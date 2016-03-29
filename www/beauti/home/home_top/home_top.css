@@ -1,0 +1,87 @@
+@CHARSET "UTF-8";
+
+/* TOP */
+.topCamImg , .topBanImg {
+	width:100%;
+	margin:0px;
+}
+
+.topCamImg div {
+	font-size:10pt;
+	color:#FF4081;
+}
+
+div.topInfBox {
+	width:100%;
+	background-color: #FFF;
+	padding: 5px;
+}
+
+div.topInfBox ul li {
+	padding: 5px;
+	margin: 0px 10px;
+}
+
+div.topInfBox span.inf01:before{
+	content: "キャンペーン";
+	font-size:0.9em;
+	padding:1px 5px;
+	margin-right:10px;
+	color:#FFF;
+	background-color: #EB727E;
+	display: inline-block;
+	width: 80px;
+	text-align: center;
+}
+
+div.topInfBox span.inf02:before{
+	content: "ニュース";
+	font-size:0.9em;
+	padding:1px 5px;
+	margin-right:10px;
+	color:#FFF;
+	background-color: #3DA75D;
+	display: inline-block;
+	width: 80px;
+	text-align: center;
+}
+
+div.topInfBox span.inf03:before{
+	content: "メンテナンス";
+	font-size:0.9em;
+	padding:1px 5px;
+	margin-right:10px;
+	color:#FFF;
+	background-color: #387EF5;
+	display: inline-block;
+	width: 80px;
+	text-align: center;
+}
+
+.topSeaBox {
+	width: 100%;
+	height: 47px;
+}
+
+.topSeaBox label {
+	width: 100%;
+	margin-left:-100px;
+	float:left;
+	border: none;
+	height: 47px;
+}
+
+.topSeaBox label input {
+	height: 47px;
+}
+
+.topSeaBox label i {
+	margin-left: 100px;
+}
+
+.topSeaBox .button {
+	width: 101px;
+	border-radius:0px;
+	font-size:12px;
+	border: none;
+}

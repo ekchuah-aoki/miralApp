@@ -1,0 +1,74 @@
+ <ion-view hide-nav-bar="true">
+<ion-content class="login_loginbody" >
+
+<!-- チュートリアル -->
+	<div class="login_tutorial">
+		<span></span>
+			<ion-content >
+				<ion-slide-box  style="height:430px" does-continue="true" auto-play="true" on-slide-changed="">
+				  <ion-slide>
+				    <div class="box"><img class="top-SlideImg" src="login/img/tutorial_01.png">
+				    <p>今いる場所や好きな場所から<br>お気に入りのサロンをみつけよう</p></div>
+				  </ion-slide>
+				  <ion-slide>
+				    <div class="box"><img class="top-SlideImg" src="login/img/tutorial_02.png">
+	   			    <p>気に入ったサロンをみつけたら<br>横にスワイプして「Like」を送ろう</p></div>
+				  </ion-slide>
+				  <ion-slide>
+				    <div class="box"><img class="top-SlideImg" src="login/img/tutorial_03.png">
+				     <p>サロンからも「Like」が返ってきたら<br>マッチング成立です<br>サロンをいつでも借りることが出来るよ</p></div>
+				  </ion-slide>
+				  <ion-slide>
+				    <div class="box"><img class="top-SlideImg" src="login/img/tutorial_04.png">
+				    <p>ミラルでサロンに「Like」を送って<br>たくさんのサロンと繋がろう</p></div>
+				  </ion-slide>
+				</ion-slide-box>
+			</ion-content>
+	</div>
+
+<!--
+<div class="list list-inset">
+  <label class="item item-input">
+<input type="text" ng-model="login.userid" size="12" placeholder="メールアドレス">
+  </label>
+  <label class="item item-input">
+
+<!-- ng-ifもあるが、こちらは、DOM自体展開されない、用途によって使いわけること！ --
+<input ng-hide="isShowPassword" type="password" ng-model="login.password" size="12" placeholder="パスワード">
+<input ng-show="isShowPassword" type="text" ng-model="login.password" size="12" placeholder="パスワード">
+<div class="button button-icon icon ion-android-sunny" on-tap="onChangePasswordShow()"></div>
+  </label>
+</div>
+
+<button class="button button-block button-positive" ng-click="onLogin()">ログイン</button> -->
+
+<div ng-switch="viewNo" class="padding">
+
+<!-- 初期表示 -->
+<div ng-switch-when="1">
+	<a class="button button-block button-light" ng-click="onLoginEntry()">ログイン</a>
+	<a class="button button-block button-stable" ng-click="onNewEntry()" >新規登録</a>
+</div>
+
+<!-- ログイン -->
+<div ng-switch-when="2">
+	<a class="button button-block cFB" ng-click="onLogin()">Facebookのアカウントでログイン</a>
+	<a class="button button-block cGO" ng-click="onLogin()">google+のアカウントでログイン</a>
+	<a class="button button-block button-light" ng-click="onLogin()">メールアドレスとパスワードでログイン</a>
+</div>
+
+<!-- 新規登録 -->
+<div ng-switch-when="3">
+	<a class="button button-block cFB" ng-click="onLogin()">Facebookのアカウントで新規登録</a>
+	<a class="button button-block cGO" ng-click="onLogin()">google+のアカウントで新規登録</a>
+	<a class="button button-block " ng-click="onLogin()">メールアドレスを使って新規登録</a>
+</div>
+
+</div>
+
+<!-- ログインなし -->
+<p><a class="c04" ng-click="onLogin()" >ログインせずにアプリを利用する</a></p>
+
+
+</ion-content>
+</ion-view>

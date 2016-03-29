@@ -5,7 +5,10 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
+angular.module('miral', ['ionic', ,'ngAnimate', 'ionicLazyLoad', 'ionic.rating'
+                         ,'miral.login.controllers'
+                         ,'miral.beauti.home.home_top.controllers'
+                         ,'miral.beauti.reserv_home.reserv_list.controllers'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -30,56 +33,35 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   // Set up the various states which the app can be in.
   // Each state's controller can be found in controllers.js
   $stateProvider
+  
+  ///////////////////////////////////////////////////////
+  //ログイン
+  .state('login', {
+	    url: '/login',
+	    templateUrl: 'login/login.html',
+	    controller: 'loginControllers'
+	  })
+  
+  
+  //カテゴリ：美容師
+  //美容師 ホーム
+  .state('beauti-home-home-top', {
+	    url: '/beauti/home/home_top',
+	    templateUrl: 'beauti/home/home_top/home_top.html',
+	    controller: 'beautiReservHomeReservListControllers'
+	  })
 
-  // setup an abstract state for the tabs directive
-    .state('tab', {
-    url: '/tab',
-    abstract: true,
-    templateUrl: 'templates/tabs.html'
-  })
-
-  // Each tab has its own nav history stack:
-
-  .state('tab.dash', {
-    url: '/dash',
-    views: {
-      'tab-dash': {
-        templateUrl: 'templates/tab-dash.html',
-        controller: 'DashCtrl'
-      }
-    }
-  })
-
-  .state('tab.chats', {
-      url: '/chats',
-      views: {
-        'tab-chats': {
-          templateUrl: 'templates/tab-chats.html',
-          controller: 'ChatsCtrl'
-        }
-      }
-    })
-    .state('tab.chat-detail', {
-      url: '/chats/:chatId',
-      views: {
-        'tab-chats': {
-          templateUrl: 'templates/chat-detail.html',
-          controller: 'ChatDetailCtrl'
-        }
-      }
-    })
-
-  .state('tab.account', {
-    url: '/account',
-    views: {
-      'tab-account': {
-        templateUrl: 'templates/tab-account.html',
-        controller: 'AccountCtrl'
-      }
-    }
-  });
+	  
+	  
+  //美容師 マッチ
+  .state('beauti-reserv_home-reserv_list', {
+	    url: '/beauti/reserv_home/reserv_list',
+	    templateUrl: 'beauti/reserv_home/reserv_list/reserv_list.html',
+	    controller: 'beautiReservHomeReservListControllers'
+	  })
+  
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/dash');
+  $urlRouterProvider.otherwise('/login');
 
 });

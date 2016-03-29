@@ -1,0 +1,28 @@
+@CHARSET "UTF-8";
+/* login */
+.login_loginbody { background-image: url('./img/login_back.jpg');
+			 padding:10px;}
+
+.login_tutorial {
+	margin: 20px 20px;
+	}
+
+.login_tutorial > span {
+	height: 450px;
+	width:100%;
+	background-color: #FFF;
+	opacity:0.4;
+	border-radius:10px;
+	display:block;
+}
+
+.login_tutorial div.box {
+	margin: 0 auto;
+	width: 350px;
+	color:#FFF;
+	text-align: center;
+}
+
+.login_tutorial div p {
+	color:#FFF;
+}

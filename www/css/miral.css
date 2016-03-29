@@ -1,0 +1,130 @@
+@CHARSET "UTF-8";
+/*************************************
+			◇	Style	◇
+**************************************/
+.miralbody {background: repeating-linear-gradient( 135deg, #FFF,#FFF 2px,#DDD 2px,#DDD 4px);}
+
+/* color */
+.c01 {	background-color: #A87544; color:#FFF; } /* 茶色 */
+.c02 {	background-color: #EB727E; color:#FFF; } /* ピンク */
+.c03 {	background-color: #19B0B8; color:#FFF; } /* 水色 */
+.c04 {	color:#FFF; } /* 白 */
+
+/* SNS color */
+.cFB {	background-color: #305097; color:#FFF; } /* Facebook */
+.cGO {	background-color: #db4a39; color:#FFF; } /* Google+ */
+
+/* float */
+.flL {	float:left;}
+.flR {	float:right;}
+.clB {	clear:both; }
+
+/* text-align */
+.teAL {	text-align:left; }
+.teAR {	text-align: right;}
+.teAC {	text-align: center;}
+
+/*************************************
+			◆	共通	◆
+**************************************/
+/* header */
+.beautiHd {
+	z-index: 10;
+}
+.beautiHd img {
+	height:30px;
+	margin:0 10px;
+}
+
+.beautiHd .iconHd{
+	font-size: 30px;
+	position: fixed;
+	right: 0px;
+	margin: 0px;
+	display: block;
+}
+
+.beautiHd .iconHd i {
+	padding: 0px 10px 4px;
+	display: inline-block;
+	width:60px;
+	text-align:center;
+	margin-left: -9px;
+	color: #5C5C5C ;
+	border-bottom: solid 4px #DDDDDD;
+}
+
+.beautiHd .iconHd .tabA {
+	color: #A87544;
+	border-bottom: solid 4px;
+}
+
+
+/* titile */
+.titleBar {
+	width: 100%;
+	padding:5px 25px;
+	box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.5);
+	font-size:15px;
+	margin: 0 0 1px 0;
+}
+
+.seaRes {
+	padding:0px;
+	margin: 0px;
+	display: block;
+	width: 100%;
+	position: relative;
+}
+
+
+.seaResTex {
+	display: inline-block;
+	position:absolute;
+	width: 100%;
+	height: 90px;
+	background-color: rgba(0,0,0,0.5);
+	bottom: 0px;
+	color:#FFF;
+}
+
+.seaResTex > div p {
+	display: inline-block;
+	width: 50%;
+	text-align: center;
+	color: #FFF;
+	margin: 10px auto;
+}
+
+.seaResTex > div p:first-child {
+	border-right: solid 2px ;
+}
+
+.seaResTex > div p span {
+	color: #FFF;
+	font-size:20px;
+}
+
+.seaResTex .titleBar {
+	position:absolute;
+	bottom: 15px;
+	color: #FFF;
+}
+
+.seaResImg {
+	display: block;
+	height: 250px;
+	width: 50%;
+}
+
+.seaResImg > img {
+	width: 100%;
+}
+
+/*************************************
+			◇	画面別	◇
+**************************************/
+
+
+
+
