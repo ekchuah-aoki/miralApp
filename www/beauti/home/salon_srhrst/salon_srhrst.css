@@ -1,0 +1,62 @@
+@CHARSET "UTF-8";
+
+.salon_srhrst_result {
+	padding:0px;
+	margin: 0px;
+	display: block;
+	width: 100%;
+	position: relative;
+}
+
+.salon_srhrst_resulttext {
+	display: inline-block;
+	position:absolute;
+	width: 100%;
+	height: 90px;
+	background-color: rgba(0,0,0,0.5);
+	bottom: 0px;
+	color:#FFF;
+}
+
+.salon_srhrst_resulttext > div p {
+	display: inline-block;
+	width: 50%;
+	text-align: center;
+	color: #FFF;
+	margin: 10px auto;
+}
+
+.salon_srhrst_resulttext > div p:first-child {
+	border-right: solid 2px ;
+}
+
+.salon_srhrst_resulttext > div p span {
+	color: #FFF;
+	font-size:20px;
+}
+
+.salon_srhrst_resulttext .titleBar {
+	position:absolute;
+	bottom: 15px;
+	color: #FFF;
+}
+
+.salon_srhrst_resultimg {
+	display: block;
+	height: 250px;
+	width: 50%;
+}
+
+.salon_srhrst_resultimg > img {
+	width: 100%;
+}
+
+.salon_srhrst_resultrev {
+	position: fixed;
+	display: inline-block;
+	right: 25px;
+}
+
+.salon_srhrst_resultrev {
+	font-size: 11px;
+}

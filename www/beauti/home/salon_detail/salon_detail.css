@@ -1,0 +1,74 @@
+@CHARSET "UTF-8";
+
+.salon_detail_head {
+	padding:0px;
+	margin: 0px;
+	display: block;
+	width: 100%;
+	position: relative;
+}
+
+.salon_detail_head > span  {
+	display: block;
+	height: 400px;
+	overflow: hidden;
+} 
+
+.salon_detail_head  img {
+	width: 100%;
+}
+
+.salon_detail_headtext {
+	padding:10px;
+	display: inline-block;
+	position:absolute;
+	width: 100%;
+	height: 120px;
+	background-color: rgba(0,0,0,0.5);
+	bottom: 0px;
+	color:#FFF;
+}
+
+.salon_detail_headtext_name > p {
+	display: inline-block;
+	clear: both;	
+}
+
+.salon_detail_headtext_name div {
+	float: left;
+}
+
+.salon_detail_headtext_name {
+	width: 100%;
+}
+
+.salon_detail_headtext_name > div,　{
+	display: inline-block;
+	width: 50%;
+}
+
+.salon_detail_headtext_name > p　{
+	display: inline-block;
+	width: 50%;
+	font-size: 20px;
+	text-align: center;
+}
+
+.salon_detail_headtext_price {
+	clear: both;
+	}
+
+.salon_detail_headtext_price >  p {
+	display: inline-block;
+	width: 50%;
+	text-align: center;
+}
+
+.salon_detail_headtext_price >  p span {
+	font-size: 20px;
+}
+
+.salon_detail_headtext_price p:first-child {
+	border-right: solid 2px ;
+}
+

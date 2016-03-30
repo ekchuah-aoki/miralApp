@@ -8,6 +8,10 @@
 angular.module('miral', ['ionic', ,'ngAnimate', 'ionicLazyLoad', 'ionic.rating'
                          ,'miral.login.controllers'
                          ,'miral.beauti.home.home_top.controllers'
+                         ,'miral.beauti.home.salon_srhrst.controllers'
+                         ,'miral.beauti.home.salon_detail.controllers'
+                         ,'miral.beauti.home.announce.controllers'
+                         ,'miral.beauti.home.request.controllers'                         
                          ,'miral.beauti.reserv_home.reserv_list.controllers'])
 
 .run(function($ionicPlatform) {
@@ -41,8 +45,7 @@ angular.module('miral', ['ionic', ,'ngAnimate', 'ionicLazyLoad', 'ionic.rating'
 	    templateUrl: 'login/login.html',
 	    controller: 'loginControllers'
 	  })
-  
-  
+    
   //カテゴリ：美容師
   //美容師 ホーム
   .state('beauti-home-home-top', {
@@ -51,9 +54,35 @@ angular.module('miral', ['ionic', ,'ngAnimate', 'ionicLazyLoad', 'ionic.rating'
 	    controller: 'beautiReservHomeReservListControllers'
 	  })
 
+  //美容師 ホーム サロン検索結果（未マッチ：スワイプ）
+  .state('beauti-home-salon_srhrst', {
+	    url: '/beauti/home/salon_srhrst',
+	    templateUrl: 'beauti/home/salon_srhrst/salon_srhrst.html',
+	    controller: 'beautiHomeSalonSrhrstControllers'
+	  })
+
+  //美容師 ホーム サロン情報詳細
+  .state('beauti-home-salon-detail', {
+	    url: '/beauti/home/salon_detail',
+	    templateUrl: 'beauti/home/salon_detail/salon_detail.html',
+	    controller: 'beautiHomeSalonDetailControllers'
+	  })	  
 	  
+  //美容師 ホーム　お知らせ
+  .state('beauti-home-announce', {
+	    url: '/beauti/home/announce',
+	    templateUrl: 'beauti/home/announce/announce.html',
+	    controller: 'beautiHomeAnnounceControllers'
+	  })
+	 
+  //美容師 ホーム　お問い合わせ
+  .state('beauti-home-request', {
+	    url: '/beauti/home/request',
+	    templateUrl: 'beauti/home/request/request.html',
+	    controller: 'beautiHomeRequestControllers'
+	  })	  
 	  
-  //美容師 マッチ
+  //美容師 予約ホーム　サロン検索結果（マッチ済：リスト）
   .state('beauti-reserv_home-reserv_list', {
 	    url: '/beauti/reserv_home/reserv_list',
 	    templateUrl: 'beauti/reserv_home/reserv_list/reserv_list.html',

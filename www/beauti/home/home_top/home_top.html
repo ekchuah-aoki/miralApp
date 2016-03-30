@@ -1,8 +1,20 @@
 <ion-view>
-<ion-content lazy-scroll scroll-view scroll-event="scrollFnc" class="miralbody" >
-<img class="topCamImg" src="beauti/home/home_top/img/campaign_01.png">
-</div>
-<div class="topSeaBox">
+
+   <ion-nav-bar >
+		<div class="bar bar-header bar-stable beautiHd">
+			<img src="./img/common/1/logo.svg" />
+			<div class="iconHd">
+				<i class="ion-android-home tabA"></i>
+				<i class="ion-android-favorite"></i>
+				<i class="ion-android-settings"></i>
+			</div>
+		</div>
+    </ion-nav-bar>
+
+<ion-content class="miralbody" >
+<img class="home_top_camimg" src="beauti/home/home_top/img/campaign_01.png">
+
+<div class="searchbox">
   <label class="item item-input">
     <i class="icon ion-search placeholder-icon"></i>
     <input type="text" placeholder="Search">
@@ -10,27 +22,28 @@
   <button class="button c01">検索</button>
 </div>
 
-<img class="topCamImg" src="beauti/home/home_top/img/campaign_02.png">
-<img class="topCamImg" src="beauti/home/home_top/img/campaign_03.png">
-<img class="topCamImg" src="beauti/home/home_top/img/campaign_04.png">
-<img class="topCamImg" src="beauti/home/home_top/img/campaign_05.png">
-<img class="topCamImg" src="beauti/home/home_top/img/campaign_06.png">
+<a ui-sref="beauti-home-salon_srhrst"><img class="home_top_camimg" src="beauti/home/home_top/img/campaign_02.png" ></a>
+<img class="home_top_camimg" src="beauti/home/home_top/img/campaign_03.png">
+<img class="home_top_camimg" src="beauti/home/home_top/img/campaign_04.png">
+<img class="home_top_camimg" src="beauti/home/home_top/img/campaign_05.png">
+<img class="home_top_camimg" src="beauti/home/home_top/img/campaign_06.png">
 
 	<p class="c01 titleBar">お知らせ</p>
-<div class="topInfBox">
+<div class="home_top_annbox">
 	<ul>
-		<li><span class="inf01"></span>2016/00/00 おしらせだよ</li>
-		<li><span class="inf02"></span>2016/00/00 おしらせだよ</li>
-		<li><span class="inf03"></span>2016/00/00 おしらせだよ</li>
-		<li><span class="inf01"></span>2016/00/00 おしらせだよ</li>
-		<li><span class="inf02"></span>2016/00/00 おしらせだよ</li>
+		<li><span class="ann_campaign"></span><a ui-sref="beauti-home-announce">2016/00/00 おしらせだよ</a></li>
+		<li><span class="ann_news"></span><a ui-sref="beauti-home-announce">2016/00/00 おしらせだよ</a></li>
+		<li><span class="ann_maintenance"></span><a ui-sref="beauti-home-announce">2016/00/00 おしらせだよ</a></li>
+		<li><span class="ann_campaign"></span><a ui-sref="beauti-home-announce">2016/00/00 おしらせだよ</a></li>
+		<li><span class="ann_news"></span><a ui-sref="beauti-home-announce">2016/00/00 おしらせだよ</a></li>
 	</ul>
+	<p></p>
 </div>
 
 
-<img class="topBanImg" src="beauti/home/home_top/img/bana_01.png">
-<img class="topBanImg" src="beauti/home/home_top/img/bana_02.png">
-<img class="topBanImg" src="beauti/home/home_top/img/bana_03.png">
+<img class="home_top_banaimg" src="beauti/home/home_top/img/bana_01.png">
+<img class="home_top_banaimg" src="beauti/home/home_top/img/bana_02.png">
+<a ui-sref="beauti-home-request"><img class="topBanImg" src="beauti/home/home_top/img/bana_03.png"></a>
 
 
 </ion-content>
