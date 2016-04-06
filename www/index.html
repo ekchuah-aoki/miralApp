@@ -58,6 +58,19 @@
 	<!-- google map -->
  	<script src="https://maps.googleapis.com/maps/api/js"></script>
 
+	<!-- Falsebook -->
+    <script src="common/facebook/facebookConnecter.js"></script>
+	
+	<!-- google app engin -->
+    <script src="common/google_appengin/googleAppenginConnecter.js"></script>
+	<script>
+    	function googleClientOnLoad() {
+    		//ここでアプリが使用できるようにする
+    	}
+	</script>	
+	<script src="https://apis.google.com/js/client.js?onload=googleClientOnLoad"></script>
+
+
     <!-- your app's js -->
     <script src="js/app.js"></script>
 
@@ -73,8 +86,10 @@
     <script src="beauti/reserv/reserv_list/reserv_list_ctl.js"></script>
     <script src="beauti/reserv/reserv_map/reserv_map_ctl.js"></script>
 	<!-- miral共通モジュール -->
-    <script src="common/mirroruUtil.js"></script>
+    <script src="common/miralUtil.js"></script>
     <script src="common/loginInfo.js"></script>
+    <script src="common/config.js"></script>
+    <script src="beauti/common/navi_bar_ctl.js"></script>
   </head>
 
   <script type="text/javascript">
