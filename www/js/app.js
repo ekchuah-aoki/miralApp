@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('miral', ['ionic', ,'ngAnimate', 'ionicLazyLoad', 'ionic.rating'
+angular.module('miral', ['ionic', ,'ngAnimate', 'ionicLazyLoad', 'ionic.rating','miral.common.googleAppenginConnecter'
                          ,'miral.login.controllers'
                          ,'miral.beauti.home.home_top.controllers'
                          ,'miral.beauti.home.salon_srhrst.controllers'
@@ -29,6 +29,8 @@ angular.module('miral', ['ionic', ,'ngAnimate', 'ionicLazyLoad', 'ionic.rating'
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
+    //google App Engin 初期化
+    googleAppenginConnecter.init();
   });
 })
 
