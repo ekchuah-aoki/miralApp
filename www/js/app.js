@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('miral', ['ionic', ,'ngAnimate', 'ionicLazyLoad', 'ionic.rating','miral.common.googleAppenginConnecter'
+angular.module('miral', ['ionic', ,'ngAnimate', 'ionicLazyLoad', 'ionic.rating', 'miral.common.googleAppenginConnecter'
                          ,'miral.login.controllers'
                          ,'miral.beauti.home.home_top.controllers'
                          ,'miral.beauti.home.salon_srhrst.controllers'
@@ -16,7 +16,7 @@ angular.module('miral', ['ionic', ,'ngAnimate', 'ionicLazyLoad', 'ionic.rating',
                          ,'miral.beauti.reserv.reserv_list.controllers'
                          ,'miral.beauti.reserv.reserv_map.controllers'])
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform,googleAppenginConnecter) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
