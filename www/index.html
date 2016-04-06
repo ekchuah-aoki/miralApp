@@ -13,9 +13,14 @@
     <link href="beauti/home/home_top/home_top.css" rel="stylesheet">
     <link href="beauti/home/salon_srhrst/salon_srhrst.css" rel="stylesheet">
 	<link href="beauti/home/salon_detail/salon_detail.css" rel="stylesheet">
+	<link href="beauti/reserv/reserv_home/reserv_home.css" rel="stylesheet">
+	<link href="beauti/reserv/reserv_list/reserv_list.css" rel="stylesheet">
     <link href="beauti/home/request/request.css" rel="stylesheet">
     
     <link href="login/login.css" rel="stylesheet">
+
+	<!-- jQuery css -->
+    <link href="css/lightbox.css" rel="stylesheet">
         
     <!-- utility lib css -->
     <link href="lib/material-design-icons-2_1/css/material-design-icons.css" rel="stylesheet">
@@ -33,7 +38,7 @@
 
     <!-- jQuery js -->
 	<script src="lib/jquery/jquery-1.11.3.min.js"></script>
-
+	
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
 
@@ -53,7 +58,6 @@
 	<!-- google map -->
  	<script src="https://maps.googleapis.com/maps/api/js"></script>
 
-
     <!-- your app's js -->
     <script src="js/app.js"></script>
 
@@ -65,8 +69,9 @@
     <script src="beauti/home/salon_srhrst/salon_srhrst_ctl.js"></script>
     <script src="beauti/home/salon_detail/salon_detail_ctl.js"></script>
 
-    <script src="beauti/reserv_home/reserv_list/reserv_list_ctl.js"></script>
-
+    <script src="beauti/reserv/reserv_home/reserv_home_ctl.js"></script>
+    <script src="beauti/reserv/reserv_list/reserv_list_ctl.js"></script>
+    <script src="beauti/reserv/reserv_map/reserv_map_ctl.js"></script>
 	<!-- miral共通モジュール -->
     <script src="common/mirroruUtil.js"></script>
     <script src="common/loginInfo.js"></script>
@@ -78,19 +83,16 @@
 
   <body ng-app="miral" class="">
 
-<!--     <ion-nav-bar > -->
-<!-- 		<div class="bar bar-header bar-stable beautiHd"> -->
-<!-- 			<img src="./img/common/1/logo.svg" /> -->
-<!-- 			<object data=./img/common/1/logo.svg" type="image/svg+xml"></object> -->
-<!-- 			<div class="iconHd"> -->
-<!-- 				<i class="ion-android-home"></i> -->
-<!-- 				<i class="ion-android-favorite"></i> -->
-<!-- 				<i class="ion-android-settings tabA"></i> -->
-<!-- 			</div> -->
-<!-- 			 <ion-nav-back-button>戻る</ion-nav-back-button> -->
-<!-- 		</div> -->
-<!--     </ion-nav-bar> -->
-
+   <ion-nav-bar >
+		<div class="bar bar-header bar-stable beautiHd">
+			<img src="./img/common/1/logo.svg" />
+			<div class="iconHd">
+				<i class="ion-android-home tabA"></i>
+				<i class="ion-android-favorite"></i>
+				<i class="ion-android-settings"></i>
+			</div>
+		</div>
+    </ion-nav-bar>
     <!--
       The nav bar that will be updated as we navigate between views.
     -->

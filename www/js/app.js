@@ -11,8 +11,10 @@ angular.module('miral', ['ionic', ,'ngAnimate', 'ionicLazyLoad', 'ionic.rating'
                          ,'miral.beauti.home.salon_srhrst.controllers'
                          ,'miral.beauti.home.salon_detail.controllers'
                          ,'miral.beauti.home.announce.controllers'
-                         ,'miral.beauti.home.request.controllers'                         
-                         ,'miral.beauti.reserv_home.reserv_list.controllers'])
+                         ,'miral.beauti.home.request.controllers' 
+                         ,'miral.beauti.reserv.reserv_home.controllers'
+                         ,'miral.beauti.reserv.reserv_list.controllers'
+                         ,'miral.beauti.reserv.reserv_map.controllers'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -51,7 +53,7 @@ angular.module('miral', ['ionic', ,'ngAnimate', 'ionicLazyLoad', 'ionic.rating'
   .state('beauti-home-home-top', {
 	    url: '/beauti/home/home_top',
 	    templateUrl: 'beauti/home/home_top/home_top.html',
-	    controller: 'beautiReservHomeReservListControllers'
+	    controller: 'beautiHomeHomeTopControllers'
 	  })
 
   //美容師 ホーム サロン検索結果（未マッチ：スワイプ）
@@ -82,13 +84,26 @@ angular.module('miral', ['ionic', ,'ngAnimate', 'ionicLazyLoad', 'ionic.rating'
 	    controller: 'beautiHomeRequestControllers'
 	  })	  
 	  
-  //美容師 予約ホーム　サロン検索結果（マッチ済：リスト）
-  .state('beauti-reserv_home-reserv_list', {
-	    url: '/beauti/reserv_home/reserv_list',
-	    templateUrl: 'beauti/reserv_home/reserv_list/reserv_list.html',
-	    controller: 'beautiReservHomeReservListControllers'
+  //美容師 予約ホーム　
+  .state('beauti-reserv-reserv_home', {
+	    url: '/beauti/reserv/reserv_home',
+	    templateUrl: 'beauti/reserv/reserv_home/reserv_home.html',
+	    controller: 'beautiReservReservHomeControllers'
 	  })
-  
+	  
+  //美容師 予約ホーム　サロン検索結果（マッチ済：リスト）
+  .state('beauti-reserv-reserv_list', {
+	    url: '/beauti/reserv/reserv_list',
+	    templateUrl: 'beauti/reserv/reserv_list/reserv_list.html',
+	    controller: 'beautiReservReservListControllers'
+	  })
+
+  //美容師 予約ホーム　サロン検索結果（マッチ済：MAP）
+  .state('beauti-reserv-reserv_map', {
+	    url: '/beauti/reserv/reserv_map',
+	    templateUrl: 'beauti/reserv/reserv_map/reserv_map.html',
+	    controller: 'beautiReservReservMapControllers'
+	  })	  
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/login');

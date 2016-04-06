@@ -31,8 +31,10 @@
 /* font-size */
 .fs10 {	font-size: }
 
-/* img */
-
+/* has-header-w (タブが２つある場合) */
+.has-header-w {
+	top:88px;
+}
 /*************************************
 			◆	共通パーツ 	◆
 **************************************/
@@ -102,7 +104,7 @@ span.ann_news:before{
 	text-align: center;
 }
 
-span.ann_maintenance:before{
+span.ann_maintenance:before {
 	content: "メンテナンス";
 	font-size:0.9em;
 	padding:1px 5px;
@@ -122,6 +124,8 @@ span.ann_maintenance:before{
 
 .searchbox label {
 	width: 100%;
+	margin-top:0px;
+	margin-bottom:0px;
 	margin-left:-100px;
 	float:left;
 	border: none;
@@ -141,4 +145,134 @@ span.ann_maintenance:before{
 	border-radius:0px;
 	font-size:12px;
 	border: none;
+	height: 47px;
 }
+
+/* contentbox */
+.contentbox {
+	width: 100%;
+	background-color: #FFF;
+	border: solid 1px #DDD;
+	margin: 10px 0px 0px;
+	padding: 15px 15px 0px 15px;
+	display: inline-block;
+}
+
+.contentbox_title {
+	margin: 0px;
+	padding: 0px 0px 15px 0px;
+	display: block;
+	font-size: 20px;
+	color: #A87544;
+}
+
+.contentbox_content {
+	margin: 0px;
+	padding: 0px 0px 15px 0px;
+	display: inline-block;
+}
+
+/* accordions */
+.accordion {
+	width:100%;
+	margin-top: 10px;
+	border: solid 1px #DDD; 
+}
+
+.accordion input {
+	display: none;
+}
+
+.accordion label {
+	position: relative;
+	display: block;
+	background: #FFF ;
+	cursor: pointer;
+	padding: 15px;
+	border: none;
+	font-size: 20px;
+	color: #A87544;
+}
+
+.accordion label::after {
+	position: absolute;
+	top: 50%;
+	right: 10px;
+	display: block;
+	content: '';
+	width: 10px;
+	height: 10px;
+	margin-top: -10px;
+	margin-right:7px;
+	border-top: 1px solid #888;
+	border-right: 1px solid #888;
+	-webkit-transform: rotate(135deg);
+	transform: rotate(135deg);
+} 
+
+.accordion input:checked + label::after {
+	margin-top: -3px;
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+
+.accordion .accordion_content {
+	transition: 0.2s;
+	height: 0;
+	overflow: hidden;
+	background: #FFF;
+	padding: 0 15px;
+	border: none;
+}
+
+.accordion input:checked  ~ .accordion_content {
+	height: auto;
+	padding: 0px 15px 15px 15px;
+}
+
+/* miral tab */
+.miral_tab > .tabs {
+	position:relative;
+	color:#5c5c5c;
+	margin-bottom: 10px;
+}
+
+.miral_tab .tabs >.tab-item {
+	border-bottom: solid #DDDDDD 5px;
+	max-width: none;
+	opacity:1.0;
+}
+
+.miral_tab .tabs > .tab-item.tab-item-active {
+	color:#A87544;
+	border-bottom: solid #A87544 5px;
+}
+
+/* search tab */
+.search_tab　{
+	display: block;
+}
+
+.search_tab > .tabs > span {
+	width: 100px;
+	background-color: #A87544;
+	display: inline-block;
+	color: #FFF;
+	text-align:center;
+}
+
+.search_tab > .tabs  > a {
+	max-width: none;
+	color: #A87544;
+	margin: 0px;
+}
+
+.search_tab > .tabs  > a.active , .search_tab > .tabs  > a.activated {
+	max-width: none;
+	border:none !important;
+	color: #A87544;
+	background: #FFDAB5;
+	margin: none;
+}
+
+

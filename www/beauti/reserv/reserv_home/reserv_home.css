@@ -1,0 +1,46 @@
+@CHARSET "UTF-8";
+
+.reserv_home_salon {
+	width:100%;
+	display: block;
+	padding:10px;
+}
+
+.reserv_home_salon dl   {
+	width: 20%;
+	display: block;
+	float: left;
+	margin: 0px 2.5%;
+}
+
+.reserv_home_salon dt {
+	font: 12px nomale;
+	display: block;
+	width: 100%;
+}
+
+.reserv_home_salon dl dd  {
+	height: 100px;
+	display: inline-block;
+	overflow:hidden;
+}
+
+.reserv_home_salon dl dd >img {
+	width:100%;
+	min-width:100px;
+	min-height: 100px;
+}
+
+.reserv_home_salon p {
+	width:100%;
+	text-align: right;
+}
+
+.reserv_home_salon p a {
+	color:#A87544;
+}
+
+.reserv_home_search span img {
+	width: 100%;
+	margin: 0 0 -5px; 0
+}
