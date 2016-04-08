@@ -12,6 +12,7 @@
 .c02, .c02:hover, .c02.active, .c02.activated {	background-color: #EB727E; color:#FFF; } /* ピンク */
 .c03, .c03:hover, .c03.active, .c03.activated {	background-color: #19B0B8; color:#FFF; } /* 水色 */
 .c04, .c04:hover, .c04.active, .c04.activated {	color:#FFF; } /* 白 */
+.c05, .c05:hover, .c05.active, .c05.activated {	background-color: #5C5C5C; color:#FFF; } /* グレー */
 
 /* SNS color */
 .cFB, .cFB:hover, .cFB.active , .cFB.activated {	background-color: #305097; color:#FFF; } /* Facebook */
@@ -35,6 +36,17 @@
 .has-header-w {
 	top:88px;
 }
+
+/* margin */
+.maN {
+	margin:none !important;
+}
+
+/* padding */
+.paN {
+	padding: none !important;
+}
+
 /*************************************
 			◆	共通パーツ 	◆
 **************************************/
@@ -47,28 +59,21 @@
 	margin:0 10px;
 }
 
-.beautiHd .iconHd{
-	font-size: 30px;
-	position: fixed;
-	right: 0px;
-	margin: 0px;
-	display: block;
+div.iconHd .button {
+	font-size:30px;
+	border-radius:0px;
+}
+.iconHd > .button:hover ,
+.iconHD > .button.active , .iconHD > .button.activated {
+	color:#A87544;
+	background-color: transparent;
+	border-left: none;
+	border-right: none;
+	border-bottom: solid 4px #A87544;
+	border-radius:0px;
+	padding: 1px 9px 1px 9px;
 }
 
-.beautiHd .iconHd i {
-	padding: 0px 10px 4px;
-	display: inline-block;
-	width:60px;
-	text-align:center;
-	margin-left: -9px;
-	color: #5C5C5C ;
-	border-bottom: solid 4px #DDDDDD;
-}
-
-.beautiHd .iconHd .tabA {
-	color: #A87544;
-	border-bottom: solid 4px;
-}
 
 /* titile Bar */
 .titleBar {
@@ -157,6 +162,9 @@ span.ann_maintenance:before {
 	padding: 15px 15px 0px 15px;
 	display: inline-block;
 }
+.contentbox:first-child {
+	margin: 0px;
+}
 
 .contentbox_title {
 	margin: 0px;
@@ -167,6 +175,7 @@ span.ann_maintenance:before {
 }
 
 .contentbox_content {
+	width:100%;
 	margin: 0px;
 	padding: 0px 0px 15px 0px;
 	display: inline-block;

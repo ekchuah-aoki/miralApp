@@ -13,9 +13,16 @@
     <link href="beauti/home/home_top/home_top.css" rel="stylesheet">
     <link href="beauti/home/salon_srhrst/salon_srhrst.css" rel="stylesheet">
 	<link href="beauti/home/salon_detail/salon_detail.css" rel="stylesheet">
+	<link href="beauti/home/announce_detail/announce_detail.css" rel="stylesheet">
 	<link href="beauti/reserv/reserv_home/reserv_home.css" rel="stylesheet">
 	<link href="beauti/reserv/reserv_list/reserv_list.css" rel="stylesheet">
     <link href="beauti/home/request/request.css" rel="stylesheet">
+ 
+	<link href="beauti/setting/account_edit/account_edit.css" rel="stylesheet">
+	<link href="beauti/setting/license_edit/license_edit.css" rel="stylesheet">  
+    <link href="beauti/setting/beauti_detail/beauti_detail.css" rel="stylesheet">
+	<link href="beauti/setting/setting_home/setting_home.css" rel="stylesheet">
+
     
     <link href="login/login.css" rel="stylesheet">
 
@@ -78,6 +85,7 @@
     <script src="login/login_ctl.js"></script>
     <script src="beauti/home/home_top/home_top_ctl.js"></script>
     <script src="beauti/home/announce/announce_ctl.js"></script>
+    <script src="beauti/home/announce_detail/announce_detail_ctl.js"></script>
     <script src="beauti/home/request/request_ctl.js"></script>
     <script src="beauti/home/salon_srhrst/salon_srhrst_ctl.js"></script>
     <script src="beauti/home/salon_detail/salon_detail_ctl.js"></script>
@@ -85,6 +93,12 @@
     <script src="beauti/reserv/reserv_home/reserv_home_ctl.js"></script>
     <script src="beauti/reserv/reserv_list/reserv_list_ctl.js"></script>
     <script src="beauti/reserv/reserv_map/reserv_map_ctl.js"></script>
+
+    <script src="beauti/setting/setting_home/setting_home_ctl.js"></script>
+    <script src="beauti/setting/beauti_detail/beauti_detail_ctl.js"></script>
+    <script src="beauti/setting/account_edit/account_edit_ctl.js"></script>
+    <script src="beauti/setting/license_edit/license_edit_ctl.js"></script>
+    
 	<!-- miral共通モジュール -->
     <script src="common/miralUtil.js"></script>
     <script src="common/loginInfo.js"></script>
@@ -95,17 +109,18 @@
   <script type="text/javascript">
 	numeral.language('ja');
   </script>
-
   <body ng-app="miral" class="">
 
    <ion-nav-bar >
 		<div class="bar bar-header bar-stable beautiHd">
 			<img src="./img/common/1/logo.svg" />
-			<div class="iconHd">
-				<i class="ion-android-home tabA"></i>
-				<i class="ion-android-favorite"></i>
-				<i class="ion-android-settings"></i>
-			</div>
+			<ion-nav-buttons side="right">
+			　　<div class="iconHd">
+					<a class="button" ng-click="home()"><i class="ion-android-home tabA"></i></a>
+					<button class="button" ng-click="reserv_home()"><i class="ion-android-favorite"></i></button>
+					<button class="button" ng-click="setting()"><i class="ion-android-settings"></i></button>
+				</div>
+			</ion-nav-buttons>
 		</div>
     </ion-nav-bar>
     <!--

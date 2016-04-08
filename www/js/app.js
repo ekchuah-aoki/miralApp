@@ -11,11 +11,16 @@ angular.module('miral', ['ionic', ,'ngAnimate', 'ionicLazyLoad', 'ionic.rating',
                          ,'miral.beauti.home.salon_srhrst.controllers'
                          ,'miral.beauti.home.salon_detail.controllers'
                          ,'miral.beauti.home.announce.controllers'
+                         ,'miral.beauti.home.announce.detail.controllers'
                          ,'miral.beauti.home.request.controllers' 
                          ,'miral.beauti.reserv.reserv_home.controllers'
                          ,'miral.beauti.reserv.reserv_list.controllers'
-                         ,'miral.beauti.reserv.reserv_map.controllers'])
-
+                         ,'miral.beauti.reserv.reserv_map.controllers'
+                         ,'miral.beauti.setting.setting_home.controllers'
+                         ,'miral.beauti.setting.beauti_detail.controllers'
+                         ,'miral.beauti.setting.account_edit.controllers'
+                         ,'miral.beauti.setting.license_edit.controllers'])
+                         
 .run(function($ionicPlatform,googleAppenginConnecter) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -78,7 +83,14 @@ angular.module('miral', ['ionic', ,'ngAnimate', 'ionicLazyLoad', 'ionic.rating',
 	    templateUrl: 'beauti/home/announce/announce.html',
 	    controller: 'beautiHomeAnnounceControllers'
 	  })
-	 
+
+  //美容師 ホーム　お知らせ
+  .state('beauti-home-announce-detail', {
+	    url: '/beauti/home/announce_detail',
+	    templateUrl: 'beauti/home/announce_detail/announce_detail.html',
+	    controller: 'beautiHomeAnnounceDetailControllers'
+	  })	  
+	  
   //美容師 ホーム　お問い合わせ
   .state('beauti-home-request', {
 	    url: '/beauti/home/request',
@@ -105,8 +117,37 @@ angular.module('miral', ['ionic', ,'ngAnimate', 'ionicLazyLoad', 'ionic.rating',
 	    url: '/beauti/reserv/reserv_map',
 	    templateUrl: 'beauti/reserv/reserv_map/reserv_map.html',
 	    controller: 'beautiReservReservMapControllers'
-	  })	  
+	  })
+	  
+  //美容師 設定　設定ホーム
+  .state('beauti-setting-home', {
+	    url: '/beauti/setting/setting_home',
+	    templateUrl: 'beauti/setting/setting_home/setting_home.html',
+	    controller: 'beautiSettingSettingHomeControllers'
+	  })
 
+  //美容師 設定　美容師詳細
+  .state('beauti-setting-beauti_detail', {
+	    url: '/beauti/setting/beauti_detail',
+	    templateUrl: 'beauti/setting/beauti_detail/beauti_detail.html',
+	    controller: 'beautiSettingBeautiDetailControllers'
+	  })
+
+  //美容師 設定　基本情報の変更
+  .state('beauti-setting-accoun_edit', {
+	    url: '/beauti/setting/accoun_edit',
+	    templateUrl: 'beauti/setting/accoun_edit/accoun_edit.html',
+	    controller: 'beautiSettingAccountEditControllers'
+	  })
+
+  //美容師 設定　美容師免許の登録
+  .state('beauti-setting-license_edit', {
+	    url: '/beauti/setting/license_edit',
+	    templateUrl: 'beauti/setting/license_edit/license_edit.html',
+	    controller: 'beautiSettingLicenseEditControllers'
+	  })
+	  	  
+	  
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/login');
 
