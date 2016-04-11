@@ -18,6 +18,7 @@
 .cFB, .cFB:hover, .cFB.active , .cFB.activated {	background-color: #305097; color:#FFF; } /* Facebook */
 .cGO, .cGO:hover, .cGO.active , .cGO.activated {	background-color: #db4a39; color:#FFF; } /* Google+ */
 .cIN, .cIN:hover, .cIN.active , .cIN.activated {	background-color: #3F729B; color:#FFF; } /* Instagram */
+.cTW, .cTW:hover, .cTW.active , .cTW.activated {	background-color: #55acee; color:#FFF; } /* twitter */
 
 /* float */
 .flL { float:left;}
