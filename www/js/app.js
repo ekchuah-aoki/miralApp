@@ -134,9 +134,9 @@ angular.module('miral', ['ionic', ,'ngAnimate', 'ionicLazyLoad', 'ionic.rating',
 	  })
 
   //美容師 設定　基本情報の変更
-  .state('beauti-setting-accoun_edit', {
-	    url: '/beauti/setting/accoun_edit',
-	    templateUrl: 'beauti/setting/accoun_edit/accoun_edit.html',
+  .state('beauti-setting-account_edit', {
+	    url: '/beauti/setting/account_edit',
+	    templateUrl: 'beauti/setting/account_edit/account_edit.html',
 	    controller: 'beautiSettingAccountEditControllers'
 	  })
 
