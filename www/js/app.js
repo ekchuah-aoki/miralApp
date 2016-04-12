@@ -85,7 +85,7 @@ angular.module('miral', ['ionic', ,'ngAnimate', 'ionicLazyLoad', 'ionic.rating',
 	  })
 
   //美容師 ホーム　お知らせ
-  .state('beauti-home-announce-detail', {
+  .state('beauti-home-announce_detail', {
 	    url: '/beauti/home/announce_detail',
 	    templateUrl: 'beauti/home/announce_detail/announce_detail.html',
 	    controller: 'beautiHomeAnnounceDetailControllers'

@@ -7,6 +7,10 @@
 	color:#5C5C5C;
 }
 
+a {
+	text-decoration: none;
+}
+
 /* color */
 .c01, .c01:hover, .c01.active, .c01.activated {	background-color: #A87544; color:#FFF; } /* 茶色 */
 .c02, .c02:hover, .c02.active, .c02.activated {	background-color: #EB727E; color:#FFF; } /* ピンク */
@@ -47,6 +51,25 @@
 .paN {
 	padding: none !important;
 }
+
+/* boder */
+.boN {
+	border:noen;
+}
+
+/* input placeholder */
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+  color: #FFF;}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  color: #FFF; }
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: #FFF;
+  text-indent: 0;}
 
 /*************************************
 			◆	共通パーツ 	◆

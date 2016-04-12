@@ -50,18 +50,56 @@
 
 <!-- ログイン -->
 <div ng-switch-when="2">
-	<a class="button button-block cFB" ng-click="onLogin()">Facebookのアカウントでログイン</a>
-	<a class="button button-block cGO" ng-click="onLogin()">google+のアカウントでログイン</a>
-	<a class="button button-block cIN" ng-click="onLogin()">Instagramのアカウントでログイン</a>
-	<a class="button button-block button-light" ng-click="onLogin()">メールアドレスとパスワードでログイン</a>
+	<a class="button button-block cFB login_button_icon" ng-click="onLogin()">
+		<i class="ion-social-facebook"></i>
+		<span>Facebookのアカウントでログイン</span>
+	</a>
+	<a class="button button-block cGO login_button_icon" ng-click="onLogin()">
+		<i class="ion-social-googleplus"></i>
+		<span>google+のアカウントでログイン</span>
+	</a>
+	<a class="button button-block cTW login_button_icon" ng-click="onLogin()">
+		<i class="ion-social-twitter"></i>
+		<span>Twitterのアカウントでログイン</span>
+	</a>
+	<a class="button button-block cIN login_button_icon" ng-click="onLogin()">
+		<i class="ion-social-instagram"></i>
+		<span>Instagramのアカウントでログイン</span>
+	</a>
+
+	<a class="button button-block button-light" ng-click="onMallLogin()">メールアドレスとパスワードでログイン</a>
 </div>
 
 <!-- 新規登録 -->
 <div ng-switch-when="3">
-	<a class="button button-block cFB" ng-click="onLogin()">Facebookのアカウントで新規登録</a>
-	<a class="button button-block cGO" ng-click="onLogin()">google+のアカウントで新規登録</a>
-	<a class="button button-block cIN" ng-click="onLogin()">Instagramのアカウントで新規登録</a>
-	<a class="button button-block " ng-click="onLogin()">メールアドレスを使って新規登録</a>
+	<a class="button button-block cFB login_button_icon" ng-click="onNew()">
+		<i class="ion-social-facebook"></i>
+		<span>Facebookのアカウントで新規登録</span>
+	</a>
+	<a class="button button-block cGO login_button_icon" ng-click="onNew()">
+		<i class="ion-social-googleplus"></i>
+		<span>google+のアカウントで新規登録</span>
+	</a>
+	<a class="button button-block cTW login_button_icon" ng-click="onNew()">
+		<i class="ion-social-twitter"></i>
+		<span>Twitterのアカウントで新規登録</span>
+	</a>
+	<a class="button button-block cIN login_button_icon" ng-click="onNew()">
+		<i class="ion-social-instagram"></i>
+		<span>Instagramのアカウントで新規登録</span>
+	</a>
+	<a class="button button-block" ng-click="onNew()">メールアドレスを使って新規登録</a>
+</div>
+
+<!-- メールアドレス/ID・パスワード -->
+<div ng-switch-when="4">
+	<div class="login_mail">
+		<!-- メールアドレス -->
+		<input type="text" placeholder="メールアドレス/ID・パスワード">
+		<!-- パスワード -->
+		<input type="password" placeholder="パスワード">
+	</div>
+	<a class="button button-block" ng-click="onNew()">ログイン</a>
 </div>
 
 </div>

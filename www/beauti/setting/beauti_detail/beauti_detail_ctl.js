@@ -3,17 +3,17 @@ angular.module('miral.beauti.setting.beauti_detail.controllers', [])
 .controller('beautiSettingBeautiDetailControllers', function($scope) {
 	
 	$scope.user_name ="本田涼子";
-	$scope.review ="";	
-	$scope.user_name ="";
-	$scope.user_name ="";
-	
-	$scope.search = function(){
-		console.log($state.$current);
+	$scope.reviwe_vel ="5.0";
+	$scope.reviwe_num ="3";
 
-		var transition = $timeout(function(){
-			$state.go('top.salon-search',null,'');
-		});
-	};
+	$scope.birthday_year ="1988";
+	$scope.birthday_month ="01";
+	$scope.birthday_day ="09";
+	
+	$scope.gender ="女";
+	
+	$scope.stylist_his ="6";
+	$scope.license ="所有";	
 	
 })
 ;

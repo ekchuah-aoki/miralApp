@@ -3,7 +3,7 @@
 	<p class="c01 titleBar">新規登録</p>
 
 <div class="padding">
-	<div class="contentbox list license_edit">
+	<div class="contentbox list account_edit">
 
 		<!-- メールアドレス -->
 		<div class="contentbox_box">	
@@ -17,20 +17,43 @@
 		<div class="contentbox_box">	
 			<p class="contentbox_title">パスワード</p>
 			<div class="contentbox_content">
-  			  <input type="text" >
+  			  <input type="password" >
 			</div>
 		</div>
 
-		<!-- 氏名 -->
+		<!-- パスワードの確認 -->
 		<div class="contentbox_box">	
-			<p class="contentbox_title">氏名</p>
+			<p class="contentbox_title">パスワードの確認</p>
+			<div class="contentbox_content">
+  			  <input type="password">
+			</div>
+		</div>
+
+		<!-- お名前（漢字） -->
+		<div class="contentbox_box">	
+			<p class="contentbox_title">お名前</p>
 			<div class="contentbox_content ">
-  			  <span class="license_edit_name">
+  			  <span class="account_edit_name">
   			  	<span>性</span>
   			  	<input type="text">
   			  </span>
-  			  <span class="license_edit_name">
+  			  <span class="account_edit_name">
   			  	<span>名</span>
+				<input type="text">
+  			  </span>
+  			</div>
+		</div>
+
+		<!-- フリガナ -->
+		<div class="contentbox_box">	
+			<p class="contentbox_title">カナ</p>
+			<div class="contentbox_content ">
+  			  <span class="account_edit_name">
+  			  	<span>セイ</span>
+  			  	<input type="text">
+  			  </span>
+  			  <span class="account_edit_name">
+  			  	<span>メイ</span>
 				<input type="text">
   			  </span>
 		</div>
@@ -54,7 +77,7 @@
 	</div>
 	</div>
 
-	<button class="button button-block c01">美容師免許の登録</button>
+	<a class="button button-block c01" ui-sref="beauti-setting-license_edit" >美容師免許の登録</a>
 
 </div>
 

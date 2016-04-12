@@ -4,66 +4,100 @@
 <div class="beauti_detail_head">
       <div class="beauti_detail_headtext" >
 		<ion-slide-box class="beauti_detail_contentbox" show-pager="false" does-continue="true" >
+		  <!-- スライド　一枚目 -->
 		  <ion-slide>
-			<p>{{user_name}}さん</p>
+		  <div class="beauti_detail_prfbox">
+			<div>
+			  	<p class="beauti_detail_username">{{user_name}}</p>
+				<p class="beauti_detail_reviwe">
+					<span>★★★★★</span>
+					<span>{{reviwe_vel}}</span>
+					<span>({{reviwe_num}})</span>
+				</p>
+		    </div>
+		    <div>
+				<p>生年月日/性別</p>
+				<p>スタイリスト歴</p>
+				<p>美容師免許</p>
+		     </div>
+		     <div>
+				<p>{{birthday_year}}/{{birthday_month}}/{{birthday_day}}/{{gender}}</p>
+				<p>{{stylist_his}}年</p>
+				<p>{{license}}</p>
+		     </div>
+		   </div>
 		  </ion-slide>
+		  <!-- スライド　二枚目 -->
 		  <ion-slide>
-		  	プロフィールページをご覧になってくださりありがとうございます！本田涼子です！
-		  	現在はフリーランスの美容師として活動しており、将来的には独立を考えております！
-		  	最後まで丁寧に対応いたしますのでぜひ宜しくお願い致します。
+			  	プロフィールページをご覧になってくださりありがとうございます！本田涼子です！
+			  	現在はフリーランスの美容師として活動しており、将来的には独立を考えております！
+			  	最後まで丁寧に対応いたしますのでぜひ宜しくお願い致します。
 		  </ion-slide>
 		</ion-slide-box>
       </div>
-	<span><img src="./beauti/home/salon_detail/img/salon01_1.jpg"></span>
+	<span><img src="./img/beauti/1/profile.png"></span>
 </div>
 
 <div class="padding">
-	<!-- サロン マイギャラリー -->
-	<div class="beauti_detail_gallery">
-		<div class="beauti_detail_gallerytitle c01">
+	<!-- 美容師　MyGallery -->
+	<div class="beauti_detail_gallery clB c01">
+		<div class="beauti_detail_gallerytitle ">
 			<p>My<br>Gallery</p>
 		</div>
 		<ul class="beauti_detail_galleryimg">
-			<li><a href="./beauti/home/salon_detail/img/salon01_2.jpg" data-lightbox="salonGalley">
-				<img src="./beauti/home/salon_detail/img/salon01_2.jpg" ></a></li>
-			<li><a href="./beauti/home/salon_detail/img/salon01_3.jpg" data-lightbox="salonGalley">
-				<img src="./beauti/home/salon_detail/img/salon01_3.jpg"></a></li>
-			<li><a href="./beauti/home/salon_detail/img/salon01_4.jpg" data-lightbox="salonGalley">
-				<img src="./beauti/home/salon_detail/img/salon01_4.jpg"></a></li>
+			<li><a href="./img/beauti/1/mygallery_01.jpg" data-lightbox="salonGalley">
+				<img src="./img/beauti/1/mygallery_01.jpg" ></a></li>
+			<li><a href="./img/beauti/1/mygallery_02.jpg" data-lightbox="salonGalley">
+				<img src="./img/beauti/1/mygallery_02.jpg"></a></li>
+			<li><a href="./img/beauti/1/mygallery_03.jpg" data-lightbox="salonGalley">
+				<img src="./img/beauti/1/mygallery_03.jpg"></a></li>
 		</ul>
 	</div>
 
-	<!-- サロン サロンギャラリー -->
-	<div class="beauti_detail_gallery">
-		<div class="beauti_detail_gallerytitle c05">
+	<!-- 美容師　WorkGallery -->
+	<div class="beauti_detail_gallery clB c05">
+		<div class="beauti_detail_gallerytitle ">
 			<p>Work<br>Gallery</p>
 		</div>
 		<ul class="beauti_detail_galleryimg">
-			<li><a href="./beauti/home/salon_detail/img/salon01_2.jpg" data-lightbox="salonGalley">
-				<img src="./beauti/home/salon_detail/img/salon01_2.jpg" ></a></li>
-			<li><a href="./beauti/home/salon_detail/img/salon01_3.jpg" data-lightbox="salonGalley">
-				<img src="./beauti/home/salon_detail/img/salon01_3.jpg"></a></li>
-			<li><a href="./beauti/home/salon_detail/img/salon01_4.jpg" data-lightbox="salonGalley">
-				<img src="./beauti/home/salon_detail/img/salon01_4.jpg"></a></li>
+			<li><a href="./img/beauti/1/workgallery_01.jpg" data-lightbox="salonGalley">
+				<img src="./img/beauti/1/workgallery_01.jpg" ></a></li>
+			<li><a href="./img/beauti/1/workgallery_02.jpg" data-lightbox="salonGalley">
+				<img src="./img/beauti/1/workgallery_02.jpg"></a></li>
+			<li><a href="./img/beauti/1/workgallery_03jpg" data-lightbox="salonGalley">
+				<img src="./img/beauti/1/workgallery_03.jpg"></a></li>
+		</ul>
+		<ul class="beauti_detail_galleryimg">
+			<li><a href="./img/beauti/1/workgallery_02.jpg" data-lightbox="salonGalley">
+				<img src="./img/beauti/1/workgallery_02.jpg"></a></li>
+			<li><a href="./img/beauti/1/workgallery_03jpg" data-lightbox="salonGalley">
+				<img src="./img/beauti/1/workgallery_03.jpg"></a></li>
+			<li><a href="./img/beauti/1/workgallery_01.jpg" data-lightbox="salonGalley">
+				<img src="./img/beauti/1/workgallery_01.jpg" ></a></li>
 		</ul>
 	</div>
 
-	<!-- サロン サロンギャラリー -->
-	<div class="beauti_detail_gallery">
-		<div class="beauti_detail_gallerytitle cIN">
+	<!-- 美容師 Instagram -->
+	<div class="beauti_detail_gallery clB cIN">
+		<div class="beauti_detail_gallerytitle  ">
 			<p>Instagram<br>Gallery</p>
 		</div>
 		<ul class="beauti_detail_galleryimg">
-			<li><a href="./beauti/home/salon_detail/img/salon01_2.jpg" data-lightbox="salonGalley">
-				<img src="./beauti/home/salon_detail/img/salon01_2.jpg" ></a></li>
-			<li><a href="./beauti/home/salon_detail/img/salon01_3.jpg" data-lightbox="salonGalley">
-				<img src="./beauti/home/salon_detail/img/salon01_3.jpg"></a></li>
-			<li><a href="./beauti/home/salon_detail/img/salon01_4.jpg" data-lightbox="salonGalley">
-				<img src="./beauti/home/salon_detail/img/salon01_4.jpg"></a></li>
+			<li><a href="./img/beauti/1/workgallery_01.jpg" data-lightbox="salonGalley">
+				<img src="./img/beauti/1/workgallery_01.jpg" ></a></li>
+			<li><a href="./img/beauti/1/workgallery_02.jpg" data-lightbox="salonGalley">
+				<img src="./img/beauti/1/workgallery_02.jpg"></a></li>
+			<li><a href="./img/beauti/1/workgallery_03jpg" data-lightbox="salonGalley">
+				<img src="./img/beauti/1/workgallery_03.jpg"></a></li>
+			<li><a href="./img/beauti/1/workgallery_04.jpg" data-lightbox="salonGalley">
+				<img src="./img/beauti/1/workgallery_04.jpg" ></a></li>
+			<li><a href="./img/beauti/1/workgallery_01.jpg" data-lightbox="salonGalley">
+				<img src="./img/beauti/1/workgallery_01.jpg" ></a></li>
 		</ul>
 	</div>
 	
 	<button class="button button-block c01">プロフィールを編集する</button>
+	<span class="clB"></span>
 </div>
 	<script src="js/lightbox.js"></script>
 </ion-content>

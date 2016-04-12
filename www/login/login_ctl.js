@@ -16,14 +16,13 @@ angular.module('miral.login.controllers', [])
 //	}
 
 	$scope.onLogin=function() {
-
-		//if($scope.login.userid && $scope.login.password){
-			//state名を指定してTOP画面に遷移（今は、美容師用TOPページ固定遷移）
 			$state.go('beauti-home-home-top',null,'');
-		//}
-
 	}
 
+	$scope.onNew=function() {
+		$state.go('beauti-setting-account_edit',null,'');
+}
+	
 	//初期ビュー
 	$scope.viewNo = "1";
 
@@ -42,6 +41,10 @@ angular.module('miral.login.controllers', [])
 
 	$scope.onNewEntry=function(){
 		$scope.viewNo="3";
+	}
+
+	$scope.onMallLogin=function(){
+		$scope.viewNo="4";
 	}
 
 })
