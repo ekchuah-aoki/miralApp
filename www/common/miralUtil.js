@@ -1,6 +1,6 @@
 angular.module('miral.common.miralUtil', [])
 
-.factory('$loalStorage', ['$window', function($window) {
+.factory('$localStorage', ['$window', function($window) {
 'use strict';
 	  return {
 		  set:function(key, value){
@@ -10,7 +10,7 @@ angular.module('miral.common.miralUtil', [])
 			  return $window.localStorage[key] || defaultValue;
 		  },
 		  setObject:function(key, value){
-			  $window.localStorage[key]=JSON.stringfy(value);
+			  $window.localStorage[key]=JSON.stringify(value);
 		  },
 		  getObject:function(key){
 			  return JSON.parse($window.localStorage[key] || '{}');

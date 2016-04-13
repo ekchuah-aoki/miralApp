@@ -50,28 +50,31 @@
 
 <!-- ログイン -->
 <div ng-switch-when="2">
-	<a class="button button-block cFB login_button_icon" ng-click="onLogin()">
+	<a class="button button-block cFB login_button_icon" ng-click="onFacebookLogin()">
 		<i class="ion-social-facebook"></i>
 		<span>Facebookのアカウントでログイン</span>
 	</a>
-	<a class="button button-block cGO login_button_icon" ng-click="onLogin()">
+	<a class="button button-block cGO login_button_icon" ng-disabled="googlePlusBtnDisabled" ng-click="onGooglePlusLogin()">
 		<i class="ion-social-googleplus"></i>
 		<span>google+のアカウントでログイン</span>
 	</a>
-	<a class="button button-block cTW login_button_icon" ng-click="onLogin()">
+	<a class="button button-block cTW login_button_icon" ng-click="onTwitterLogin()">
 		<i class="ion-social-twitter"></i>
 		<span>Twitterのアカウントでログイン</span>
 	</a>
+<!-- 
 	<a class="button button-block cIN login_button_icon" ng-click="onLogin()">
 		<i class="ion-social-instagram"></i>
 		<span>Instagramのアカウントでログイン</span>
 	</a>
+ -->	
 
 	<a class="button button-block button-light" ng-click="onMallLogin()">メールアドレスとパスワードでログイン</a>
 </div>
 
 <!-- 新規登録 -->
 <div ng-switch-when="3">
+<!-- 
 	<a class="button button-block cFB login_button_icon" ng-click="onNew()">
 		<i class="ion-social-facebook"></i>
 		<span>Facebookのアカウントで新規登録</span>
@@ -88,7 +91,8 @@
 		<i class="ion-social-instagram"></i>
 		<span>Instagramのアカウントで新規登録</span>
 	</a>
-	<a class="button button-block" ng-click="onNew()">メールアドレスを使って新規登録</a>
+ -->
+	<a class="button button-block" ng-click="onNewByEmail()">メールアドレスを使って新規登録</a>
 </div>
 
 <!-- メールアドレス/ID・パスワード -->

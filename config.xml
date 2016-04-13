@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="com.ionicframework.miralapp560456" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="jp.co.ekchuah.miralapp" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>miralApp</name>
   <description>
-        An Ionic Framework and Cordova project.
+        美容師とサロンをスマートにつなぐアプリ.
     </description>
   <author email="you@example.com" href="http://example.com.com/">
       Your Name Here
@@ -18,8 +18,13 @@
   <preference name="BackupWebStorage" value="none"/>
   <preference name="SplashScreen" value="screen"/>
   <preference name="SplashScreenDelay" value="3000"/>
+  <preference name="TwitterConsumerKey" value="s2dQ940uCI6N7SnLQSjwXjmpV"/>
+  <preference name="TwitterConsumerSecret" value="2Eblptn5s1wYDJ86yKDwLZVXlczK01266SEjKEuhgTblmJt4wS"/>
   <feature name="StatusBar">
     <param name="ios-package" value="CDVStatusBar" onload="true"/>
+  </feature>
+  <feature name="InAppBrowser">
+    <param name="ios-package" value="CDVInAppBrowser"/>
   </feature>
   <platform name="ios">
     <icon src="resources/ios/icon/icon.png" width="57" height="57"/>

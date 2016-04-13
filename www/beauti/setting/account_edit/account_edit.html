@@ -14,7 +14,7 @@
 		</div>
 		
 		<!-- パスワード -->
-		<div class="contentbox_box">	
+		<div class="contentbox_box" ng-show="{{isShowPassword}}">	
 			<p class="contentbox_title">パスワード</p>
 			<div class="contentbox_content">
   			  <input type="password" >
@@ -22,7 +22,7 @@
 		</div>
 
 		<!-- パスワードの確認 -->
-		<div class="contentbox_box">	
+		<div class="contentbox_box" ng-show="{{isShowPassword}}">	
 			<p class="contentbox_title">パスワードの確認</p>
 			<div class="contentbox_content">
   			  <input type="password">

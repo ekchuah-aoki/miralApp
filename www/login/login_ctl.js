@@ -1,30 +1,18 @@
-angular.module('miral.login.controllers', [])
+angular.module('miral.login.controllers', ['miral.login.login_fnc','miral.common.miralConst','miral.common.googleplus'])
 
-.controller('loginControllers', function($scope, $state) {
+.controller('loginControllers', function($scope, $state, miralLoginLoginFnc, ACCOUNT_SETTING_MODE, googleplusConnecter) {
 
 	$scope.timestamp = new Date().getTime();
-
-//	$scope.isShowPassword = false;
-
-	//入力項目は必ず配列にすること、でないと値が取得できない
-//	$scope.login={};
-//	$scope.login.userid = "";
-//	$scope.login.password = "";
-
-//	$scope.onChangePasswordShow=function(){
-//		$scope.isShowPassword = !$scope.isShowPassword;
-//	}
-
-	$scope.onLogin=function() {
-			$state.go('beauti-home-home-top',null,'');
-	}
-
-	$scope.onNew=function() {
-		$state.go('beauti-setting-account_edit',null,'');
-}
 	
 	//初期ビュー
 	$scope.viewNo = "1";
+	
+	//google plusでのログインが可能かどうか
+	if(googleplusConnecter.googleplusIsAvailable()){
+		$scope.googlePlusBtnDisabled = false;
+	}else{
+		$scope.googlePlusBtnDisabled = true;
+	}
 
 	$scope.prop = {};
 	$scope.prop.headerColor = "calm";
@@ -34,7 +22,8 @@ angular.module('miral.login.controllers', [])
 		cl.push("bar-"+$scope.prop.headerColor);
 		return cl;
 	}
-
+	
+	
 	$scope.onLoginEntry=function(){
 		$scope.viewNo="2";
 	}
@@ -44,9 +33,51 @@ angular.module('miral.login.controllers', [])
 	}
 
 	$scope.onMallLogin=function(){
-		$scope.viewNo="4";
+		$state.go('beauti-home-home-top',null,'');
 	}
 
+	///////////////////////////////
+	//メールアドレスで新規登録
+	$scope.onNewByEmail=function() {
+		$state.go('beauti-setting-account_edit',{mode:ACCOUNT_SETTING_MODE.email},'');
+	}
+
+	///////////////////////////////
+	//ログイン
+	$scope.onLogin=function() {
+		$state.go('beauti-home-home-top',null,'');
+	}	
+	
+	///////////////////////////////
+	//Face bookログイン
+	$scope.onFacebookLogin=function() {
+		miralLoginLoginFnc.facebookLogin();
+	}
+
+	///////////////////////////////
+	//Twitterログイン
+	$scope.onTwitterLogin=function() {
+		twitterConnecter.twitterSignIn();
+	}
+
+	///////////////////////////////
+	//GooglePlusログイン
+	$scope.onGooglePlusLogin=function() {
+		googleplusConnecter.googleplusSignIn();
+	}
+	
+	///////////////////////////////
+	//Instagramログイン
+	$scope.onInstagramLogin=function() {
+		$state.go('beauti-home-home-top',null,'');
+		/*
+		instagramConnecter.instagramSignIn(function(){
+			//$state.go('beauti-home-home-top',null,'');			
+		});
+		*/
+	}	
+	
+	
 })
 
 ;

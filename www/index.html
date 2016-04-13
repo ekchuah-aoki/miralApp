@@ -66,6 +66,16 @@
 
 	<!-- Falsebook -->
     <script src="common/facebook/facebookConnecter.js"></script>
+
+	<!-- Instagram -->
+    <script src="lib/ng-cordova-oauth.min.js"></script>
+    <script src="common/instagram/instagramConnecter.js"></script>
+
+	<!-- Twitter -->
+    <script src="common/twitter/twitterConnecter.js"></script>
+
+	<!-- google plus -->
+    <script src="common/googleplus/googleplusConnecter.js"></script>
 	
 	<!-- google app engin -->
     <script src="common/google_appengin/googleAppenginConnecter.js"></script>
@@ -82,6 +92,8 @@
 
 	<!-- ここに新規のコントローラ、サービス、専用モジュールを追加 -->
     <script src="login/login_ctl.js"></script>
+    <script src="login/login_fnc.js"></script>
+    
     <script src="beauti/home/home_top/home_top_ctl.js"></script>
     <script src="beauti/home/announce/announce_ctl.js"></script>
     <script src="beauti/home/announce_detail/announce_detail_ctl.js"></script>
@@ -101,8 +113,10 @@
 	<!-- miral共通モジュール -->
     <script src="common/miralUtil.js"></script>
     <script src="common/loginInfo.js"></script>
-    <script src="common/config.js"></script>
+    <script src="common/miralConfig.js"></script>
     <script src="beauti/common/navi_bar_ctl.js"></script>
+    <script src="common/miralConst.js"></script>
+    
   </head>
 
   <script type="text/javascript">
@@ -111,9 +125,10 @@
   <body ng-app="miral" class="">
 
    <ion-nav-bar >
-		<div class="bar bar-header bar-stable beautiHd">
-			<img src="./img/common/1/logo.svg" />
+		<div class="bar bar-header bar-stable beautiHd">å
+	       <ion-nav-back-buttonå style="margin-left:4px">戻る</ion-nav-back-button>
 			<ion-nav-buttons side="right">
+				<img src="./img/common/1/logo.svg" />
 			　　<div class="iconHd">
 					<a class="button" ng-click="home()"><i class="ion-android-home tabA"></i></a>
 					<button class="button" ng-click="reserv_home()"><i class="ion-android-favorite"></i></button>

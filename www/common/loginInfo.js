@@ -1,24 +1,28 @@
-angular.module('mirroru.loginInfo', ['miral.common.miralUtil'])
+angular.module('mirroru.loginInfo', ['miral.common.miralUtil','miral.common.miralConst'])
 
-.constant('userInfoConstVal',{
-	type:{SALON:1, BEAUTI:2}
-})
 
-.factory('loginInfo', function(userInfoConstVal, $loalStorage) {
+.factory('loginInfo', function($localStorage, LOGIN_TYPE) {
 
 	return {
-		set:function(userId_){
+		setUserInfo:function(userId_,userName_, email_, loginType_){
 			var loginInfo = {
-				userId:userId_
+				userId:userId_,
+				userName:userName_,
+				email:email_,
+				loginType:loginType_
 			};
-
-			$loalStorage.setObject(loginInfo)
+/*
+			switch(loginType_){
+			case LOGIN_TYPE.facebook:
+				loginInfo['facebookId']=
+			}
+*/			
+			$localStorage.setObject('_$loginuser', loginInfo)
 			
 		},
 
-		get:function(){
-			
-			return $loalStorage.getObject('_$loginuser');
+		getUserInfo:function(){
+			return $localStorage.getObject('_$loginuser');
 		}
 	};
 })

@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('miral', ['ionic', ,'ngAnimate', 'ionicLazyLoad', 'ionic.rating', 'miral.common.googleAppenginConnecter'
+angular.module('miral', ['ionic', 'ngCordovaOauth','ngAnimate', 'ionicLazyLoad', 'ionic.rating', 'miral.common.googleAppenginConnecter'
                          ,'miral.login.controllers'
                          ,'miral.beauti.home.home_top.controllers'
                          ,'miral.beauti.home.salon_srhrst.controllers'
@@ -135,7 +135,7 @@ angular.module('miral', ['ionic', ,'ngAnimate', 'ionicLazyLoad', 'ionic.rating',
 
   //美容師 設定　基本情報の変更
   .state('beauti-setting-account_edit', {
-	    url: '/beauti/setting/account_edit',
+	    url: '/beauti/setting/account_edit/:mode',
 	    templateUrl: 'beauti/setting/account_edit/account_edit.html',
 	    controller: 'beautiSettingAccountEditControllers'
 	  })

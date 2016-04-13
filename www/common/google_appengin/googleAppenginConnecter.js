@@ -46,6 +46,37 @@ angular.module('miral.common.googleAppenginConnecter', ['miral.common.config'])
 			gapi.client.load(GOOGLE_APP_ENGIN.APIName, GOOGLE_APP_ENGIN.APIVersion, callback, GOOGLE_APP_ENGIN.url);
 		},
 
+		execute:function(){
+			
+			var api = arguments[0];
+			var success = arguments[1];
+			var fail = arguments[2];
+			var arg = [];
+			if(arguments.length>3){
+				arg = Array.prototype.slice.call(arguments, 3);
+			}
+			
+			try {
+				api.apply(null, arg).execute(
+						function(resp){
+							
+							console.log('google app engin return code :' + resp.code);
+							
+							if(!resp.code){
+								if(success){
+									success(resp);
+								}
+							}
+						});
+			}catch(e){
+				console.log('google app engin return fail :' + e);
+				if(fail){
+					fail();
+				}
+			}
+			
+		},
+			
 		test:function(f){
 			gapi.client.miralServer.greetings.getGreeting({'id': 1}).execute(
 					function(resp){
