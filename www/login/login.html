@@ -99,11 +99,11 @@
 <div ng-switch-when="4">
 	<div class="login_mail">
 		<!-- メールアドレス -->
-		<input type="text" placeholder="メールアドレス/ID・パスワード">
+		<input type="text" placeholder="メールアドレス" ng-model="loginEmail">
 		<!-- パスワード -->
-		<input type="password" placeholder="パスワード">
+		<input type="password" placeholder="パスワード" ng-model="loginPassword">
 	</div>
-	<a class="button button-block" ng-click="onNew()">ログイン</a>
+	<a class="button button-block" ng-click="onMailLogin()">ログイン</a>
 </div>
 
 </div>

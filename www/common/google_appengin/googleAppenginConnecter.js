@@ -60,11 +60,14 @@ angular.module('miral.common.googleAppenginConnecter', ['miral.common.config'])
 				api.apply(null, arg).execute(
 						function(resp){
 							
-							console.log('google app engin return code :' + resp.code);
-							
 							if(!resp.code){
 								if(success){
 									success(resp);
+								}
+							}else{
+								console.log('google app engin return code :' + resp.code);
+								if(fail){
+									fail();
 								}
 							}
 						});

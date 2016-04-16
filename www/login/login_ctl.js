@@ -1,11 +1,23 @@
-angular.module('miral.login.controllers', ['miral.login.login_fnc','miral.common.miralConst','miral.common.googleplus'])
+angular.module('miral.login.controllers', ['miral.login.login_fnc','miral.common.miralConst','miral.loginInfo'
+                                           ,'miral.common.googleplus'
+                                           ,'miral.common.twitter'])
 
-.controller('loginControllers', function($scope, $state, miralLoginLoginFnc, ACCOUNT_SETTING_MODE, googleplusConnecter) {
+.controller('loginControllers', function($scope, $state, miralLoginLoginFnc, ACCOUNT_SETTING_MODE, LOGIN_STATE,loginInfo
+		, googleplusConnecter,twitterConnecter ) {
 
 	$scope.timestamp = new Date().getTime();
 	
-	//初期ビュー
+	///////////////////////////////
+	//項目初期化
+	
+	//ログインクリア
+	loginInfo.clearLoginInfo();
+	
 	$scope.viewNo = "1";
+	
+	$scope.loginEmail = "test@ekchuah.co.jp";
+	$scope.loginPassword = "";
+	
 	
 	//google plusでのログインが可能かどうか
 	if(googleplusConnecter.googleplusIsAvailable()){
@@ -33,7 +45,7 @@ angular.module('miral.login.controllers', ['miral.login.login_fnc','miral.common
 	}
 
 	$scope.onMallLogin=function(){
-		$state.go('beauti-home-home-top',null,'');
+		$scope.viewNo="4";
 	}
 
 	///////////////////////////////
@@ -43,21 +55,50 @@ angular.module('miral.login.controllers', ['miral.login.login_fnc','miral.common
 	}
 
 	///////////////////////////////
-	//ログイン
-	$scope.onLogin=function() {
-		$state.go('beauti-home-home-top',null,'');
+	//ログイン失敗
+	var loginFailFnc = function(){
+		alert('ログイン失敗');
+	}
+
+	///////////////////////////////
+	//SNS ログイン成功
+	var snsLoginSucess = function(loginState_){
+		if(loginState_ == LOGIN_STATE.logined){
+			$state.go('beauti-home-home-top',null,'');
+		}else if(loginState_ == LOGIN_STATE.newAccount){
+			$state.go('beauti-setting-account_edit',{mode:ACCOUNT_SETTING_MODE.sns},'');
+		}
+	}
+	
+	
+	///////////////////////////////
+	//メールログイン
+	$scope.onMailLogin=function() {
+		
+		var sucess = function(loginState_){
+			if(loginState_ == LOGIN_STATE.logined){
+				$state.go('beauti-home-home-top',null,'');
+			}else{
+				alert('ログイン失敗');
+			}
+		}
+		
+		miralLoginLoginFnc.mailLogin($scope.loginEmail,$scope.loginPassword,sucess, loginFailFnc );
 	}	
 	
 	///////////////////////////////
 	//Face bookログイン
 	$scope.onFacebookLogin=function() {
-		miralLoginLoginFnc.facebookLogin();
+		miralLoginLoginFnc.facebookLogin(snsLoginSucess);
 	}
 
 	///////////////////////////////
 	//Twitterログイン
 	$scope.onTwitterLogin=function() {
-		twitterConnecter.twitterSignIn();
+
+		//twitterConnecter.twitterLogout();
+		
+		miralLoginLoginFnc.twitterLogin(snsLoginSucess);
 	}
 
 	///////////////////////////////

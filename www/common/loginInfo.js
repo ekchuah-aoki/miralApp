@@ -1,30 +1,66 @@
-angular.module('mirroru.loginInfo', ['miral.common.miralUtil','miral.common.miralConst'])
+angular.module('miral.loginInfo', ['miral.common.miralUtil','miral.common.miralConst'])
 
 
 .factory('loginInfo', function($localStorage, LOGIN_TYPE) {
 
-	return {
-		setUserInfo:function(userId_,userName_, email_, loginType_){
-			var loginInfo = {
-				userId:userId_,
-				userName:userName_,
-				email:email_,
-				loginType:loginType_
-			};
-/*
-			switch(loginType_){
-			case LOGIN_TYPE.facebook:
-				loginInfo['facebookId']=
+	var _loginInfo ={
+		userId:"",
+		email:"",
+		name:"",
+		loginType:""
+			
+	},
+	
+	_secretLoginInfo ={
+		facebookId:"",
+		facebookToken:"",
+		twitterId:"",
+		twitterToken:"",
+		googleplusId:"",
+		googleplusToken:"",
+		instagramId:"",
+		instagramToken:""
+	}
+	;
+	
+	var myself = 
+	{
+		
+		clearLoginInfo:function(){
+			$localStorage.remove('__$loginuser')
+		},
+		
+		isLogined:function(){
+			if(mysekf.getUserInfo()){
+				return true;
 			}
-*/			
-			$localStorage.setObject('_$loginuser', loginInfo)
+			
+			return false;
+		},
+		
+		setLoginInfo:function(props_){
+			
+			for(var n in props_){
+				if(_loginInfo[n]!=undefined){
+					_loginInfo[n] = props_[n];
+				}else if(!_secretLoginInfo[n]){
+					_secretLoginInfo[n] = props_[n];
+				}
+			}
+
+			$localStorage.setObject('__$loginuser', _loginInfo)
 			
 		},
 
 		getUserInfo:function(){
-			return $localStorage.getObject('_$loginuser');
+			return $localStorage.getObject('__$loginuser');
+		},
+		getSecretInfo:function(){
+			return _secretLoginInfo;
 		}
 	};
+	
+	return myself;
 })
 ;
 

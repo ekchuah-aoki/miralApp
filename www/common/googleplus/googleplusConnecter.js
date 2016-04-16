@@ -1,4 +1,4 @@
-angular.module('miral.common.googleplus', ['mirroru.loginInfo'])
+angular.module('miral.common.googleplus', [])
 
 .factory('googleplusConnecter', function($window, $cordovaOauth, loginInfo) {
 'use strict';

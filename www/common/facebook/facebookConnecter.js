@@ -72,11 +72,11 @@ angular.module('miral.common.facebook', [])
 		  facebookSignOut:function(success_, fail_){
 			  facebookConnectPlugin.logout(function(){
 				  console.log('Facebook Loginout')
-				  success_()
+				  success_();
 			  },
 			  function(fail){
 				  console.log('Facebook Logout Fail!!') 
-				  fail_()
+				  fail_();
 			  });
 		  }
 		  

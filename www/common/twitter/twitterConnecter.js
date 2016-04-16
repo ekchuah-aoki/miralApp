@@ -1,46 +1,47 @@
-angular.module('miral.common.twitter', ['mirroru.loginInfo'])
+angular.module('miral.common.twitter', [])
 
 .factory('twitterConnecter', function($window, $cordovaOauth, loginInfo) {
 'use strict';
 
-	var _twitterLoginFail=function(){
-		console.log('Twitter Login Fail!!')  
-	},
-	_twitterLoginSuccess=function(response){
+  return {
 	  
-		console.log('Facebook Loin Success!!!');
+	  twitterSignIn:function(succ_,fail_){
+		  TwitterConnect.login(
+				  function(result) {
+				    console.log('Successful login!');
+				    console.log(JSON.stringify(result));
+				    console.log(succ_);
+				    if(succ_){
+				    	succ_(result);
+				    }
+				  }, function(error) {
+				    console.log('Error logging in');
+				    console.log(error);
+				    if(fail_){
+				    	fail_();
+				    }
+				  }
+				);
 		  
-	},
-	_setLoginUserInfo=function(profileInfo){
-		
-		 
-	},
-	_getTwitterProfileInfo=function(authResponse){
-	};
-
-	  return {
-		  
-		  twitterSignIn:function(succ,err){
-			  TwitterConnect.login(
-					  function(result) {
-					    console.log('Successful login!');
-					    console.log(JSON.stringify(result));
-					    _setLoginUserInfo();
-					    if(succ){
-					    	succ();
-					    }
-					  }, function(error) {
-					    console.log('Error logging in');
-					    console.log(error);
-					    if(err){
-					    	err();
-					    }
-					  }
-					);
-			  
-		  }
-		  
+	  },
+	  twitterLogout:function(succ_,fail_){
+		  TwitterConnect.logout(
+				  function() {
+				    console.log('Successful logout!');
+				    if(succ_){
+				    	succ_();
+				    }
+				  },
+				  function() {
+				    console.log('Error logging out');
+				    if(fail_){
+				    	fail_();
+				    }
+				  }
+				);			  
 	  }
+	  
+  }
 	  		
 	  
 })

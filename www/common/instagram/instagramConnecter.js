@@ -1,4 +1,4 @@
-angular.module('miral.common.instagram', ['mirroru.loginInfo','ngCordovaOauth'])
+angular.module('miral.common.instagram', ['ngCordovaOauth'])
 
 .factory('instagramConnecter', function($window, $cordovaOauth, loginInfo) {
 'use strict';
