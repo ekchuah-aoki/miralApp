@@ -78,9 +78,10 @@ textarea::-webkit-input-placeholder {
 .beautiHd {
 	z-index: 10;
 }
-.beautiHd img {
+div.iconHd > img {
 	height:30px;
-	margin:0 10px;
+	margin:2px 0px;
+	width: 80px;
 }
 
 div.iconHd .button {
@@ -308,4 +309,11 @@ span.ann_maintenance:before {
 	margin: none;
 }
 
-
+/* list_salon_img */
+.list_salon_img {
+	width: 60px;
+	height: 60px;
+	border-radius:30px;
+	background-color: red;
+	display: inline-block;
+}

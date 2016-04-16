@@ -1,6 +1,8 @@
 @CHARSET "UTF-8";
 
-.account_edit .contentbox_content > input {
+
+
+.account_edit .contentbox_content > input [type="text"] {
 	border-bottom: solid #DDD 1px;
 	width: 100%;
 }
@@ -10,6 +12,7 @@
 	padding: 5px 0px;
 }
 
+/* お名前 */
 span.account_edit_name {
 	width: 50%;
 	float: left;
@@ -33,7 +36,95 @@ span.account_edit_name > span  {
 	height: 50px;
 }
 
+/* セレクトボックス */
 .account_edit .contentbox_content select {
 	width: 100%;
 	max-width: none;
+}
+
+/* ラジオボタン */
+.account_edit_gender {
+	width: 100%;
+}
+
+.account_edit_gender > input[type="radio"] {
+	display: none;
+}
+
+.account_edit_gender > label {
+	width:50%;
+	display: inline-block;
+	float: left;
+	text-align:right;
+	position: relative;
+	padding-right: 90px;
+	cursor: pointer;
+}
+
+.account_edit_gender > label:after {
+	position: absolute;
+	top: 50%;
+	right: 50px;
+	display: block;
+	margin-top: -10px;
+	width: 24px;
+	height: 24px;
+	border: 2px solid #DDD;
+	border-radius: 50%;
+	content: '';
+}
+
+.account_edit_gender > label:before {
+	position: absolute;
+	top: 50%;
+	right: 55px;
+	display: block;
+	margin-top: -5px;
+	width: 14px;
+	height: 14px;
+	border-radius: 50%;
+	background-color: #A87544;
+	content: '';
+	opacity: 0;
+}
+
+.account_edit_gender > input[type=radio]:checked + label:before {
+  opacity: 1;
+}
+
+/* 生年月日 */
+.account_edit_birthday > span {
+	display: table;
+}
+
+.account_edit_birthday > span > .item-select {
+	padding: 0px 40px 0px 0px;
+}
+
+.account_edit_birthday > span > .item-select > select {
+	padding: 0px 30px 0px 0px;
+}
+
+.account_edit_birthday > span > div:nth-child(1) {
+	width: 100px;
+}
+
+.account_edit_birthday > span > div:nth-child(3) {
+	width: 70px;
+}
+
+.account_edit_birthday > span > div:nth-child(5) {
+	width: 70px;
+}
+
+.account_edit_birthday > span > span:nth-child(2),
+.account_edit_birthday > span > span:nth-child(4),
+.account_edit_birthday > span > span:nth-child(6) {
+	margin-bottom: 30px;
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.account_edit_birthday > span {
+	float: right; 
 }

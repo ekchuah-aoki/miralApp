@@ -16,8 +16,9 @@
 	<link href="beauti/home/announce_detail/announce_detail.css" rel="stylesheet">
 	<link href="beauti/reserv/reserv_home/reserv_home.css" rel="stylesheet">
 	<link href="beauti/reserv/reserv_list/reserv_list.css" rel="stylesheet">
+	<link href="beauti/reserv/salon_list/salon_list.css" rel="stylesheet">
     <link href="beauti/home/request/request.css" rel="stylesheet">
- 
+
 	<link href="beauti/setting/account_edit/account_edit.css" rel="stylesheet">
 	<link href="beauti/setting/license_edit/license_edit.css" rel="stylesheet">  
     <link href="beauti/setting/beauti_detail/beauti_detail.css" rel="stylesheet">
@@ -104,18 +105,22 @@
     <script src="beauti/reserv/reserv_home/reserv_home_ctl.js"></script>
     <script src="beauti/reserv/reserv_list/reserv_list_ctl.js"></script>
     <script src="beauti/reserv/reserv_map/reserv_map_ctl.js"></script>
+    <script src="beauti/reserv/salon_list/salon_list_ctl.js"></script>
+    <script src="beauti/reserv/favorite/favorite_ctl.js"></script>
 
     <script src="beauti/setting/setting_home/setting_home_ctl.js"></script>
     <script src="beauti/setting/beauti_detail/beauti_detail_ctl.js"></script>
     <script src="beauti/setting/account_edit/account_edit_ctl.js"></script>
     <script src="beauti/setting/license_edit/license_edit_ctl.js"></script>
+
     
 	<!-- miral共通モジュール -->
     <script src="common/miralUtil.js"></script>
     <script src="common/loginInfo.js"></script>
     <script src="common/miralConfig.js"></script>
-    <script src="beauti/common/navi_bar_ctl.js"></script>
     <script src="common/miralConst.js"></script>
+    <script src="common/navi_bar_ctl.js"></script>
+
     
   </head>
 
@@ -125,14 +130,14 @@
   <body ng-app="miral" class="">
 
    <ion-nav-bar >
-		<div class="bar bar-header bar-stable beautiHd">å
-	       <ion-nav-back-buttonå style="margin-left:4px">戻る</ion-nav-back-button>
+		<div class="bar bar-header bar-stable beautiHd">
+	       <ion-nav-back-button style="margin-left:4px" side="left">戻る</ion-nav-back-button>
 			<ion-nav-buttons side="right">
-				<img src="./img/common/1/logo.svg" />
-			　　<div class="iconHd">
-					<a class="button" ng-click="home()"><i class="ion-android-home tabA"></i></a>
-					<button class="button" ng-click="reserv_home()"><i class="ion-android-favorite"></i></button>
-					<button class="button" ng-click="setting()"><i class="ion-android-settings"></i></button>
+			　　<div class="iconHd" ng-controller="commonNaviBarControllers">
+					<img src="./img/common/1/logo.svg" />
+					<button class="button" ng-click="onHome()"><i class="ion-android-home"></i></a>
+					<button class="button" ng-click="onReserv()"><i class="ion-android-favorite"></i></a>
+					<button class="button" ng-click="onSetting()"><i class="ion-android-settings"></i></button>
 				</div>
 			</ion-nav-buttons>
 		</div>

@@ -16,10 +16,13 @@ angular.module('miral', ['ionic', 'ngCordovaOauth','ngAnimate', 'ionicLazyLoad',
                          ,'miral.beauti.reserv.reserv_home.controllers'
                          ,'miral.beauti.reserv.reserv_list.controllers'
                          ,'miral.beauti.reserv.reserv_map.controllers'
+                         ,'miral.beauti.reserv.salon_list.controllers'
+                         ,'miral.beauti.reserv.favorite.controllers'
                          ,'miral.beauti.setting.setting_home.controllers'
                          ,'miral.beauti.setting.beauti_detail.controllers'
                          ,'miral.beauti.setting.account_edit.controllers'
-                         ,'miral.beauti.setting.license_edit.controllers'])
+                         ,'miral.beauti.setting.license_edit.controllers'
+                         ,'miral.common.navi_bar.controllers'])
                          
 .run(function($ionicPlatform,googleAppenginConnecter) {
   $ionicPlatform.ready(function() {
@@ -55,8 +58,9 @@ angular.module('miral', ['ionic', 'ngCordovaOauth','ngAnimate', 'ionicLazyLoad',
 	    controller: 'loginControllers'
 	  })
     
-  //カテゴリ：美容師
-  //美容師 ホーム
+  //----------  カテゴリ：美容師 ----------
+  //-----  beauti-home -----
+  // 美容師 ホーム
   .state('beauti-home-home-top', {
 	    url: '/beauti/home/home_top',
 	    templateUrl: 'beauti/home/home_top/home_top.html',
@@ -98,6 +102,7 @@ angular.module('miral', ['ionic', 'ngCordovaOauth','ngAnimate', 'ionicLazyLoad',
 	    controller: 'beautiHomeRequestControllers'
 	  })	  
 	  
+  //-----  beauti-reserv -----
   //美容師 予約ホーム　
   .state('beauti-reserv-reserv_home', {
 	    url: '/beauti/reserv/reserv_home',
@@ -105,20 +110,35 @@ angular.module('miral', ['ionic', 'ngCordovaOauth','ngAnimate', 'ionicLazyLoad',
 	    controller: 'beautiReservReservHomeControllers'
 	  })
 	  
-  //美容師 予約ホーム　サロン検索結果（マッチ済：リスト）
+  //美容師 予約　サロン検索結果（マッチ済：リスト）
   .state('beauti-reserv-reserv_list', {
 	    url: '/beauti/reserv/reserv_list',
 	    templateUrl: 'beauti/reserv/reserv_list/reserv_list.html',
 	    controller: 'beautiReservReservListControllers'
 	  })
 
-  //美容師 予約ホーム　サロン検索結果（マッチ済：MAP）
+  //美容師 予約　サロン検索結果（マッチ済：MAP）
   .state('beauti-reserv-reserv_map', {
 	    url: '/beauti/reserv/reserv_map',
 	    templateUrl: 'beauti/reserv/reserv_map/reserv_map.html',
 	    controller: 'beautiReservReservMapControllers'
 	  })
-	  
+
+  //美容師 予約　サロン一覧
+  .state('beauti-reserv-salon_list', {
+	    url: '/beauti/reserv/salon_list',
+	    templateUrl: 'beauti/reserv/salon_list/salon_list.html',
+	    controller: 'beautiReservSalonListControllers'
+	  })
+
+  //美容師 予約　お気に入り
+  .state('beauti-reserv-favorite', {
+	    url: '/beauti/reserv/favorite',
+	    templateUrl: 'beauti/reserv/favorite/favorite.html',
+	    controller: 'beautiReservFavoriteControllers'
+	  })
+
+  //-----  beauti-setting -----	  
   //美容師 設定　設定ホーム
   .state('beauti-setting-home', {
 	    url: '/beauti/setting/setting_home',

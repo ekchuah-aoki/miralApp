@@ -1,18 +1,21 @@
-angular.module('miral.beauti.common.navi_bar.controllers', [])
+angular.module('miral.common.navi_bar.controllers', [])
 
-.controller('beautiCommonNaviBarControllers', function($scope,$window, $state, $timeout,$ionicHistory) {
+.controller('commonNaviBarControllers', function($scope,$window, $state, $timeout,$ionicHistory) {
 
-	console.log('Start beautiCommonNaviBarControllers');
+	console.log('Start CommonNaviBarControllers');
 	
+	$scope.onHome=function(){
+		$state.go('beauti-home-home-top',null,'');
+	}
+
+	$scope.onReserv=function(){
+		$state.go('beauti-reserv-reserv_home',null,'');
+	}
+
+	$scope.onSetting=function(){
+		$state.go('beauti-setting-home',null,'');
+	}
 	
-	$scope.moveReservHome=function(){
-		navi_page_foward($state, 'beauti-reserv_home-reserv_list');
-	};
-	
-	
-	$scope.pageBack=function(){
-		$ionicHistory.backView();
-	};
 })
 ;
 
