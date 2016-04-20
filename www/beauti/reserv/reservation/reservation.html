@@ -1,0 +1,121 @@
+<ion-view>
+<ion-content class="miralbody reserv_reservation">
+
+	<!-- 小見出し 1 -->
+	<p class="titleBar c01">予約をする</p>
+	
+	<!-- サロン　利用可能機材 -->
+	<div class="reserv_reservation_materialBox">
+		<div class="reserv_reservation_material">
+			<div>
+				<div class="reserv_reservation_salonName">
+					<p>salonHairDeseign 池袋店<br>JR「池袋駅」徒歩５分 ★★★★★(4.9)</p>
+					<p>利用料金<br>1時間　1000Pt / １日　8000Pt</p>
+				</div>
+				<ul>
+					<li><span>セット台・椅子</span></li>
+					<li><span>シャンプー台</span></li>
+					<li><span>ケープ・クロス</span></li>
+					<li><span>タオル</span></li>
+					<li><span>ドライヤー</span></li>
+					<li><span>ワゴン</span></li>
+					<li><span>スツール</span></li>
+					<li><span>ローラーボール</span></li>
+					<li><span>その他機材</span></li>
+					<li><span>その他消耗品</span></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+	<div class="padding"><!-- padding -->
+
+		<!-- サロン　利用希望日 -->
+		<div class="reserv_reservation_dataDay contentbox">
+			<p class="contentbox_title">利用希望日</p>			
+			<div class="contentbox_content">
+				<input type="radio" value="1" id="today" name="dataDay" checked>
+				<label for="today" class="button c02">今日</label>
+				<input type="radio" value="2" id="tommorow" name="dataDay">
+				<label for="tommorow" class="button c03">明日</label>
+			</div>
+		</div>
+			
+
+		<!-- サロン 利用希望時間 -->
+		<div class="reserv_reservation_dataTime contentbox">
+			<p class="contentbox_title">利用希望時間</p>
+			<div class="contentbox_content">
+				<table>
+					<tr>
+						<th colspan="2">9</th><th colspan="2">10</th><th colspan="2">11</th><th colspan="2">13</th>
+						<th colspan="2">14</th><th colspan="2">15</th><th colspan="2">16</th><th colspan="2">17</th>
+						<th colspan="2">18</th><th colspan="2">19</th><th colspan="2">20</th><th colspan="2">21</th>					</tr>
+					<tr>
+						<td></td><td></td> <td></td><td></td> <td></td><td></td> <td></td><td></td>
+						<td></td><td></td> <td></td><td></td> <td></td><td></td> <td></td><td></td>
+						<td></td><td></td> <td></td><td></td> <td></td><td></td> <td></td><td></td>
+					</tr>
+				</table>
+				<div class="reserv_reservation_strTime">
+					<p>開始時間</p>
+					<div class="contentbox_content item-select">
+					   <select>
+					      <option value="" selected >--</option>
+					      <option value="09:00">09:00</option>
+					      <option value="09:30">09:30</option>
+					      <option value="10:00">10:00</option>
+					      <option value="10:30">10:30</option>
+					   </select>
+					</div>
+				</div>
+				<div class="reserv_reservation_finTime">
+					<p>終了時間</p>
+					<div class="contentbox_content item-select">
+					   <select>
+					      <option value="" selected >--</option>
+					      <option value="09:00">09:00</option>
+					      <option value="09:30">09:30</option>
+					      <option value="10:00">10:00</option>
+					      <option value="10:30">10:30</option>
+					   </select>
+					</div>
+				</div>
+				<div class="reserv_reservation_useTime">
+					<p>利用時間</p>
+					<p>1:00</p>
+				</div>
+				<div class="reserv_reservation_useFee">
+					<p>利用料金</p>
+					<p>1000Pt</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- サロン　利用規約 -->		
+		<div class="reserv_reservation_use accordion">
+			<input id="salon_detail_use" type="checkbox" checked>
+			<label for="salon_detail_use">利用条件</label>
+			<div class="accordion_content">
+			<ul>
+				<li>利用条件その１</li>
+				<li>利用条件その2</li>
+				<li>利用条件その3</li>
+			</ul>
+			</div>
+		</div>
+
+		<!-- サロン　メッセージ -->
+		<div class="reserv_reservation_message contentbox">
+			<p class="contentbox_title">メッセージ</p>
+			<div class="contentbox_content">
+				<textarea></textarea>
+			</div>
+		</div>
+			
+	</div><!-- padding -->
+	
+	<a class="button button-block c01">この内容で予約する</a>
+	
+</ion-content>
+</ion-view>

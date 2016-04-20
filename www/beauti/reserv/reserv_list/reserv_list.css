@@ -108,9 +108,9 @@ span.reserv_list_result_vacancyTomorrow:before {
 	height: 40px;
 	border-radius:20px;
 	display: inline-block;
-	color:#FFF;
+	color:#DDD;
 	text-align: center;
-	border: 1px solid #FFF;
+	border: 1px solid #DDD;
 	padding: 2px;
 	cursor: pointer;
 }

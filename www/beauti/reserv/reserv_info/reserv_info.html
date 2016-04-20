@@ -1,0 +1,450 @@
+<ion-view>
+<ion-content class="miralbody">
+<ion-tabs class="miral_tab">
+  <ion-tab title="予約ホーム" icon-on="ion-android-favorite" icon-off="ion-android-favorite">
+    <!-- Tab 1 content -->
+  </ion-tab>
+
+  <ion-tab title="予約一覧" icon-on="ion-android-calendar" icon-off="ion-android-calendar">
+    <!-- Tab 2 content -->
+  </ion-tab>
+
+  <ion-tab title="メッセージ" icon-on="ion-android-textsms" icon-off="ion-android-textsms">
+    <!-- Tab 3 content -->
+  </ion-tab>
+</ion-tabs>
+
+<!-- 現在予約をしているサロン -->
+<p class="c01 titleBar">現在予約をしているサロン</p>
+
+<div class="padding salon_list">
+	<div class="contentbox">
+		<img class="list_salon_img" src="./beauti/home/salon_detail/img/salon01_1.jpg">
+		<div class="salon_list_salonName">
+			<p>salon Hair Design 池袋店</p>
+			<p>
+				<span>最寄駅</span>
+				<span>JR池袋駅</span>
+				<span>徒歩10分</span>
+			</p>
+		</div>
+		<div class="accordion salon_list_reserv_detailToday">
+			<input id="salon_list_reserv" type="checkbox">
+			<label for="salon_list_reserv">
+			<p>
+				<span class="reserv_list_result_vacancyToday"></span>
+				<span>利用予定時刻</span>
+				<span>10:00~11:00</span>
+				<span>詳細</span>
+			</p>
+			</label>
+			<div class="accordion_content">
+				<table class="salon_list_reserv_detail">
+					<tr>
+						<th>予約ステータス</th>
+						<td>予約完了</td>
+					</tr>
+					<tr>
+						<th>予約申請日</th>
+						<td>2016-00-00</td>
+					</tr>
+					<tr>
+						<th>予約申請時刻</th>
+						<td>15:09:49</td>
+					</tr>
+					<tr>
+						<th>利用予定日</th>
+						<td>2016-00-00</td>
+					</tr>
+					<tr>
+						<th>利用予定時刻</th>
+						<td>9:00~18:00</td>
+					</tr>
+					<tr>
+						<th>利用予定時間</th>
+						<td>9:00:00</td>
+					</tr>
+					<tr>
+						<th>利用ポイント</th>
+						<td>8000Pt</td>
+					</tr>
+					<tr>
+						<td colspan="2" class="reserv_info_cancel" >
+							<a ng-click="showConfirm()">予約をキャンセルする</a>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<div class="contentbox">
+		<img class="list_salon_img" src="./beauti/home/salon_detail/img/salon01_1.jpg">
+		<div class="salon_list_salonName">
+			<p>salon Hair Design 池袋店</p>
+			<p>
+				<span>最寄駅</span>
+				<span>JR池袋駅</span>
+				<span>徒歩10分</span>
+			</p>
+		</div>
+		<div class="accordion salon_list_reserv_detailTomorrow">
+			<input id="salon_list_reserv_02" type="checkbox">
+			<label for="salon_list_reserv_02">
+			<p>
+				<span class="reserv_list_result_vacancyTomorrow"></span>
+				<span>利用予定時刻</span>
+				<span>10:00~11:00</span>
+				<span>詳細</span>
+			</p>
+			</label>
+			<div class="accordion_content">
+				<table class="salon_list_reserv_detail">
+					<tr>
+						<th>予約ステータス</th>
+						<td>予約完了</td>
+					</tr>
+					<tr>
+						<th>予約申請日</th>
+						<td>2016-00-00</td>
+					</tr>
+					<tr>
+						<th>予約申請時刻</th>
+						<td>15:09:49</td>
+					</tr>
+					<tr>
+						<th>利用予定日</th>
+						<td>2016-00-00</td>
+					</tr>
+					<tr>
+						<th>利用予定時刻</th>
+						<td>9:00~18:00</td>
+					</tr>
+					<tr>
+						<th>利用予定時間</th>
+						<td>9:00:00</td>
+					</tr>
+					<tr>
+						<th>利用ポイント</th>
+						<td>8000Pt</td>
+					</tr>
+					<tr>
+						<td colspan="2" class="reserv_info_cancel" >
+							<a ng-click="showConfirm()">予約をキャンセルする</a>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- 予約履歴 -->
+<p class="c01 titleBar">予約履歴</p>
+<div class="padding salon_list">
+	<div class="contentbox">
+		<img class="list_salon_img" src="./beauti/home/salon_detail/img/salon01_1.jpg">
+		<div class="salon_list_salonName">
+			<p>salon Hair Design 池袋店</p>
+			<p>
+				<span>最寄駅</span>
+				<span>JR池袋駅</span>
+				<span>徒歩10分</span>
+			</p>
+		</div>
+		<div class="accordion salon_list_reserv_detailOld">
+			<input id="salon_list_reserv_03" type="checkbox">
+			<label for="salon_list_reserv_03">
+			<p>
+				<span class="reserv_linfo_result_vacancyOld"></span>
+				<span>利用予定時刻</span>
+				<span>10:00~11:00</span>
+				<span>詳細</span>
+			</p>
+			</label>
+			<div class="accordion_content">
+				<table class="salon_list_reserv_detail">
+					<tr>
+						<th>予約ステータス</th>
+						<td>来店済</td>
+					</tr>
+					<tr>
+						<th>予約申請時刻</th>
+						<td>2016-00-00</td>
+					</tr>
+					<tr>
+						<th>予約申請日</th>
+						<td>2016-00-00</td>
+					</tr>
+					<tr>
+						<th>利用予定日</th>
+						<td>15:09:49</td>
+					</tr>
+					<tr>
+						<th>利用予定時刻</th>
+						<td>9:00~18:00</td>
+					</tr>
+					<tr>
+						<th>利用予定時間</th>
+						<td>9:00:00</td>
+					</tr>
+					<tr>
+						<th>利用ポイント</th>
+						<td>8000Pt</td>
+					</tr>
+					<tr>
+						<th>来店時刻</th>
+						<td>14:00:00</td>
+					</tr>
+					<tr>
+						<th>退店時刻</th>
+						<td>16:00:00</td>
+					</tr>
+					<tr>
+						<th>キャンセル</th>
+						<td>-</td>
+					</tr>
+					<tr>
+						<th>キャンセル受付日時</th>
+						<td>-</td>
+					</tr>
+					<tr>
+						<th>発生ポイント</th>
+						<td>80Pt</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<div class="contentbox">
+		<img class="list_salon_img" src="./beauti/home/salon_detail/img/salon01_1.jpg">
+		<div class="salon_list_salonName">
+			<p>salon Hair Design 池袋店</p>
+			<p>
+				<span>最寄駅</span>
+				<span>JR池袋駅</span>
+				<span>徒歩10分</span>
+			</p>
+		</div>
+		<div class="accordion salon_list_reserv_detailOld">
+			<input id="salon_list_reserv_03" type="checkbox">
+			<label for="salon_list_reserv_03">
+			<p>
+				<span class="reserv_linfo_result_vacancyOld"></span>
+				<span>利用予定時刻</span>
+				<span>10:00~11:00</span>
+				<span>詳細</span>
+			</p>
+			</label>
+			<div class="accordion_content">
+				<table class="salon_list_reserv_detail">
+					<tr>
+						<th>予約ステータス</th>
+						<td>来店済</td>
+					</tr>
+					<tr>
+						<th>予約申請時刻</th>
+						<td>2016-00-00</td>
+					</tr>
+					<tr>
+						<th>予約申請日</th>
+						<td>2016-00-00</td>
+					</tr>
+					<tr>
+						<th>利用予定日</th>
+						<td>15:09:49</td>
+					</tr>
+					<tr>
+						<th>利用予定時刻</th>
+						<td>9:00~18:00</td>
+					</tr>
+					<tr>
+						<th>利用予定時間</th>
+						<td>9:00:00</td>
+					</tr>
+					<tr>
+						<th>利用ポイント</th>
+						<td>8000Pt</td>
+					</tr>
+					<tr>
+						<th>来店時刻</th>
+						<td>14:00:00</td>
+					</tr>
+					<tr>
+						<th>退店時刻</th>
+						<td>16:00:00</td>
+					</tr>
+					<tr>
+						<th>キャンセル</th>
+						<td>-</td>
+					</tr>
+					<tr>
+						<th>キャンセル受付日時</th>
+						<td>-</td>
+					</tr>
+					<tr>
+						<th>発生ポイント</th>
+						<td>80Pt</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+	
+	<div class="contentbox">
+		<img class="list_salon_img" src="./beauti/home/salon_detail/img/salon01_1.jpg">
+		<div class="salon_list_salonName">
+			<p>salon Hair Design 池袋店</p>
+			<p>
+				<span>最寄駅</span>
+				<span>JR池袋駅</span>
+				<span>徒歩10分</span>
+			</p>
+		</div>
+		<div class="accordion salon_list_reserv_detailOld">
+			<input id="salon_list_reserv_03" type="checkbox">
+			<label for="salon_list_reserv_03">
+			<p>
+				<span class="reserv_linfo_result_vacancyOld"></span>
+				<span>利用予定時刻</span>
+				<span>10:00~11:00</span>
+				<span>詳細</span>
+			</p>
+			</label>
+			<div class="accordion_content">
+				<table class="salon_list_reserv_detail">
+					<tr>
+						<th>予約ステータス</th>
+						<td>来店済</td>
+					</tr>
+					<tr>
+						<th>予約申請時刻</th>
+						<td>2016-00-00</td>
+					</tr>
+					<tr>
+						<th>予約申請日</th>
+						<td>2016-00-00</td>
+					</tr>
+					<tr>
+						<th>利用予定日</th>
+						<td>15:09:49</td>
+					</tr>
+					<tr>
+						<th>利用予定時刻</th>
+						<td>9:00~18:00</td>
+					</tr>
+					<tr>
+						<th>利用予定時間</th>
+						<td>9:00:00</td>
+					</tr>
+					<tr>
+						<th>利用ポイント</th>
+						<td>8000Pt</td>
+					</tr>
+					<tr>
+						<th>来店時刻</th>
+						<td>14:00:00</td>
+					</tr>
+					<tr>
+						<th>退店時刻</th>
+						<td>16:00:00</td>
+					</tr>
+					<tr>
+						<th>キャンセル</th>
+						<td>-</td>
+					</tr>
+					<tr>
+						<th>キャンセル受付日時</th>
+						<td>-</td>
+					</tr>
+					<tr>
+						<th>発生ポイント</th>
+						<td>80Pt</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<div class="contentbox">
+		<img class="list_salon_img" src="./beauti/home/salon_detail/img/salon01_1.jpg">
+		<div class="salon_list_salonName">
+			<p>salon Hair Design 池袋店</p>
+			<p>
+				<span>最寄駅</span>
+				<span>JR池袋駅</span>
+				<span>徒歩10分</span>
+			</p>
+		</div>
+		<div class="accordion salon_list_reserv_detailOld">
+			<input id="salon_list_reserv_03" type="checkbox">
+			<label for="salon_list_reserv_03">
+			<p>
+				<span class="reserv_linfo_result_vacancyOld"></span>
+				<span>利用予定時刻</span>
+				<span>10:00~11:00</span>
+				<span>詳細</span>
+			</p>
+			</label>
+			<div class="accordion_content">
+				<table class="salon_list_reserv_detail">
+					<tr>
+						<th>予約ステータス</th>
+						<td>来店済</td>
+					</tr>
+					<tr>
+						<th>予約申請時刻</th>
+						<td>2016-00-00</td>
+					</tr>
+					<tr>
+						<th>予約申請日</th>
+						<td>2016-00-00</td>
+					</tr>
+					<tr>
+						<th>利用予定日</th>
+						<td>15:09:49</td>
+					</tr>
+					<tr>
+						<th>利用予定時刻</th>
+						<td>9:00~18:00</td>
+					</tr>
+					<tr>
+						<th>利用予定時間</th>
+						<td>9:00:00</td>
+					</tr>
+					<tr>
+						<th>利用ポイント</th>
+						<td>8000Pt</td>
+					</tr>
+					<tr>
+						<th>来店時刻</th>
+						<td>14:00:00</td>
+					</tr>
+					<tr>
+						<th>退店時刻</th>
+						<td>16:00:00</td>
+					</tr>
+					<tr>
+						<th>キャンセル</th>
+						<td>-</td>
+					</tr>
+					<tr>
+						<th>キャンセル受付日時</th>
+						<td>-</td>
+					</tr>
+					<tr>
+						<th>発生ポイント</th>
+						<td>80Pt</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+
+
+</ion-content>
+</ion-view>

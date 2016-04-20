@@ -1,0 +1,116 @@
+@CHARSET "UTF-8";
+
+.reserv_RecMessage,
+.reserv_TraMessage {
+	width: 100%;
+	position: relative;
+}
+
+.reserv_RecMessage .message_cont {
+	width: 100%;
+	background-color: #5c5c5c;
+	padding:15px;
+	border-radius:10px;
+	position: relative;
+	color:#FFF;
+	line-height: 1.5em;
+	font-size: 14px;
+	box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.1);
+}
+
+.reserv_TraMessage .message_cont {
+	width: 100%;
+	background-color: #DDDDDD;
+	padding:15px;
+	border-radius:10px;
+	position: relative;
+	line-height: 1.5em;
+	font-size: 14px;
+	box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.1);
+}
+
+.reserv_RecMessage .message_cont:after {
+	border:10px solid transparent;
+	border-right-color:#5c5c5c;
+	border-left-width:0;
+	left:-9px;
+	content:"";
+	display:block;
+	bottom:10px;
+	position:absolute;
+	width:0;
+	}
+
+.reserv_TraMessage .message_cont:after {
+	border:10px solid transparent;
+	border-left-color:#DDDDDD;
+	border-right-width:0;
+	right:-9px;
+	content:"";
+	display:block;
+	bottom:10px;
+	position:absolute;
+	width:0;
+	}
+	
+.reserv_RecMessage .message_wrap{
+	margin-left: 65px;
+}
+
+.reserv_TraMessage .message_wrap{
+	margin-right: 65px;
+}
+
+.reserv_RecMessage .message_img {
+	width: 40px;
+	height: 40px;
+	background-color: #ccc;
+	display: inline-block;
+	border-radius:20px;
+	position: absolute;
+	bottom:15px;
+	left: 0px;
+}
+
+.reserv_TraMessage .message_img {
+	width: 40px;
+	height: 40px;
+	background-color: #ccc;
+	display: inline-block;
+	border-radius:20px;
+	position:absolute;
+	bottom:15px;
+	right: 0px;
+}
+
+.reserv_RecMessage .message_addres {
+	width:100%;
+	margin-left: 10px;
+	font-size: 12px;
+	text-align: left;
+}
+
+.reserv_TraMessage .message_addres {
+	width:100%;
+	margin-right: 10px;
+	font-size: 12px;
+	text-align: right;
+}
+
+.message_input {
+	width: 70px;
+	height: 70px;
+	border: none;
+	border-radius: 35px;
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
+	font-size: 40px;
+	box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.5);
+}
+
+.reserv_message_input {
+	resize:none;
+	height: 100px;
+	padding: 10px;
+}

@@ -17,11 +17,16 @@ angular.module('miral', ['ionic', 'ngCordovaOauth','ngAnimate', 'ionicLazyLoad',
                          ,'miral.beauti.reserv.reserv_list.controllers'
                          ,'miral.beauti.reserv.reserv_map.controllers'
                          ,'miral.beauti.reserv.salon_list.controllers'
+                         ,'miral.beauti.reserv.message_list.controllers'
+                         ,'miral.beauti.reserv.message.controllers'
                          ,'miral.beauti.reserv.favorite.controllers'
+                         ,'miral.beauti.reserv.reserv_info.controllers'
+                         ,'miral.beauti.reserv.reservation.controllers'
                          ,'miral.beauti.setting.setting_home.controllers'
                          ,'miral.beauti.setting.beauti_detail.controllers'
                          ,'miral.beauti.setting.account_edit.controllers'
                          ,'miral.beauti.setting.license_edit.controllers'
+                         ,'miral.beauti.setting.point_man.controllers'
                          ,'miral.common.navi_bar.controllers'])
                          
 .run(function($ionicPlatform,googleAppenginConnecter) {
@@ -131,6 +136,13 @@ angular.module('miral', ['ionic', 'ngCordovaOauth','ngAnimate', 'ionicLazyLoad',
 	    controller: 'beautiReservSalonListControllers'
 	  })
 
+  //美容師 予約　一覧・履歴・詳細表示
+  .state('beauti-reserv-reserv_info', {
+	    url: '/beauti/reserv/reserv_info',
+	    templateUrl: 'beauti/reserv/reserv_info/reserv_info.html',
+	    controller: 'beautiReservReservInfoControllers'
+	  })
+
   //美容師 予約　お気に入り
   .state('beauti-reserv-favorite', {
 	    url: '/beauti/reserv/favorite',
@@ -138,6 +150,27 @@ angular.module('miral', ['ionic', 'ngCordovaOauth','ngAnimate', 'ionicLazyLoad',
 	    controller: 'beautiReservFavoriteControllers'
 	  })
 
+  //美容師 予約　メッセージ一覧
+  .state('beauti-reserv-message_list', {
+	    url: '/beauti/reserv/message_list',
+	    templateUrl: 'beauti/reserv/message_list/message_list.html',
+	    controller: 'beautiReservMessageListControllers'
+	  })
+
+  //美容師 予約　メッセージ
+  .state('beauti-reserv-message', {
+	    url: '/beauti/reserv/message',
+	    templateUrl: 'beauti/reserv/message/message.html',
+	    controller: 'beautiReservMessageControllers'
+	  })
+
+  //美容師 予約　予約
+  .state('beauti-reserv-reservation', {
+	    url: '/beauti/reserv/reservation',
+	    templateUrl: 'beauti/reserv/reservation/reservation.html',
+	    controller: 'beautiReservReservationControllers'
+	  })
+	  
   //-----  beauti-setting -----	  
   //美容師 設定　設定ホーム
   .state('beauti-setting-home', {
@@ -166,8 +199,14 @@ angular.module('miral', ['ionic', 'ngCordovaOauth','ngAnimate', 'ionicLazyLoad',
 	    templateUrl: 'beauti/setting/license_edit/license_edit.html',
 	    controller: 'beautiSettingLicenseEditControllers'
 	  })
-	  	  
-	  
+
+  //美容師 設定　ポイント管理
+  .state('beauti-setting-point_man', {
+	    url: '/beauti/setting/point_man',
+	    templateUrl: 'beauti/setting/point_man/point_man.html',
+	    controller: 'beautiSettingPointManControllers'
+	  })
+	
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/login');
 

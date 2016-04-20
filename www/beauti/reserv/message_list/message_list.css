@@ -1,0 +1,82 @@
+@CHARSET "UTF-8";
+
+.message_list {
+	width: 100%;
+
+}
+
+.message_list > .contentbox {
+	margin: 0px;
+	margin-bottom:-6px;
+}
+
+
+.message_list > .contentbox {
+	display: inline-block;
+	padding-bottom: 15px;
+}
+
+.message_list .contentbox > img {
+	margin-right: -60px;
+}
+
+.message_list_text {
+	width: 100%;
+	float: left;
+}
+
+.message_list_text >div {
+	margin-left: 70px;
+}
+
+.message_list_text > div > p {
+	margin: 0px;
+	width:100%;
+	font-size: 12px;
+}
+
+.message_list_text > div > p.salon_name {
+	font-size: 14px;
+	color:#A87544;
+}
+
+
+.message_list_text > div > p:last-child {
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+}
+
+span.unread:before{
+	content: "未読";
+	font-size:0.9em;
+	padding:1px 1px;
+	margin: 0px;
+	color:#FFF;
+	background-color: #A87544;
+	display: inline-block;
+	width: 30px;
+	text-align: center;
+	float: right;
+}
+
+.mess_time {
+	float: right;
+	font-size: 12px;
+	margin: 0px 5px;
+}
+
+
+@media screen and (min-width: 0px) and (max-device-width: 400px) {
+
+.message_list .contentbox > img {
+	display: none;
+	
+}
+	
+.message_list_text >div {
+	margin-left: 0px;
+}
+
+}
+

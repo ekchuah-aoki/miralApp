@@ -1,0 +1,45 @@
+@CHARSET "UTF-8";
+
+td.reserv_info_cancel  {
+	text-align: right;
+	height: 20px;
+}
+
+.reserv_info_cancel a {
+	font-size: 12px;
+	cursor: pointer;
+	padding: 6px 12px 6px 12px;
+	color:#5C5C5C;
+	text-decoration: noen;
+	margin-right: -10px;
+}
+
+.salon_list_reserv_detailOld {
+	width: 100%;
+	border: solid 2px #DDD;
+	padding: 5px;
+	margin-top: 10px;
+	position: relative;
+}
+
+.salon_list_reserv_detailOld p {
+	margin: 0px;
+	width: 100%;
+}
+
+.salon_list_reserv_detailOld p span:last-child {
+	float: right;
+	margin: 2px 2px 2px 0px;
+}
+
+span.reserv_linfo_result_vacancyOld:before {
+	content: "来店済";
+	font-size:0.9em;
+	padding:3px 0px;
+	margin: 0px;
+	color:#FFF;
+	background-color: #5c5c5c;
+	display: inline-block;
+	width: 50px;
+	text-align: center;
+}

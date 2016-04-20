@@ -17,6 +17,7 @@ a {
 .c03, .c03:hover, .c03.active, .c03.activated {	background-color: #19B0B8; color:#FFF; } /* 水色 */
 .c04, .c04:hover, .c04.active, .c04.activated {	color:#FFF; } /* 白 */
 .c05, .c05:hover, .c05.active, .c05.activated {	background-color: #5C5C5C; color:#FFF; } /* グレー */
+.c06, .c06:hover, .c06.active, .c06.activated {	background-color: #DDD; color:#FFF; } /* 薄いグレー */
 
 /* SNS color */
 .cFB, .cFB:hover, .cFB.active , .cFB.activated {	background-color: #305097; color:#FFF; } /* Facebook */
@@ -310,10 +311,48 @@ span.ann_maintenance:before {
 }
 
 /* list_salon_img */
-.list_salon_img {
+img.list_salon_img {
 	width: 60px;
 	height: 60px;
 	border-radius:30px;
-	background-color: red;
 	display: inline-block;
+	float: left;
+}
+
+/* cancel_button */
+.cancel_button > .popup{
+	width: auto;
+	margin: 0px 20px;
+}
+
+.cancel_button > .popup > .popup-head > h3{
+	color: #A87544;
+}
+
+.cancel_button > .popup > .popup-body dt{
+	margin-bottom: 10px;
+}
+
+.cancel_button > .popup > .popup-buttons >button {
+	padding: 0 7px;
+}
+
+/* message_button */
+.message_button > .popup{
+	width:100%;
+	min-width:320px;
+	max-width:500px;
+	margin: 0px 20px;
+}
+
+.message_button > .popup > .popup-head > h3{
+	color: #A87544;
+}
+
+.message_button > .popup > .popup-body dt{
+	margin-bottom: 10px;
+}
+
+.message_button > .popup > .popup-buttons >button {
+	padding: 0 7px;
 }
