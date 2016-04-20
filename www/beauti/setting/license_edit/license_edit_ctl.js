@@ -2,13 +2,45 @@ angular.module('miral.beauti.setting.license_edit.controllers', ['miral.beauti.s
 
 .controller('beautiSettingLicenseEditControllers', function($scope,$state, miralBeautiSettingLicenseEditFnc) {
 	
+	$scope.selectedImag = false;
+	$scope.licenseImgData = "";
+	$scope.licenseImgType = "";	
+	console.debug('■■■■■■■■■■■■■■■■');			
 	
 	/////////////////////////////////////
-	//アカウント情報保存
+	//美容師免許登録登録しないでスキップ
 	$scope.onSkipLicanseRegist=function(){
-		miralBeautiSettingLicenseEditFnc.registAccount();
-		
 		$state.go("beauti-home-home-top", null, '');
+	}
+
+	/////////////////////////////////////
+	//美容師免許登録
+	$scope.onLicanseRegist=function(){
+		if(!$scope.selectedImag){
+			return;
+		}
+		
+		miralBeautiSettingLicenseEditFnc.licenseRegist(
+				$scope.licenseImgData,
+				//成功
+				function(){
+					$state.go("beauti-home-home-top", null, '');
+				}
+		);
+		
+		
+	}
+
+	///////////////////////////////
+	//ライセンスイメージ選択
+	$scope.onLicenseImagPick=function(){
+		miralBeautiSettingLicenseEditFnc.licenseImagPick(function(imgData){
+			$scope.$apply(function(){
+				$scope.licenseImgType ="data:image/;base64,"
+				$scope.licenseImgData= imgData;
+				$scope.selectedImag = true;
+			});
+		});
 		
 	}
 	

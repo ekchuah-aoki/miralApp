@@ -1,6 +1,6 @@
-angular.module('miral.beauti.setting.account_edit.controllers', ['miral.common.miralConst','miral.common.account.service'])
+angular.module('miral.beauti.setting.account_edit.controllers', ['miral.common.miralConst','miral.beauti.setting.account_edit_fnc','miral.login.login_fnc'])
 
-.controller('beautiSettingAccountEditControllers', function($scope,$state, $stateParams, miralCommonAccountService
+.controller('beautiSettingAccountEditControllers', function($scope,$state, $stateParams, miralBeautiSettingAccountEditFnc,miralLoginLoginFnc
 		, ACCOUNT_SETTING_MODE, PREFECTURE, ACCOUNT_TYPE) {
 
 	
@@ -42,7 +42,9 @@ angular.module('miral.beauti.setting.account_edit.controllers', ['miral.common.m
 	$scope.prefect =$scope.prefectureList[1];
 
 	if($scope.settingMode == ACCOUNT_SETTING_MODE.sns){
-		accInfo = miralCommonAccountService.restoreAccountInfo();
+		//SNSログイン経由でアカウント登録に遷移してきた場合は
+		//アカウント情報がlocalstrageに保存されているので取得して、初期設定する
+		accInfo = miralLoginLoginFnc.restoreAccountInfo();
 
 		$scope.email = accInfo.email;
 		$scope.lastName = accInfo.lastName;
@@ -60,10 +62,22 @@ angular.module('miral.beauti.setting.account_edit.controllers', ['miral.common.m
 	}
 	
 	///////////////////////////////
-	//美容師免許
+	//美容師免許に進む
 	$scope.onLicense=function(){
 
-		var accInfo = miralCommonAccountService.restoreAccountInfo();
+		var accInfo = miralLoginLoginFnc.restoreAccountInfo();
+
+		accInfo = _setAccountByInputVal(accInfo);
+		
+		//入力情報localStrageに保存
+		miralBeautiSettingAccountEditFnc.registAccount(accInfo);
+		
+		$state.go('beauti-setting-license_edit', null, '');
+	}
+	
+	/////////////////////////////////
+	//入力値をアカウント情報に設定
+	var _setAccountByInputVal=function(accInfo){
 		if(!accInfo){
 			accInfo = {};
 		}
@@ -81,10 +95,11 @@ angular.module('miral.beauti.setting.account_edit.controllers', ['miral.common.m
 		accInfo.birthday_m=$scope.birthday_m;
 		accInfo.birthday_d=$scope.birthday_d;
 		
-		//入力情報localStrageに保存
-		miralCommonAccountService.saveAccountInfo(accInfo);
+		return accInfo;
 		
-		$state.go('beauti-setting-license_edit', null, '');
+		
 	}
+	
+	
 })
 ;

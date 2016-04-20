@@ -6,14 +6,16 @@ angular.module('miral.login.login_fnc', ['miral.common.miralConst'
                                          ,'miral.common.googleplus'
                                          ,'miral.common.account.service'
                                          ,'miral.loginInfo'
+                                         ,'miral.common.miralUtil'
                                          ])
 
                                          
-.factory('miralLoginLoginFnc', function(LOGIN_TYPE,UMU_FLG,LOGIN_STATE,loginInfo 
+.factory('miralLoginLoginFnc', function(LOGIN_TYPE,UMU_FLG,LOGIN_STATE,loginInfo,$localStorage
 		, googleAppenginConnecter,facebookConnecter,instagramConnecter,twitterConnecter,googleplusConnecter
 		,miralCommonAccountService) {
 
-	
+	///////////////////////////////////////////
+	//DBからアカウント情報を取得
 	var _getMiralAccount=function(loginType_, id_, success_, fail_){
 		miralCommonAccountService.getAccount(loginType_, id_,
 				//success
@@ -24,10 +26,9 @@ angular.module('miral.login.login_fnc', ['miral.common.miralConst'
 					loginInfo.setLoginInfo({loginType_});
 
 					if(resp.res.rstCode==UMU_FLG.ari){
-						//アカウント情報あり
-						//ログイン情報生成
+						//アカウント情報ありの場合、アカウント情報からログイン情報を生成
 						loginInfo.setLoginInfo({
-							userId:resp.userId,
+							accountId:resp.accountId,
 							email:resp.email,
 							name: resp.lastName + " " + resp.firstName
 						});
@@ -69,6 +70,7 @@ angular.module('miral.login.login_fnc', ['miral.common.miralConst'
 						
 						console.log('facebook ログイン成功')
 						
+						//facebookで
 						loginInfo.setLoginInfo({loginType:LOGIN_TYPE.facebook,
 							facebookId:profileInfo.id});
 						
@@ -83,7 +85,7 @@ angular.module('miral.login.login_fnc', ['miral.common.miralConst'
 												lastName:names[1],
 												firstName:names[0]
 										};
-										miralCommonAccountService.saveAccountInfo(accInfo);
+										myself.saveAccountInfo(accInfo);
 										
 									}
 									success_(loginState_);
@@ -115,7 +117,7 @@ angular.module('miral.login.login_fnc', ['miral.common.miralConst'
 									//Twitterの場合、アカウントの初期データにする項目がないので、クリア
 									if(loginState_ == LOGIN_STATE.newAccount){
 										
-										miralCommonAccountService.removeAccountInfo();
+										myself.removeAccountInfo();
 										
 									}
 									success_(loginState_);
@@ -125,7 +127,24 @@ angular.module('miral.login.login_fnc', ['miral.common.miralConst'
 						
 					}
 			);
-		}
+		},
+		/////////////////////////////////////
+		//アカウント情報をlocalStrageに保存
+		saveAccountInfo:function(accInfo){
+			$localStorage.setObject('__miralLoginLoginFnc_accountInfo', accInfo);
+		},	
+		
+		/////////////////////////////////////
+		//アカウント情報をlocalStrageから取得
+		restoreAccountInfo:function(){
+			return $localStorage.getObject('__miralLoginLoginFnc_accountInfo');
+		},
+		/////////////////////////////////////
+		//アカウント情報をlocalStrageから消去
+		removeAccountInfo:function(){
+			return $localStorage.remove('__miralLoginLoginFnc_accountInfo');
+			
+		},
 		
 	};
 	

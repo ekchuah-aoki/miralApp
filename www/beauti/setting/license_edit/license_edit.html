@@ -4,10 +4,11 @@
 	<div class="padding">
 		<div class="contentbox">
 			<div class="license_edit_box">
-				<p>ここをタップして<br/>美容師免許の写真を<br>アップロードしてください</p>
+				<p ng-hide="selectedImag" ng-click="onLicenseImagPick()">ここをタップして<br/>美容師免許の写真を<br>選択してください</p>
+				<span ng-show="selectedImag" ng-click="onLicenseImagPick()"><img src="{{licenseImgType}}{{licenseImgData}}"></span>
 			</div>
 		</div>
-		<a class="button button-block c01" ui-sref="beauti-home-home-top">美容師免許を登録する</a>
+		<a class="button button-block c01" ng-click="onLicanseRegist()" ui-sref="beauti-home-home-top">美容師免許を登録する</a>
 		<a class="button button-block" ng-click="onSkipLicanseRegist()">後で美容師免許を登録する</a>
 	</div>
 	

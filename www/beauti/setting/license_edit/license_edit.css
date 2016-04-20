@@ -14,3 +14,13 @@
 	text-align: center;
 	vertical-align: middle;
 }
+
+.license_edit_box span {
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.license_edit_box img {
+	height: 200px;
+}
