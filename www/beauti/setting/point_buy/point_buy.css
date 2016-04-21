@@ -1,0 +1,14 @@
+@CHARSET "UTF-8";
+
+.setting_point_buy_list p {
+	width: 50%;
+	color:#A87544;
+	font-size: 17px;
+	float: left;
+	padding: 12px;
+}
+
+.setting_point_buy_list button {
+	width: 50%;
+	float: left;
+}

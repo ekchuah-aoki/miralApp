@@ -1,7 +1,5 @@
 @CHARSET "UTF-8";
 
-
-
 .account_edit .contentbox_content > input [type="text"] {
 	border-bottom: solid #DDD 1px;
 	width: 100%;

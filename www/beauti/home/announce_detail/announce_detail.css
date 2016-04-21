@@ -1,2 +1,14 @@
 @CHARSET "UTF-8";
 
+.test_table {
+	display: table;
+	width: 1000px;
+	height: 1000px;
+	margin: 0 auto;
+}
+
+.test_table span {
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+}

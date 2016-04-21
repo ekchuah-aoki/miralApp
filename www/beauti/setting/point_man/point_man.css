@@ -1,100 +1,50 @@
 @CHARSET "UTF-8";
 
-.beauti_detail_head {
-	padding:0px;
-	margin: 0px;
-	display: block;
-	width: 100%;
-	position: relative;
-}
-
-.beauti_detail_head > span  {
-	display: block;
-	height: 400px;
-	overflow: hidden;
-} 
-
-.beauti_detail_head span > img {
-	width: 100%;
-	min-width: 400px;
-	min-height: 400px;
-}
-
-.beauti_detail_headtext {
-	padding:10px;
-	display: inline-block;
-	position:absolute;
-	width: 100%;
-	height: 120px;
-	background-color: rgba(0,0,0,0.5);
-	bottom: 0px;
-	color:#FFF;
-}
-
-.beauti_detail_contentbox {
-	display: inline-block;
-	width: 100%;
-	height:100%;
-	position: relative;
-}
-
-.beauti_detail_gallery {
-	width:100%;
-	height: 100%;
-	margin-bottom: 10px;
-	display: inline-block;
-}
-
-.beauti_detail_gallerytitle {
-	display:inline-block;
-	width: 120px;
-	height:120px;
-	margin-right:-120px;
+.setting_point_man_inq > .contentbox p {
+	margin: 0;
+	width: 50%;
 	float: left;
+}
+
+.setting_point_man_inq > .contentbox p:last-child {
 	text-align: center;
-	padding-top: 35px;
-	font-size: 20px;
+	font-size: 17px;
 }
 
-.beauti_detail_galleryimg {
-	margin-left: 120px;
+.setting_point_man_inq > p,
+.setting_point_man_inq > button {
+	margin: 10px 1%;
+	width: 48%;
+	float: left;
 }
 
-.beauti_detail_galleryimg li {
-	float:left;
-	display:inline-block;
-	width: 33.3%;
-	height:120px;
-	overflow: hidden;
-}
-.beauti_detail_galleryimg li img {
-	width:100%;
-	min-width:120px;
-	min-height: 120px;
+.setting_point_man_inq > p{
+	font-size:12px;
 }
 
-.beauti_detail_username {
-	font-size: 22px;
+.setting_point_man_inq > contentbox p:last-child {
+	text-align: center;
+	font-size: 17px;
 }
-.beauti_detail_reviwe {
+
+ul.setting_point_man_his{
+	margin: 0px;
+	margin-bottom: -1px;
+}
+
+.setting_point_man_his > li.item > p {
+	margin: 0;
+	width: 50%;
+	float: left;
+	font-size: 17px;
+}
+
+.setting_point_man_his > li.item > p:first-child span {
 	font-size: 12px;
 }
 
-.beauti_detail_prfbox {
-	width: 100%;
-	height:100%;
-	display: table;
-}
-
-.beauti_detail_prfbox > div {
-	display:table-cell;	
-	vertical-align: middle;
-}
-
-.beauti_detail_prfbox > div p {
-	margin: 10px 0px;
-}
-
-.beauti_detail_prfbox > div:first-child {
-	width: 50%;
+.setting_point_man_his > li.item > p:last-child {
+	text-align: center;
+	font-size: 20px;
+	padding: 10px;
 }

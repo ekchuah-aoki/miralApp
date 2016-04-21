@@ -7,11 +7,9 @@
 	color:#5C5C5C;
 }
 
-a {
-	text-decoration: none;
-}
+a {	text-decoration: none;}
 
-/* color */
+/* background-color */
 .c01, .c01:hover, .c01.active, .c01.activated {	background-color: #A87544; color:#FFF; } /* 茶色 */
 .c02, .c02:hover, .c02.active, .c02.activated {	background-color: #EB727E; color:#FFF; } /* ピンク */
 .c03, .c03:hover, .c03.active, .c03.activated {	background-color: #19B0B8; color:#FFF; } /* 水色 */
@@ -25,10 +23,18 @@ a {
 .cIN, .cIN:hover, .cIN.active , .cIN.activated {	background-color: #3F729B; color:#FFF; } /* Instagram */
 .cTW, .cTW:hover, .cTW.active , .cTW.activated {	background-color: #55acee; color:#FFF; } /* twitter */
 
+/* color */
+.fc01 {	color: #A87544 !important;} /* 茶色 */
+.fc02 {	color: #EB727E !important;} /* ピンク */
+.fc03 {	color: #19B0B8 !important;} /* 水色 */
+.fc04 {	color: #FFFFFF !important;} /* 白 */
+.fc05 {	color: #5C5C5C !important;} /* グレー(濃) */
+.fc06 {	color: #DDDDDD !important;} /* グレー(薄) */
+
 /* float */
-.flL { float:left;}
-.flR { float:right;}
-.clB { clear:both; }
+.flL {	float:left;}
+.flR {	float:right;}
+.clB {	clear:both;}
 
 /* text-align */
 .teAL {	text-align:left; }
@@ -36,41 +42,24 @@ a {
 .teAC {	text-align: center;}
 
 /* font-size */
-.fs10 {	font-size: }
+
 
 /* has-header-w (タブが２つある場合) */
-.has-header-w {
-	top:88px;
-}
+.has-header-w {	top:88px;}
 
 /* margin */
-.maN {
-	margin:none !important;
-}
+.maN {	margin:none !important;}
 
 /* padding */
-.paN {
-	padding: none !important;
-}
+.paN {	padding: none !important;}
 
 /* boder */
-.boN {
-	border:noen;
-}
+.boN {	border:noen;}
 
 /* input placeholder */
-input::-moz-placeholder,
-textarea::-moz-placeholder {
-  color: #FFF;}
-
-input:-ms-input-placeholder,
-textarea:-ms-input-placeholder {
-  color: #FFF; }
-
-input::-webkit-input-placeholder,
-textarea::-webkit-input-placeholder {
-  color: #FFF;
-  text-indent: 0;}
+input::-moz-placeholder,textarea::-moz-placeholder {color: #FFF;}
+input:-ms-input-placeholder,textarea:-ms-input-placeholder {color: #FFF; }
+input::-webkit-input-placeholder,textarea::-webkit-input-placeholder {color: #FFF;text-indent: 0;}
 
 /*************************************
 			◆	共通パーツ 	◆
@@ -99,7 +88,6 @@ div.iconHd .button {
 	border-radius:0px;
 	padding: 1px 9px 1px 9px;
 }
-
 
 /* titile Bar */
 .titleBar {

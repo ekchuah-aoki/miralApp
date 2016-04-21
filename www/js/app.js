@@ -10,6 +10,8 @@ angular.module('miral', ['ionic', 'ngCordovaOauth','ngAnimate', 'ionicLazyLoad',
                          ,'miral.beauti.home.home_top.controllers'
                          ,'miral.beauti.home.salon_srhrst.controllers'
                          ,'miral.beauti.home.salon_detail.controllers'
+                         ,'miral.beauti.home.guides_owner.controllers'
+                         ,'miral.beauti.home.guides_miral.controllers' 
                          ,'miral.beauti.home.announce.controllers'
                          ,'miral.beauti.home.announce.detail.controllers'
                          ,'miral.beauti.home.request.controllers' 
@@ -17,16 +19,26 @@ angular.module('miral', ['ionic', 'ngCordovaOauth','ngAnimate', 'ionicLazyLoad',
                          ,'miral.beauti.reserv.reserv_list.controllers'
                          ,'miral.beauti.reserv.reserv_map.controllers'
                          ,'miral.beauti.reserv.salon_list.controllers'
-                         ,'miral.beauti.reserv.message_list.controllers'
-                         ,'miral.beauti.reserv.message.controllers'
+                         ,'miral.beauti.reserv.reservation.controllers'
                          ,'miral.beauti.reserv.favorite.controllers'
                          ,'miral.beauti.reserv.reserv_info.controllers'
-                         ,'miral.beauti.reserv.reservation.controllers'
+                         ,'miral.beauti.reserv.message_list.controllers'
+                         ,'miral.beauti.reserv.message.controllers'
                          ,'miral.beauti.setting.setting_home.controllers'
+                         ,'miral.beauti.setting.point_man.controllers'
+                         ,'miral.beauti.setting.point_buy.controllers'
                          ,'miral.beauti.setting.beauti_detail.controllers'
+                         ,'miral.beauti.setting.beauti_edit.controllers'
+                         ,'miral.beauti.setting.review.controllers'
+                         ,'miral.beauti.setting.account.controllers'
                          ,'miral.beauti.setting.account_edit.controllers'
                          ,'miral.beauti.setting.license_edit.controllers'
-                         ,'miral.beauti.setting.point_man.controllers'
+                         ,'miral.beauti.setting.help.controllers'
+                         ,'miral.beauti.setting.help_detail.controllers'
+                         ,'miral.beauti.setting.terms.controllers'
+                         ,'miral.beauti.setting.privacy_policy.controllers'
+                         ,'miral.beauti.setting.sclt.controllers'
+                         ,'miral.beauti.setting.withdrawal.controllers'
                          ,'miral.common.navi_bar.controllers'])
                          
 .run(function($ionicPlatform,googleAppenginConnecter) {
@@ -62,8 +74,9 @@ angular.module('miral', ['ionic', 'ngCordovaOauth','ngAnimate', 'ionicLazyLoad',
 	    templateUrl: 'login/login.html',
 	    controller: 'loginControllers'
 	  })
-    
-  //----------  カテゴリ：美容師 ----------
+  //------------------------------------
+  //          カテゴリ：美容師
+  //------------------------------------
   //-----  beauti-home -----
   // 美容師 ホーム
   .state('beauti-home-home-top', {
@@ -84,8 +97,22 @@ angular.module('miral', ['ionic', 'ngCordovaOauth','ngAnimate', 'ionicLazyLoad',
 	    url: '/beauti/home/salon_detail',
 	    templateUrl: 'beauti/home/salon_detail/salon_detail.html',
 	    controller: 'beautiHomeSalonDetailControllers'
-	  })	  
-	  
+	  })
+
+  //美容師 ホーム　ミラルのてびき
+  .state('beauti-home-guides_miral', {
+	    url: '/beauti/home/guides_miral',
+	    templateUrl: 'beauti/home/guides_miral/guides_miral.html',
+	    controller: 'beautiHomeGuidesMiralControllers'
+	  })
+
+  //美容師 ホーム　オーナーのてびき
+  .state('beauti-home-guides_owner', {
+	    url: '/beauti/home/guides_owner',
+	    templateUrl: 'beauti/home/guides_owner/guides_owner.html',
+	    controller: 'beautiHomeGuidesOwnerControllers'
+	  })
+
   //美容師 ホーム　お知らせ
   .state('beauti-home-announce', {
 	    url: '/beauti/home/announce',
@@ -93,20 +120,20 @@ angular.module('miral', ['ionic', 'ngCordovaOauth','ngAnimate', 'ionicLazyLoad',
 	    controller: 'beautiHomeAnnounceControllers'
 	  })
 
-  //美容師 ホーム　お知らせ
+  //美容師 ホーム　お知らせ詳細
   .state('beauti-home-announce_detail', {
 	    url: '/beauti/home/announce_detail',
 	    templateUrl: 'beauti/home/announce_detail/announce_detail.html',
 	    controller: 'beautiHomeAnnounceDetailControllers'
-	  })	  
-	  
+	  })
+
   //美容師 ホーム　お問い合わせ
   .state('beauti-home-request', {
 	    url: '/beauti/home/request',
 	    templateUrl: 'beauti/home/request/request.html',
 	    controller: 'beautiHomeRequestControllers'
-	  })	  
-	  
+	  })
+
   //-----  beauti-reserv -----
   //美容師 予約ホーム　
   .state('beauti-reserv-reserv_home', {
@@ -129,6 +156,13 @@ angular.module('miral', ['ionic', 'ngCordovaOauth','ngAnimate', 'ionicLazyLoad',
 	    controller: 'beautiReservReservMapControllers'
 	  })
 
+  //美容師 予約　予約
+  .state('beauti-reserv-reservation', {
+	    url: '/beauti/reserv/reservation',
+	    templateUrl: 'beauti/reserv/reservation/reservation.html',
+	    controller: 'beautiReservReservationControllers'
+	  })
+
   //美容師 予約　サロン一覧
   .state('beauti-reserv-salon_list', {
 	    url: '/beauti/reserv/salon_list',
@@ -136,18 +170,18 @@ angular.module('miral', ['ionic', 'ngCordovaOauth','ngAnimate', 'ionicLazyLoad',
 	    controller: 'beautiReservSalonListControllers'
 	  })
 
-  //美容師 予約　一覧・履歴・詳細表示
-  .state('beauti-reserv-reserv_info', {
-	    url: '/beauti/reserv/reserv_info',
-	    templateUrl: 'beauti/reserv/reserv_info/reserv_info.html',
-	    controller: 'beautiReservReservInfoControllers'
-	  })
-
   //美容師 予約　お気に入り
   .state('beauti-reserv-favorite', {
 	    url: '/beauti/reserv/favorite',
 	    templateUrl: 'beauti/reserv/favorite/favorite.html',
 	    controller: 'beautiReservFavoriteControllers'
+	  })
+
+  //美容師 予約　一覧・履歴・詳細表示
+  .state('beauti-reserv-reserv_info', {
+	    url: '/beauti/reserv/reserv_info',
+	    templateUrl: 'beauti/reserv/reserv_info/reserv_info.html',
+	    controller: 'beautiReservReservInfoControllers'
 	  })
 
   //美容師 予約　メッセージ一覧
@@ -164,13 +198,6 @@ angular.module('miral', ['ionic', 'ngCordovaOauth','ngAnimate', 'ionicLazyLoad',
 	    controller: 'beautiReservMessageControllers'
 	  })
 
-  //美容師 予約　予約
-  .state('beauti-reserv-reservation', {
-	    url: '/beauti/reserv/reservation',
-	    templateUrl: 'beauti/reserv/reservation/reservation.html',
-	    controller: 'beautiReservReservationControllers'
-	  })
-	  
   //-----  beauti-setting -----	  
   //美容師 設定　設定ホーム
   .state('beauti-setting-home', {
@@ -179,11 +206,46 @@ angular.module('miral', ['ionic', 'ngCordovaOauth','ngAnimate', 'ionicLazyLoad',
 	    controller: 'beautiSettingSettingHomeControllers'
 	  })
 
-  //美容師 設定　美容師詳細
+  //美容師 設定　ポイント管理
+  .state('beauti-setting-point_man', {
+	    url: '/beauti/setting/point_man',
+	    templateUrl: 'beauti/setting/point_man/point_man.html',
+	    controller: 'beautiSettingPointManControllers'
+	  })
+
+  //美容師 設定　ポイント購入
+  .state('beauti-setting-point_buy', {
+	    url: '/beauti/setting/point_buy',
+	    templateUrl: 'beauti/setting/point_buy/point_buy.html',
+	    controller: 'beautiSettingPointBuyControllers'
+	  })
+
+  //美容師 設定　マイプロフィール
   .state('beauti-setting-beauti_detail', {
 	    url: '/beauti/setting/beauti_detail',
 	    templateUrl: 'beauti/setting/beauti_detail/beauti_detail.html',
 	    controller: 'beautiSettingBeautiDetailControllers'
+	  })
+
+  //美容師 設定　マイプロフィールの編集
+  .state('beauti-setting-beauti_edit', {
+	    url: '/beauti/setting/beauti_edit',
+	    templateUrl: 'beauti/setting/beauti_edit/beauti_edit.html',
+	    controller: 'beautiSettingBeautiEditControllers'
+	  })
+
+  //美容師 設定　レビュー
+  .state('beauti-setting-review', {
+	    url: '/beauti/setting/review',
+	    templateUrl: 'beauti/setting/review/review.html',
+	    controller: 'beautiSettingReviewControllers'
+	  })
+
+  //美容師 設定　アカウントの設定
+  .state('beauti-setting-account', {
+	    url: '/beauti/setting/account',
+	    templateUrl: 'beauti/setting/account/account.html',
+	    controller: 'beautiSettingAccountControllers'
 	  })
 
   //美容師 設定　基本情報の変更
@@ -200,13 +262,49 @@ angular.module('miral', ['ionic', 'ngCordovaOauth','ngAnimate', 'ionicLazyLoad',
 	    controller: 'beautiSettingLicenseEditControllers'
 	  })
 
-  //美容師 設定　ポイント管理
-  .state('beauti-setting-point_man', {
-	    url: '/beauti/setting/point_man',
-	    templateUrl: 'beauti/setting/point_man/point_man.html',
-	    controller: 'beautiSettingPointManControllers'
+  //美容師 設定　ヘルプ
+  .state('beauti-setting-help', {
+	    url: '/beauti/setting/help',
+	    templateUrl: 'beauti/setting/help/help.html',
+	    controller: 'beautiSettingHelpControllers'
 	  })
-	
+
+  //美容師 設定　ヘルプ詳細
+  .state('beauti-setting-help_detail', {
+	    url: '/beauti/setting/help_detail',
+	    templateUrl: 'beauti/setting/help_detail/help_detail.html',
+	    controller: 'beautiSettingHelpDetailControllers'
+	  })
+
+  //美容師 設定　利用規約
+  .state('beauti-setting-terms', {
+	    url: '/beauti/setting/terms',
+	    templateUrl: 'beauti/setting/terms/terms.html',
+	    controller: 'beautiSettingTermsControllers'
+	  })
+
+  //美容師 設定　プライバシーポリシー
+  .state('beauti-setting-privacy_policy', {
+	    url: '/beauti/setting/privacy_policy',
+	    templateUrl: 'beauti/setting/privacy_policy/privacy_policy.html',
+	    controller: 'beautiSettingPrivacyPolicyControllers'
+	  })
+
+  //美容師 設定　特定商取引
+  .state('beauti-setting-sclt', {
+	    url: '/beauti/setting/sclt',
+	    templateUrl: 'beauti/setting/sclt/sclt.html',
+	    controller: 'beautiSettingScltControllers'
+	  })
+
+  //美容師 設定　退会
+  .state('beauti-setting-withdrawal', {
+	    url: '/beauti/setting/withdrawal',
+	    templateUrl: 'beauti/setting/withdrawal/withdrawal.html',
+	    controller: 'beautiSettingWithdrawalControllers'
+	  })
+
+	  
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/login');
 
