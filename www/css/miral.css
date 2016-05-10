@@ -2,9 +2,14 @@
 /*************************************
 			◇	Style	◇
 **************************************/
+html, body{
+  height: 100%; }
+
+
 .miralbody {
 	background: repeating-linear-gradient( 135deg, #FFF,#FFF 2px,#DDD 2px,#DDD 4px);
 	color:#5C5C5C;
+	height: 100%;
 }
 
 a {	text-decoration: none;}
@@ -60,6 +65,18 @@ a {	text-decoration: none;}
 input::-moz-placeholder,textarea::-moz-placeholder {color: #FFF;}
 input:-ms-input-placeholder,textarea:-ms-input-placeholder {color: #FFF; }
 input::-webkit-input-placeholder,textarea::-webkit-input-placeholder {color: #FFF;text-indent: 0;}
+
+/* display */
+.diN {
+	display: none !important;
+}
+
+/* liquid box */
+.liquid_box1x1:before {
+	content: "";
+	display: block;
+	padding-top:100%;
+}
 
 /*************************************
 			◆	共通パーツ 	◆
@@ -307,6 +324,17 @@ img.list_salon_img {
 	float: left;
 }
 
+/* list_beauti_img */
+img.list_beauti_img {
+	width: 40px;
+	height: 40px;
+	border-radius:30px;
+	display: inline-block;
+	float: left;
+}
+
+
+
 /* cancel_button */
 .cancel_button > .popup{
 	width: auto;
@@ -344,3 +372,17 @@ img.list_salon_img {
 .message_button > .popup > .popup-buttons >button {
 	padding: 0 7px;
 }
+
+/* toggle miral */
+.toggle.toggle-miral input:checked + .track {
+  border-color: #A87544;
+  background-color: #A87544; }
+  
+.toggle-small .toggle-miral input:checked + .track {
+  background-color: rgba(239, 71, 58, 0.5); }
+
+.toggle-small .toggle-miral input:checked + .track .handle {
+  background-color: #A87544; }
+
+
+

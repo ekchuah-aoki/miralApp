@@ -2,8 +2,12 @@
 <ion-content class="miralbody">
 <!-- サロン 見出し -->
 <div class="salon_detail_head">
-      <button class="button c01 salon_detail_headlike">LIKE</button>
+     <button class="button c01 salon_detail_headlike">LIKE</button>
      <button class="c01 salon_detail_headmap">MAP</button>
+	<div class="salon_list_favorite">
+		<input id="reserv_list_favorite_01" name="reserv_list" type="checkbox" checked/>
+		<label for="reserv_list_favorite_01"><i class="ion-android-favorite"></i></label>
+	</div>
       <div class="salon_detail_headtext" >
      	<div class="salon_detail_headtext_name">
 		  <div>
@@ -22,20 +26,37 @@
 		
 <div class="padding">
 	<!-- サロン サロンギャラリー -->
-	<div class="salon_detail_gallery">
-		<div class="salon_detail_gallerytitle c01">
+	<div class="salon_detail_gallery c01">
+		<div class="salon_detail_gallerytitle">
 			<p>salon<br>Gallery</p>
 		</div>
 		<ul class="salon_detail_galleryimg">
-			<li><a href="./beauti/home/salon_detail/img/salon01_2.jpg" data-lightbox="salonGalley">
+			<li class="liquid_box1x1"><a href="./beauti/home/salon_detail/img/salon01_2.jpg" data-lightbox="salonGalley">
 				<img src="./beauti/home/salon_detail/img/salon01_2.jpg" ></a></li>
-			<li><a href="./beauti/home/salon_detail/img/salon01_3.jpg" data-lightbox="salonGalley">
+			<li class="liquid_box1x1"><a href="./beauti/home/salon_detail/img/salon01_3.jpg" data-lightbox="salonGalley">
 				<img src="./beauti/home/salon_detail/img/salon01_3.jpg"></a></li>
-			<li><a href="./beauti/home/salon_detail/img/salon01_4.jpg" data-lightbox="salonGalley">
+			<li class="liquid_box1x1"><a href="./beauti/home/salon_detail/img/salon01_4.jpg" data-lightbox="salonGalley">
 				<img src="./beauti/home/salon_detail/img/salon01_4.jpg"></a></li>
 		</ul>
 	</div>
-		
+
+	<!-- サロン　空き状況 -->
+	<div class="salon_detail_dataTime contentbox">
+		<p class="contentbox_title">本日の空き状況</p>
+		<table>
+			<tr>
+				<th colspan="2">9</th><th colspan="2">10</th><th colspan="2">11</th><th colspan="2">13</th>
+				<th colspan="2">14</th><th colspan="2">15</th><th colspan="2">16</th><th colspan="2">17</th>
+				<th colspan="2">18</th><th colspan="2">19</th><th colspan="2">20</th><th colspan="2">21</th>
+			</tr>
+			<tr>
+				<td></td><td></td> <td></td><td></td> <td></td><td></td> <td></td><td></td>
+				<td></td><td></td> <td></td><td></td> <td></td><td></td> <td></td><td></td>
+				<td></td><td></td> <td></td><td></td> <td></td><td></td> <td></td><td></td>
+			</tr>
+		</table>
+	</div>
+
 	<!-- サロン　貸出可能機材 -->
 	<div class="salon_detail_material contentbox">
 		<p class="contentbox_title">貸出可能機材</p>
@@ -129,7 +150,31 @@
 			</table>
 		</div>	
 	</div>
-	
+
+	<!-- サロン　関連店舗 -->
+	<div class="salon_detail_sister accordion">
+		<input id="salon_detail_sister" type="checkbox">
+		<label for="salon_detail_sister">関連店舗</label>
+		<div class="accordion_content">
+			<dl>
+				<dd><img src="./beauti/home/salon_detail/img/salon01_1.jpg"></dd>
+				<dt>店舗名~店舗名~店舗名~店舗名~</dt>
+			</dl>
+			<dl>
+				<dd><img src="./beauti/home/salon_detail/img/salon01_2.jpg"></dd>
+				<dt>店舗名</dt>
+			</dl>
+			<dl>
+				<dd><img src="./beauti/home/salon_detail/img/salon01_3.jpg"></dd>
+				<dt>店舗名</dt>
+			</dl>
+			<dl>
+				<dd><img src="./beauti/home/salon_detail/img/salon01_4.jpg"></dd>
+				<dt>店舗名</dt>
+			</dl>
+		</div>
+	</div>
+
 	<!-- サロン　レビュー -->
 	<div class="salon_detail_review contentbox">
 		<p class="contentbox_title">レビュー</p>

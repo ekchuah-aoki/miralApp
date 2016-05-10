@@ -3006,7 +3006,8 @@ time, mark, audio, video {
   border: 0;
   vertical-align: baseline;
   font: inherit;
-  font-size: 100%; }
+  font-size: 100%;
+ }
 
 ol, ul {
   list-style: none; }
@@ -3051,6 +3052,7 @@ html {
   -ms-user-select: none;
   user-select: none;
   font-family: sans-serif;
+  height:100%;
   /* 1 */
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -3063,7 +3065,8 @@ html {
  */
 body {
   margin: 0;
-  line-height: 1; }
+  line-height: 1; 
+  height: 100%;}
 
 /**
  * Remove default outlines.

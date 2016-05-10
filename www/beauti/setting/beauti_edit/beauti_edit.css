@@ -1,2 +1,55 @@
 @CHARSET "UTF-8";
 
+span.img_edit {
+	background-color: rgba(255,255,255,0.5);
+	height: 100%;
+	width: 100%;
+	display: inline-block;
+	position: absolute;
+	color: #FFF;
+	padding:10px;
+}
+
+span.img_edit span {
+	width:100%;
+	height:100%;
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+	border: 2px dotted #FFF;
+	margin: auto;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-align-items: center;
+	align-items: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+}
+
+li.galleryimgAdd {
+	background-color: rgba(255,255,255,0.5);
+	display: inline-block;
+	box-sizing:border-box;
+	padding: 6px ;
+	position: relative;
+}
+
+li.galleryimgAdd:before {
+	content: "";
+	color: #FFF;
+	border: dotted 2px #FFF;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	margin: -2px 0px;
+	min-height: 110px;
+}
+
+li.galleryimgAdd p {
+	position:absolute;
+	margin-top: -50%;
+	font-size: 40px;
+	text-align: center;
+	right: 0;
+	left: 0;
+}

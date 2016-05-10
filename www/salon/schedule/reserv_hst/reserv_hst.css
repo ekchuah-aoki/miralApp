@@ -1,0 +1,18 @@
+@CHARSET "UTF-8";
+
+.reserv_hst_button {
+	width: 100%;
+	padding: 10px;
+	display: inline-block;
+}
+
+.reserv_hst_button > span  {
+	width: 50%;
+	padding: 0 10px;
+	display: inline-block;
+	float: left;
+}
+
+.reserv_hst_button > span > button {
+	width: 100%;
+}

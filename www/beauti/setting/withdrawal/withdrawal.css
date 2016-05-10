@@ -1,2 +1,38 @@
 @CHARSET "UTF-8";
 
+.withdrawal .contentbox {
+	padding-bottom: 15px;
+}
+.withdrawal_title {
+	font-size: 17px;
+	color:#A87544;
+	margin: 20px 0px 10px;
+}
+
+.withdrawal_point {
+	width: 100%;
+	margin: 15px;
+	font-size: 17px;
+}
+
+.withdrawal .contentbox dl {
+	width: 100%;
+	margin-top: 30px;
+}
+
+.withdrawal .contentbox dl dt {
+	font-weight: normal;
+	width:50%;
+	float:left;
+	display: inline-block;
+	clear: both;
+	font-size: 17px;
+	color:#A87544;
+}
+
+.withdrawal .contentbox dl dd {
+	width: 50%;
+	display: inline-block;
+	text-align: right;
+	font-size: 17px;
+}

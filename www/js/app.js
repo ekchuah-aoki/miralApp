@@ -39,6 +39,27 @@ angular.module('miral', ['ionic', 'ngCordovaOauth','ngAnimate', 'ionicLazyLoad',
                          ,'miral.beauti.setting.privacy_policy.controllers'
                          ,'miral.beauti.setting.sclt.controllers'
                          ,'miral.beauti.setting.withdrawal.controllers'
+                         ,'miral.salon.home.home_top.controllers'
+                         ,'miral.salon.home.anounce.controllers'
+                         ,'miral.salon.home.anounce_detail.controllers'
+                         ,'miral.salon.home.request.controllers'
+                         ,'miral.salon.schedule.share_request.controllers'
+                         ,'miral.salon.schedule.beauti_list.controllers'
+                         ,'miral.salon.schedule.reserv_today.controllers'
+                         ,'miral.salon.schedule.reserv_tomorrow.controllers'
+                         ,'miral.salon.schedule.reserv_hst.controllers'
+                         ,'miral.salon.schedule.message_list.controllers'
+                         ,'miral.salon.schedule.message.controllers'
+                         ,'miral.salon.setting.setting_home.controllers'
+                         ,'miral.salon.setting.point_man.controllers'
+                         ,'miral.salon.setting.salon_detail.controllers'
+                         ,'miral.salon.setting.salon_edit.controllers'
+                         ,'miral.salon.setting.review.controllers'
+                         ,'miral.salon.setting.account.controllers'
+                         ,'miral.salon.setting.account_edit.controllers'
+                         ,'miral.salon.setting.terms.controllers'
+                         ,'miral.salon.setting.privacy_policy.controllers'
+                         ,'miral.salon.setting.sclt.controllers'
                          ,'miral.common.navi_bar.controllers'])
                          
 .run(function($ionicPlatform,googleAppenginConnecter) {
@@ -304,8 +325,167 @@ angular.module('miral', ['ionic', 'ngCordovaOauth','ngAnimate', 'ionicLazyLoad',
 	    controller: 'beautiSettingWithdrawalControllers'
 	  })
 
-	  
-  // if none of the above states are matched, use this as the fallback
+  //------------------------------------
+  //          カテゴリ：サロン
+  //------------------------------------
+  //-----  salon-home -----
+  // サロン ホーム　トップ
+  .state('salon-home-home_top', {
+	    url: '/salon/home/home_top',
+	    templateUrl: 'salon/home/home_top/home_top.html',
+	    controller: 'salonHomeHomeTopControllers'
+	  })
+
+  //　サロン ホーム お知らせ
+  .state('salon-home-anounce', {
+	    url: '/salon/home/anounce',
+	    templateUrl: 'salon/home/anounce/anounce.html',
+	    controller: 'salonHomeAnounceControllers'
+	  })
+
+  //　サロン ホーム お知らせ　詳細
+  .state('salon-home-anounce_detail', {
+	    url: '/salon/home/anounce_detail',
+	    templateUrl: 'salon/home/anounce_detail/anounce_detail.html',
+	    controller: 'salonHomeSalonDetailControllers'
+	  })
+
+  //　サロン ホーム　ご意見・お問い合わせ
+  .state('salon-home-request', {
+	    url: '/salon/home/request',
+	    templateUrl: 'salon/schedule/request/request.html',
+	    controller: 'salonHomeRequestMiralControllers'
+	  })
+
+  //-----  salon-schedule -----
+  // サロン スケジュール　シェアリクエスト
+  .state('salon-schedule-share_request', {
+	    url: '/salon/schedule/share_request',
+	    templateUrl: 'salon/schedule/share_request/share_request.html',
+	    controller: 'salonScheduleShareRequestControllers'
+	  })
+
+  //　サロン スケジュール 美容師一覧
+  .state('salon-schedule-beauti_list', {
+	    url: '/salon/schedule/beauti_list',
+	    templateUrl: 'salon/schedule/beauti_list/beauti_list.html',
+	    controller: 'salonScheduleBeautiListControllers'
+	  })
+
+  //　サロン スケジュール 今日の予定
+  .state('salon-schedule-reserv_today', {
+	    url: '/salon/schedule/reserv_today',
+	    templateUrl: 'salon/schedule/reserv_today/reserv_today.html',
+	    controller: 'salonScheduleReservTodayControllers'
+	  })
+
+  //　サロン スケジュール　明日の予定
+  .state('salon-schedule-reserv_tomorrow', {
+	    url: '/salon/schedule/reserv_tomorrow',
+	    templateUrl: 'salon/schedule/reserv_tomorrow/reserv_tomorrow.html',
+	    controller: 'salonScheduleReservTomorrowControllers'
+	  })
+
+  // サロン スケジュール　予約履歴
+  .state('salon-schedule-reserv_hst', {
+	    url: '/salon/schedule/reserv_hst',
+	    templateUrl: 'salon/schedule/reserv_hst/reserv_hst.html',
+	    controller: 'salonScheduleReservHstControllers'
+	  })
+
+  //　サロン スケジュール メッセージ一覧
+  .state('salon-schedule-message_list', {
+	    url: '/salon/schedule/message_list',
+	    templateUrl: 'salon/schedule/message_list/message_list.html',
+	    controller: 'salonScheduleMessageListControllers'
+	  })
+
+  //　サロン スケジュール メッセージ
+  .state('salon-schedule-message', {
+	    url: '/salon/schedule/message',
+	    templateUrl: 'salon/schedule/message/message.html',
+	    controller: 'salonScheduleMessageControllers'
+	  })
+
+  //-----  salon-setting -----
+  // サロン 設定　ホーム
+  .state('salon-setting-setting_home', {
+	    url: '/salon/setting/setting_home',
+	    templateUrl: 'salon/setting/setting_home/setting_home.html',
+	    controller: 'salonSalonSettingSettingHomeControllers'
+	  })
+
+  // サロン 設定　ポイント管理
+  .state('salon-setting-point_man', {
+	    url: '/salon/setting/point_man',
+	    templateUrl: 'salon/setting/point_man/point_man.html',
+	    controller: 'salonSettingPointManControllers'
+	  })
+
+  // サロン 設定　マイプロフィール
+  .state('salon-setting-salon_detail', {
+	    url: '/salon/setting/salon_detail',
+	    templateUrl: 'salon/setting/salon_detail/salon_detail.html',
+	    controller: 'salonSettingSalonDetailControllers'
+	  })
+
+  // サロン 設定　マイプロフィールの編集
+  .state('salon-setting-salon_edit', {
+	    url: '/salon/setting/salon_edit',
+	    templateUrl: 'salon/setting/salon_edit/salon_edit.html',
+	    controller: 'salonSettingSalonEditControllers'
+	  })
+
+  // サロン 設定　レビュー
+  .state('salon-setting-review', {
+	    url: '/salon/setting/review',
+	    templateUrl: 'salon/setting/review/review.html',
+	    controller: 'salonSettingReviewControllers'
+	  })
+
+  // サロン 設定  アカウントの設定
+  .state('salon-setting-account', {
+	    url: '/salon/setting/account',
+	    templateUrl: 'salon/setting/account/account.html',
+	    controller: 'salonSettingAccountControllers'
+	  })
+
+　// サロン 設定　基本情報の変更
+  .state('salon-setting-account_edit', {
+	    url: '/salon/setting/account_edit',
+	    templateUrl: 'salon/setting/account_edit/account_edit.html',
+	    controller: 'salonSettingAccountEditControllers'
+	  })
+
+  // サロン 設定　その他の設定
+  .state('salon-setting-other_edit', {
+	    url: '/salon/setting/other_edit',
+	    templateUrl: 'salon/setting/other_edit/other_edit.html',
+	    controller: 'salonSettingOtherEditControllers'
+	  })
+
+  // サロン 設定  利用規約
+  .state('salon-setting-terms', {
+	    url: '/salon/setting/terms',
+	    templateUrl: 'salon/setting/terms/terms.html',
+	    controller: 'salonSettingTermsControllers'
+	  })
+
+  // サロン 設定  プライバシーポリシー
+  .state('salon-setting-privacy_policy', {
+	    url: '/salon/setting/privacy_policy',
+	    templateUrl: 'salon/setting/privacy_policy/privacy_policy.html',
+	    controller: 'salonSettingPrivacyPolicyControllers'
+	  })
+
+  // サロン 設定  特定商取引
+  .state('salon-setting-sclt', {
+	    url: '/salon/setting/sclt',
+	    templateUrl: 'salon/setting/sclt/sclt.html',
+	    controller: 'salonSettingScltControllers'
+	  })
+
+	  // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/login');
 
 });

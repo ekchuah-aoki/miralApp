@@ -1,5 +1,10 @@
 @CHARSET "UTF-8";
 
+.setting_home .contentbox{
+	cursor: pointer;
+}
+
+
 .setting_home_icon {
 	width: 40px;
 	height: 40px;
@@ -36,8 +41,6 @@
 	margin-left: 5px;	
 	width: 40px;
 }
-
-
 
 .setting_home_01 > div.contentbox {
 	margin-top: -1px;
