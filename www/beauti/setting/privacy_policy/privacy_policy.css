@@ -1,2 +1,10 @@
 @CHARSET "UTF-8";
 
+p.privacy_policy_title{
+	font-size:20px;
+	padding:10px 0 10px 0;
+}
+
+p.privacy_policy_content_title{
+	font-weight:bold;
+}

@@ -1,1 +1,10 @@
 @CHARSET "UTF-8";
+
+p.terms_title{
+	font-size:20px;
+	padding:10px 0 10px 0;
+}
+
+p.terms_content_title{
+	font-weight:bold;
+}
