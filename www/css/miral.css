@@ -384,7 +384,7 @@ img.list_beauti_img {
 .toggle-small .toggle-miral input:checked + .track .handle {
   background-color: #A87544; }
 
-/* 画像入れ替えdirective */
+/* 画像入れ替えdirective　 */
 .imgsortable_dragging {
   -moz-transform: scale(1.05, 1.05);
   -ms-transform: scale(1.05, 1.05);
