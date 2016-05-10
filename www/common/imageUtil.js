@@ -1,6 +1,6 @@
-angular.module('miral.common.imageUtil', ['miral.common.account.service','miral.loginInfo'])
+angular.module('miral.common.imageUtil', ['miral.loginInfo'])
 
-.factory('miralCommonImageUtil', function(miralCommonAccountService,loginInfo) {
+.factory('miralCommonImageUtil', function(loginInfo) {
 
 	var myself = {
 			///////////////////////////////

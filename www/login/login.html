@@ -1,6 +1,7 @@
  <ion-view hide-nav-bar="true">
 <ion-content class="login_loginbody" >
 
+
 <!-- チュートリアル -->
 	<div class="login_tutorial">
 		<span></span>
@@ -50,6 +51,7 @@
 
 <!-- ログイン -->
 <div ng-switch-when="2">
+
 	<a class="button button-block cFB login_button_icon" ng-click="onFacebookLogin()">
 		<i class="ion-social-facebook"></i>
 		<span>Facebookのアカウントでログイン</span>
@@ -110,7 +112,6 @@
 
 <!-- ログインなし -->
 <p class="login_nologin"><a class="c04" ng-click="onLogin()" >ログインせずにアプリを利用する</a></p>
-
 
 </ion-content>
 </ion-view>

@@ -1,6 +1,6 @@
 angular.module('miral.beauti.setting.account_edit.controllers', ['miral.common.miralConst','miral.beauti.setting.account_edit_fnc','miral.login.login_fnc'])
 
-.controller('beautiSettingAccountEditControllers', function($scope,$state, $stateParams, miralBeautiSettingAccountEditFnc,miralLoginLoginFnc
+.controller('beautiSettingAccountEditControllers', function($scope,$state, $stateParams, $ionicHistory, $ionicNavBarDelegate, miralBeautiSettingAccountEditFnc,miralLoginLoginFnc
 		, ACCOUNT_SETTING_MODE, PREFECTURE, ACCOUNT_TYPE) {
 
 	
@@ -58,7 +58,11 @@ angular.module('miral.beauti.setting.account_edit.controllers', ['miral.common.m
 		$scope.birthday_d = "";
 		$scope.prefect =$scope.prefectureList[1];
 		
+		$ionicHistory.clearHistory();
 		
+	}else if($scope.settingMode == ACCOUNT_SETTING_MODE.email){
+	}else{
+		//意外は修正モード
 	}
 	
 	///////////////////////////////
@@ -70,9 +74,12 @@ angular.module('miral.beauti.setting.account_edit.controllers', ['miral.common.m
 		accInfo = _setAccountByInputVal(accInfo);
 		
 		//入力情報localStrageに保存
-		miralBeautiSettingAccountEditFnc.registAccount(accInfo);
+		miralBeautiSettingAccountEditFnc.registAccount(accInfo,
+				function(resp){
+					$state.go('beauti-setting-license_edit', null, '');
+				}
+		);
 		
-		$state.go('beauti-setting-license_edit', null, '');
 	}
 	
 	/////////////////////////////////

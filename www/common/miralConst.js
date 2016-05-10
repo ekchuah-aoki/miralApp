@@ -1,4 +1,17 @@
 angular.module('miral.common.miralConst', [])
+
+//曜日
+.constant('WEEK', {
+	man:0,
+	tues:1,
+	wednes:2,
+	thurs:3,
+	fri:4,
+	satur:5,
+	sun:6,
+	holi:9
+})
+
 //ログインモード
 .constant('LOGIN_TYPE', {
 	facebook:1,
@@ -15,8 +28,8 @@ angular.module('miral.common.miralConst', [])
 
 //アカウント設定モード
 .constant('ACCOUNT_SETTING_MODE', {
-	sns:1,
-	email:2
+	sns:1,   //SNS新規
+	email:2  //emailから新規
 })
 
 //有無
@@ -30,6 +43,13 @@ angular.module('miral.common.miralConst', [])
 	logined:1,
 	newAccount:2,
 	logout:3
+})                                         
+
+//メッセージタイプ
+.constant('MSG_TYPE', {
+	matching:1,			//マッチング依頼
+	reservation:2,		//予約
+	inquiry:3			//問合せ
 })                                         
 
 

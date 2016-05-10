@@ -1,6 +1,6 @@
 angular.module('miral.beauti.home.home_top.controllers', [])
 
-.controller('beautiHomeHomeTopControllers', function($scope,$window, $state, $timeout, $ionicSideMenuDelegate) {
+.controller('beautiHomeHomeTopControllers', function($scope,$window, $state, $timeout, $ionicHistory) {
 
 	console.log('Start beautiHomeHomeTopControllers');
 
