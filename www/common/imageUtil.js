@@ -5,7 +5,6 @@ angular.module('miral.common.imageUtil', ['miral.loginInfo'])
 	var myself = {
 			///////////////////////////////
 			//ライセンスイメージ選択
-			
 			showImagPick:function(sucess_, fail_,width_, height_, count_){
 
 				
