@@ -6,7 +6,7 @@ angular.module('miral.loginInfo', ['miral.common.miralUtil','miral.common.miralC
 
 	//ログイン基本情報
 	var _loginInfo ={
-		accountId:"",
+		accountId:"",  //美容師の場合、BeauticianKindのId、サロンの場合は、SalonKindのId
 		email:"",
 		name:"",
 		loginType:""

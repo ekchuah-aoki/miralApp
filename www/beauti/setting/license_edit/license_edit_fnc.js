@@ -1,7 +1,7 @@
 
-angular.module('miral.beauti.setting.license_edit_fnc', ['miral.common.account.service','miral.loginInfo','miral.common.imageUtil'])
+angular.module('miral.beauti.setting.license_edit_fnc', ['miral.loginInfo','miral.common.imageUtil','miral.common.googleAppenginConnecter'])
 
-.factory('miralBeautiSettingLicenseEditFnc', function(miralCommonAccountService,loginInfo,miralCommonImageUtil) {
+.factory('miralBeautiSettingLicenseEditFnc', function(loginInfo,miralCommonImageUtil,googleAppenginConnecter) {
 
 	var myself = {
 			///////////////////////////////
@@ -26,9 +26,18 @@ angular.module('miral.beauti.setting.license_edit_fnc', ['miral.common.account.s
 			
 			//////////////////////////////////
 			///ライセンスイメージ登録
-			licenseRegist:function(imgData,sucess_, fail_){
+			licenseRegist:function(imgData_,success_, fail_){
 				var userInfo = loginInfo.getUserInfo();	
-				  miralCommonAccountService.addLicenseImg(userInfo.accountId, imgData, sucess_, fail_);
+
+				var msg = {accountId:userInfo.accountId,
+						imgbase64data:imgData_};
+				
+				googleAppenginConnecter.execute(
+						gapi.client.miralServer.beauti.licenseservice.add,
+						success_,
+						fail_,
+						msg
+						);
 			}
 	}
 	

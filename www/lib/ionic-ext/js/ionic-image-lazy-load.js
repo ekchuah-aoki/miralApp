@@ -6,7 +6,7 @@
  * Updated by Rene Korss on 11/25/2015
  */
 
-angular.module('ionicLazyLoad', []);
+angular.module('ionicLazyLoad', ['miral.common.googleAppenginConnecter']);
 
 angular.module('ionicLazyLoad')
 
@@ -27,14 +27,20 @@ angular.module('ionicLazyLoad')
         };
 }])
 
-.directive('imageLazySrc', ['$document', '$timeout', '$ionicScrollDelegate', '$compile',
-    function ($document, $timeout, $ionicScrollDelegate, $compile) {
+.directive('imageLazySrc', ['$document', '$timeout', '$ionicScrollDelegate', '$compile','googleAppenginConnecter',
+    function ($document, $timeout, $ionicScrollDelegate, $compile,googleAppenginConnecter) {
+	
+	
+		var myself = this;
+		var base64DataLoaded = false;
+	
         return {
             restrict: 'A',
             scope: {
                 lazyScrollResize: "@lazyScrollResize",
                 imageLazyBackgroundImage: "@imageLazyBackgroundImage",
-                imageLazySrc: "@"
+                imageLazySrc: "@",
+                base64Data:'@',	
             },
             link: function ($scope, $element, $attributes) {
                 if (!$attributes.imageLazyDistanceFromBottomToLoad) {
@@ -51,6 +57,11 @@ angular.module('ionicLazyLoad')
                 }
 
                 $scope.$watch('imageLazySrc', function (oldV, newV) {
+                	
+                	if( oldV != newV ){
+                		myself.base64DataLoaded = false;
+                	}
+
                     if(loader)
                         loader.remove();
                     if ($attributes.imageLazyLoader) {
@@ -84,6 +95,7 @@ angular.module('ionicLazyLoad')
                 function loadImage() {
                     //Bind "load" event
                     $element.bind("load", function (e) {
+                        base64DataLoaded = true;
                         if ($attributes.imageLazyLoader) {
                             loader.remove();
                         }
@@ -94,24 +106,50 @@ angular.module('ionicLazyLoad')
                         $element.unbind("load");
                     });
 
+                    
+                    if($scope.base64Data=="true"){
+                    	if(!myself.base64DataLoaded){
+    						myself.base64DataLoaded = true;
+	            			googleAppenginConnecter.execute(
+	            					gapi.client.miralServer.common.imageservice.load,
+	            					function(resp){
+	            						_setImage("data:image/;base64," + resp.imgBase64Data);
+	            					},
+	            					null,
+	            					{fileName:$attributes.imageLazySrc}
+	            					);
+                    	}
+                    }else{
+
+                    	_setImage($attributes.imageLazySrc);
+                    	
+                	}
+                }
+                
+                function _setImage(src_) {
                     if ($scope.imageLazyBackgroundImage == "true") {
                         var bgImg = new Image();
                         bgImg.onload = function () {
                             if ($attributes.imageLazyLoader) {
                                 loader.remove();
                             }
-                            $element[0].style.backgroundImage = 'url(' + $attributes.imageLazySrc + ')'; // set style attribute on element (it will load image)
+                            if($scope.base64Data=="true"){
+                            	$element[0].style.backgroundImage = src_; // set style attribute on element (it will load image)
+                            }else{
+                            	$element[0].style.backgroundImage = 'url(' + src_ + ')'; // set style attribute on element (it will load image)
+                            }
                             if ($scope.lazyScrollResize == "true") {
                                 //Call the resize to recalculate the size of the screen
                                 $ionicScrollDelegate.resize();
                             }
                         };
-                        bgImg.src = $attributes.imageLazySrc;
+                        bgImg.src = src_;
                     } else {
-                        $element[0].src = $attributes.imageLazySrc; // set src attribute on element (it will load image)
+                        $element[0].src = src_; // set src attribute on element (it will load image)
                     }
-                }
 
+                
+                }
                 function isInView() {
                     var clientHeight = $document[0].documentElement.clientHeight;
                     var clientWidth = $document[0].documentElement.clientWidth;

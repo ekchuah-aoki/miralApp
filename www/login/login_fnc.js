@@ -4,22 +4,19 @@ angular.module('miral.login.login_fnc', ['miral.common.miralConst'
                                          ,'miral.common.instagram'
                                          ,'miral.common.twitter'
                                          ,'miral.common.googleplus'
-                                         ,'miral.common.account.service'
                                          ,'miral.loginInfo'
                                          ,'miral.common.miralUtil'
                                          ])
 
                                          
 .factory('miralLoginLoginFnc', function(LOGIN_TYPE,UMU_FLG,LOGIN_STATE,loginInfo,$localStorage
-		, googleAppenginConnecter,facebookConnecter,instagramConnecter,twitterConnecter,googleplusConnecter
-		,miralCommonAccountService) {
+		, googleAppenginConnecter,facebookConnecter,instagramConnecter,twitterConnecter,googleplusConnecter) {
 
 	///////////////////////////////////////////
 	//DBからアカウント情報を取得
 	var _getMiralAccount=function(loginType_, id_, success_, fail_){
-		miralCommonAccountService.getAccount(loginType_, id_,
 				//success
-				function(resp){
+		var success = function(resp){
 			
 					var loginState;
 
@@ -27,10 +24,13 @@ angular.module('miral.login.login_fnc', ['miral.common.miralConst'
 
 					if(resp.res.rstCode==UMU_FLG.ari){
 						//アカウント情報ありの場合、アカウント情報からログイン情報を生成
+						
+						var account = resp.account;
+						
 						loginInfo.setLoginInfo({
-							accountId:resp.accountId,
-							email:resp.email,
-							name: resp.lastName + " " + resp.firstName
+							accountId:account.accountId,
+							email:account.email,
+							name: account.lastName + " " + account.firstName
 						});
 						
 						console.log('アカウント登録済み');
@@ -43,14 +43,24 @@ angular.module('miral.login.login_fnc', ['miral.common.miralConst'
 					if(success_){
 						success_(sloginState);
 					}
-				},
-				//fail
-				function(){
+		};
+		
+		//fail
+		var fail = function(){
 					console.log('アカウント情報取得失敗');
 					if(fail_){
 						fail_();
 					}
-				});
+		};
+		
+		googleAppenginConnecter.execute(
+				gapi.client.miralServer.common.accountservice.get,
+				success,
+				fail,
+				{loginType:loginType_, id:id_}
+				);
+		
+		
 	};
 	
 	

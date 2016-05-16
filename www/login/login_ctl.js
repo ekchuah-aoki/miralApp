@@ -2,7 +2,7 @@ angular.module('miral.login.controllers', ['miral.login.login_fnc','miral.common
                                            ,'miral.common.googleplus'
                                            ,'miral.common.twitter'])
 
-.controller('loginControllers', function($scope, $state, miralLoginLoginFnc, ACCOUNT_SETTING_MODE, LOGIN_STATE,loginInfo
+.controller('loginControllers', function($scope, $state,  $ionicHistory, miralLoginLoginFnc, ACCOUNT_SETTING_MODE, LOGIN_STATE,loginInfo
 		, googleplusConnecter,twitterConnecter ) {
 
 	$scope.timestamp = new Date().getTime();
@@ -51,6 +51,11 @@ angular.module('miral.login.controllers', ['miral.login.login_fnc','miral.common
 	///////////////////////////////
 	//メールアドレスで新規登録
 	$scope.onNewByEmail=function() {
+
+		$ionicHistory.nextViewOptions({
+			disableBack: true
+		});		
+
 		$state.go('beauti-setting-account_edit',{mode:ACCOUNT_SETTING_MODE.email},'');
 	}
 
@@ -63,9 +68,15 @@ angular.module('miral.login.controllers', ['miral.login.login_fnc','miral.common
 	///////////////////////////////
 	//SNS ログイン成功
 	var snsLoginSucess = function(loginState_){
+
+		$ionicHistory.nextViewOptions({
+			disableBack: true
+		});		
+
 		if(loginState_ == LOGIN_STATE.logined){
 			$state.go('beauti-home-home-top',null,'');
 		}else if(loginState_ == LOGIN_STATE.newAccount){
+			
 			$state.go('beauti-setting-account_edit',{mode:ACCOUNT_SETTING_MODE.sns},'');
 		}
 	}
@@ -77,6 +88,10 @@ angular.module('miral.login.controllers', ['miral.login.login_fnc','miral.common
 		
 		var sucess = function(loginState_){
 			if(loginState_ == LOGIN_STATE.logined){
+				
+				$ionicHistory.nextViewOptions({
+					disableBack: true
+				});		
 				$state.go('beauti-home-home-top',null,'');
 			}else{
 				alert('ログイン失敗');
