@@ -8,7 +8,7 @@ angular.module('miral.common.imageUtil', ['miral.loginInfo'])
 			showImagPick:function(sucess_, fail_,width_, height_, count_){
 
 				
-				imagePicker.getPictures(sucess_, fail_, opt_	
+				imagePicker.getPictures(sucess_, fail_,	
 						  { // options object, all optional
 							title:"アルバム",  
 						    maximumImagesCount: count_, // Android only since plugin version 2.1.1, default no limit
