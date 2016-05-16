@@ -1,6 +1,7 @@
  <ion-view hide-nav-bar="true">
 <ion-content class="login_loginbody" >
 
+
 <!-- チュートリアル -->
 	<div class="login_tutorial">
 		<span></span>
@@ -12,15 +13,15 @@
 				  </ion-slide>
 				  <ion-slide>
 				    <div class="box"><img class="login_slideimg" src="login/img/tutorial_02.png">
-	   			    <p>気に入ったサロンをみつけたら<br>横にスワイプして「Like」を送ろう</p></div>
+	   			    <p>気に入ったサロンをみつけたら<br>ボタンを押してシェアをしよう</p></div>
 				  </ion-slide>
 				  <ion-slide>
 				    <div class="box"><img class="login_slideimg" src="login/img/tutorial_03.png">
-				     <p>サロンからも「Like」が返ってきたら<br>マッチング成立です<br>サロンをいつでも借りることが出来るよ</p></div>
+				     <p>サロンからOKがきたら<br>マッチング成立です<br>サロンをいつでも借りることが出来るよ</p></div>
 				  </ion-slide>
 				  <ion-slide>
 				    <div class="box"><img class="login_slideimg" src="login/img/tutorial_04.png">
-				    <p>ミラルでサロンに「Like」を送って<br>たくさんのサロンと繋がろう</p></div>
+				    <p>ミラルでサロンに「シェア」を送って<br>たくさんのサロンと繋がろう</p></div>
 				</ion-slide-box>
 			</ion-content>
 	</div>
@@ -50,6 +51,7 @@
 
 <!-- ログイン -->
 <div ng-switch-when="2">
+
 	<a class="button button-block cFB login_button_icon" ng-click="onFacebookLogin()">
 		<i class="ion-social-facebook"></i>
 		<span>Facebookのアカウントでログイン</span>
@@ -110,7 +112,6 @@
 
 <!-- ログインなし -->
 <p class="login_nologin"><a class="c04" ng-click="onLogin()" >ログインせずにアプリを利用する</a></p>
-
 
 </ion-content>
 </ion-view>

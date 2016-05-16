@@ -40,8 +40,8 @@ angular.module('miral', ['ionic', 'ngCordovaOauth','ngAnimate', 'ionicLazyLoad',
                          ,'miral.beauti.setting.sclt.controllers'
                          ,'miral.beauti.setting.withdrawal.controllers'
                          ,'miral.salon.home.home_top.controllers'
-                         ,'miral.salon.home.anounce.controllers'
-                         ,'miral.salon.home.anounce_detail.controllers'
+                         ,'miral.salon.home.announce.controllers'
+                         ,'miral.salon.home.announce_detail.controllers'
                          ,'miral.salon.home.request.controllers'
                          ,'miral.salon.schedule.share_request.controllers'
                          ,'miral.salon.schedule.beauti_list.controllers'
@@ -337,24 +337,24 @@ angular.module('miral', ['ionic', 'ngCordovaOauth','ngAnimate', 'ionicLazyLoad',
 	  })
 
   //　サロン ホーム お知らせ
-  .state('salon-home-anounce', {
-	    url: '/salon/home/anounce',
-	    templateUrl: 'salon/home/anounce/anounce.html',
-	    controller: 'salonHomeAnounceControllers'
+  .state('salon-home-announce', {
+	    url: '/salon/home/announce',
+	    templateUrl: 'salon/home/announce/announce.html',
+	    controller: 'salonHomeAnnounceControllers'
 	  })
 
   //　サロン ホーム お知らせ　詳細
-  .state('salon-home-anounce_detail', {
-	    url: '/salon/home/anounce_detail',
-	    templateUrl: 'salon/home/anounce_detail/anounce_detail.html',
-	    controller: 'salonHomeSalonDetailControllers'
+  .state('salon-home-announce_detail', {
+	    url: '/salon/home/announce_detail',
+	    templateUrl: 'salon/home/announce_detail/announce_detail.html',
+	    controller: 'salonHomeAnnounceDetailControllers'
 	  })
 
   //　サロン ホーム　ご意見・お問い合わせ
   .state('salon-home-request', {
 	    url: '/salon/home/request',
-	    templateUrl: 'salon/schedule/request/request.html',
-	    controller: 'salonHomeRequestMiralControllers'
+	    templateUrl: 'salon/home/request/request.html',
+	    controller: 'salonHomeRequestControllers'
 	  })
 
   //-----  salon-schedule -----

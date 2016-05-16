@@ -1,2 +1,10 @@
 @CHARSET "UTF-8";
 
+p.sclt_title{
+	font-size:20px;
+	padding:10px 0 10px 0;
+}
+
+dl dt{
+	font-weight:bold;
+}
