@@ -1,5 +1,6 @@
 @CHARSET "UTF-8";
 
+/*　----- reserv_home_salon start -----　*/
 .reserv_home_salon {
 	width:100%;
 	display: block;
@@ -17,6 +18,9 @@
 	font: 12px nomale;
 	display: block;
 	width: 100%;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
 }
 
 .reserv_home_salon dl dd  {
@@ -34,13 +38,28 @@
 .reserv_home_salon p {
 	width:100%;
 	text-align: right;
-}
-
-.reserv_home_salon p a {
 	color:#A87544;
 }
+/*　----- reserv_home_salon end -----　*/
 
-.reserv_home_search span img {
-	width: 100%;
-	margin: 0 0 -5px; 0
+/*　----- reserv_home_salon start -----　*/
+.reserv_home_search {
+	overflow: hidden;
+	font-size: 0;
+	vertical-align: top;
 }
+
+.reserv_home_search li {
+	height: 100px;
+	width: 100%;
+
+}
+
+.reserv_home_salon img{
+	margin:0px;
+	width: 100%;
+	height: auto;
+	min-height: 100px;
+}
+
+/*　----- reserv_home_salon end -----　*/

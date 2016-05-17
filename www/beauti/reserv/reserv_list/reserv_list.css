@@ -1,5 +1,6 @@
 @CHARSET "UTF-8";
 
+/* ----- reserv_list_result start ----- */
 .reserv_list_result {
 	padding:0px;
 	margin: 0px;
@@ -7,8 +8,27 @@
 	width: 100%;
 	position: relative;
 }
+/* ----- reserv_list_result end ----- */
 
-.reserv_list_resulttext {
+/* ----- reserv_list_result_vacancy start ----- */
+.reserv_list_result_vacancy {
+	position: absolute;
+	top: 15px;
+	left: 15px;
+	font: 12px #FFF;
+}
+/* ----- reserv_list_result_vacancy end ----- */
+
+/* ----- favorite_button start ----- */
+li.reserv_list_result span.favorite_button {
+	position: absolute;
+	top:15px;
+	right: 15px;
+}
+/* ----- favorite_button end ----- */
+
+/* ----- reserv_list_result_text start ----- */
+.reserv_list_result_text {
 	display: inline-block;
 	position:absolute;
 	width: 100%;
@@ -18,7 +38,7 @@
 	color:#FFF;
 }
 
-.reserv_list_resulttext > div p {
+.reserv_list_result_text > div p {
 	display: inline-block;
 	width: 50%;
 	text-align: center;
@@ -26,95 +46,42 @@
 	margin: 10px auto;
 }
 
-.reserv_list_resulttext > div p:first-child {
+.reserv_list_result_text > div p:first-child {
 	border-right: solid 2px ;
 }
 
-.reserv_list_resulttext > div p span {
+.reserv_list_result_text > div p span {
 	color: #FFF;
 	font-size:20px;
 }
 
-.reserv_list_resulttext .titleBar {
+.reserv_list_result_text .titleBar {
 	position:absolute;
 	bottom: 15px;
 	color: #FFF;
 }
+/* ----- reserv_list_result_text end ----- */
 
-.reserv_list_resultimg {
-	display: block;
-	height: 250px;
-	width: 50%;
-}
-
-.reserv_list_resultimg > img {
-	width: 100%;
-}
-
-.reserv_list_resultrev {
+/* ----- reserv_list_result_review start ----- */
+.reserv_list_result_review {
 	position: fixed;
 	display: inline-block;
 	right: 25px;
 }
 
-.reserv_list_resultrev {
+.reserv_list_result_review {
 	font-size: 11px;
 }
+/* ----- reserv_list_result_review end ----- */
 
-.reserv_list_result_vacancy {
-	position: absolute;
-	top: 15px;
-	left: 15px;
-	font: 12px #FFF;
+/* ----- reserv_list_result_img start ----- */
+.reserv_list_result_img {
+	display: block;
+	height: 250px;
+	width: 50%;
 }
 
-span.reserv_list_result_vacancyToday:before {
-	content: "今日";
-	font-size:0.9em;
-	padding:3px 0px;
-	margin: 0px 10px 0px 0px;
-	color:#FFF;
-	background-color: #EB727E;
-	display: inline-block;
-	width: 40px;
-	text-align: center;
+.reserv_list_result_img > img {
+	width: 100%;
 }
-
-span.reserv_list_result_vacancyTomorrow:before {
-	content: "明日";
-	font-size:0.9em;
-	padding:3px 0px;
-	margin: 0px;
-	color:#FFF;
-	background-color: #19B0B8;
-	display: inline-block;
-	width: 40px;
-	text-align: center;
-}
-
-.reserv_list_result_favorite {
-	position: absolute;
-	top:15px;
-	right: 15px;
-}
-
-.reserv_list_result_favorite input {
-	display: none;
-}
-
-.reserv_list_result_favorite label {
-	font-size: 25px;
-	width:40px;
-	height: 40px;
-	border-radius:20px;
-	display: inline-block;
-	color:#DDD;
-	text-align: center;
-	border: 1px solid #DDD;
-	padding: 2px;
-	cursor: pointer;
-}
-
-.reserv_list_result_favorite input:checked ~ label {
-	color:#FAA;	
-}
+/* ----- reserv_list_result_img end ----- */

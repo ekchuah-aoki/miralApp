@@ -1,5 +1,6 @@
 @CHARSET "UTF-8";
 
+/*　----- map-embed start -----　*/
 .map-embed{
 	max-width: 100% ;
 	height: 100%;
@@ -24,7 +25,9 @@
 .map-embed img{
 	max-width: none ;
 }
+/*　----- map-embed end -----　*/
 
+/*　----- reserv_map start -----　*/
 .reserv_map {
 	padding-top: 93px;
 	position: relative;
@@ -41,7 +44,7 @@
 	margin-bottom: -4px;
 }
 
-.reserv_map > div.reserv_map_detailWrap > div.reserv_map_ListIcon {
+.reserv_map > div.reserv_map_detailWrap > div.reserv_map_listIcon {
 	width: 60px;
 	height: 60px;
 	border-radius:30px;
@@ -76,19 +79,23 @@
     border-right: 20px solid transparent;
     margin: -19px auto 0;
 }
+/*　----- reserv_map end -----　*/
 
-.reserv_map_detailBox {
+/*　----- reserv_map_detail_box start -----　*/
+.reserv_map_detail_box {
 	width: 100%;
 	height: 100%;
 	position: relative;
 }
 
-.reserv_map_detailBox > p.titleBar > span {
+.reserv_map_detail_box > p.titleBar > span {
 	display: inline-block;
 	float: right;
 }
+/*　----- reserv_map_detail_box start -----　*/
 
-.reserv_map_detailPrice {
+/*　----- reserv_map_detail_price start -----　*/
+.reserv_map_detail_price {
 	position: absolute;
 	width: 100%;
 	height: 50px;
@@ -97,14 +104,21 @@
 	bottom: 0;
 }
 
-.reserv_map_detailPrice p {
+.reserv_map_detail_price p {
 	width: 50%;
 	float: left;
 	color: #FFF;
 	text-align: center;
 }
 
-.reserv_map_detailImg span {
+.reserv_map_detail_price p:first-child {
+	border-right: 2px solid #FFF;
+	box-sizing:boderbox;
+}
+/*　----- reserv_map_detail_price end -----　*/
+
+/*　----- reserv_map_detail_img start -----　*/
+.reserv_map_detail_img span {
 	display: inline-block;
 	width: 50%;
 	height: 150px;
@@ -112,18 +126,15 @@
 	overflow: hidden;
 }
 
-.reserv_map_detailImg span img {
+.reserv_map_detail_img span img {
 	width: 100%;
 	height: 100%;
 	min-width: 200px;
 	min-height: 200px;
 	}
+/*　----- reserv_map_detail_img end -----　*/
 
-.reserv_map_detailPrice p:first-child {
-	border-right: 2px solid #FFF;
-	box-sizing:boderbox;
-}
-
+/*　----- googlemapAPI start -----　*/
 .gm-style .gm-style-iw {
 	width: 50px;
 }
@@ -132,8 +143,11 @@
 	display: none;
 }
 
+/*　----- reserv_map_price start -----　*/
 .reserv_map_price {
 	width: 50px;
 	text-align: center;
 	display: inline-block;
 }
+/*　----- reserv_map_price end -----　*/
+/*　----- googlemapAPI end -----　*/

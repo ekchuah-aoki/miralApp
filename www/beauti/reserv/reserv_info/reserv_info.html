@@ -1,5 +1,6 @@
 <ion-view>
-<ion-content class="miralbody">
+<ion-content class="miralbody reserv_info">
+
 <ion-tabs class="miral_tab">
   <ion-tab title="予約ホーム" icon-on="ion-android-favorite" icon-off="ion-android-favorite">
     <!-- Tab 1 content -->
@@ -14,32 +15,29 @@
   </ion-tab>
 </ion-tabs>
 
-<!-- 現在予約をしているサロン -->
-<p class="c01 titleBar">現在予約をしているサロン</p>
+	<!-- 現在予約をしているサロン -->
+	<p class="c01 titleBar">現在予約をしているサロン</p>
+	<div class="padding salon_list">
 
-<div class="padding salon_list">
-	<div class="contentbox">
+	<!-- 1 -->
+	<div class="contentbox reserv_accordion">
 		<img class="list_salon_img" src="./beauti/home/salon_detail/img/salon01_1.jpg">
-		<div class="salon_list_salonName">
+		<div class="salon_list_label">
 			<p>salon Hair Design 池袋店</p>
-			<p>
-				<span>最寄駅</span>
-				<span>JR池袋駅</span>
-				<span>徒歩10分</span>
-			</p>
+			<p><span>最寄駅</span><span>JR池袋駅</span><span>徒歩10分</span></p>
 		</div>
-		<div class="accordion salon_list_reserv_detailToday">
+		<div class="accordion reserv_accordion_today">
 			<input id="salon_list_reserv" type="checkbox">
 			<label for="salon_list_reserv">
-			<p>
-				<span class="reserv_list_result_vacancyToday"></span>
-				<span>利用予定時刻</span>
-				<span>10:00~11:00</span>
-				<span>詳細</span>
-			</p>
+				<p>
+					<span class="reserv_today"></span>
+					<span>利用予定時刻</span>
+					<span>10:00~11:00</span>
+					<span>詳細</span>
+				</p>
 			</label>
 			<div class="accordion_content">
-				<table class="salon_list_reserv_detail">
+				<table class="reserv_accordion_detail">
 					<tr>
 						<th>予約ステータス</th>
 						<td>予約完了</td>
@@ -75,12 +73,13 @@
 					</tr>
 				</table>
 			</div>
-		</div>
-	</div>
+		</div><!-- / accordion -->
+	</div><!-- / contentbox -->
 
-	<div class="contentbox">
+	<!-- 2 -->
+	<div class="contentbox reserv_accordion">
 		<img class="list_salon_img" src="./beauti/home/salon_detail/img/salon01_1.jpg">
-		<div class="salon_list_salonName">
+		<div class="salon_list_label">
 			<p>salon Hair Design 池袋店</p>
 			<p>
 				<span>最寄駅</span>
@@ -88,18 +87,18 @@
 				<span>徒歩10分</span>
 			</p>
 		</div>
-		<div class="accordion salon_list_reserv_detailTomorrow">
+		<div class="accordion reserv_accordion_tomorrow">
 			<input id="salon_list_reserv_02" type="checkbox">
 			<label for="salon_list_reserv_02">
 			<p>
-				<span class="reserv_list_result_vacancyTomorrow"></span>
+				<span class="reserv_tomorrow"></span>
 				<span>利用予定時刻</span>
 				<span>10:00~11:00</span>
 				<span>詳細</span>
 			</p>
 			</label>
 			<div class="accordion_content">
-				<table class="salon_list_reserv_detail">
+				<table class="reserv_accordion_detail">
 					<tr>
 						<th>予約ステータス</th>
 						<td>予約完了</td>
@@ -141,10 +140,11 @@
 
 <!-- 予約履歴 -->
 <p class="c01 titleBar">予約履歴</p>
+<!-- 1 -->
 <div class="padding salon_list">
-	<div class="contentbox">
+	<div class="contentbox reserv_accordion">
 		<img class="list_salon_img" src="./beauti/home/salon_detail/img/salon01_1.jpg">
-		<div class="salon_list_salonName">
+		<div class="salon_list_label">
 			<p>salon Hair Design 池袋店</p>
 			<p>
 				<span>最寄駅</span>
@@ -152,18 +152,18 @@
 				<span>徒歩10分</span>
 			</p>
 		</div>
-		<div class="accordion salon_list_reserv_detailOld">
+		<div class="accordion reserv_accordion_history">
 			<input id="salon_list_reserv_03" type="checkbox">
 			<label for="salon_list_reserv_03">
 			<p>
-				<span class="reserv_linfo_result_vacancyOld"></span>
+				<span class="hst_already"></span>
 				<span>利用予定時刻</span>
 				<span>10:00~11:00</span>
 				<span>詳細</span>
 			</p>
 			</label>
 			<div class="accordion_content">
-				<table class="salon_list_reserv_detail">
+				<table class="reserv_accordion_detail">
 					<tr>
 						<th>予約ステータス</th>
 						<td>来店済</td>
@@ -217,9 +217,10 @@
 		</div>
 	</div>
 
-	<div class="contentbox">
+	<!-- 2 -->
+	<div class="contentbox reserv_accordion">
 		<img class="list_salon_img" src="./beauti/home/salon_detail/img/salon01_1.jpg">
-		<div class="salon_list_salonName">
+		<div class="salon_list_label">
 			<p>salon Hair Design 池袋店</p>
 			<p>
 				<span>最寄駅</span>
@@ -227,11 +228,11 @@
 				<span>徒歩10分</span>
 			</p>
 		</div>
-		<div class="accordion salon_list_reserv_detailOld">
+		<div class="accordion reserv_accordion_history">
 			<input id="salon_list_reserv_03" type="checkbox">
 			<label for="salon_list_reserv_03">
 			<p>
-				<span class="reserv_linfo_result_vacancyOld"></span>
+				<span class="hst_already"></span>
 				<span>利用予定時刻</span>
 				<span>10:00~11:00</span>
 				<span>詳細</span>
@@ -292,9 +293,10 @@
 		</div>
 	</div>
 	
-	<div class="contentbox">
+	<!-- 3 -->
+	<div class="contentbox reserv_accordion">
 		<img class="list_salon_img" src="./beauti/home/salon_detail/img/salon01_1.jpg">
-		<div class="salon_list_salonName">
+		<div class="salon_list_label">
 			<p>salon Hair Design 池袋店</p>
 			<p>
 				<span>最寄駅</span>
@@ -302,11 +304,11 @@
 				<span>徒歩10分</span>
 			</p>
 		</div>
-		<div class="accordion salon_list_reserv_detailOld">
+		<div class="accordion reserv_accordion_history">
 			<input id="salon_list_reserv_03" type="checkbox">
 			<label for="salon_list_reserv_03">
 			<p>
-				<span class="reserv_linfo_result_vacancyOld"></span>
+				<span class="hst_already"></span>
 				<span>利用予定時刻</span>
 				<span>10:00~11:00</span>
 				<span>詳細</span>
@@ -367,9 +369,10 @@
 		</div>
 	</div>
 
-	<div class="contentbox">
+	<!-- 4 -->
+	<div class="contentbox reserv_accordion">
 		<img class="list_salon_img" src="./beauti/home/salon_detail/img/salon01_1.jpg">
-		<div class="salon_list_salonName">
+		<div class="salon_list_label">
 			<p>salon Hair Design 池袋店</p>
 			<p>
 				<span>最寄駅</span>
@@ -377,11 +380,11 @@
 				<span>徒歩10分</span>
 			</p>
 		</div>
-		<div class="accordion salon_list_reserv_detailOld">
+		<div class="accordion reserv_accordion_history">
 			<input id="salon_list_reserv_03" type="checkbox">
 			<label for="salon_list_reserv_03">
 			<p>
-				<span class="reserv_linfo_result_vacancyOld"></span>
+				<span class="hst_already"></span>
 				<span>利用予定時刻</span>
 				<span>10:00~11:00</span>
 				<span>詳細</span>

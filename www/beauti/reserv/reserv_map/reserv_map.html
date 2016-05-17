@@ -1,76 +1,72 @@
 <ion-view>
-  <div class="tabs-striped tabs-top search_tab">
-
-    <div class="tabs">
-      <span class="tab-item　tab_title">
-      	利用日時
-      </span>
-      <a class="tab-item active" href="#">
-        今日
-      </a>
-      <a class="tab-item" href="#">
-		明日
-      </a>
-      <a class="tab-item" href="#">
-		選択しない
-      </a>
-    </div>
-  </div>
-
-<div class="miralbody reserv_map">
-	<div class="reserv_map_detailWrap">
-		<div class="reserv_map_ListIcon"><i class="ion-android-list"></i></div>
-		<div class="reserv_map_detail">
-			<div class="reserv_map_detailBox">
-				<p class="titleBar c01">salonHairDesing<span>★★★★★</span></p>
-				<div class="reserv_map_detailImg">
-					 <span><img src="./beauti/home/salon_detail/img/salon01_2.jpg" ></span>
-					 <span><img src="./beauti/home/salon_detail/img/salon01_2.jpg" ></span>
-				</div>
-				<div class="reserv_map_detailPrice">
-			   	      <p class="flL">1時間 <span>1000Pt</span></p>
-				      <p>1日 <span>8000Pt</span></p>
+	<div class="tabs-striped tabs-top search_tab">
+		<div class="tabs">
+			<span class="tab-item　tab_title">
+				利用日時
+			</span>
+			<a class="tab-item" href="#">
+				今日
+			</a>
+			<a class="tab-item" href="#">
+				明日
+			</a>
+			<a class="tab-item active" href="#">
+				選択しない
+			</a>
+		</div>
+	</div>
+	
+	<div class="miralbody reserv_map">
+		<div class="reserv_map_detailWrap">
+			<div class="reserv_map_listIcon"><i class="ion-android-list"></i></div>
+			<div class="reserv_map_detail">
+				<div class="reserv_map_detail_box">
+					<p class="titleBar c01">salonHairDesing<span>★★★★★</span></p>
+					<div class="reserv_map_detail_img">
+						 <span><img src="./beauti/home/salon_detail/img/salon01_2.jpg" ></span>
+						 <span><img src="./beauti/home/salon_detail/img/salon01_2.jpg" ></span>
+					</div>
+					<div class="reserv_map_detail_price">
+				   	      <p class="flL">1時間 <span>1000Pt</span></p>
+					      <p>1日 <span>8000Pt</span></p>
+					</div>
 				</div>
 			</div>
 		</div>
+		<!-- 地図のキャンパス -->
+		<div class="map-embed">
+			<div id="map-canvas">ここに地図が表示されます</div>
+		</div>	
+	
+		<script>
+		// キャンパスの要素を取得する
+			var canvas = document.getElementById( 'map-canvas' ) ;
+		
+		// 中心の位置座標を指定する
+			var latlng = new google.maps.LatLng( 35.725609, 139.713814 );
+		
+		// 地図のオプションを設定する
+			var mapOptions = {
+				zoom: 15 ,				// ズーム値
+				center: latlng ,		// 中心座標 [latlng]
+				disableDefaultUI: true,
+			};
+		
+		// [canvas]に、[mapOptions]の内容の、地図のインスタンス([map])を作成する
+			var map = new google.maps.Map( canvas , mapOptions ) ;
+			
+		// 情報ウィンドウのインスタンスを格納する配列
+			var infoWindows = [] ;
+		
+		// 1つ目の情報ウィンドウのインスタンスを作成する
+		// [ new google.maps.InfoWindow() ]の引数にオプションオブジェクトを指定する
+			infoWindows[0] = new google.maps.InfoWindow( {
+			content: "<div class='reserv_map_price'>1000</div>" ,
+			position: latlng ,
+		} ) ;
+		
+		// 情報ウィンドウ(のインスタンス)を地図に設置(レンダリング)する
+			infoWindows[0].open( map ) ;
+		</script>
 	</div>
-	<!-- 地図のキャンパス -->
-	<div class="map-embed">
-		<div id="map-canvas">ここに地図が表示されます</div>
-	</div>	
-
-	<script>
-	
-	// キャンパスの要素を取得する
-	var canvas = document.getElementById( 'map-canvas' ) ;
-
-	// 中心の位置座標を指定する
-	var latlng = new google.maps.LatLng( 35.725609, 139.713814 );
-
-	// 地図のオプションを設定する
-	var mapOptions = {
-		zoom: 15 ,				// ズーム値
-		center: latlng ,		// 中心座標 [latlng]
-		disableDefaultUI: true,
-	};
-
-	// [canvas]に、[mapOptions]の内容の、地図のインスタンス([map])を作成する
-	var map = new google.maps.Map( canvas , mapOptions ) ;
-	
-	// 情報ウィンドウのインスタンスを格納する配列
-	var infoWindows = [] ;
-
-	// 1つ目の情報ウィンドウのインスタンスを作成する
-	// [ new google.maps.InfoWindow() ]の引数にオプションオブジェクトを指定する
-		infoWindows[0] = new google.maps.InfoWindow( {
-		content: "<div class='reserv_map_price'>1000</div>" ,
-		position: latlng ,
-	} ) ;
-
-	// 情報ウィンドウ(のインスタンス)を地図に設置(レンダリング)する
-		infoWindows[0].open( map ) ;
-	
-	
-	</script>
-</div>
 </ion-view>
