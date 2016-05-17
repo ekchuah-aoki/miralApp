@@ -1,5 +1,12 @@
 @CHARSET "UTF-8";
 
+/*　----- salon_srhrst start -----　*/
+.salon_srhrst ul.list {
+	margin: 0px;
+}
+/*　----- salon_srhrst end -----　*/
+
+/*　----- salon_srhrst_result start -----　*/
 .salon_srhrst_result {
 	padding:0px;
 	margin: 0px;
@@ -7,8 +14,10 @@
 	width: 100%;
 	position: relative;
 }
+/*　----- salon_srhrst_result end -----　*/
 
-.salon_srhrst_resulttext {
+/*　----- salon_srhrst_result_text start -----　*/
+.salon_srhrst_result_text {
 	display: inline-block;
 	position:absolute;
 	width: 100%;
@@ -18,7 +27,7 @@
 	color:#FFF;
 }
 
-.salon_srhrst_resulttext > div p {
+.salon_srhrst_result_text > div p {
 	display: inline-block;
 	width: 50%;
 	text-align: center;
@@ -26,37 +35,42 @@
 	margin: 10px auto;
 }
 
-.salon_srhrst_resulttext > div p:first-child {
+.salon_srhrst_result_text > div p:first-child {
 	border-right: solid 2px ;
 }
 
-.salon_srhrst_resulttext > div p span {
+.salon_srhrst_result_text > div p span {
 	color: #FFF;
 	font-size:20px;
 }
 
-.salon_srhrst_resulttext .titleBar {
+.salon_srhrst_result_text .titleBar {
 	position:absolute;
 	bottom: 15px;
 	color: #FFF;
 }
+/*　----- salon_srhrst_result_text end -----　*/
 
-.salon_srhrst_resultimg {
-	display: block;
-	height: 250px;
-	width: 50%;
-}
-
-.salon_srhrst_resultimg > img {
-	width: 100%;
-}
-
-.salon_srhrst_resultrev {
+/*　----- salon_srhrst_result start -----　*/
+.salon_srhrst_result_review {
 	position: fixed;
 	display: inline-block;
 	right: 25px;
 }
 
-.salon_srhrst_resultrev {
+.salon_srhrst_result_review {
 	font-size: 11px;
 }
+/*　----- salon_srhrst_result end -----　*/
+
+/*　----- salon_srhrst_result_img start -----　*/
+.salon_srhrst_result_img {
+	display: block;
+	height: 250px;
+	width: 50%;
+}
+
+.salon_srhrst_result_img > img {
+	width: 100%;
+}
+/*　----- salon_srhrst_result_img end -----　*/

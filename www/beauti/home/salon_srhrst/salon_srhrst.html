@@ -1,108 +1,111 @@
 <ion-view>
-<ion-content class="miralbody">
+<ion-content class="miralbody salon_srhrst">
 
-<div class="searchbox">
-  <label class="item item-input">
-    <i class="icon ion-search placeholder-icon"></i>
-    <input type="text" placeholder="Search">
-  </label>
-  <button class="button c01">検索</button>
-</div>
-<ul class="list">
-	<!-- ---------- 1 ---------- -->
-    <li class="item salon_srhrst_result">
-      <a ui-sref="beauti-home-salon-detail">
-      <div class="salon_srhrst_resulttext" ui-sref="beauti-home-salon-detail">
-	      <div>
-	      	<p class="flL">1時間 <span>1000Pt</span></p>
-	      	<p>1日 <span>8000Pt</span></p>
-	      </div>
-	      <p class="titleBar c01">salonHairDesign
-			  <span class="salon_srhrst_resultrou">JR「池袋」駅  徒歩5分</span>
-		      <span class="salon_srhrst_resultrev">★★★★★ 4.6</span>
-	      </p>
-      </div>
-      <div>
-		<span class="salon_srhrst_resultimg c02 flL"><img src="./beauti/reserv/reserv_list/img/salon01-1.jpg"></span>
-		<span class="salon_srhrst_resultimg c03 flL"><img src="./beauti/reserv/reserv_list/img/salon01-2.jpg"></span>
-      </div>
-      </a>
-    </li>
+	<!-- 検索ボックス -->
+	<div class="searchbox">
+		<label class="item item-input">
+			<i class="icon ion-search placeholder-icon"></i>
+			<input type="text" placeholder="Search">
+		</label>
+		<button class="button c01">検索</button>
+	</div>
 
-	<!-- ---------- 2 ---------- -->
-    <li class="item salon_srhrst_result">
-      <div class="salon_srhrst_resulttext">
-	      <div>
-	      	<p class="flL">1時間 <span>1000Pt</span></p>
-	      	<p>1日 <span>8000Pt</span></p>
-	      </div>
-	      <p class="titleBar c01">salonHairDesign
-			  <span class="salon_srhrst_resultrou">JR「池袋」駅  徒歩5分</span>
-		      <span class="salon_srhrst_resultrev">★★★★★ 4.6</span>
-	      </p>
-      </div>
-      <div>
-		<span class="salon_srhrst_resultimg c02 flL"><img src="./beauti/reserv/reserv_list/img/salon01-1.jpg"></span>
-		<span class="salon_srhrst_resultimg c03 flL"><img src="./beauti/reserv/reserv_list/img/salon01-2.jpg"></span>
-      </div>
-    </li>
-
-	<!-- ---------- 3 ---------- -->
-    <li class="item salon_srhrst_result">
-      <div class="salon_srhrst_resulttext">
-	      <div>
-	      	<p class="flL">1時間 <span>1000Pt</span></p>
-	      	<p>1日 <span>8000Pt</span></p>
-	      </div>
-	      <p class="titleBar c01">salonHairDesign
-			  <span class="salon_srhrst_resultrou">JR「池袋」駅  徒歩5分</span>
-		      <span class="salon_srhrst_resultrev">★★★★★ 4.6</span>
-	      </p>
-      </div>
-      <div>
-		<span class="salon_srhrst_resultimg c02 flL"><img src="./beauti/reserv/reserv_list/img/salon01-1.jpg"></span>
-		<span class="salon_srhrst_resultimg c03 flL"><img src="./beauti/reserv/reserv_list/img/salon01-2.jpg"></span>
-      </div>
-    </li>
-
-	<!-- ---------- 4 ---------- -->
-    <li class="item salon_srhrst_result">
-      <div class="salon_srhrst_resulttext">
-	      <div>
-	      	<p class="flL">1時間 <span>1000Pt</span></p>
-	      	<p>1日 <span>8000Pt</span></p>
-	      </div>
-	      <p class="titleBar c01">salonHairDesign
-			  <span class="salon_srhrst_resultrou">JR「池袋」駅  徒歩5分</span>
-		      <span class="salon_srhrst_resultrev">★★★★★ 4.6</span>
-	      </p>
-      </div>
-      <div>
-		<span class="salon_srhrst_resultimg c02 flL"><img src="./beauti/reserv/reserv_list/img/salon01-1.jpg"></span>
-		<span class="salon_srhrst_resultimg c03 flL"><img src="./beauti/reserv/reserv_list/img/salon01-2.jpg"></span>
-      </div>
-    </li>
-
-	<!-- ---------- 5 ---------- -->
-    <li class="item salon_srhrst_result">
-      <div class="salon_srhrst_resulttext">
-	      <div>
-	      	<p class="flL">1時間 <span>1000Pt</span></p>
-	      	<p>1日 <span>8000Pt</span></p>
-	      </div>
-	      <p class="titleBar c01">salonHairDesign
-			  <span class="salon_srhrst_resultrou">JR「池袋」駅  徒歩5分</span>
-		      <span class="salon_srhrst_resultrev">★★★★★ 4.6</span>
-	      </p>
-      </div>
-      <div>
-		<span class="salon_srhrst_resultimg c02 flL"><img src="./beauti/reserv/reserv_list/img/salon01-1.jpg"></span>
-		<span class="salon_srhrst_resultimg c03 flL"><img src="./beauti/reserv/reserv_list/img/salon01-2.jpg"></span>
-      </div>
-    </li>
-</ul>
-<button class="button button-block c01 padding">もっと表示する</button>
-
+	<!-- サロン一覧 -->
+	<ul class="list">
+		<!-- 1 -->
+		<li class="item salon_srhrst_result" ng-click="beautiHomeSalonDetail()">
+			<div class="salon_srhrst_result_text" ui-sref="beauti-home-salon-detail">
+				<div>
+					<p class="flL">1時間 <span>1000Pt</span></p>
+					<p>1日 <span>8000Pt</span></p>
+				</div>
+					<p class="titleBar c01">salonHairDesign
+						<span>JR「池袋」駅  徒歩5分</span>
+						<span class="salon_srhrst_result_review">★★★★★ 4.6</span>
+					</p>
+			</div>
+			<div><!-- 店舗写真 -->
+				<span class="salon_srhrst_result_img c02 flL"><img src="./beauti/reserv/reserv_list/img/salon01-1.jpg"></span>
+				<span class="salon_srhrst_result_img c03 flL"><img src="./beauti/reserv/reserv_list/img/salon01-2.jpg"></span>
+			</div>
+		</li>
+	
+		<!-- 2 -->
+		<li class="item salon_srhrst_result" ng-click="beautiHomeSalonDetail()">
+			<div class="salon_srhrst_result_text" ui-sref="beauti-home-salon-detail">
+				<div>
+					<p class="flL">1時間 <span>1000Pt</span></p>
+					<p>1日 <span>8000Pt</span></p>
+				</div>
+					<p class="titleBar c01">salonHairDesign
+						<span>JR「池袋」駅  徒歩5分</span>
+						<span class="salon_srhrst_result_review">★★★★★ 4.6</span>
+					</p>
+			</div>
+			<div><!-- 店舗写真 -->
+				<span class="salon_srhrst_result_img c02 flL"><img src="./beauti/reserv/reserv_list/img/salon01-1.jpg"></span>
+				<span class="salon_srhrst_result_img c03 flL"><img src="./beauti/reserv/reserv_list/img/salon01-2.jpg"></span>
+			</div>
+		</li>
+	
+		<!-- 3 -->
+		<li class="item salon_srhrst_result" ng-click="beautiHomeSalonDetail()">
+			<div class="salon_srhrst_result_text" ui-sref="beauti-home-salon-detail">
+				<div>
+					<p class="flL">1時間 <span>1000Pt</span></p>
+					<p>1日 <span>8000Pt</span></p>
+				</div>
+					<p class="titleBar c01">salonHairDesign
+						<span>JR「池袋」駅  徒歩5分</span>
+						<span class="salon_srhrst_result_review">★★★★★ 4.6</span>
+					</p>
+			</div>
+			<div><!-- 店舗写真 -->
+				<span class="salon_srhrst_result_img c02 flL"><img src="./beauti/reserv/reserv_list/img/salon01-1.jpg"></span>
+				<span class="salon_srhrst_result_img c03 flL"><img src="./beauti/reserv/reserv_list/img/salon01-2.jpg"></span>
+			</div>
+		</li>
+	
+		<!-- 4 -->
+		<li class="item salon_srhrst_result" ng-click="beautiHomeSalonDetail()">
+			<div class="salon_srhrst_result_text" ui-sref="beauti-home-salon-detail">
+				<div>
+					<p class="flL">1時間 <span>1000Pt</span></p>
+					<p>1日 <span>8000Pt</span></p>
+				</div>
+					<p class="titleBar c01">salonHairDesign
+						<span>JR「池袋」駅  徒歩5分</span>
+						<span class="salon_srhrst_result_review">★★★★★ 4.6</span>
+					</p>
+			</div>
+			<div><!-- 店舗写真 -->
+				<span class="salon_srhrst_result_img c02 flL"><img src="./beauti/reserv/reserv_list/img/salon01-1.jpg"></span>
+				<span class="salon_srhrst_result_img c03 flL"><img src="./beauti/reserv/reserv_list/img/salon01-2.jpg"></span>
+			</div>
+		</li>
+	
+		<!-- 5 -->
+		<li class="item salon_srhrst_result" ng-click="beautiHomeSalonDetail()">
+			<div class="salon_srhrst_result_text" ui-sref="beauti-home-salon-detail">
+				<div>
+					<p class="flL">1時間 <span>1000Pt</span></p>
+					<p>1日 <span>8000Pt</span></p>
+				</div>
+					<p class="titleBar c01">salonHairDesign
+						<span>JR「池袋」駅  徒歩5分</span>
+						<span class="salon_srhrst_result_review">★★★★★ 4.6</span>
+					</p>
+			</div>
+			<div><!-- 店舗写真 -->
+				<span class="salon_srhrst_result_img c02 flL"><img src="./beauti/reserv/reserv_list/img/salon01-1.jpg"></span>
+				<span class="salon_srhrst_result_img c03 flL"><img src="./beauti/reserv/reserv_list/img/salon01-2.jpg"></span>
+			</div>
+		</li>
+	</ul>
+	
+	<div class="padding">
+		<button class="button button-block c01 maN">もっと表示する</button>
+	</div>
 
 </ion-content>
 </ion-view>

@@ -1,187 +1,165 @@
 <ion-view>
-<ion-content class="miralbody">
-<!-- サロン 見出し -->
-<div class="salon_detail_head">
-     <button class="button c01 salon_detail_headlike">LIKE</button>
-     <button class="c01 salon_detail_headmap">MAP</button>
-	<div class="salon_list_favorite">
-		<input id="reserv_list_favorite_01" name="reserv_list" type="checkbox" checked/>
-		<label for="reserv_list_favorite_01"><i class="ion-android-favorite"></i></label>
+<ion-content class="miralbody salon_detail">
+
+	<!-- サロン 情報 -->
+	<div class="salon_detail_head">
+		<button class="button c01 salon_detail_head_button">シェアリクエスト</button>
+		<button class="c01 salon_detail_head_map">MAP</button>
+		<div class="favorite_button salon_detail_favorite">
+			<input id="reserv_list_favorite_01" name="reserv_list" type="checkbox" checked/>
+			<label for="reserv_list_favorite_01"><i class="ion-android-favorite"></i></label>
+		</div>
+		<div class="salon_detail_head_text" >
+			<div class="salon_detail_head_text_name">
+				<div>
+					<p>salonHairDesign</p>
+					<p>JR「池袋」駅  徒歩5分</p>
+				</div>
+				<p>★★★★★ 4.6</p>
+			</div>
+			<div class="salon_detail_head_text_price">
+				<p class="flL">1時間 <span>1000Pt</span></p>
+				<p class="">1日 <span>8000Pt</span></p>
+			</div>
+		</div>
+		<span class="salon_detail_head_img"><img src="./beauti/home/salon_detail/img/salon01_1.jpg"></span>
 	</div>
-      <div class="salon_detail_headtext" >
-     	<div class="salon_detail_headtext_name">
-		  <div>
-		      <p>salonHairDesign</p>
-			  <p>JR「池袋」駅  徒歩5分</p>
-		  </div>
-	      <p>★★★★★ 4.6</p>
-	  	</div>
-      	<div class="salon_detail_headtext_price">
-   	      <p class="flL">1時間 <span>1000Pt</span></p>
-	      <p class="">1日 <span>8000Pt</span></p>
-	  	</div>
-      </div>
-	<span><img src="./beauti/home/salon_detail/img/salon01_1.jpg"></span>
-</div>
 		
-<div class="padding">
-	<!-- サロン サロンギャラリー -->
-	<div class="salon_detail_gallery c01">
-		<div class="salon_detail_gallerytitle">
-			<p>salon<br>Gallery</p>
+	<div class="padding">
+		<!-- サロン サロンギャラリー -->
+		<div class="miral_gallery c01">
+			<div class="miral_gallery_title">
+				<p>salon<br>Gallery</p>
+			</div>
+			<ul class="miral_gallery_img">
+				<li class="liquid_box1x1"><a href="./beauti/home/salon_detail/img/salon01_2.jpg" data-lightbox="salonGalley">
+					<img src="./beauti/home/salon_detail/img/salon01_2.jpg" ></a></li>
+				<li class="liquid_box1x1"><a href="./beauti/home/salon_detail/img/salon01_3.jpg" data-lightbox="salonGalley">
+					<img src="./beauti/home/salon_detail/img/salon01_3.jpg"></a></li>
+				<li class="liquid_box1x1"><a href="./beauti/home/salon_detail/img/salon01_4.jpg" data-lightbox="salonGalley">
+					<img src="./beauti/home/salon_detail/img/salon01_4.jpg"></a></li>
+			</ul>
 		</div>
-		<ul class="salon_detail_galleryimg">
-			<li class="liquid_box1x1"><a href="./beauti/home/salon_detail/img/salon01_2.jpg" data-lightbox="salonGalley">
-				<img src="./beauti/home/salon_detail/img/salon01_2.jpg" ></a></li>
-			<li class="liquid_box1x1"><a href="./beauti/home/salon_detail/img/salon01_3.jpg" data-lightbox="salonGalley">
-				<img src="./beauti/home/salon_detail/img/salon01_3.jpg"></a></li>
-			<li class="liquid_box1x1"><a href="./beauti/home/salon_detail/img/salon01_4.jpg" data-lightbox="salonGalley">
-				<img src="./beauti/home/salon_detail/img/salon01_4.jpg"></a></li>
-		</ul>
-	</div>
-
-	<!-- サロン　空き状況 -->
-	<div class="salon_detail_dataTime contentbox">
-		<p class="contentbox_title">本日の空き状況</p>
-		<table>
-			<tr>
-				<th colspan="2">9</th><th colspan="2">10</th><th colspan="2">11</th><th colspan="2">13</th>
-				<th colspan="2">14</th><th colspan="2">15</th><th colspan="2">16</th><th colspan="2">17</th>
-				<th colspan="2">18</th><th colspan="2">19</th><th colspan="2">20</th><th colspan="2">21</th>
-			</tr>
-			<tr>
-				<td></td><td></td> <td></td><td></td> <td></td><td></td> <td></td><td></td>
-				<td></td><td></td> <td></td><td></td> <td></td><td></td> <td></td><td></td>
-				<td></td><td></td> <td></td><td></td> <td></td><td></td> <td></td><td></td>
-			</tr>
-		</table>
-	</div>
-
-	<!-- サロン　貸出可能機材 -->
-	<div class="salon_detail_material contentbox">
-		<p class="contentbox_title">貸出可能機材</p>
-		<ul class="salon_detail_materiallist contentbox_content">
-			<li><span>セット台・椅子</span></li>
-			<li><span>シャンプー台</span></li>
-			<li><span>ケープ・クロス</span></li>
-			<li><span>タオル</span></li>
-			<li><span>ドライヤー</span></li>
-			<li><span>ワゴン</span></li>
-			<li><span>スツール</span></li>
-			<li><span>ローラーボール</span></li>
-			<li><span>その他機材</span></li>
-			<li><span>その他消耗品</span></li>
-		</ul>
-	</div>
 	
-	<!-- サロン　キャンセル料 -->
-	<div class="salon_detail_cancel contentbox ">
-		<p class="contentbox_title">キャンセル</p>
-		<div class="contentbox_content">
-		当日のキャンセルの場合、利用料金の３割分の料金を頂きます。
-		</div>
-	</div>
-	
-	<!-- サロン　利用条件 -->
-	<div class="salon_detail_use accordion">
-		<input id="salon_detail_use" type="checkbox">
-		<label for="salon_detail_use">利用条件</label>
-		<div class="accordion_content">
-		<ul>
-			<li>利用条件その１</li>
-			<li>利用条件その2</li>
-			<li>利用条件その3</li>
-		</ul>
-		</div>
-	</div>
-	
-	<!-- サロン　サロンデータ -->
-	<div class="salon_detail_data accordion">
-		<input id="salon_detail_data" type="checkbox">
-		<label for="salon_detail_data">サロンデータ詳細</label>
-		<div class="accordion_content">
+		<!-- サロン　空き状況 -->
+		<div class="salon_availability contentbox">
+			<p class="contentbox_title">本日の空き状況</p>
 			<table>
 				<tr>
-					<th>所在地</th>
-					<td>東京都豊島区xxx 池袋ビル２F</td>
+					<th colspan="2">9</th><th colspan="2">10</th><th colspan="2">11</th><th colspan="2">13</th>
+					<th colspan="2">14</th><th colspan="2">15</th><th colspan="2">16</th><th colspan="2">17</th>
+					<th colspan="2">18</th><th colspan="2">19</th><th colspan="2">20</th><th colspan="2">21</th>
 				</tr>
 				<tr>
-					<th>アクセス</th>
-					<td>JR池袋駅から徒歩５分</td>
-				</tr>
-				<tr>
-					<th>電話番号</th>
-					<td>00-0000-0000</td>
-				</tr>
-				<tr>
-					<th>メールアドレス</th>
-					<td>salon@miral.com</td>
-				</tr>
-				<tr>
-					<th>駐車場</th>
-					<td>なし ※近くにパーキング有</td>
-				</tr>
-				<tr>
-					<th>営業時間</th>
-					<td>10:00〜20:00</td>
-				</tr>
-				<tr>
-					<th>定休日</th>
-					<td>毎週木曜・年末年始</td>
-				</tr>
-				<tr>
-					<th>備考</th>
-					<td>
-					 ・禁煙<br>
-				     ・ブランケットなどの貸出も行っております。
-					</td>
-				</tr>
-				<tr>
-					<th>オーナーからの一言</th>
-					<td>
-						サロンのページを見ていただきありがとうございます。<br>
-						オーナーの加藤です。<br>
-						ご不明点がございましたらお気軽にご質問ください。<br>
-						皆様のご利用お待ちしております。<br>
-						sample-sample-sample-sample-sample-sample-sample-sample-sample-sample-
-						sample-sample-sample-sample-sample-sample-sample-sample-sample-sample-		
-					</td>
+					<td></td><td></td> <td></td><td></td> <td></td><td></td> <td></td><td></td>
+					<td></td><td></td> <td></td><td></td> <td></td><td></td> <td></td><td></td>
+					<td></td><td></td> <td></td><td></td> <td></td><td></td> <td></td><td></td>
 				</tr>
 			</table>
-		</div>	
-	</div>
-
-	<!-- サロン　関連店舗 -->
-	<div class="salon_detail_sister accordion">
-		<input id="salon_detail_sister" type="checkbox">
-		<label for="salon_detail_sister">関連店舗</label>
-		<div class="accordion_content">
-			<dl>
-				<dd><img src="./beauti/home/salon_detail/img/salon01_1.jpg"></dd>
-				<dt>店舗名~店舗名~店舗名~店舗名~</dt>
-			</dl>
-			<dl>
-				<dd><img src="./beauti/home/salon_detail/img/salon01_2.jpg"></dd>
-				<dt>店舗名</dt>
-			</dl>
-			<dl>
-				<dd><img src="./beauti/home/salon_detail/img/salon01_3.jpg"></dd>
-				<dt>店舗名</dt>
-			</dl>
-			<dl>
-				<dd><img src="./beauti/home/salon_detail/img/salon01_4.jpg"></dd>
-				<dt>店舗名</dt>
-			</dl>
 		</div>
-	</div>
-
-	<!-- サロン　レビュー -->
-	<div class="salon_detail_review contentbox">
-		<p class="contentbox_title">レビュー</p>
-	</div>
 	
-	<button class="button button-block c01">LIKE</button>
-</div>
+		<!-- サロン　貸出可能機材 -->
+		<div class="salon_detail_material contentbox">
+			<p class="contentbox_title">貸出可能機材</p>
+			<ul class="salon_detail_material_list contentbox_content">
+				<li><span>セット台・椅子</span></li>
+				<li><span>シャンプー台</span></li>
+				<li><span>ケープ・クロス</span></li>
+				<li><span>タオル</span></li>
+				<li><span>ドライヤー</span></li>
+				<li><span>ワゴン</span></li>
+				<li><span>スツール</span></li>
+				<li><span>ローラーボール</span></li>
+				<li><span>その他機材</span></li>
+				<li><span>その他消耗品</span></li>
+			</ul>
+		</div>
+		
+		<!-- サロン　キャンセル料 -->
+		<div class="salon_detail_cancel contentbox ">
+			<p class="contentbox_title">キャンセル</p>
+			<div class="contentbox_content">
+			当日のキャンセルの場合、利用料金の３割分の料金を頂きます。
+			</div>
+		</div>
+		
+		<!-- サロン　利用条件 -->
+		<div class="salon_detail_use accordion">
+			<input id="salon_detail_use" type="checkbox">
+			<label for="salon_detail_use">利用条件</label>
+			<div class="accordion_content">
+				<ul>
+					<li>利用条件その１</li>
+					<li>利用条件その2</li>
+					<li>利用条件その3</li>
+				</ul>
+			</div>
+		</div>
+		
+		<!-- サロン　サロンデータ -->
+		<div class="salon_detail_data accordion">
+			<input id="salon_detail_data" type="checkbox">
+			<label for="salon_detail_data">サロンデータ詳細</label>
+			<div class="accordion_content">
+				<table>
+					<tr>
+						<th>所在地</th>
+						<td>東京都豊島区xxx 池袋ビル２F</td>
+					</tr>
+					<tr>
+						<th>アクセス</th>
+						<td>JR池袋駅から徒歩５分</td>
+					</tr>
+					<tr>
+						<th>電話番号</th>
+						<td>00-0000-0000</td>
+					</tr>
+					<tr>
+						<th>メールアドレス</th>
+						<td>salon@miral.com</td>
+					</tr>
+					<tr>
+						<th>駐車場</th>
+						<td>なし ※近くにパーキング有</td>
+					</tr>
+					<tr>
+						<th>営業時間</th>
+						<td>10:00〜20:00</td>
+					</tr>
+					<tr>
+						<th>定休日</th>
+						<td>毎週木曜・年末年始</td>
+					</tr>
+					<tr>
+						<th>備考</th>
+						<td>
+						 ・禁煙<br>
+					     ・ブランケットなどの貸出も行っております。
+						</td>
+					</tr>
+					<tr>
+						<th>オーナーからの一言</th>
+						<td>
+							サロンのページを見ていただきありがとうございます。<br>
+							オーナーの加藤です。<br>
+							ご不明点がございましたらお気軽にご質問ください。<br>
+							皆様のご利用お待ちしております。<br>
+							sample-sample-sample-sample-sample-sample-sample-sample-sample-sample-
+							sample-sample-sample-sample-sample-sample-sample-sample-sample-sample-		
+						</td>
+					</tr>
+				</table>
+			</div>	
+		</div>
+		
+		<!-- サロン　レビュー -->
+		<div class="salon_detail_review contentbox">
+			<p class="contentbox_title">レビュー</p>
+		</div>
+		
+		<button class="button button-block c01">シェアリクエスト</button>
+	</div>
 	<script src="js/lightbox.js"></script>
+	
 </ion-content>
 </ion-view>

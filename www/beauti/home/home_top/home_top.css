@@ -1,21 +1,19 @@
 @CHARSET "UTF-8";
 
-/* TOP */
-.home_top_camimg , 
-.home_top_banaimg {
-	width:100%;
-	margin-bottom:-5px;
+/* ----- b_home_top_cam start -----*/
+.b_home_top_cam {
+	overflow: hidden;
 }
 
-div.home_top_annbox {
-	width:100%;
-	background-color: #FFF;
-	padding: 5px;
+.b_home_top_cam li {
+	height: 200px;
+	width: 100%;
 }
 
-div.home_top_annbox ul li {
-	padding: 5px;
-	margin: 0px 10px;
+.b_home_top_cam img{
+	margin:0px;
+	width: 100%;
+	height: auto;
+	min-height: 200px;
 }
-
-
+/* ----- b_home_top_cam end -----*/

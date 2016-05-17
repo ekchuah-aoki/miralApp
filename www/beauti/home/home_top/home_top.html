@@ -1,38 +1,46 @@
 <ion-view>
-<ion-content class="miralbody" >
-<img class="home_top_camimg" src="beauti/home/home_top/img/campaign_01.png">
+<ion-content class="miralbody home_top">
+<!-- 美容師　hoem_top -->
 
-<div class="searchbox">
-  <label class="item item-input">
-    <i class="icon ion-search placeholder-icon"></i>
-    <input type="text" placeholder="Search">
-  </label>
-  <button class="button c01">検索</button>
-</div>
-
-<a ui-sref="beauti-home-salon_srhrst"><img class="home_top_camimg" src="beauti/home/home_top/img/campaign_02.png" ></a>
-<img class="home_top_camimg" src="beauti/home/home_top/img/campaign_03.png">
-<img class="home_top_camimg" src="beauti/home/home_top/img/campaign_04.png">
-<img class="home_top_camimg" src="beauti/home/home_top/img/campaign_05.png">
-<img class="home_top_camimg" src="beauti/home/home_top/img/campaign_06.png">
-
-	<p class="c01 titleBar">お知らせ</p>
-<div class="home_top_annbox">
-	<ul>
-		<li><span class="ann_campaign"></span><a ui-sref="beauti-home-announce">2016/00/00 おしらせだよ</a></li>
-		<li><span class="ann_news"></span><a ui-sref="beauti-home-announce">2016/00/00 おしらせだよ</a></li>
-		<li><span class="ann_maintenance"></span><a ui-sref="beauti-home-announce">2016/00/00 おしらせだよ</a></li>
-		<li><span class="ann_campaign"></span><a ui-sref="beauti-home-announce">2016/00/00 おしらせだよ</a></li>
-		<li><span class="ann_news"></span><a ui-sref="beauti-home-announce">2016/00/00 おしらせだよ</a></li>
+	<!-- キャンペーンバナー -->
+	<div class="s_home_top_cam" ng-click="beautiHomeSalonSrhrst()">
+		<img src="beauti/home/home_top/img/campaign_01.png">
+	</div>
+	
+	<!-- 検索 -->
+	<div class="searchbox">
+	  <label class="item item-input">
+	    <i class="icon ion-search placeholder-icon"></i>
+	    <input type="text" placeholder="Search">
+	  </label>
+	  <button class="button c01">検索</button>
+	</div>
+	
+	<!-- キャンペーンバナー -->
+	<ul class="b_home_top_cam">
+		<li ng-click="beautiHomeSalonSrhrst()"><img src="beauti/home/home_top/img/campaign_02.png"></li>
+		<li ng-click="beautiHomeSalonSrhrst()"><img src="beauti/home/home_top/img/campaign_03.png"></li>
+		<li ng-click="beautiHomeSalonSrhrst()"><img src="beauti/home/home_top/img/campaign_04.png"></li>
+		<li ng-click="beautiHomeSalonSrhrst()"><img src="beauti/home/home_top/img/campaign_05.png"></li>
+		<li ng-click="beautiHomeSalonSrhrst()"><img src="beauti/home/home_top/img/campaign_06.png"></li>
 	</ul>
-	<p></p>
-</div>
-
-
-<img class="home_top_banaimg" src="beauti/home/home_top/img/bana_01.png">
-<img class="home_top_banaimg" src="beauti/home/home_top/img/bana_02.png">
-<a ui-sref="beauti-home-request"><img class="home_top_banaimg" src="beauti/home/home_top/img/bana_03.png"></a>
-
-
+	
+	<!-- お知らせ -->
+	<p class="c01 titleBar">お知らせ</p>
+	<div class="home_top_info">
+		<ul class="home_top_infoContent">
+			<li ng-click="beautiHomeAnnounceDetail()"><span class="ann_campaign"></span>00/00 おしらせだよ</li>
+			<li ng-click="beautiHomeAnnounceDetail()"><span class="ann_news"></span>00/00 おしらせだよ</li>
+			<li ng-click="beautiHomeAnnounceDetail()"><span class="ann_maintenance"></span>2015/00/00 おしらせだよ</li>
+		</ul>
+		<p ng-click="beautiHomeAnnounce()">もっとみる</p>
+	</div>
+	
+	<!-- 各種案内 -->
+	<ul class="home_top_guide">
+		<li ng-click="beautiHomeGuidesMiral()"><img src="beauti/home/home_top/img/bana_01.png"></li>
+		<li ng-click="beautiHomeGuidesOwner()"><img src="beauti/home/home_top/img/bana_02.png"></li>
+		<li ng-click="beautiHomeRequest()"><img src="beauti/home/home_top/img/bana_03.png"></li>
+	</ul>
 </ion-content>
 </ion-view>
