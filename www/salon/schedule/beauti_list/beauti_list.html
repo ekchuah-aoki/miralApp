@@ -1,8 +1,121 @@
 <ion-view>
-<ion-content class="miralbody">
+<ion-content class="miralbody beauti_list">
 
+	<!-- タブ -->
+	<ion-tabs class="miral_tab">
+		<ion-tab title="シェアリクエスト"></ion-tab>
+		<ion-tab title="スタイリスト一覧"></ion-tab>
+	</ion-tabs>
 
-
+	<!-- 美容師一覧 -->
+	<div class="padding beauti_list">
+		<!-- 1 -->
+		<div class="contentbox reserv_accordion">
+			<img class="list_beauti_img" src="./img/beauti/1/profile.png">
+			<div class="beauti_list_label">
+				<p>本田涼子</p>
+			</div>
+	
+			<!-- 予約：今日 -->
+			<div class="accordion reserv_accordion_today">
+				<input id="salon_list_reserv" type="checkbox">
+				<label for="salon_list_reserv">
+				<p>
+					<span class="reserv_today"></span>
+					<span>利用予定時刻</span>
+					<span>10:00~11:00</span>
+					<span>詳細</span>
+				</p>
+				</label>
+				<div class="accordion_content">
+					<table class="reserv_accordion_detail">
+						<tr>
+							<th>予約ステータス</th>
+							<td>予約完了</td>
+						</tr>
+						<tr>
+							<th>予約申請日</th>
+							<td>2016-00-00</td>
+						</tr>
+						<tr>
+							<th>予約申請時刻</th>
+							<td>15:09:49</td>
+						</tr>
+						<tr>
+							<th>利用予定日</th>
+							<td>2016-00-00</td>
+						</tr>
+						<tr>
+							<th>利用予定時刻</th>
+							<td>9:00~18:00</td>
+						</tr>
+						<tr>
+							<th>利用予定時間</th>
+							<td>9:00:00</td>
+						</tr>
+						<tr>
+							<th>利用ポイント</th>
+							<td>8000Pt</td>
+						</tr>
+	
+					</table>
+				</div>
+			</div>
+	
+			<!-- 予約：明日 -->
+			<div class="accordion reserv_accordion_tomorrow">
+				<input id="salon_list_reserv_02" type="checkbox">
+				<label for="salon_list_reserv_02">
+				<p>
+					<span class="reserv_tomorrow"></span>
+					<span>利用予定時刻</span>
+					<span>10:00~11:00</span>
+					<span>詳細</span>
+				</p>
+				</label>
+				<div class="accordion_content">
+					<table class="reserv_accordion_detail">
+						<tr>
+							<th>予約ステータス</th>
+							<td>予約完了</td>
+						</tr>
+						<tr>
+							<th>予約申請日</th>
+							<td>2016-00-00</td>
+						</tr>
+						<tr>
+							<th>予約申請時刻</th>
+							<td>15:09:49</td>
+						</tr>
+						<tr>
+							<th>利用予定日</th>
+							<td>2016-00-00</td>
+						</tr>
+						<tr>
+							<th>利用予定時刻</th>
+							<td>9:00~18:00</td>
+						</tr>
+						<tr>
+							<th>利用予定時間</th>
+							<td>9:00:00</td>
+						</tr>
+						<tr>
+							<th>利用ポイント</th>
+							<td>8000Pt</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	
+		<!-- 2 -->
+		<div class="contentbox beauti_list">
+			<img class="list_beauti_img" src="./img/beauti/1/profile.png">
+			<div class="beauti_list_label">
+				<p>本田涼子</p>
+			</div>
+		</div>
+	</div>
 
 </ion-content>
 </ion-view>

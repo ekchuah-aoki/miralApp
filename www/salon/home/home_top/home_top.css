@@ -1,5 +1,6 @@
 @CHARSET "UTF-8";
 
+/* ----- s_home_top_cam  start -----*/
 .s_home_top_cam {
 	height: 250px;
 	width: 100%;
@@ -11,7 +12,9 @@
 	height: auto;
 	min-height: 250px;
 }
+/* ----- s_home_top_cam end -----*/
 
+/* ----- s_home_top_button start ----- */
 .s_home_top_button li {
 	height: 130px;
 	width: 33.3%;
@@ -31,24 +34,4 @@
 .s_home_top_button li:nth-child(2) {
 	background-color: #cc9054;
 }
-
-.s_home_top_info {
-	display:inline-block;
-	width: 100%;
-	height:200px;
-	padding: 10px;
-	background-color: #FFF;
-}
-.s_home_top_infoContent {
-	height: 155px;
-	overflow: scroll;
-}
-
-.s_home_top_info p {
-	width: 100%;
-	text-align:right;
-	padding: 5px 0px;
-	}
-.s_home_top_infoContent li {
-	padding: 5px 0px;
-}
+/* ----- s_home_top_button end ----- */

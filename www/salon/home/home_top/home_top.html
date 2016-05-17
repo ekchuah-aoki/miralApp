@@ -1,35 +1,34 @@
 <ion-view>
-<ion-content class="miralbody">
+<ion-content class="miralbody home_top">
+<!-- サロン　home_top -->
 
-<!-- サロン　TOP -->
-
-<!-- キャンペーンバナー -->
-<div class="s_home_top_cam">
-	<img src="salon/home/home_top/img/home_top_cam.png">
-</div>
-
-<ul class="s_home_top_button">
-	<li><i class="ion-android-person"></i><br><span>スタイリスト</span></li>
-	<li><i class="ion-chatbox-working"></i><br><span>メッセージ</span></li>
-	<li><i class="ion-android-calendar"></i><br><span>スケジュール</span></li>
-</ul>
-
-<p class="titleBar c01">お知らせ</p>
-<div class="s_home_top_info">
-	<ul class="s_home_top_infoContent">
-		<li><span class="ann_campaign"></span><a ui-sref="">2016/00/00 おしらせだよ</a></li>
-		<li><span class="ann_news"></span><a ui-sref="">2016/00/00 おしらせだよ</a></li>
-		<li><span class="ann_maintenance"></span><a ui-sref="">2016/00/00 おしらせだよ</a></li>
-		<li><span class="ann_campaign"></span><a ui-sref="">2016/00/00 おしらせだよ</a></li>
-		<li><span class="ann_news"></span><a ui-sref="">2016/00/00 おしらせだよ</a></li>
+	<!-- キャンペーンバナー -->
+	<div class="s_home_top_cam" ng-click="salonHomeAnnounceDetail()">
+		<img src="salon/home/home_top/img/home_top_cam.png">
+	</div>
+	
+	<!-- 各種ボタン -->
+	<ul class="s_home_top_button">
+		<li ng-click="salonScheduleShareRequest()"><i class="ion-android-person"></i><br><span>スタイリスト</span></li>
+		<li ng-click="salonScheduleMessageList()"><i class="ion-chatbox-working"></i><br><span>メッセージ</span></li>
+		<li ng-click="salonScheduleReservToday()"><i class="ion-android-calendar"></i><br><span>スケジュール</span></li>
 	</ul>
-	<p>全てのお知らせを表示</p>
-</div>
-
-
-<img class="home_top_banaimg" src="beauti/home/home_top/img/bana_01.png">
-<a ui-sref="beauti-home-request"><img class="home_top_banaimg" src="beauti/home/home_top/img/bana_03.png"></a>
-
-
+	
+	<!-- お知らせ -->
+	<p class="titleBar c01">お知らせ</p>
+	<div class="home_top_info">
+		<ul class="home_top_infoContent">
+			<li ng-click="salonHomeAnnounceDetail()"><span class="ann_campaign"></span>00/00 おしらせだ</li>
+			<li ng-click="salonHomeAnnounceDetail()"><span class="ann_news"></span>00/00 おしらせだよ</li>
+			<li ng-click="salonHomeAnnounceDetail()"><span class="ann_maintenance"></span>2016/00/00 おしらせだよ</li>
+		</ul>
+		<p ng-click="salonHomeAnnounce()">もっとみる</p>
+	</div>
+	
+	<!-- 各種案内 -->
+	<ul class="home_top_guide">
+		<li ng-click="salonHomeGuidesMiral()"><img src="beauti/home/home_top/img/bana_01.png"></li>
+		<li ng-click="salonHomeRequest()"><img src="beauti/home/home_top/img/bana_03.png"></li>
+	</ul>
 </ion-content>
 </ion-view>

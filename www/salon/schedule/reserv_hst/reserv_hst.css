@@ -1,5 +1,6 @@
 @CHARSET "UTF-8";
 
+/*　----- reserv_hst_button start -----　*/
 .reserv_hst_button {
 	width: 100%;
 	padding: 10px;
@@ -16,3 +17,50 @@
 .reserv_hst_button > span > button {
 	width: 100%;
 }
+/*　----- reserv_hst_button end -----　*/
+
+/*　----- reserv_hst_content start -----　*/
+.reserv_hst_content > .accordion{
+	margin-top: 0px;
+}
+.reserv_hst_content > .accordion > label {
+	padding-right: 35px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+/*　----- reserv_hst_content end -----　*/
+
+/*　----- salon_hst_user_img start -----　*/
+.salon_hst_user_img {
+	width: 30px;
+	height: 30px;
+	display: inline-block;
+	border-radius:15px;
+	margin: 0px;
+	overflow: hidden;
+	margin-right: 10px;
+	float: left;
+}
+
+.salon_hst_user_img img {
+	width: 100%
+}
+/*　----- salon_hst_user_img end -----　*/
+
+/*　----- salon_hst_user_name start -----　*/
+.salon_hst_user_name {
+	display: inline-block;
+	font-size: 20px;
+	color: #5C5C5C;
+	margin: 0;
+	margin-bottom: 10px;
+}
+/*　----- salon_hst_user_name end -----　*/
+
+/*　----- salon_hst_use_time start -----　*/
+.salon_hst_use_time{
+	font-size: 15px;
+	color: #5C5C5C;
+	margin: 0;
+}
+/*　----- salon_hst_use_time end -----　*/
