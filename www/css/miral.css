@@ -2,14 +2,11 @@
 /*************************************
 			◇	Style	◇
 **************************************/
-html, body{
-  height: 100%; }
-
+html, body{　height: 100%; }
 
 .miralbody {
 	background: repeating-linear-gradient( 135deg, #FFF,#FFF 2px,#DDD 2px,#DDD 4px);
 	color:#5C5C5C;
-	height: 100%;
 }
 
 a {	text-decoration: none;}
@@ -19,8 +16,8 @@ a {	text-decoration: none;}
 .c02, .c02:hover, .c02.active, .c02.activated {	background-color: #EB727E; color:#FFF; } /* ピンク */
 .c03, .c03:hover, .c03.active, .c03.activated {	background-color: #19B0B8; color:#FFF; } /* 水色 */
 .c04, .c04:hover, .c04.active, .c04.activated {	color:#FFF; } /* 白 */
-.c05, .c05:hover, .c05.active, .c05.activated {	background-color: #5C5C5C; color:#FFF; } /* グレー */
-.c06, .c06:hover, .c06.active, .c06.activated {	background-color: #DDD; color:#FFF; } /* 薄いグレー */
+.c05, .c05:hover, .c05.active, .c05.activated {	background-color: #5C5C5C; color:#FFF; } /* グレー (濃) */
+.c06, .c06:hover, .c06.active, .c06.activated {	background-color: #DDDDDD; color:#FFF; } /* グレー (薄)*/
 
 /* SNS color */
 .cFB, .cFB:hover, .cFB.active , .cFB.activated {	background-color: #305097; color:#FFF; } /* Facebook */
@@ -53,10 +50,10 @@ a {	text-decoration: none;}
 .has-header-w {	top:88px;}
 
 /* margin */
-.maN {	margin:none !important;}
+.maN {	margin: 0px !important;}
 
 /* padding */
-.paN {	padding: none !important;}
+.paN {	padding: 0px !important;}
 
 /* boder */
 .boN {	border:noen;}
@@ -81,7 +78,7 @@ input::-webkit-input-placeholder,textarea::-webkit-input-placeholder {color: #FF
 /*************************************
 			◆	共通パーツ 	◆
 **************************************/
-/* header */
+/*　----- header start -----　*/
 .beautiHd {
 	z-index: 10;
 }
@@ -105,8 +102,9 @@ div.iconHd .button {
 	border-radius:0px;
 	padding: 1px 9px 1px 9px;
 }
+/*　----- header end -----　*/
 
-/* titile Bar */
+/*　----- titleBar start -----　*/
 .titleBar {
 	width: 100%;
 	padding:5px 25px;
@@ -114,45 +112,115 @@ div.iconHd .button {
 	font-size:15px;
 	margin: 0 0 1px 0;
 }
+/*　----- titleBar end -----　*/
 
-/*　お知らせ：アイコン  */
+/*　----- icon start -----　*/
+/*　お知らせ：キャンペーン  */
  span.ann_campaign:before{
 	content: "キャンペーン";
-	font-size:0.9em;
-	padding:1px 5px;
+	font-size:0.8em;
+	padding:1px 3px;
 	margin: 0px 10px;
 	color:#FFF;
 	background-color: #EB727E;
 	display: inline-block;
-	width: 90px;
+	width: 80px;
 	text-align: center;
 }
 
+/*　お知らせ：ニュース  */
 span.ann_news:before{
 	content: "ニュース";
-	font-size:0.9em;
-	padding:1px 5px;
+	font-size:0.8em;
+	padding:1px 3px;
 	margin: 0px 10px;
 	color:#FFF;
 	background-color: #3DA75D;
 	display: inline-block;
-	width: 90px;
+	width: 80px;
 	text-align: center;
 }
 
+/*　お知らせ：メンテナンス  */
 span.ann_maintenance:before {
 	content: "メンテナンス";
-	font-size:0.9em;
-	padding:1px 5px;
+	font-size:0.8em;
+	padding:1px 3px;
 	margin: 0px 10px;
 	color:#FFF;
 	background-color: #387EF5;
 	display: inline-block;
-	width: 90px;
+	width: 80px;
 	text-align: center;
 }
 
-/* 検索ボックス */
+/*　履歴：来店済  */
+span.hst_already:before {
+	content: "来店済";
+	font-size:12px;
+	padding:3px 0px;
+	margin: 0px 10px 0px 0px;
+	color:#FFF;
+	background-color: #A87544;
+	display: inline-block;
+	width: 50px;
+	text-align: center;
+}
+
+/* 履歴：来店なし */
+span.hst_none:before {
+	content: "来店なし";
+	font-size:12px;
+	padding:3px 0px;
+	margin: 0px 10px 0px 0px;
+	color:#FFF;
+	background-color: red;
+	display: inline-block;
+	width: 60px;
+	text-align: center;
+}
+
+/* 履歴：キャンセル */
+span.hst_cancel:before {
+	content: "キャンセル";
+	font-size:12px;
+	padding:3px 0px;
+	margin: 0px 10px 0px 0px;
+	color:#FFF;
+	background-color:#5C5C5C;
+	display: inline-block;
+	width: 75px;
+	text-align: center;
+}
+
+/*　予約：今日  */
+span.reserv_today:before {
+	content: "今日";
+	font-size:12px;
+	padding:3px 0px;
+	margin: 0px 10px 0px 0px;
+	color:#FFF;
+	background-color: #EB727E;
+	display: inline-block;
+	width: 40px;
+	text-align: center;
+}
+
+/*　予約：明日  */
+span.reserv_tomorrow:before {
+	content: "明日";
+	font-size:12px;
+	padding:3px 0px;
+	margin: 0px 10px 0px 0px;
+	color:#FFF;
+	background-color: #19B0B8;
+	display: inline-block;
+	width: 40px;
+	text-align: center;
+}
+/*　----- icon end -----　*/
+
+/*　----- searchbox start -----　*/
 .searchbox {
 	width: 100%;
 	height: 47px;
@@ -183,8 +251,9 @@ span.ann_maintenance:before {
 	border: none;
 	height: 47px;
 }
+/*　----- searchbox end -----　*/
 
-/* contentbox */
+/*　----- contentbox start -----　*/
 .contentbox {
 	width: 100%;
 	background-color: #FFF;
@@ -192,6 +261,7 @@ span.ann_maintenance:before {
 	margin: 10px 0px 0px;
 	padding: 15px 15px 0px 15px;
 	display: inline-block;
+	vertical-align:top;
 }
 .contentbox:first-child {
 	margin: 0px;
@@ -211,8 +281,9 @@ span.ann_maintenance:before {
 	padding: 0px 0px 15px 0px;
 	display: inline-block;
 }
+/*　----- contentbox end -----　*/
 
-/* accordions */
+/*　----- accordion start -----　*/
 .accordion {
 	width:100%;
 	margin-top: 10px;
@@ -270,7 +341,9 @@ span.ann_maintenance:before {
 	padding: 0px 15px 15px 15px;
 }
 
-/* miral tab */
+/*　----- accordion end -----　*/
+
+/*　----- miral tab start -----　*/
 .miral_tab > .tabs {
 	position:relative;
 	color:#5c5c5c;
@@ -287,8 +360,9 @@ span.ann_maintenance:before {
 	color:#A87544;
 	border-bottom: solid #A87544 5px;
 }
+/*　----- miral tab end -----　*/
 
-/* search tab */
+/*　----- search tab start -----　*/
 .search_tab　{
 	display: block;
 }
@@ -315,7 +389,10 @@ span.ann_maintenance:before {
 	margin: none;
 }
 
-/* list_salon_img */
+/*　----- search tab end -----　*/
+
+/*　----- list img start -----　*/
+/* salon */
 img.list_salon_img {
 	width: 60px;
 	height: 60px;
@@ -324,7 +401,7 @@ img.list_salon_img {
 	float: left;
 }
 
-/* list_beauti_img */
+/* beauti */
 img.list_beauti_img {
 	width: 40px;
 	height: 40px;
@@ -333,8 +410,9 @@ img.list_beauti_img {
 	float: left;
 }
 
+/*　----- list img end -----　*/
 
-
+/*　----- cancel_button start -----　*/
 /* cancel_button */
 .cancel_button > .popup{
 	width: auto;
@@ -353,7 +431,9 @@ img.list_beauti_img {
 	padding: 0 7px;
 }
 
-/* message_button */
+/*　----- cancel_button end -----　*/
+
+/*　----- message_button start -----　*/
 .message_button > .popup{
 	width:100%;
 	min-width:320px;
@@ -373,7 +453,9 @@ img.list_beauti_img {
 	padding: 0 7px;
 }
 
-/* toggle miral */
+/*　----- message_button end -----　*/
+
+/*　----- toggle miral start -----　*/
 .toggle.toggle-miral input:checked + .track {
   border-color: #A87544;
   background-color: #A87544; }
@@ -383,8 +465,20 @@ img.list_beauti_img {
 
 .toggle-small .toggle-miral input:checked + .track .handle {
   background-color: #A87544; }
+  -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+}
+.imgsortable_placeholder {
+  -moz-transition: all 200ms ease-in-out;
+  -o-transition: all 200ms ease-in-out;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  display:inline-block;
+}
+/*　----- toggle miral end -----　*/
 
-/* 画像入れ替えdirective　 */
+/*　----- 画像入れ替えdirective start -----　*/
 .imgsortable_dragging {
   -moz-transform: scale(1.05, 1.05);
   -ms-transform: scale(1.05, 1.05);
@@ -408,3 +502,318 @@ img.list_beauti_img {
 .imgsortable_item {
 	display:inline-block;
 }
+/* ----- 画像入れ替えdirective end -----　*/
+
+/* ----- home_top_guide start -----*/
+.home_top_guide {
+	overflow: hidden;
+}
+
+.home_top_guide li {
+	height: 100px;
+	width: 100%;
+}
+
+.home_top_guide img{
+	margin:0px;
+	width: 100%;
+	height: auto;
+	min-height: 100px;
+}
+/* ----- home_top_guide end -----*/
+
+/* ----- home_top_info start -----　*/
+.home_top_info {
+	display:inline-block;
+	width: 100%;
+	height:150px;
+	padding: 10px;
+	background-color: #FFF;
+}
+
+.home_top_infoContent {
+	width:100%;
+	height: 100px;
+}
+
+.home_top_infoContent li {
+	margin:0px;
+	width:100%;
+	padding: 5px 0px;
+	display: inline-block;
+	cursor: pointer;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+}
+
+.home_top_info p {
+	width: 100%;
+	text-align:right;
+	padding: 10px 0px;
+}
+/* ----- home_top_info end -----　*/
+
+/* ----- miral_gallery start ----- */
+.miral_gallery {
+	width:100%;
+	height: auto;
+	display: inline-block;
+}
+
+.miral_gallery_title {
+	display:block;
+	width: 120px;
+	height:auto;
+	margin-right:-120px;
+	float: left;
+	text-align: center;
+	padding-top: 35px;
+	font-size: 20px;
+}
+
+.miral_gallery_img {
+	margin-left: 120px;
+}
+
+.miral_gallery_img li {
+	position: relative;
+	width: 33.3%;
+	height:auto;
+	float:left;
+	display:inline-block;
+	overflow: hidden;
+	min-height: 120px;
+}
+.miral_gallery_img li img {
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	min-width:120px;
+	min-height: 120px;
+}
+/* ----- miral_gallery end ----- */
+
+/* ----- favorite_button start ----- */
+.favorite_button {
+	z-index: 1;
+	border: 0px;
+}
+
+.favorite_button input {
+	display: none;
+}
+
+.favorite_button label {
+	font-size: 25px;
+	width:40px;
+	height: 40px;
+	border-radius:20px;
+	display: inline-block;
+	color:#DDD;
+	text-align: center;
+	border: 1px solid #DDD;
+	padding: 2px;
+	cursor: pointer;
+	background-color: #FFF;
+}
+
+.favorite_button input:checked ~ label {
+	color:#FAA;	
+}
+/* ----- favorite_button end ----- */
+
+/* ----- salon_availabilityd start ----- */
+.salon_availability table{
+	width: 100%;
+	border:solid #FFF 1px;
+	margin-bottom: 10px;
+}
+
+.salon_availability table th {
+	width: 8%;
+	border:solid #FFF 1px;
+	background-color: #EB727E; 
+	color:#FFF;
+}
+
+.salon_availability table td {
+	height: 20px;
+	border:solid #FFF 1px;
+	background-color: #DDD;
+}
+/* ----- salon_availability end ----- */
+
+/* ----- salon_list , beauti_list start -----　*/
+.salon_list > div.contentbox,
+.beauti_list > div.contentbox {
+	padding: 10px;
+	width: 100%;
+	position: relative;
+}
+
+.salon_list > div.contentbox > span,
+.beauti_list > div.contentbox > span {
+	float: left;
+	}
+/* ----- salon_list , beauti_list  end -----　*/
+
+/* ----- salon_list_label start -----　*/
+.salon_list_label {
+	width: 100%;
+	height:60px;
+	display: inline-block;
+	margin-left: -60px;
+	padding-left: 70px;
+}
+
+.salon_list_label p {
+	margin: 0px;
+}
+
+.salon_list_label p:first-child {
+	font-size: 17px;
+	margin: 5px 0px;
+}
+
+.salon_list_label > .favorite_button {
+	position: absolute;
+	top:20px;
+	right: 10px;
+}
+/* ----- salon_list_label end -----　*/
+
+/* ----- beauti_list_label start -----　*/
+.beauti_list_label {
+	width: 100%;
+	height:40px;
+	display: inline-block;
+	margin-left: -60px;
+	padding-left: 70px;
+}
+
+.beauti_list_label p {
+	margin: 0px;
+}
+
+.beauti_list_label p:first-child {
+	font-size: 17px;
+	margin: 5px 0px;
+}
+
+.beauti_list_label > .favorite_button {
+	position: absolute;
+	top:20px;
+	right: 10px;
+}
+/* ----- beauti_list_label end -----　*/
+
+/* ----- reserv_accordion start ----- */
+.reserv_accordion > .accordion  label {
+	padding: 0px;
+	color: #5C5C5C;
+	font-size: 14px;
+}
+
+.reserv_accordion > .accordion  label::after {
+	display: none;
+}
+
+.reserv_accordion > .accordion > .accordion_content {
+	padding: 0px;
+}
+
+.reserv_accordion > .accordion input:checked ~ .accordion_content {
+	width: 100%;
+	padding: 0px;
+}
+
+/* reserv_accordion_today */
+.reserv_accordion_today {
+	width: 100%;
+	border: solid 2px #EB727E;
+	padding: 5px;
+	margin-top: 10px;
+	position: relative;
+}
+
+/* reserv_accordion_tomorrow */
+.reserv_accordion_tomorrow {
+	width: 100%;
+	border: solid 2px #19B0B8;
+	padding: 5px;
+	margin-top: 10px;
+	position: relative;
+}
+
+/* reserv_accordion_history */
+.reserv_accordion_history {
+	width: 100%;
+	border: solid 2px #DDD;
+	padding: 5px;
+	margin-top: 10px;
+	position: relative;
+}
+
+
+.reserv_accordion_today p,
+.reserv_accordion_tomorrow p,
+.reserv_accordion_history p {
+	margin: 0px;
+	width: 100%;
+}
+
+.reserv_accordion_today p span:last-child {
+	color:#EB727E;
+	float: right;
+	margin: 2px 2px 2px 0px;
+}
+
+.reserv_accordion_tomorrow p span:last-child{
+	color:#19B0B8;
+	float: right;
+	margin: 2px 2px 2px 0px;
+}
+
+.reserv_accordion_history p span:last-child {
+	color:#5c5c5c;
+	float: right;
+	margin: 2px 2px 2px 0px;
+}
+
+/* reserv_accordion_detail */
+table.reserv_accordion_detail {
+	width: 100%;
+	margin-top: 10px;
+}
+
+table.reserv_accordion_detail th {
+	text-align: left;
+	padding: 1px 3px;
+	width: 135px;
+	background-color: #DDD;
+	border: solid 2px #FFF;
+}
+
+table.reserv_accordion_detail td {
+	padding: 1px 10px;
+}
+
+/*　reserv_accordion_cancel　*/
+td.reserv_accordion_cancel  {
+	text-align: right;
+	height: 20px;
+}
+
+.reserv_accordion_cancel a {
+	font-size: 12px;
+	cursor: pointer;
+	padding: 6px 12px 6px 12px;
+	color:#5C5C5C;
+	text-decoration: noen;
+	margin-right: -10px;
+}
+
+/* ----- reserv_accordion end ----- */
