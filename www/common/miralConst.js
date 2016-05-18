@@ -56,7 +56,6 @@ angular.module('miral.common.miralConst', [])
 
 //都道府県
 .constant('PREFECTURE', {
-
     hokkaidou : {code:1, name:"北海道"},
     aomori : {code:2, name:"青森"},
     iwate : {code:3, name:"岩手"},
@@ -105,6 +104,7 @@ angular.module('miral.common.miralConst', [])
     kagoshima : {code:46, name:"鹿児島"},
     okinawa : {code:47, name:"沖縄"}
 })
+
 
 
 ;
