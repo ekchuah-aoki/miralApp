@@ -1,2 +1,246 @@
 @CHARSET "UTF-8";
 
+
+
+.account_edit .salon_contentbox_content > input [type="text"] {
+	border-bottom: solid #DDD 1px;
+	width: 100%;
+}
+
+.account_edit .salon_contentbox_title {
+	font-size:18px;
+	padding: 5px 0px;
+	color:#A87544;/*beautiでは記述無し*/
+}
+
+/* お名前 */
+span.salon_account_edit_name {
+	width: 50%;
+	float: left;
+}
+
+span.salon_account_edit_name > input {
+	border-bottom: solid #DDD 1px;
+	width:100%;
+	padding-left: 40px;
+}
+
+span.salon_account_edit_name > span  {
+	display: inline-block;
+	padding: 5px;
+	margin-right: -40px;
+	width: 40px;
+	float: left;
+}
+
+.account_edit .salon_contentbox_content  {
+	height: 50px;
+}
+
+/* セレクトボックス */
+.salon_account_edit .contentbox_content select {
+	width: 100%;
+	max-width: none;
+}
+
+
+
+/*　店舗情報　*/
+
+/*　店舗名(漢字)　*/
+span.salon_account_edit_shopName {
+	width: 50%;
+	float: left;
+}
+
+span.salon_account_edit_shopName > input {
+	border-bottom: solid #DDD 1px;
+	width:100%;
+	padding-left: 50px;
+}
+
+span.salon_account_edit_shopName > span  {
+	display: inline-block;
+	padding: 5px;
+	margin-right: -60px;
+	width: 60px;
+	float: left;
+}
+
+/* 店舗所在地 */
+span.salon_account_edit_prefecturesName {
+	width: 50%;
+	float: left;
+}
+
+span.salon_account_edit_prefecturesName > input {
+	border-bottom: solid #DDD 1px;
+	width:100%;
+	padding-left: 70px;
+}
+
+span.salon_account_edit_prefecturesName > span  {
+	display: inline-block;
+	padding: 5px;
+	margin-right: -80px;
+	width: 80px;
+	float: left;
+}
+
+/* アクセス */
+span.salon_account_edit_accessName {
+	width: 50%;
+	float: left;
+}
+
+span.salon_account_edit_accessName > input {
+	border-bottom: solid #DDD 1px;
+	width:100%;
+	padding-left: 80px;
+}
+
+span.salon_account_edit_accessName > span  {
+	display: inline-block;
+	padding: 5px;
+	margin-right: -80px;
+	width: 80px;
+	float: left;
+}
+
+span.salon_account_edit_walkName {
+	width: 50%;
+	float: left;
+}
+
+span.salon_account_edit_walkName > input {
+	border-bottom: solid #DDD 1px;
+	width:100%;
+	padding-left: 50px;
+}
+
+span.salon_account_edit_walkName > span  {
+	display: inline-block;
+	padding: 5px;
+	margin-right: -80px;
+	width: 80px;
+	float: left;
+}
+/* 検索対象都道府県 */
+span.salon_account_edit_searchName > span  {
+	padding: 5px;
+	margin-right: -120px;
+	width: 120px;
+	float: left;
+}
+
+/* 利用可能席数 */
+
+/*営業時間*/　/* セレクトボックス */
+span.salon_account_edit_openClose > span  {
+	padding: 5px;
+	margin-right: -120px;
+	width: 120px;
+	float: left;
+}
+
+.account_edit_openClose > span {
+	display: table;
+	float: right;
+}
+
+.account_edit_openClose > span > .item-select {
+	padding: 0px 40px 0px 0px;
+}
+
+.account_edit_openClose > span > .item-select > select {
+	padding: 0px 30px 0px 0px;
+}
+
+.account_edit_openClose > span > div:nth-child(1) {
+	width: 100px;
+}
+
+.account_edit_openClose > span > div:nth-child(3) {
+	width: 70px;
+}
+
+.account_edit_openClose > span > div:nth-child(5) {
+	width: 70px;
+}
+
+.account_edit_openClose > span > span:nth-child(2),
+.account_edit_openClose > span > span:nth-child(4),
+.account_edit_openClose > span > span:nth-child(6) {
+	margin-bottom: 30px;
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.account_edit_openClose > span {
+	float: right; 
+}
+
+.open_overflow_hidden {
+    overflow: hidden;
+}
+.close_overflow_hidden {
+    overflow: hidden;
+}
+
+/* 定休日 */
+.salon_week {
+	width: 100%;
+}
+
+.salon_week > input[type="radio"] {
+	display: none;
+}
+
+.salon_week > label {
+	width:10%;
+	display: inline-block;
+	float: left;
+	text-align:right;
+	position: relative;
+	padding-right: 56px;
+	cursor: pointer;
+}
+
+.salon_week > label:after {
+	position: absolute;
+	top: 50%;
+	right: 10px;
+	display: block;
+	margin-top: -10px;
+	width: 24px;
+	height: 24px;
+	border: 2px solid #DDD;
+	border-radius: 50%;
+	content: '';
+}
+
+.salon_week > label:before {
+	position: absolute;
+	top: 50%;
+	right: 15px;
+	display: block;
+	margin-top: -5px;
+	width: 14px;
+	height: 14px;
+	border-radius: 50%;
+	background-color: #A87544;
+	content: '';
+	opacity: 0;
+}
+
+.salon_week > input[type=radio]:checked + label:before {
+  opacity: 1;
+}
+
+
+
+/* 一時間利用ポイント */
+/* 一日利用ポイント */
+/* キャンセル割合 */
+/* HP URL */
+

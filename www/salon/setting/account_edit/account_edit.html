@@ -1,7 +1,316 @@
 <ion-view>
-<ion-content class="miralbody">
+<ion-content class="miralbody" >
+  <p class="c01 titleBar">新規登録</p>
 
+<div class="padding">
+  <div class="contentbox list account_edit">
+  
+    <!-- メールアドレス -->
+	<div class="contentbox_box">
+	  <p class="salon_contentbox_title">メールアドレス</p>
+  	  <div class="salon_contentbox_content">
+  	    <input type="text" placeholder="{{mail_default}}" ng-model="email">
+	  </div>
+	</div>
+		
+	<!-- パスワード -->
+	<div class="contentbox_box" ng-show="{{isShowPassword}}">
+	  <p class="salon_contentbox_title">パスワード</p>
+	  <div class="salon_contentbox_content">
+  	    <input type="password"   ng-model="pwd">
+	  </div>
+	</div>
+    
+    
+	<!-- パスワードの確認 -->
+	<div class="contentbox_box" ng-show="{{isShowPassword}}">	
+	  <p class="salon_contentbox_title">パスワードの確認</p>
+	  <div class="salon_contentbox_content">
+  	    <input type="password" ng-model="pwdCfm"
+      </div>
+	</div>
 
+	<!-- お名前（漢字） -->
+	<div class="contentbox_box">
+	  <p class="salon_contentbox_title">お名前</p>
+	  <div class="salon_contentbox_content">
+  		<span class="salon_account_edit_name">
+    	  <span>性</span>
+  		  <input type="text" ng-model="lastName">
+  		</span>
+  		<span class="salon_account_edit_name">
+  		  <span>名</span>
+	  	  <input type="text" ng-model="firstName">
+  		</span>
+  	  </div>
+	</div>
 
+	<!-- フリガナ -->
+    <div class="contentbox_box">
+	  <p class="salon_contentbox_title">カナ</p>
+	  <div class="salon_contentbox_content">
+		<span class="salon_account_edit_name">
+		  <span>セイ</span>
+  		  <input type="text" ng-model="lastNameKana">
+		</span>
+		<span class="salon_account_edit_name">
+		  <span>メイ</span>
+		  <input type="text" ng-model="firstNameKana">
+		</span>
+	  </div>
+	</div>
+		
+	<!-- お住いの地域 -->
+	<div class="contentbox_box clB">
+	  <p class="salon_contentbox_title">お住いの地域</p>
+	  <div class="salon_contentbox_content item-select">
+  	    <select ng-model="prefect1" ng-options="p.name for p in prefectureList1"></select>
+	  </div>
+	</div>
+	
+	<!-- 店舗名(漢字) -->
+	<div class="contentbox_box">
+	  <p class="salon_contentbox_title"> 登録店舗詳細</p>
+	  <div class="salon_contentbox_content">
+  	    <span class="salon_account_edit_shopName">
+  	  	  <span>店舗名</span>
+  	      <input type="text" ng-model="shopName">
+  		</span>
+  	  </div>
+  	  <div class="salon_contentbox_content">
+  	    <span class="salon_account_edit_name">
+  		  <span>カナ</span>
+  		  <input type="text" ng-model="shopNameKana">
+  		</span>
+      </div>
+	</div>
+		
+	<!-- 店舗所在地 -->
+    <div class="overflow_hidden">
+	  <div class="contentbox_box">
+	    <p class="salon_contentbox_title"> 店舗所在地</p>
+		<div class="salon_contentbox_content">
+	      <span class="salon_account_edit_searchName"></span>
+	      <div class="salon_contentbox_content item-select">
+  	        <select ng-model="prefect2" ng-options="p.name for p in prefectureList1"></select>
+	      </div>
+	    </div>
+      </div>
+	  <div class="salon_contentbox_content">
+	    <span class="salon_account_edit_shopName">
+	  	  <span>市町村</span>
+	  	  <input type="text" ng-model="streetAdd2">
+	  	</span>
+	  </div>
+	  <div class="salon_contentbox_content">
+	    <span class="salon_account_edit_name">
+	  	  <span>住所</span>
+	  	  <input type="text" ng-model="streetAdd3">
+	  	</span>
+	  </div>
+	</div>
+    
+    <!-- アクセス -->
+　　 <div class="overflow_hidden">
+	  <div class="contentbox_box">
+	    <p class="salon_contentbox_title"> アクセス</p>
+		<div class="salon_contentbox_content">
+	  	  <span class="salon_account_edit_accessName">
+	  	    <span>最寄り駅①</span>
+	  	    <input type="text" ng-model="access">
+	  	  </span>
+	  	  <span class="salon_account_edit_walkName">
+	  	    <span>徒歩</span>
+	  	    <input type="text" ng-model="walk">
+	  	  </span>
+	  	</div>
+	  	<div class="salon_contentbox_content">
+	  	  <span class="salon_account_edit_accessName">
+	  	    <span>最寄り駅②</span>
+	  	    <input type="text" ng-model="access2">
+	  	  </span>
+	  	  <span class="salon_account_edit_walkName">
+	  	    <span>徒歩</span>
+	  	    <input type="text" ng-model="walk2">
+	  	  </span>
+	  	</div>
+	  </div>
+	</div>
+	
+	<!-- 検索対象都道府県 -->
+	<div class="contentbox_box">
+	  <p class="salon_contentbox_title"> 検索対象都道府県</p>
+	  <span class="salon_account_edit_searchName"></span>
+	  <div class="salon_contentbox_content item-select">
+  	    <select ng-model="prefect3" ng-options="p.name for p in prefectureList1"></select>
+	  </div>
+    </div>
+		
+	<!-- 利用可能席数 -->
+	<div class="overflow_hidden">
+	  <div class="contentbox_box">
+	    <p class="salon_contentbox_title">利用可能席数</p>
+		<div class="salon_contentbox_content ">
+	  	  <span class="salon_account_edit_prefecturesName">
+	  	    <span>席数</span>
+	  	  	<input type="text" ng-model="seat">
+	  	  </span>
+	  	</div>
+	  </div>
+	</div>
+
+	<!-- 営業時間 -->
+    <div class="contentbox_box">
+	  <p class="salon_contentbox_title">営業時間</p>
+	  <div class="open_overflow_hidden">
+		<div class="salon_contentbox_content">
+	  	  <span class="salon_account_edit_openClose">
+	  	    <span>open</span>
+	  	  </span>
+	  	  <div class="account_edit_openClose">	
+		    <span>
+			  <div class="contentbox_content item-select">
+		        <select ng-model="openHour">
+			      <option>--</option>
+		  	      <option>6</option>
+			      <option>7</option>
+			      <option>8</option>
+	              <option>9</option>
+			      <option>10</option>
+			      <option>11</option>
+			      <option>12</option>
+			    </select>
+		      </div>
+			  <span>時</span>
+			  <div class="contentbox_content item-select">
+			    <select ng-model="openMinute">
+				  <option>--</option>
+			      <option value="00">00</option>
+			      <option value="15">15</option>
+		          <option value="30">30</option>
+	     	      <option value="45">45</option>
+				</select>
+			  </div>
+			  <span>分</span>
+			</span>
+		  </div>
+	  	</div>
+	  </div>
+	  <div class="close_overflow_hidden">
+	  	<div class="salon_contentbox_content">
+	  	  <span class="salon_account_edit_openClose">
+	  	    <span>close</span>
+	  	  </span>
+	  	  <div class="account_edit_openClose">	
+		    <span>
+			  <div class="contentbox_content item-select">
+		        <select ng-model="closeHour">
+			      <option>--</option>
+		  	      <option>17</option>
+			      <option>18</option>
+			      <option>19</option>
+	              <option>20</option>
+			      <option>22</option>
+			      <option>23</option>
+			      <option>24</option>
+			    </select>
+		      </div>
+			  <span>時</span>
+			  <div class="contentbox_content item-select">
+			    <select ng-model="closeMinute">
+				  <option>--</option>
+			      <option value="00">00</option>
+			      <option value="15">15</option>
+		          <option value="30">30</option>
+	     	      <option value="45">45</option>
+				</select>
+			  </div>
+			  <span>分</span>
+			</span>
+		  </div>
+	  	</div>
+	  </div>
+    </div>
+	
+	<!-- 定休日 -->
+	<div class="contentbox_box">
+	  <p class="salon_contentbox_title">定休日</p>
+	  <div class="contentbox_content salon_week">
+	    <input type="radio" name="x" value="1" id="mon" ng-model="mon">
+	    <label for="mon">月</label>
+        <input type="radio" name="xx" value="1" id="tues" ng-model="tues">
+        <label for="tues">火</label>
+   	    <input type="radio" name="xxx" value="1" id="wed" ng-model="wed">
+   	    <label for="wed">水</label>
+	    <input type="radio" name="xxxx" value="1" id="thurs" ng-model="thurs">
+	    <label for="thurs">木</label>
+	    <input type="radio" name="xxxxx" value="1" id="fri" ng-model="fri">
+	    <label for="fri">金</label>
+	    <input type="radio" name="xxxxxx" value="1" id="sat" ng-model="sat">
+	    <label for="sat">土</label>
+	    <input type="radio" name="xxxxxxx" value="1" id="sun" ng-model="sun">
+	    <label for="sun">日</label>
+	    <input type="radio" name="xxxxxxxx" value="1" id="holiday" ng-model="holiday">
+	    <label for="holiday">祝</label>
+	  </div>
+	</div>
+	
+    <!-- 一時間利用ポイント -->
+	<div class="contentbox_box">	
+	  <p class="salon_contentbox_title">一時間利用ポイント</p>
+  	  <div class="salon_contentbox_content">
+  	    <span class="salon_account_edit_name">
+  		  <span>P</span>
+  	      <input type="text" ng-model="hourPointName">
+  		</span>
+  	  </div>
+	</div>
+		
+    <!-- 一日利用ポイント -->
+	<div class="contentbox_box">	
+	  <p class="salon_contentbox_title">一日利用ポイント</p>
+	  <div class="salon_contentbox_content">
+  	    <span class="salon_account_edit_name">
+   	  	  <span>P</span>
+  		  <input type="text" ng-model="dayPointName">
+  		</span>
+  	  </div>
+	</div>
+		
+    <!-- キャンセル割合 -->
+	<div class="contentbox_box">	
+	  <p class="salon_contentbox_title">キャンセル割合</p>
+	  <div class="salon_contentbox_content">
+  	    <span class="salon_account_edit_name">
+  		  <span>%</span>
+  		  <input type="text" ng-model="cancel">
+  		</span>
+  	  </div>
+	</div>
+				
+    <!-- HP URL -->
+    <div class="contentbox_box">	
+	  <p class="salon_contentbox_title">ホームページまたはブログURL</p>
+	  <div class="salon_contentbox_content">
+  	    <span class="salon_account_edit_name">
+  		  <span>URL</span>
+  		  <input type="text" ng-model="URL">
+  		</span>
+      </div>
+    </div>
+    
+	<!-- 利用条件 -->
+	<p class="salon_contentbox_title">利用条件</p>
+    <form method="post" action="commnt.cgi">
+      <textarea name="　commnt" style="width:100%;border:1px #A87544 solid" cols="70" rows="5"ng-model="conditions"></textarea></p>
+	</form>
+	
+  </div>
+  <!-- 登録 -->
+  <div class="touroku">
+    <a class="button button-block c01"  ng-click="onLicense()"  >登録</a>
+  </div>
+  
+</div>
 </ion-content>
 </ion-view>
