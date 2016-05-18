@@ -6,6 +6,17 @@ angular.module('miral.beauti.setting.license_edit.controllers', ['miral.beauti.s
 	$scope.licenseImgData = "";
 	$scope.licenseImgType = "";	
 	console.debug('■■■■■■■■■■■■■■■■');			
+
+	
+	/////////////////////////////////////
+	//美容師免許画像取得
+	miralBeautiSettingLicenseEditFnc.getLicenseImg(function(imgData_){
+		$scope.$apply(function(){
+			$scope.licenseImgType ="data:image/;base64,"
+			$scope.licenseImgData= imgData_;
+			$scope.selectedImag = true;
+		});
+	})
 	
 	/////////////////////////////////////
 	//美容師免許登録登録しないでスキップ
@@ -34,10 +45,10 @@ angular.module('miral.beauti.setting.license_edit.controllers', ['miral.beauti.s
 	///////////////////////////////
 	//ライセンスイメージ選択
 	$scope.onLicenseImagPick=function(){
-		miralBeautiSettingLicenseEditFnc.licenseImagPick(function(imgData){
+		miralBeautiSettingLicenseEditFnc.licenseImagPick(function(imgData_){
 			$scope.$apply(function(){
 				$scope.licenseImgType ="data:image/;base64,"
-				$scope.licenseImgData= imgData;
+				$scope.licenseImgData= imgData_;
 				$scope.selectedImag = true;
 			});
 		});

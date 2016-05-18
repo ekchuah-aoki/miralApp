@@ -28,8 +28,8 @@ angular.module('miral.common.miralConst', [])
 
 //アカウント設定モード
 .constant('ACCOUNT_SETTING_MODE', {
-	sns:1,   //SNS新規
-	email:2  //emailから新規
+	add:1,  		//新規
+	modify:2        //編集
 })
 
 //有無
@@ -42,7 +42,8 @@ angular.module('miral.common.miralConst', [])
 .constant('LOGIN_STATE', {
 	logined:1,
 	newAccount:2,
-	logout:3
+	temporary:3,  //仮登録中
+	logout:4
 })                                         
 
 //メッセージタイプ

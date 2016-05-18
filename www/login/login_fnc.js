@@ -9,38 +9,54 @@ angular.module('miral.login.login_fnc', ['miral.common.miralConst'
                                          ])
 
                                          
-.factory('miralLoginLoginFnc', function(LOGIN_TYPE,UMU_FLG,LOGIN_STATE,loginInfo,$localStorage
+.factory('miralLoginLoginFnc', function(LOGIN_TYPE,UMU_FLG,LOGIN_STATE,ACCOUNT_TYPE,loginInfo,$localStorage
 		, googleAppenginConnecter,facebookConnecter,instagramConnecter,twitterConnecter,googleplusConnecter) {
 
 	///////////////////////////////////////////
-	//DBからアカウント情報を取得
+	//DBからアカウント情報を取得し、ログイン情報設定
 	var _getMiralAccount=function(loginType_, id_, success_, fail_){
 				//success
 		var success = function(resp){
 			
 					var loginState;
 
-					loginInfo.setLoginInfo({loginType_});
+					loginInfo.setLoginInfo({loginType:loginType_});
 
 					if(resp.res.rstCode==UMU_FLG.ari){
+						
 						//アカウント情報ありの場合、アカウント情報からログイン情報を生成
 						
 						var account = resp.account;
 						
 						loginInfo.setLoginInfo({
 							accountId:account.accountId,
+							kindId:account.kindId,
 							email:account.email,
-							name: account.lastName + " " + account.firstName
+							name: account.lastName + " " + account.firstName,
+							temporary:account.temporary
 						});
+
+						if( account.temporary){
+							sloginState = LOGIN_STATE.temporary;
+							console.log('アカウント登録済み　仮登録ログインイン');
+							
+						}else{
+							//TODO:でバック
+							//sloginState = LOGIN_STATE.temporary;
+							sloginState = LOGIN_STATE.logined;
+							console.log('アカウント登録済み　ログインイン');
+						}
 						
-						console.log('アカウント登録済み');
-						sloginState = LOGIN_STATE.logined;
+						console.log('accountId:'+account.accountId+"  kindId:"+account.kindId);
+						
+						
 					}else{
 						//アカウント情報なし
 						console.log('アカウント未登録');
 						sloginState = LOGIN_STATE.newAccount;
 					}
 					if(success_){
+						console.log(success_);
 						success_(sloginState);
 					}
 		};
@@ -60,6 +76,44 @@ angular.module('miral.login.login_fnc', ['miral.common.miralConst'
 				{loginType:loginType_, id:id_}
 				);
 		
+		
+	};
+	
+	//////////////////////////////////
+	//SNS経由ログイン時のアカウント仮登録処理
+	var _temporarilyRegist=function(accInfo_, success_, fail_){
+		var msg = {account:null}
+	    msg  = {email:accInfo_.email,						//email
+			    lastName: accInfo_.lastName,       			//氏名（苗字）
+			    firstName : accInfo_.firstName				//氏名（名前）
+		};
+
+		if(accInfo_.facebookId){
+			 msg.facebookId=accInfo_.facebookId;		//facebookのId
+		}
+		
+		if(accInfo_.twitterId){
+			 msg.twitterId=accInfo_.twitterId;			//twitterのId
+		}
+
+		//一時保存がログイン情報に設定
+		var success = function(resMsg_){
+			loginInfo.setLoginInfo({
+				accountId:resMsg_.accountId,
+				email:accInfo_.email,
+				name: accInfo_.lastName + " " + accInfo_.firstName,
+				kindId:resMsg_.kindId,
+				temporary:true
+			});
+			success_();
+		} 
+		
+		googleAppenginConnecter.execute(
+				gapi.client.miralServer.beauti.beauticianservice.addtemp,
+				success,
+				fail_,
+				msg
+				);
 		
 	};
 	
@@ -87,18 +141,28 @@ angular.module('miral.login.login_fnc', ['miral.common.miralConst'
 						_getMiralAccount(LOGIN_TYPE.facebook, profileInfo.id, 
 								function(loginState_){
 							
-									//SNSの情報でアカウント初期表示データをセット
+									//SNSの情報でアカウントの仮登録処理をする
 									if(loginState_ == LOGIN_STATE.newAccount){
+										
+										//アカウントを仮登録する
 										names = profileInfo.name.split(' ');
 										var accInfo = {
 												email:profileInfo.email,
 												lastName:names[1],
-												firstName:names[0]
+												firstName:names[0],
+												facebookId:profileInfo.id
 										};
-										myself.saveAccountInfo(accInfo);
+										_temporarilyRegist(accInfo, 
+												function(){
+													success_(loginState_);
+												},
+												fail_
+										);
 										
+									}else{
+										success_(loginState_);
 									}
-									success_(loginState_);
+									
 							
 								},fail_
 						);

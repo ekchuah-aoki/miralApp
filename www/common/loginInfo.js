@@ -6,25 +6,14 @@ angular.module('miral.loginInfo', ['miral.common.miralUtil','miral.common.miralC
 
 	//ログイン基本情報
 	var _loginInfo ={
-		accountId:"",  //美容師の場合、BeauticianKindのId、サロンの場合は、SalonKindのId
+		accountId:"",  //アカウントId
+		kindId:"",     //美容師の場合は美容師KindのId、サロンの場合はサロンのKindのId 
 		email:"",
 		name:"",
-		loginType:""
-			
-	},
+		loginType:"",
+		temporary:true	
+	};
 	
-	//ログイン秘密情報（snsの）
-	_secretLoginInfo ={
-		facebookId:"",
-		facebookToken:"",
-		twitterId:"",
-		twitterToken:"",
-		googleplusId:"",
-		googleplusToken:"",
-		instagramId:"",
-		instagramToken:""
-	}
-	;
 	
 	var myself = 
 	{
@@ -55,8 +44,6 @@ angular.module('miral.loginInfo', ['miral.common.miralUtil','miral.common.miralC
 			for(var n in props_){
 				if(_loginInfo[n]!=undefined){
 					_loginInfo[n] = props_[n];
-				}else if(!_secretLoginInfo[n]){
-					_secretLoginInfo[n] = props_[n];
 				}
 			}
 
@@ -71,11 +58,6 @@ angular.module('miral.loginInfo', ['miral.common.miralUtil','miral.common.miralC
 			return $localStorage.getObject('__$loginuser');
 		},
 
-		/////////////////////////////
-		//ログイン秘密情報の取得
-		getSecretInfo:function(){
-			return _secretLoginInfo;
-		}
 	};
 	
 	return myself;

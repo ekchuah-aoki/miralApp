@@ -1,0 +1,140 @@
+<ion-view>
+<ion-content class="miralbody" >
+	<p class="c01 titleBar">新規登録</p>
+
+<div class="padding">
+	<div class="contentbox list account_edit">
+
+		<!-- メールアドレス -->
+		<div class="contentbox_box">	
+			<p class="contentbox_title">メールアドレス</p>
+			<div class="contentbox_content">
+  			  <input type="text" id="email" name="email" placeholder="{{mail_default}}" ng-model="form.email">
+			</div>
+		</div>
+		
+		<!-- パスワード -->
+		<div class="contentbox_box" ng-show="{{isShowPassword}}">	
+			<p class="contentbox_title">パスワード</p>
+			<div class="contentbox_content">
+  			  <input type="password"   ng-model="form.pwd">
+			</div>
+		</div>
+
+		<!-- パスワードの確認 -->
+		<div class="contentbox_box" ng-show="{{isShowPassword}}">	
+			<p class="contentbox_title">パスワードの確認</p>
+			<div class="contentbox_content">
+  			  <input type="password" ng-model="form.wdCfm">
+			</div>
+		</div>
+
+		<!-- お名前（漢字） -->
+		<div class="contentbox_box">	
+			<p class="contentbox_title">お名前</p>
+			<div class="contentbox_content ">
+  			  <span class="account_edit_name">
+  			  	<span>性</span>
+  			  	<input type="text" ng-model="form.lastName">
+  			  </span>
+  			  <span class="account_edit_name">
+  			  	<span>名</span>
+				<input type="text" ng-model="form.firstName">
+  			  </span>
+  			</div>
+		</div>
+
+		<!-- フリガナ -->
+		<div class="contentbox_box">	
+			<p class="contentbox_title">カナ</p>
+			<div class="contentbox_content ">
+				<span class="account_edit_name">
+				<span>セイ</span>
+					<input type="text" ng-model="form.lastNameKana">
+				</span>
+				<span class="account_edit_name">
+			  	<span>メイ</span>
+					<input type="text" id="firstNameKana" name="firstNameKana" ng-model="form.firstNameKana">
+			  </span>
+			</div>
+		</div>
+
+		<!-- 性別 -->
+		<div class="contentbox_box">	
+			<p class="contentbox_title">性別</p>
+			<div class="contentbox_content account_edit_gender">
+				<input type="radio" value="1" id="gender_1" ng-model="form.gender">
+				<label for="gender_1">女</label>
+				<input type="radio" value="2" id="gender_2" ng-model="form.gender">
+				<label for="gender_2">男</label>
+			</div>
+		</div>
+
+		<!-- 生年月日 -->
+		<div class="contentbox_box account_edit_birthday">	
+			<p class="contentbox_title">生年月日</p>
+			<span>
+				<div class="contentbox_content item-select">
+			   <select ng-model="form.birthday_y">
+				      <option value="" selected>----</option>
+				      <option>1987</option>
+				      <option>1988</option>
+				      <option>1989</option>
+				      <option>1990</option>
+				      <option>1991</option>
+				      <option>1992</option>
+				      <option>1993</option>
+				   </select>
+				</div>
+				<span>年</span>
+				<div class="contentbox_content item-select">
+				   <select ng-model="form.birthday_m">
+				      <option value="" selected>--</option>
+				      <option value="1">1</option>
+				      <option value="2">2</option>
+				      <option value="3">3</option>
+				      <option value="4">4</option>
+				      <option value="5">5</option>
+				      <option value="6">6</option>
+				      <option value="7">7</option>
+				      <option value="8">8</option>
+				      <option value="9">9</option>
+				      <option value="10">10</option>
+				      <option value="11">11</option>
+				      <option value="12">12</option>
+				   </select>
+				</div>
+				<span>月</span>
+				<div class="contentbox_content item-select">
+				   <select ng-model="form.birthday_d">
+				      <option valaue="" selected>--</option>
+				      <option value="1">1</option>
+				      <option value="2">2</option>
+				      <option value="3">3</option>
+				      <option value="4">4</option>
+				      <option value="5">5</option>
+				      <option value="6">6</option>
+				      <option value="7">7</option>
+				   </select>
+				</div>
+				<span>日</span>
+			</span>
+		</div>
+		
+		<!-- お住いの地域 -->
+		<div class="contentbox_box clB">	
+			<p class="contentbox_title">お住いの地域</p>
+			<div class="contentbox_content item-select">
+  			   <select ng-model="form.prefect">
+  			   	<option ng-repeat="p in prefectureList" value="{{p.code}}">{{p.name}}</option>
+   			   </select>
+			</div>
+		</div>
+	</div>
+
+	<a class="button button-block c01"  ng-click="onLicense()"  >美容師免許の登録</a>
+
+</div>
+
+</ion-content>
+</ion-view>

@@ -10,6 +10,7 @@ angular.module('miral.login.controllers', ['miral.login.login_fnc','miral.common
 	///////////////////////////////
 	//項目初期化
 	
+	
 	//ログインクリア
 	loginInfo.clearLoginInfo();
 	
@@ -56,7 +57,7 @@ angular.module('miral.login.controllers', ['miral.login.login_fnc','miral.common
 			disableBack: true
 		});		
 
-		$state.go('beauti-setting-account_edit',{mode:ACCOUNT_SETTING_MODE.email},'');
+		$state.go('beauti-setting-account_edit',{mode:ACCOUNT_SETTING_MODE.add},'');
 	}
 
 	///////////////////////////////
@@ -69,15 +70,18 @@ angular.module('miral.login.controllers', ['miral.login.login_fnc','miral.common
 	//SNS ログイン成功
 	var snsLoginSucess = function(loginState_){
 
+		console.log('loginState_:'+loginState_);
+
 		$ionicHistory.nextViewOptions({
 			disableBack: true
 		});		
 
 		if(loginState_ == LOGIN_STATE.logined){
 			$state.go('beauti-home-home-top',null,'');
-		}else if(loginState_ == LOGIN_STATE.newAccount){
-			
-			$state.go('beauti-setting-account_edit',{mode:ACCOUNT_SETTING_MODE.sns},'');
+			console.debug('go home');
+		}else{
+			$state.go('beauti-setting-account_edit',{mode:ACCOUNT_SETTING_MODE.modify},'');
+			console.debug('go beauti-setting-account_edit');
 		}
 	}
 	
