@@ -1,0 +1,20 @@
+<ion-view>
+<ion-content class="miralbody">
+
+<p class="c01 titleBar">ギャラリーの編集</p>
+
+	<br>
+	<div>
+	<button class="button icon ion-ios-trash" ng-click="onChangeMode()"></button>
+	</div >
+	
+	<p class="contentbox_title">ギャラリーの変更</p>
+	<div  id="img_sortable" class="contentbox" sortable  draggable=".aoki" >
+	  
+	  <i class="imgsortable_trashbox icon ion-close-circled" style="display:none;font-size:64pt" class="icon ion-close-circled"></i>  
+	</div>
+	<button class="button button-block c01" ng-click="salonAddImg()">ギャラリーの追加</button>
+	<br>
+	<button class="button button-block c01" ng-click="salonPrf()">変更を保存する</button>
+</ion-content>
+</ion-view>

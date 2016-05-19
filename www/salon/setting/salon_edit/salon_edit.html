@@ -1,7 +1,41 @@
 <ion-view>
 <ion-content class="miralbody">
+<!-- プロフィールの編集　見出し -->
+<p class="c01 titleBar">プロフィールの編集</p>
+<div class="padding">
+	<div class="contentbox salon_edit">
 
-
-
+		<!-- オーナーの画像変更 -->
+		<div class="contentbox_box">	
+			<p class="contentbox_title">オーナーの画像変更</p>
+			<div class="salon_edit_gallery c01">
+				<ul class="salon_edit_galleryimg">
+					
+				</ul>
+			</div>
+		</div>
+		<br>
+		
+		<!-- 備考 -->
+		<div class="contentbox_box">	
+			<p class="contentbox_title">備考</p>
+			<div class="contentbox_content">
+			<textarea></textarea>
+  			</div>
+		</div>			
+		<br>
+		
+		<!-- オーナーからの一言 -->
+		<div class="contentbox_box">	
+			<p class="contentbox_title">オーナーからの一言</p>
+			<div class="contentbox_content_textarea">
+			<textarea></textarea>
+			</div>
+  		</div>
+  		<br>
+	</div>
+	</div>
+	
+	<button class="button button-block c01" ng-click="salonPrf()">変更を保存する</button>
 </ion-content>
 </ion-view>

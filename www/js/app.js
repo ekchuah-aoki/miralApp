@@ -60,7 +60,8 @@ angular.module('miral', ['ionic', 'ngCordovaOauth','ngAnimate', 'ionicLazyLoad',
                          ,'miral.salon.setting.terms.controllers'
                          ,'miral.salon.setting.privacy_policy.controllers'
                          ,'miral.salon.setting.sclt.controllers'
-                         ,'miral.common.navi_bar.controllers'])
+                         ,'miral.common.navi_bar.controllers'
+                         ,'miral.salon.setting.gallery_edit.controllers'])
                          
 .run(function($ionicPlatform,googleAppenginConnecter) {
   $ionicPlatform.ready(function() {
@@ -436,6 +437,13 @@ angular.module('miral', ['ionic', 'ngCordovaOauth','ngAnimate', 'ionicLazyLoad',
 	    controller: 'salonSettingSalonEditControllers'
 	  })
 
+  // サロン 設定　ギャラリーの編集
+  .state('salon-setting-gallery_edit', {
+	    url: '/salon/setting/gallery_edit',
+	    templateUrl: 'salon/setting/gallery_edit/gallery_edit.html',
+	    controller: 'salonSettingGalleryEditControllers'
+	  })
+	  
   // サロン 設定　レビュー
   .state('salon-setting-review', {
 	    url: '/salon/setting/review',
@@ -486,6 +494,6 @@ angular.module('miral', ['ionic', 'ngCordovaOauth','ngAnimate', 'ionicLazyLoad',
 	  })
 
 	  // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/login');
+  $urlRouterProvider.otherwise('/salon/setting/setting_home');
 
 });
