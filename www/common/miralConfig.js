@@ -11,4 +11,3 @@ angular.module('miral.common.config', [])
 )
 ;
 
-
