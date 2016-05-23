@@ -236,3 +236,10 @@
 .salon_salon_list_favorite input:checked ~ label {
 	color:#FAA;	
 }
+
+.salon_salon_edit .salon_contentbox_title {
+	font-size:18px;
+	padding: 5px 0px;
+	color:#A87544;/*beautiでは記述無し*/
+}
+

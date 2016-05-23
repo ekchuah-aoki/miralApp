@@ -137,7 +137,10 @@ angular.module('miral.login.controllers', ['miral.login.login_fnc','miral.common
 		*/
 	}	
 	
-	
+	/*　リンク　*/
+	$scope.accountEdi=function() {
+		$state.go('salon-setting-account_edit',null,'');
+	}
 })
 
 ;

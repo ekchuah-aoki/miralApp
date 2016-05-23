@@ -16,28 +16,21 @@ angular.module('miral.salon.setting.gallery_edit.controllers', ['ionicImageSorta
 				  function(result_) {
 					  for (var i = 0; i < result_.length; i++) {
 								  // <img>要素を追加
-								  $('<img/>').attr("src", "data:image/;base64,"+result_[i]).addClass('gallery_pct').appendTo('#img_sortable');  
+								  $('<img/>').attr("src", "data:image/;base64,"+result_[i]).addClass('gallery_edit_pct').appendTo('#img_sortable');  
 					  }
-				  });
+				  }
+		);
 	}
 	
 	/*　リンク　*/
 	$scope.salonPrf=function() {
-		var pct = $('#img_sortable').children('div').children('img');
-		
-
+		//画面戻る前にデータをサーバーに
+		//＊まだデータ表示だけ
+		var pct = $('#img_sortable').children('img');
 			 console.log(pct);
-		
-		
 		$state.go('salon-setting-salon_detail',null,'');
 	}
 
-	
-
-	
-	
 })
 
 ;
-
-

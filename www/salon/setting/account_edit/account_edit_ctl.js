@@ -13,8 +13,6 @@ angular.module('miral.salon.setting.account_edit.controllers', ['miral.common.mi
 //		$scope.isShowPassword = !$scope.isShowPassword;
 //	}
 
-	$scope.form = {};
-	
 	$scope.mail_default ="sample@miral.co.jp";
 	
 	//登録モードによって表示項目切り替え
@@ -129,19 +127,7 @@ angular.module('miral.salon.setting.account_edit.controllers', ['miral.common.mi
 		
 	}
 	
-	///////////////////////////////
-	//美容師免許に進む
-	$scope.onLicense=function(){
 
-		var accInfo = miralLoginLoginFnc.restoreAccountInfo();
-
-		accInfo = _setAccountByInputVal(accInfo);
-		
-		//入力情報localStrageに保存
-		miralBeautiSettingAccountEditFnc.registAccount(accInfo);
-		
-		$state.go('beauti-setting-license_edit', null, '');
-	}
 	
 	/////////////////////////////////
 	//入力値をアカウント情報に設定
@@ -169,6 +155,10 @@ angular.module('miral.salon.setting.account_edit.controllers', ['miral.common.mi
 		
 	}
 
+	/*　リンク　*/
+	$scope.salonHome=function() {
+		$state.go('salon-home-home_top',null,'');
+	}
 	
 })
 ;

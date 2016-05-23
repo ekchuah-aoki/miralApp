@@ -8,11 +8,10 @@ angular.module('miral.salon.setting.salon_detail.controllers', [])
 		$state.go('salon-setting-salon_edit',null,'');
 	}
 	
+	/*　リンク　*/
 	$scope.galleryEdi=function() {
 		$state.go('salon-setting-gallery_edit',null,'');
 	}
-	
-	
 	
 })
 
