@@ -9,7 +9,7 @@
 	<div class="contentbox_box">
 	  <p class="salon_contentbox_title">メールアドレス</p>
   	  <div class="salon_contentbox_content">
-  	    <input type="text" placeholder="{{mail_default}}" ng-model="email">
+  	    <input type="text" placeholder="{{mail_default}}" ng-model="form.email">
 	  </div>
 	</div>
 		
@@ -17,7 +17,7 @@
 	<div class="contentbox_box" ng-show="{{isShowPassword}}">
 	  <p class="salon_contentbox_title">パスワード</p>
 	  <div class="salon_contentbox_content">
-  	    <input type="password"   ng-model="pwd">
+  	    <input type="password"   ng-model="form.pwd">
 	  </div>
 	</div>
     
@@ -25,7 +25,7 @@
 	<div class="contentbox_box" ng-show="{{isShowPassword}}">	
 	  <p class="salon_contentbox_title">パスワードの確認</p>
 	  <div class="salon_contentbox_content">
-  	    <input type="password" ng-model="pwdCfm">
+  	    <input type="password" ng-model="form.pwdCfm">
       </div>
 	</div>
 
@@ -35,11 +35,11 @@
 	  <div class="salon_contentbox_content">
   		<span class="salon_account_edit_name">
     	  <span>性</span>
-  		  <input type="text" ng-model="lastName">
+  		  <input type="text" ng-model="form.lastName">
   		</span>
   		<span class="salon_account_edit_name">
   		  <span>名</span>
-	  	  <input type="text" ng-model="firstName">
+	  	  <input type="text" ng-model="form.firstName">
   		</span>
   	  </div>
 	</div>
@@ -50,11 +50,11 @@
 	  <div class="salon_contentbox_content">
 		<span class="salon_account_edit_name">
 		  <span>セイ</span>
-  		  <input type="text" ng-model="lastNameKana">
+  		  <input type="text" ng-model="form.lastNameKana">
 		</span>
 		<span class="salon_account_edit_name">
 		  <span>メイ</span>
-		  <input type="text" ng-model="firstNameKana">
+		  <input type="text" ng-model="form.firstNameKana">
 		</span>
 	  </div>
 	</div>
@@ -63,7 +63,7 @@
 	<div class="contentbox_box clB">
 	  <p class="salon_contentbox_title">お住いの地域</p>
 	  <div class="salon_contentbox_content item-select">
-  	    <select ng-model="prefect1" ng-options="p.name for p in prefectureList1"></select>
+  	    <select ng-model="form.prefect1" ng-options="p.name for p in prefectureList1"></select>
 	  </div>
 	</div>
 	
@@ -73,13 +73,13 @@
 	  <div class="salon_contentbox_content">
   	    <span class="salon_account_edit_shopName">
   	  	  <span>店舗名</span>
-  	      <input type="text" ng-model="shopName">
+  	      <input type="text" ng-model="form.shopName">
   		</span>
   	  </div>
   	  <div class="salon_contentbox_content">
   	    <span class="salon_account_edit_name">
   		  <span>カナ</span>
-  		  <input type="text" ng-model="shopNameKana">
+  		  <input type="text" ng-model="form.shopNameKana">
   		</span>
       </div>
 	</div>
@@ -91,20 +91,20 @@
 		<div class="salon_contentbox_content">
 	      <span class="salon_account_edit_searchName"></span>
 	      <div class="salon_contentbox_content item-select">
-  	        <select ng-model="prefect2" ng-options="p.name for p in prefectureList1"></select>
+  	        <select ng-model="form.prefect2" ng-options="p.name for p in prefectureList1"></select>
 	      </div>
 	    </div>
       </div>
 	  <div class="salon_contentbox_content">
 	    <span class="salon_account_edit_shopName">
 	  	  <span>市町村</span>
-	  	  <input type="text" ng-model="streetAdd2">
+	  	  <input type="text" ng-model="form.streetAdd2">
 	  	</span>
 	  </div>
 	  <div class="salon_contentbox_content">
 	    <span class="salon_account_edit_name">
 	  	  <span>住所</span>
-	  	  <input type="text" ng-model="streetAdd3">
+	  	  <input type="text" ng-model="form.streetAdd3">
 	  	</span>
 	  </div>
 	</div>
@@ -116,35 +116,26 @@
 		<div class="salon_contentbox_content">
 	  	  <span class="salon_account_edit_accessName">
 	  	    <span>最寄り駅①</span>
-	  	    <input type="text" ng-model="access">
+	  	    <input type="text" ng-model="form.access">
 	  	  </span>
 	  	  <span class="salon_account_edit_walkName">
 	  	    <span>徒歩</span>
-	  	    <input type="text" ng-model="walk">
+	  	    <input type="text" ng-model="form.walk">
 	  	  </span>
 	  	</div>
 	  	<div class="salon_contentbox_content">
 	  	  <span class="salon_account_edit_accessName">
 	  	    <span>最寄り駅②</span>
-	  	    <input type="text" ng-model="access2">
+	  	    <input type="text" ng-model="form.access2">
 	  	  </span>
 	  	  <span class="salon_account_edit_walkName">
 	  	    <span>徒歩</span>
-	  	    <input type="text" ng-model="walk2">
+	  	    <input type="text" ng-model="form.walk2">
 	  	  </span>
 	  	</div>
 	  </div>
 	</div>
 	
-	<!-- 検索対象都道府県 -->
-	<div class="contentbox_box">
-	  <p class="salon_contentbox_title"> 検索対象都道府県</p>
-	  <span class="salon_account_edit_searchName"></span>
-	  <div class="salon_contentbox_content item-select">
-  	    <select ng-model="prefect3" ng-options="p.name for p in prefectureList1"></select>
-	  </div>
-    </div>
-		
 	<!-- 利用可能席数 -->
 	<div class="overflow_hidden">
 	  <div class="contentbox_box">
@@ -152,7 +143,7 @@
 		<div class="salon_contentbox_content ">
 	  	  <span class="salon_account_edit_prefecturesName">
 	  	    <span>席数</span>
-	  	  	<input type="text" ng-model="seat">
+	  	  	<input type="text" ng-model="form.seat">
 	  	  </span>
 	  	</div>
 	  </div>
@@ -169,7 +160,7 @@
 	  	  <div class="account_edit_openClose">	
 		    <span>
 			  <div class="contentbox_content item-select">
-		        <select ng-model="openHour">
+		        <select ng-model="form.openHour">
 			      <option>--</option>
 		  	      <option>6</option>
 			      <option>7</option>
@@ -182,7 +173,7 @@
 		      </div>
 			  <span>時</span>
 			  <div class="contentbox_content item-select">
-			    <select ng-model="openMinute">
+			    <select ng-model="form.openMinute">
 				  <option>--</option>
 			      <option value="00">00</option>
 			      <option value="15">15</option>
@@ -203,7 +194,7 @@
 	  	  <div class="account_edit_openClose">	
 		    <span>
 			  <div class="contentbox_content item-select">
-		        <select ng-model="closeHour">
+		        <select ng-model="form.closeHour">
 			      <option>--</option>
 		  	      <option>17</option>
 			      <option>18</option>
@@ -216,7 +207,7 @@
 		      </div>
 			  <span>時</span>
 			  <div class="contentbox_content item-select">
-			    <select ng-model="closeMinute">
+			    <select ng-model="form.closeMinute">
 				  <option>--</option>
 			      <option value="00">00</option>
 			      <option value="15">15</option>
@@ -235,21 +226,21 @@
 	<div class="contentbox_box">
 	  <p class="salon_contentbox_title">定休日</p>
 	  <div class="contentbox_content salon_week">
-	    <input type="radio" name="x" value="1" id="mon" ng-model="mon">
+	    <input type="radio" name="x" value="1" id="mon" ng-model="form.mon">
 	    <label for="mon">月</label>
-        <input type="radio" name="xx" value="1" id="tues" ng-model="tues">
+        <input type="radio" name="xx" value="1" id="tues" ng-model="form.tues">
         <label for="tues">火</label>
-   	    <input type="radio" name="xxx" value="1" id="wed" ng-model="wed">
+   	    <input type="radio" name="xxx" value="1" id="wed" ng-model="form.wed">
    	    <label for="wed">水</label>
-	    <input type="radio" name="xxxx" value="1" id="thurs" ng-model="thurs">
+	    <input type="radio" name="xxxx" value="1" id="thurs" ng-model="form.thurs">
 	    <label for="thurs">木</label>
-	    <input type="radio" name="xxxxx" value="1" id="fri" ng-model="fri">
+	    <input type="radio" name="xxxxx" value="1" id="fri" ng-model="form.fri">
 	    <label for="fri">金</label>
-	    <input type="radio" name="xxxxxx" value="1" id="sat" ng-model="sat">
+	    <input type="radio" name="xxxxxx" value="1" id="sat" ng-model="form.sat">
 	    <label for="sat">土</label>
-	    <input type="radio" name="xxxxxxx" value="1" id="sun" ng-model="sun">
+	    <input type="radio" name="xxxxxxx" value="1" id="sun" ng-model="form.sun">
 	    <label for="sun">日</label>
-	    <input type="radio" name="xxxxxxxx" value="1" id="holiday" ng-model="holiday">
+	    <input type="radio" name="xxxxxxxx" value="1" id="holiday" ng-model="form.holiday">
 	    <label for="holiday">祝</label>
 	  </div>
 	</div>
@@ -260,7 +251,7 @@
   	  <div class="salon_contentbox_content">
   	    <span class="salon_account_edit_name">
   		  <span>P</span>
-  	      <input type="text" ng-model="hourPointName">
+  	      <input type="text" ng-model="form.hourPointName">
   		</span>
   	  </div>
 	</div>
@@ -271,7 +262,7 @@
 	  <div class="salon_contentbox_content">
   	    <span class="salon_account_edit_name">
    	  	  <span>P</span>
-  		  <input type="text" ng-model="dayPointName">
+  		  <input type="text" ng-model="form.dayPointName">
   		</span>
   	  </div>
 	</div>
@@ -282,7 +273,7 @@
 	  <div class="salon_contentbox_content">
   	    <span class="salon_account_edit_name">
   		  <span>%</span>
-  		  <input type="text" ng-model="cancel">
+  		  <input type="text" ng-model="form.cancel">
   		</span>
   	  </div>
 	</div>
@@ -293,7 +284,7 @@
 	  <div class="salon_contentbox_content">
   	    <span class="salon_account_edit_name">
   		  <span>URL</span>
-  		  <input type="text" ng-model="URL">
+  		  <input type="text" ng-model="form.URL">
   		</span>
       </div>
     </div>
@@ -301,7 +292,7 @@
 	<!-- 利用条件 -->
 	<p class="salon_contentbox_title">利用条件</p>
     <form method="post" action="commnt.cgi">
-      <textarea name="　commnt" style="width:100%;border:1px #A87544 solid" cols="70" rows="5"ng-model="conditions"></textarea></p>
+      <textarea name="　commnt" style="width:100%;border:1px #A87544 solid" cols="70" rows="5" ng-model="form.conditions"></textarea></p>
 	</form>
   
   <!-- 登録 -->

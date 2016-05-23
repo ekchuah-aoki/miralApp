@@ -13,6 +13,8 @@ angular.module('miral.salon.setting.account_edit.controllers', ['miral.common.mi
 //		$scope.isShowPassword = !$scope.isShowPassword;
 //	}
 
+	$scope.form = {};
+	
 	$scope.mail_default ="sample@miral.co.jp";
 	
 	//登録モードによって表示項目切り替え
