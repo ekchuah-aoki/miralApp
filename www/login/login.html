@@ -95,16 +95,16 @@
 	</a>
  -->
 	<a class="button button-block" ng-click="onNewByEmail()">メールアドレスを使って新規登録</a>
-	<a class="button button-block" ng-click="accountEdi()">サロンの新規登録</a>
+	<a class="button button-block" ng-click="onNewForSalon()">サロンの新規登録</a>
 </div>
 
 <!-- メールアドレス/ID・パスワード -->
 <div ng-switch-when="4">
 	<div class="login_mail">
 		<!-- メールアドレス -->
-		<input type="text" placeholder="メールアドレス" ng-model="loginEmail">
+		<input type="text" placeholder="メールアドレス" ng-model="form.loginEmail">
 		<!-- パスワード -->
-		<input type="password" placeholder="パスワード" ng-model="loginPassword">
+		<input type="password" placeholder="パスワード" ng-model="form.loginPassword">
 	</div>
 	<a class="button button-block" ng-click="onMailLogin()">ログイン</a>
 </div>

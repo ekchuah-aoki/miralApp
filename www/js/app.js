@@ -462,7 +462,7 @@ angular.module('miral', ['ionic', 'ngCordovaOauth','ngAnimate', 'ionicLazyLoad',
 
 　// サロン 設定　基本情報の変更
   .state('salon-setting-account_edit', {
-	    url: '/salon/setting/account_edit',
+	    url: '/salon/setting/account_edit/:mode',
 	    templateUrl: 'salon/setting/account_edit/account_edit.html',
 	    controller: 'salonSettingAccountEditControllers'
 	  })
@@ -504,6 +504,6 @@ angular.module('miral', ['ionic', 'ngCordovaOauth','ngAnimate', 'ionicLazyLoad',
 	  })
 
 	  // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/salon/setting/account_edit');
+  $urlRouterProvider.otherwise('/login');
 
 });

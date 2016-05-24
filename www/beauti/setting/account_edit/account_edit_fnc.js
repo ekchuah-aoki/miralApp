@@ -31,7 +31,8 @@ angular.module('miral.beauti.setting.account_edit_fnc', ['miral.common.googleApp
 
 		
 			    var success = function(resp){
-			    	loginInfo.setLoginInfo({accountId:resp.accountId});
+			    	loginInfo.setLoginInfo({accountId:resp.accountId
+			    							,kindId:resp.kindId});
 			    	if(success_){
 			    		success_(resp)
 			    	}
@@ -95,6 +96,7 @@ angular.module('miral.beauti.setting.account_edit_fnc', ['miral.common.googleApp
 					var accInfo = {};
 					
 					accInfo.email=res.beauti.email;
+					accInfo.acType = 
 					accInfo.lastName= res.beauti.lastName;       
 					accInfo.firstName= res.beauti.firstName;
 					accInfo.lastNameKana= res.beauti.lastNameKana;   

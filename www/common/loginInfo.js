@@ -7,6 +7,7 @@ angular.module('miral.loginInfo', ['miral.common.miralUtil','miral.common.miralC
 	//ログイン基本情報
 	var _loginInfo ={
 		accountId:"",  //アカウントId
+		acType:"",    //アカウントタイプ（美容師・サロン）
 		kindId:"",     //美容師の場合は美容師KindのId、サロンの場合はサロンのKindのId 
 		email:"",
 		name:"",
@@ -28,7 +29,7 @@ angular.module('miral.loginInfo', ['miral.common.miralUtil','miral.common.miralC
 		/////////////////////////////
 		//ログイン中か確認
 		isLogined:function(){
-			if(mysekf.getUserInfo()){
+			if(myself.getUserInfo()){
 				return true;
 			}
 			

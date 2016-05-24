@@ -11,7 +11,7 @@ angular.module('miral.beauti.home.home_top.controllers', [])
 			//$state.go('top.salon-search',null,'');
 		//});
 	//};
-
+	
 	//　遷移　
 	//美容師：ホーム：検索結果（未️マッチ）
 	$scope.beautiHomeSalonSrhrst=function() {

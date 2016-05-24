@@ -28,6 +28,28 @@ angular.module('miral.sample.sample1', ['miral.sample.sample1_fnc','ionicImageSo
 		
 	}
 	
+	$scope.onSrhStationList=function(){
+		
+		//取得成功時のコールバック関数
+		var success = function(response){
+			sList = response.stations;
+			
+			for(var i=0; i< sList.length; i++){
+				
+				var s = sList[i]; 
+				
+				console.debug("trainName:"+s.trainName+"  stationName:"+s.stationName);
+			}
+		}
+		
+		//取得失敗時のコールバック関数
+		var fail = function (){
+			alert('失敗');
+		}
+		
+		sampleSample1Fnc.srhStationList('原', success, fail);
+		
+	}
 	
 	
 	$scope.onChangeMode = function(){

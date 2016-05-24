@@ -91,6 +91,7 @@
     <!-- ionic extention -->
     <script src="lib/ionic-ext/js/ionic-image-lazy-load.js"></script>
     <script src="lib/ionic-ext/js/ionic-rating.min.js"></script>
+    <script src="lib/ionic-ext/js/ionic-image-sortable.js"></script>
 
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
@@ -101,9 +102,6 @@
     <script src="lib/numeral/ja.min.js"></script>
     <script src="lib/math.min.js"></script>
 
-	<!-- google map -->
- 	<script src="https://maps.googleapis.com/maps/api/js"></script>
-	
 	<!-- Falsebook -->
     <script src="common/facebook/facebookConnecter.js"></script>
 
@@ -193,9 +191,6 @@
     <script src="salon/setting/privacy_policy/privacy_policy_ctl.js"></script>
     <script src="salon/setting/sclt/sclt_ctl.js"></script>
 	<script src="salon/setting/gallery_edit/gallery_edit_ctl.js"></script>
-<!-- aoki     
-    <script src="common/accountService.js"></script>
--->
 
 	<!-- miral共通モジュール -->
     <script src="common/miralUtil.js"></script>
@@ -204,10 +199,11 @@
     <script src="common/miralConst.js"></script>
     <script src="common/navi_bar_ctl.js"></script>
     <script src="common/imageUtil.js"></script>
+    <script src="common/miralMap.js"></script>
+
 <!-- aoki -->
     <script src="sample/sample1_fnc.js"></script>
     <script src="sample/sample1_ctl.js"></script>
-    <script src="lib/ionic-ext/js/ionic-image-sortable.js"></script>
 
   </head>
 
@@ -220,11 +216,18 @@
 		<div class="bar bar-header bar-stable beautiHd">
 	       <ion-nav-back-button style="margin-left:4px" side="left">戻る</ion-nav-back-button>
 			<ion-nav-buttons side="right">
-			　　<div class="iconHd" ng-controller="commonNaviBarControllers">
+			　　<div class="iconHd" id="miralNaviBer" ng-controller="commonNaviBarControllers">
 					<img src="./img/common/1/logo.svg" />
-					<button class="button" ng-click="onHome()"><i class="ion-android-home"></i></a>
-					<button class="button" ng-click="onReserv()"><i class="ion-android-favorite"></i></a>
-					<button class="button" ng-click="onSetting()"><i class="ion-android-settings"></i></button>
+					<div style="display:inline" ng-show="accountIsBeauti">
+						<button class="button" ng-click="onHome()"><i class="ion-android-home"></i></a>
+						<button class="button" ng-click="onReserv()"><i class="ion-android-favorite"></i></a>
+						<button class="button" ng-click="onSetting()"><i class="ion-android-settings"></i></button>
+					</div>
+					<div  style="display:inline" ng-hide="accountIsBeauti">
+						<button class="button" ng-click="onSalonHome()"><i class="ion-android-home"></i></a>
+						<button class="button" ng-click=""><i class="ion-android-favorite"></i></a>
+						<button class="button" ng-click="onSalonSetting()"><i class="ion-android-settings"></i></button>
+					</div>
 				</div>
 			</ion-nav-buttons>
 		</div>

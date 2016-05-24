@@ -2,7 +2,7 @@ angular.module('miral.login.controllers', ['miral.login.login_fnc','miral.common
                                            ,'miral.common.googleplus'
                                            ,'miral.common.twitter'])
 
-.controller('loginControllers', function($scope, $state,  $ionicHistory, miralLoginLoginFnc, ACCOUNT_SETTING_MODE, LOGIN_STATE,loginInfo
+.controller('loginControllers', function($scope, $state,  $ionicHistory, miralLoginLoginFnc, ACCOUNT_SETTING_MODE, LOGIN_STATE,ACCOUNT_TYPE, loginInfo
 		, googleplusConnecter,twitterConnecter ) {
 
 	$scope.timestamp = new Date().getTime();
@@ -16,8 +16,9 @@ angular.module('miral.login.controllers', ['miral.login.login_fnc','miral.common
 	
 	$scope.viewNo = "1";
 	
-	$scope.loginEmail = "test@ekchuah.co.jp";
-	$scope.loginPassword = "";
+	$scope.form={};
+	$scope.form.loginEmail = "test@ekchuah.co.jp";
+	$scope.form.loginPassword = "";
 	
 	
 	//google plusでのログインが可能かどうか
@@ -96,13 +97,27 @@ angular.module('miral.login.controllers', ['miral.login.login_fnc','miral.common
 				$ionicHistory.nextViewOptions({
 					disableBack: true
 				});		
-				$state.go('beauti-home-home-top',null,'');
+				
+				//美容師・サロンアカウントによって、遷移先決定
+				userInfo = loginInfo.getUserInfo();
+				
+				if (userInfo.acType == ACCOUNT_TYPE.salon){
+					console.log('サロン　アカウントでログイン');
+					$state.go('salon-home-home_top',null,'');
+				}else{
+					var scope = angular.element(document.getElementById('miralNaviBer')).scope();
+					scope.$apply(function(){
+						scope.changeNaviBar();
+					});
+					console.log('美容師　アカウントでログイン');
+					$state.go('beauti-home-home-top',null,'');
+				}
 			}else{
 				alert('ログイン失敗');
 			}
 		}
 		
-		miralLoginLoginFnc.mailLogin($scope.loginEmail,$scope.loginPassword,sucess, loginFailFnc );
+		miralLoginLoginFnc.mailLogin($scope.form.loginEmail,$scope.form.loginPassword,sucess, loginFailFnc );
 	}	
 	
 	///////////////////////////////
@@ -137,9 +152,10 @@ angular.module('miral.login.controllers', ['miral.login.login_fnc','miral.common
 		*/
 	}	
 	
-	/*　リンク　*/
-	$scope.accountEdi=function() {
-		$state.go('salon-setting-account_edit',null,'');
+	///////////////////////////////
+	//サロン新規作成
+	$scope.onNewForSalon=function() {
+		$state.go('salon-setting-account_edit',{mode:ACCOUNT_SETTING_MODE.add},'');
 	}
 })
 

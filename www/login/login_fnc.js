@@ -30,12 +30,14 @@ angular.module('miral.login.login_fnc', ['miral.common.miralConst'
 						
 						loginInfo.setLoginInfo({
 							accountId:account.accountId,
+							acType:account.acType,
 							kindId:account.kindId,
 							email:account.email,
 							name: account.lastName + " " + account.firstName,
 							temporary:account.temporary
 						});
 
+						console.log('アカウントタイプ'+account.acType);
 						if( account.temporary){
 							sloginState = LOGIN_STATE.temporary;
 							console.log('アカウント登録済み　仮登録ログインイン');
@@ -56,7 +58,6 @@ angular.module('miral.login.login_fnc', ['miral.common.miralConst'
 						sloginState = LOGIN_STATE.newAccount;
 					}
 					if(success_){
-						console.log(success_);
 						success_(sloginState);
 					}
 		};
@@ -84,6 +85,7 @@ angular.module('miral.login.login_fnc', ['miral.common.miralConst'
 	var _temporarilyRegist=function(accInfo_, success_, fail_){
 		var msg = {account:null}
 	    msg  = {email:accInfo_.email,						//email
+			    acType: accInfo_.acType,              		//アカウントタイプ(美容師、サロン）
 			    lastName: accInfo_.lastName,       			//氏名（苗字）
 			    firstName : accInfo_.firstName				//氏名（名前）
 		};
@@ -100,6 +102,7 @@ angular.module('miral.login.login_fnc', ['miral.common.miralConst'
 		var success = function(resMsg_){
 			loginInfo.setLoginInfo({
 				accountId:resMsg_.accountId,
+				acType:accInfo_.acType,
 				email:accInfo_.email,
 				name: accInfo_.lastName + " " + accInfo_.firstName,
 				kindId:resMsg_.kindId,
@@ -150,7 +153,8 @@ angular.module('miral.login.login_fnc', ['miral.common.miralConst'
 												email:profileInfo.email,
 												lastName:names[1],
 												firstName:names[0],
-												facebookId:profileInfo.id
+												facebookId:profileInfo.id,
+												acType:ACCOUNT_TYPE.beauti
 										};
 										_temporarilyRegist(accInfo, 
 												function(){

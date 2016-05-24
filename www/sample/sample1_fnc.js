@@ -20,6 +20,17 @@ angular.module('miral.sample.sample1_fnc', ['miral.common.miralConst'
 					fail_,
 					reqMsg
 					)
+		},
+		srhStationList:function(keyword_, success_, fail_){
+			
+			reqMsg = {keyword:keyword_};
+			
+			googleAppenginConnecter.execute(
+					gapi.client.miralServer.common.trainmasterservice.srhstationlist,
+					success_,
+					fail_,
+					reqMsg
+					)
 		}
 		
 	};
