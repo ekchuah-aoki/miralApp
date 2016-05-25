@@ -1,32 +1,43 @@
 @CHARSET "UTF-8";
 
+/*　----- setting_home start -----　*/
 .setting_home .contentbox{
 	cursor: pointer;
 }
 
+.setting_home_box {
+	padding: 0px;
+}
 
+.setting_home_marginBox {
+	margin: 10px 0px;
+}
+
+.setting_home_box > div.setting_home_iconBox {
+	margin-top: -1px;
+	padding: 10px;
+	height: 60px;
+	display: table;
+}
+
+.setting_home_box > div.setting_home_iconNoBox {
+	margin-top: -1px;
+	padding:0px;
+	height: 45px;
+	display: table;
+}
+/*　----- setting_home end -----　*/
+
+/*　----- setting_home_icon start -----　*/
 .setting_home_icon {
 	width: 40px;
 	height: 40px;
-	display: inline-block;
+	display: table-cell;
+	vertical-align:middle;
 	border-radius:20px;
 	text-align: center;
 	float: left;
 	margin-right: -40px;
-}
-
-.setting_home_title {
-	display: inline-block;
-	padding: 10px 20px;
-	font-size: 17px;
-	width: 98%;
-	margin: 0 0 0 40px;
-}
-
-.setting_home_title_capture {
-	font-size: 12px;
-	display: inline-block;
-	float: right;
 }
 
  .setting_home_icon > img {
@@ -41,40 +52,30 @@
 	margin-left: 5px;	
 	width: 40px;
 }
+/*　----- setting_home_icon end -----　*/
 
-.setting_home_01 > div.contentbox {
-	margin-top: -1px;
-	padding: 10px 15px 10px 15px;
-	height: 60px;
-}
-
-.setting_home_01  div.contentbox_content {
-	padding-bottom: 0px;
+/*　----- setting_home_title start -----　*/
+.setting_home_title {
+	width: 100%;
+	display: table-cell;
+	vertical-align: middle;
 }
 
-.setting_home_02 {
-	margin:10px 0px 15px;
+.setting_home_title_content{
+	width: 100%;
+	margin-left: 60px;
+	font-size: 18px;
 }
 
-.setting_home_02 > div.contentbox {
-	margin-top: -1px;
-	height: 50px;
-	padding: 5px 15px 0px 15px;
+.setting_home_iconNoBox .setting_home_title_content {
+	padding: 10px;
+	margin: 0px;
 }
 
-.setting_home_02 .setting_home_title {
-	padding: 10px 20px;
+.setting_home_title_capture {
+	font-size: 12px;
+	display: inline-block;
+	float: right;
 }
+/*　----- setting_home_icon end -----　*/
 
-.setting_home_03 > div.contentbox {
-	margin-top: -1px;
-	padding: 10px 15px 0px 15px;
-	height: 40px;
-}
-.setting_home_03  div.contentbox_content {
-	padding-bottom: 10px;
-}
-
-.setting_home_03 .setting_home_title {
-	padding: 0px 20px;
-}
