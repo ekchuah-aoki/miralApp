@@ -76,18 +76,16 @@ angular.module('miral.salon.setting.account_edit.controllers', ['miral.common.mi
 
 	$scope.touroku=function() {
 		
+		salonInfo = {};
+
 		//アカウント共通情報
-		accInfo = {};
-		accInfo.email = $scope.form.email; 
-		accInfo.acType = ACCOUNT_TYPE.salon;
-		accInfo.pwd = $scope.form.pwd; 
-		accInfo.lastName = $scope.form.lastName; 
-		accInfo.firstName = $scope.form.firstName; 
-		accInfo.prefecturesCd = miralStrUtil.toInt($scope.form.prefect1.code); 
-		accInfo.temporary = false;
+		salonInfo.email = $scope.form.email; 
+		salonInfo.pwd = $scope.form.pwd; 
+		salonInfo.lastName = $scope.form.lastName; 
+		salonInfo.firstName = $scope.form.firstName; 
+		salonInfo.prefecturesCd = miralStrUtil.toInt($scope.form.prefect1.code); 
 		
 		//アカウントサロン情報
-		salonInfo = {};
 		salonInfo.name = $scope.form.shopName;
 		salonInfo.nameKana = $scope.form.shopNameKana;
 		salonInfo.prefecturesCd = miralStrUtil.toInt($scope.form.prefect2.code);
@@ -110,8 +108,14 @@ angular.module('miral.salon.setting.account_edit.controllers', ['miral.common.mi
 			
 			console.log('新規登録');
 			
-			salonSettingAccountEditFnc.registAccount(accInfo, salonInfo
+			salonSettingAccountEditFnc.registAccount(salonInfo
 					,function(){
+				
+						//Naviバーの状態を設定
+						var scope = angular.element(document.getElementById('miralNaviBer')).scope();
+						scope.$apply(function(){
+							scope.changeNaviBar();
+						});
 						$state.go('salon-home-home_top',null,'');
 					}
 			);

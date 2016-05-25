@@ -62,10 +62,12 @@ angular.module('miral', ['ionic', 'ngCordovaOauth','ngAnimate', 'ionicLazyLoad',
                          ,'miral.salon.setting.sclt.controllers'
                          ,'miral.common.navi_bar.controllers'
                          ,'miral.salon.setting.gallery_edit.controllers'
+                         ,'miral.loginInfo'
+                         ,'miral.common.miralConst'
                          ,'miral.sample.sample1'
                          ])
                          
-.run(function($ionicPlatform,googleAppenginConnecter) {
+.run(function($ionicPlatform,googleAppenginConnecter,$state,loginInfo,ACCOUNT_TYPE) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -80,6 +82,23 @@ angular.module('miral', ['ionic', 'ngCordovaOauth','ngAnimate', 'ionicLazyLoad',
     }
     //google App Engin 初期化
     googleAppenginConnecter.init();
+    
+    //ログイン済みなら各ホーム画面へ
+    userInfo = loginInfo.getUserInfo();
+    
+    if( userInfo.accountId){
+    	if (userInfo.acType == ACCOUNT_TYPE.salon){
+    		console.log('サロン　アカウントでログイン済み');
+    		$state.go('salon-home-home_top',null,'');
+    	}else{
+    		console.log('美容師　アカウントでログイン済み');
+    		$state.go('beauti-home-home-top',null,'');
+    	}
+    }else{
+   		$state.go('login',null,'');
+    }
+    
+    
   });
 })
 
@@ -504,6 +523,7 @@ angular.module('miral', ['ionic', 'ngCordovaOauth','ngAnimate', 'ionicLazyLoad',
 	  })
 
 	  // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/login');
+	  //$urlRouterProvider.otherwise('/login');
+  
 
 });

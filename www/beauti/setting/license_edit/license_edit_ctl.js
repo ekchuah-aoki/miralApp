@@ -8,6 +8,17 @@ angular.module('miral.beauti.setting.license_edit.controllers', ['miral.beauti.s
 	console.debug('■■■■■■■■■■■■■■■■');			
 
 	
+	var goHome=function(){
+		//Naviバーの状態を設定
+		var scope = angular.element(document.getElementById('miralNaviBer')).scope();
+		scope.$apply(function(){
+			scope.changeNaviBar();
+		});
+		
+		$state.go("beauti-home-home-top", null, '');
+		
+	}
+	
 	/////////////////////////////////////
 	//美容師免許画像取得
 	miralBeautiSettingLicenseEditFnc.getLicenseImg(function(imgData_){
@@ -21,7 +32,7 @@ angular.module('miral.beauti.setting.license_edit.controllers', ['miral.beauti.s
 	/////////////////////////////////////
 	//美容師免許登録登録しないでスキップ
 	$scope.onSkipLicanseRegist=function(){
-		$state.go("beauti-home-home-top", null, '');
+		goHome();
 	}
 
 	/////////////////////////////////////
@@ -35,7 +46,7 @@ angular.module('miral.beauti.setting.license_edit.controllers', ['miral.beauti.s
 				$scope.licenseImgData,
 				//成功
 				function(){
-					$state.go("beauti-home-home-top", null, '');
+					goHome();
 				}
 		);
 		

@@ -29,7 +29,7 @@ angular.module('miral.loginInfo', ['miral.common.miralUtil','miral.common.miralC
 		/////////////////////////////
 		//ログイン中か確認
 		isLogined:function(){
-			if(myself.getUserInfo()){
+			if(myself.getUserInfo().accountId){
 				return true;
 			}
 			

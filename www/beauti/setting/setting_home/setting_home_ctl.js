@@ -1,6 +1,6 @@
-angular.module('miral.beauti.setting.setting_home.controllers', [])
+angular.module('miral.beauti.setting.setting_home.controllers', ['miral.loginInfo'])
 
-.controller('beautiSettingSettingHomeControllers', function($scope,$state) {
+.controller('beautiSettingSettingHomeControllers', function($scope,$state,$ionicPopup,loginInfo) {
 	
 	// ユーザー情報 
 	$scope.user_name = '本田涼子';
@@ -43,6 +43,24 @@ angular.module('miral.beauti.setting.setting_home.controllers', [])
 	//美容師：設定：特定商取引
 	$scope.beautiSettingSclt=function() {
 		$state.go('beauti-setting-sclt',null,'');
+	}
+	
+	//ログアウト
+	$scope.logOut=function(){
+		   var confirmPopup = $ionicPopup.confirm({
+			     title: '確認',
+			     template: 'ログアウトしてもいいですか',
+			     cancelText:'キャンセル',
+			     okText:'ログアウト',
+			   });
+
+			   confirmPopup.then(function(res) {
+			     if(res) {
+			 		loginInfo.clearLoginInfo();		//ログイン情報クリア（ログアウト）
+			 		$state.go('login',null,'');
+			     } else {
+			     }
+			   });		
 	}
 	
 })

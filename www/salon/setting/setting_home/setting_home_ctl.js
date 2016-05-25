@@ -45,6 +45,23 @@ angular.module('miral.salon.setting.setting_home.controllers', [])
 		$state.go('salon-home-home_top',null,'');
 	}
 	
+	//ログアウト
+	$scope.logOut=function(){
+		   var confirmPopup = $ionicPopup.confirm({
+			     title: '確認',
+			     template: 'ログアウトしてもいいですか',
+			     cancelText:'キャンセル',
+			     okText:'ログアウト',
+			   });
+
+			   confirmPopup.then(function(res) {
+			     if(res) {
+			 		loginInfo.clearLoginInfo();		//ログイン情報クリア（ログアウト）
+			 		$state.go('login',null,'');
+			     } else {
+			     }
+			   });		
+	}
 	
 })
 

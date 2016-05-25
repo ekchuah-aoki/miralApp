@@ -25,8 +25,7 @@ angular.module('miral.login.login_fnc', ['miral.common.miralConst'
 					if(resp.res.rstCode==UMU_FLG.ari){
 						
 						//アカウント情報ありの場合、アカウント情報からログイン情報を生成
-						
-						var account = resp.account;
+						var account = resp;
 						
 						loginInfo.setLoginInfo({
 							accountId:account.accountId,
@@ -43,8 +42,6 @@ angular.module('miral.login.login_fnc', ['miral.common.miralConst'
 							console.log('アカウント登録済み　仮登録ログインイン');
 							
 						}else{
-							//TODO:でバック
-							//sloginState = LOGIN_STATE.temporary;
 							sloginState = LOGIN_STATE.logined;
 							console.log('アカウント登録済み　ログインイン');
 						}
@@ -71,7 +68,7 @@ angular.module('miral.login.login_fnc', ['miral.common.miralConst'
 		};
 		
 		googleAppenginConnecter.execute(
-				gapi.client.miralServer.common.accountservice.get,
+				gapi.client.miralServer.common.accountservice.getlogin,
 				success,
 				fail,
 				{loginType:loginType_, id:id_}
@@ -83,11 +80,10 @@ angular.module('miral.login.login_fnc', ['miral.common.miralConst'
 	//////////////////////////////////
 	//SNS経由ログイン時のアカウント仮登録処理
 	var _temporarilyRegist=function(accInfo_, success_, fail_){
-		var msg = {account:null}
-	    msg  = {email:accInfo_.email,						//email
-			    acType: accInfo_.acType,              		//アカウントタイプ(美容師、サロン）
-			    lastName: accInfo_.lastName,       			//氏名（苗字）
-			    firstName : accInfo_.firstName				//氏名（名前）
+		
+		var msg = {email:accInfo_.email,				//email
+			    lastName: accInfo_.lastName,       		//氏名（苗字）
+			    firstName : accInfo_.firstName			//氏名（名前）
 		};
 
 		if(accInfo_.facebookId){
@@ -102,7 +98,7 @@ angular.module('miral.login.login_fnc', ['miral.common.miralConst'
 		var success = function(resMsg_){
 			loginInfo.setLoginInfo({
 				accountId:resMsg_.accountId,
-				acType:accInfo_.acType,
+				acType:ACCOUNT_TYPE.beauti,
 				email:accInfo_.email,
 				name: accInfo_.lastName + " " + accInfo_.firstName,
 				kindId:resMsg_.kindId,
@@ -153,8 +149,7 @@ angular.module('miral.login.login_fnc', ['miral.common.miralConst'
 												email:profileInfo.email,
 												lastName:names[1],
 												firstName:names[0],
-												facebookId:profileInfo.id,
-												acType:ACCOUNT_TYPE.beauti
+												facebookId:profileInfo.id
 										};
 										_temporarilyRegist(accInfo, 
 												function(){

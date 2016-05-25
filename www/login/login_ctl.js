@@ -11,9 +11,6 @@ angular.module('miral.login.controllers', ['miral.login.login_fnc','miral.common
 	//項目初期化
 	
 	
-	//ログインクリア
-	loginInfo.clearLoginInfo();
-	
 	$scope.viewNo = "1";
 	
 	$scope.form={};
@@ -68,6 +65,28 @@ angular.module('miral.login.controllers', ['miral.login.login_fnc','miral.common
 	}
 
 	///////////////////////////////
+	//HOME画面遷移
+	var goHome=function(){
+		userInfo = loginInfo.getUserInfo();
+
+		//Naviバーの状態を設定
+		var scope = angular.element(document.getElementById('miralNaviBer')).scope();
+		scope.$apply(function(){
+			scope.changeNaviBar();
+		});
+		
+		
+		if (userInfo.acType == ACCOUNT_TYPE.salon){
+			console.log('サロン　アカウントでログイン');
+			$state.go('salon-home-home_top',null,'');
+		}else{
+			console.log('美容師　アカウントでログイン');
+			$state.go('beauti-home-home-top',null,'');
+		}
+		
+	}
+	
+	///////////////////////////////
 	//SNS ログイン成功
 	var snsLoginSucess = function(loginState_){
 
@@ -78,8 +97,8 @@ angular.module('miral.login.controllers', ['miral.login.login_fnc','miral.common
 		});		
 
 		if(loginState_ == LOGIN_STATE.logined){
-			$state.go('beauti-home-home-top',null,'');
-			console.debug('go home');
+			//HOME画面に進む
+			goHome();
 		}else{
 			$state.go('beauti-setting-account_edit',{mode:ACCOUNT_SETTING_MODE.modify},'');
 			console.debug('go beauti-setting-account_edit');
@@ -98,20 +117,8 @@ angular.module('miral.login.controllers', ['miral.login.login_fnc','miral.common
 					disableBack: true
 				});		
 				
-				//美容師・サロンアカウントによって、遷移先決定
-				userInfo = loginInfo.getUserInfo();
-				
-				if (userInfo.acType == ACCOUNT_TYPE.salon){
-					console.log('サロン　アカウントでログイン');
-					$state.go('salon-home-home_top',null,'');
-				}else{
-					var scope = angular.element(document.getElementById('miralNaviBer')).scope();
-					scope.$apply(function(){
-						scope.changeNaviBar();
-					});
-					console.log('美容師　アカウントでログイン');
-					$state.go('beauti-home-home-top',null,'');
-				}
+				//HOME画面に進む
+				goHome();
 			}else{
 				alert('ログイン失敗');
 			}

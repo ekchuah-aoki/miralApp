@@ -5,17 +5,25 @@ angular.module('miral.salon.setting.account_edit_fnc', ['miral.loginInfo'
                                                         ,'miral.common.miralUtil'])
 
 .factory('salonSettingAccountEditFnc', function(loginInfo,googleAppenginConnecter,miralMap, PREFECTURE
-		,miralConstUtil, miralStrUtil) {
+		,miralConstUtil, miralStrUtil, ACCOUNT_TYPE) {
 
 	var myself = {
 
-			_register:function(accInfo_, salonInfo_, success_, fail_){
+			_register:function(salonInfo_, success_, fail_){
 				
-			    var msg = {account:accInfo_, salon:salonInfo_}
+			    var msg = {salon:salonInfo_}
 				
 				var success = function(resp){
-			    	loginInfo.setLoginInfo({accountId:resp.accountId
-			    							,kindId:resp.kindId});
+			    	//ログイン状態にする
+			    	loginInfo.setLoginInfo({
+						accountId:resp.accountId,
+						acType:ACCOUNT_TYPE.salon,
+						kindId:resp.kindId,
+						email:salonInfo_.email,
+						name: salonInfo_.lastName + " " + salonInfo_.firstName,
+						temporary:false
+			    	});
+			    	
 			    	if(success_){
 			    		success_(resp)
 			    	}
@@ -33,11 +41,11 @@ angular.module('miral.salon.setting.account_edit_fnc', ['miral.loginInfo'
 	
 			///////////////////////////////
 			//アカウントをDBに登録
-			registAccount:function(accInfo_, salonInfo_, success_, fail_){
+			registAccount:function(salonInfo_, success_, fail_){
 				//住所をGEOコードに変換
 				if( miralStrUtil.isEmpty(salonInfo_.prefecturesCd) || miralStrUtil.isEmpty(salonInfo_.streetAdd1) || miralStrUtil.isEmpty(salonInfo_.streetAdd2)){
 
-					myself._register(accInfo_, salonInfo_, success_, fail_);
+					myself._register(salonInfo_, success_, fail_);
 				}else{
 				
 					var addr = miralConstUtil.getPrefectureNameByCode(PREFECTURE, salonInfo_.prefecturesCd)
@@ -47,10 +55,10 @@ angular.module('miral.salon.setting.account_edit_fnc', ['miral.loginInfo'
 						salonInfo_.lat = result_.position.lat.toString();
 						salonInfo_.lng = result_.position.lng.toString();
 						
-						myself._register(accInfo_, salonInfo_, success_, fail_);
+						myself._register(salonInfo_, success_, fail_);
 						
 						},function(){
-							myself._register(accInfo_, salonInfo_, success_, fail_);
+							myself._register(salonInfo_, success_, fail_);
 						});
 				}
 			}

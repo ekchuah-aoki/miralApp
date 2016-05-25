@@ -5,34 +5,42 @@ angular.module('miral.beauti.setting.account_edit_fnc', ['miral.common.googleApp
 	var myself = {
 			///////////////////////////////
 			//アカウントをDBに登録
-			registAccount:function(accInfo, success_, fail_){
+			registAccount:function(beautiInfo_, success_, fail_){
 				
 
 			    //入力値をメッセージに設定
-			    var msg = {account:null, beautician:null}
+			    var msg = {beautician:null}
 				
-			    msg.account = {email:accInfo.email,				//email
-					    acType: accInfo.acType,              	//アカウントタイプ(美容師、サロン）
-					    lastName: accInfo.lastName,       		//氏名（苗字）
-					    firstName : accInfo.firstName,			//氏名（名前）
-					    lastNameKana : accInfo.lastNameKana,   	//氏名カナ（苗字）
-					    firstNameKana: accInfo.firstNameKana,	//氏名カナ（名前）            	
-					    prefecturesCd: accInfo.prefect,         //都道府県  	
-					    passWord: accInfo.pwd,					//パスワード
-				};
-				
-			    msg.beautician = {
-			    		gender:accInfo.gender,					//性別
-			    		birthday_y:accInfo.birthday_y,			//生年月日（年）
-			    		birthday_m:accInfo.birthday_m,			//生年月日（月）
-			    		birthday_d:accInfo.birthday_d			//生年月日（日）
+			    msg.beautician = {email:beautiInfo_.email,				//email
+					    lastName: beautiInfo_.lastName,       		//氏名（苗字）
+					    firstName : beautiInfo_.firstName,			//氏名（名前）
+					    lastNameKana : beautiInfo_.lastNameKana,   	//氏名カナ（苗字）
+					    firstNameKana: beautiInfo_.firstNameKana,	//氏名カナ（名前）            	
+					    prefecturesCd: beautiInfo_.prefect,         //都道府県  	
+					    passWord: beautiInfo_.pwd,					//パスワード
+
+					    gender:beautiInfo_.gender,					//性別
+			    		birthday_y:beautiInfo_.birthday_y,			//生年月日（年）
+			    		birthday_m:beautiInfo_.birthday_m,			//生年月日（月）
+			    		birthday_d:beautiInfo_.birthday_d			//生年月日（日）
 			    		
 			    };
 
 		
 			    var success = function(resp){
-			    	loginInfo.setLoginInfo({accountId:resp.accountId
-			    							,kindId:resp.kindId});
+			    	
+			    	
+			    	//ログイン状態にする
+			    	loginInfo.setLoginInfo({
+						accountId:resp.accountId,
+						acType:ACCOUNT_TYPE.salon,
+						kindId:resp.kindId,
+						email:beautiInfo_.email,
+						name: beautiInfo_.lastName + " " + beautiInfo_.firstName,
+						temporary:false
+						
+			    	});
+			    	
 			    	if(success_){
 			    		success_(resp)
 			    	}

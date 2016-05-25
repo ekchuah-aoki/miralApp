@@ -5,16 +5,24 @@ angular.module('miral.common.navi_bar.controllers', ['miral.loginInfo', 'miral.c
 	console.log('Start CommonNaviBarControllers');
 	
 	
-	
 	$scope.changeNaviBar=function(){
 		userInfo = loginInfo.getUserInfo();
 		
+		if (!userInfo.accountId){
+			//まだログインされていなければ、何もしない
+			return;
+		}
+		
+		//アカウントタイプによって、表示するNaviBarを切り替える
 		if( userInfo.acType == ACCOUNT_TYPE.beauti ){
 			$scope.accountIsBeauti = true; 
 		}else{
 			$scope.accountIsBeauti = false; 
 		}
 	}
+	
+	
+	$scope.changeNaviBar();
 	
 	$scope.onHome=function(){
 		$ionicHistory.nextViewOptions({
