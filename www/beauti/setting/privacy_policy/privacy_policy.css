@@ -1,10 +1,14 @@
 @CHARSET "UTF-8";
 
+/*　----- privacy_policy_title start　----- */
 p.privacy_policy_title{
 	font-size:20px;
 	padding:10px 0 10px 0;
 }
+/*　----- privacy_policy_title end　----- */
 
+/*　----- privacy_policy_content_title start　----- */
 p.privacy_policy_content_title{
 	font-weight:bold;
 }
+/*　----- privacy_policy_content_title end　----- */

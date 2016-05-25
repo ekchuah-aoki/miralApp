@@ -1,10 +1,14 @@
 @CHARSET "UTF-8";
 
+/*　----- sclt_title start　----- */
 p.sclt_title{
 	font-size:20px;
 	padding:10px 0 10px 0;
 }
+/*　----- sclt_title end　----- */
 
-dl dt{
+/*　----- sclt_content start　----- */
+.sclt_content dl dt{
 	font-weight:bold;
 }
+/*　----- sclt_content end　----- */

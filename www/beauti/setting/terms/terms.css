@@ -1,10 +1,14 @@
 @CHARSET "UTF-8";
 
+/*　----- terms_title start　----- */
 p.terms_title{
 	font-size:20px;
 	padding:10px 0 10px 0;
 }
+/*　----- terms_title end　----- */
 
+/*　----- terms_content_title start　----- */
 p.terms_content_title{
 	font-weight:bold;
 }
+/*　----- terms_content_title end　----- */

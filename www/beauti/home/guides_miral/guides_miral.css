@@ -1,2 +1,113 @@
 @CHARSET "UTF-8";
 
+/* ----- guides_miral_wapper start ----- */
+.guides_miral_wapper{
+	width:100%;
+	max-width:500px;
+	margin:auto;
+}
+/* ----- guides_miral_wapper end ----- */
+
+/* ----- guides_miral_head start ----- */
+.guides_miral_head > span{
+	font-size:20px;
+}
+/* ----- guides_miral_head end ----- */
+
+/* ----- guides_miral_contents start ----- */
+.guides_miral_contents{
+	width:100%;
+	display:inline-block;
+}
+
+.guides_miral_contents > img {
+	width:100%;
+}
+/* ----- guides_miral_contents end ----- */
+
+/* ----- guides_miral_contents_box start ----- */
+.guides_miral_contents_box{
+	width:50%;
+	float:left;
+	padding:10px;
+}
+
+.guides_miral_contents_box > img {
+	width:100%;
+}
+/* ---- guides_miral_contents_box end ----- */
+
+/* ----- guides_miral_contents_subbox start ----- */
+.guides_miral_contents_subbox{
+	width:50%;
+	float:left;
+	padding:10px;
+}
+/* ----- guides_miral_contents_subbox end ----- */
+
+/* ----- guides_miral_colorbox start ----- */
+.guides_miral_colorbox{
+	float:left;
+	background-color:rgba(168,117,68,0.3);
+	border-radius:10px;
+	height:auto;
+	position:relative;
+	padding-bottom:40%;
+}
+
+.guides_miral_colorbox > img {
+	width:100%;
+	position:absolute;
+	bottom:0;
+	left:0;
+}
+/* ----- guides_miral_colorbox end ----- */
+
+/* ----- guides_miral_dotBox start ----- */
+.guides_miral_dotBox{
+	border:dotted 5px #A87544;
+	padding:10px;
+}
+
+.guides_miral_dotBox > p {
+	padding:10px 0 10px 0;
+}
+/* ----- guides_miral_dotBox end ----- */
+
+/* ----- guides_miral_sharebox start ----- */
+.guides_miral_sharebox{
+	display:table;
+}
+/* ----- guides_miral_sharebox end ----- */
+
+/* ----- guides_miral_sharebox_sub start ----- */
+.guides_miral_sharebox_sub{
+	display:table-cell;
+	text-align:left;
+	vertical-align:middle;
+}
+/* ----- guides_miral_sharebox_sub end ----- */
+
+/* ----- guides_miral_footer start ----- */
+.guides_miral_footer{
+	width:33.3%;
+	float:left;
+	padding:10px;
+}
+
+.guides_miral_footer > img {
+	width:100%;
+}
+/* ----- guides_miral_footer end ----- */
+
+/* ----- guides_miral_borderBox start ----- */
+.guides_miral_borderBox{
+	border:10px solid #DDD;
+	border-image:url('../../../beauti/home/guides_miral/img/boder_img_01.png') 20 20 round;
+	padding:10px;
+}
+
+.guides_miral_borderBox > img {
+	width:100%;
+}
+/* ----- guides_miral_borderBox end ----- */
