@@ -1,6 +1,6 @@
-angular.module('miral.salon.setting.setting_home.controllers', [])
+angular.module('miral.salon.setting.setting_home.controllers', ['miral.loginInfo'])
 
-.controller('salonSalonSettingSettingHomeControllers', function($scope, $state) {
+.controller('salonSalonSettingSettingHomeControllers', function($scope, $state,$ionicPopup,loginInfo) {
 
 	// ユーザー情報
 	$scope.salon_name = 'salon Hair Design';
