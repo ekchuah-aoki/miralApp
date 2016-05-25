@@ -1,74 +1,68 @@
 <ion-view>
-<ion-content class="miralbody setting_home" >
+<ion-content class="miralbody setting_home">
 
-<p class="c01 titleBar">そのた</p>
-<div class="padding">
-	<div class="setting_home_01">
-		<div class="contentbox">
-			<div class="contentbox_content" ng-click="salonPrf()">
+	<p class="c01 titleBar">そのた</p>
+	<div class="padding">
+		<div class="setting_home_box">
+			<div class="contentbox setting_home_iconBox" ng-click="salonSettingSalonDetail()">
 				<span class="setting_home_icon"><img src="./img/salon/1/profile.jpg" ></span>
-				<p class="setting_home_title">{{salon_name}}
-					<span class="setting_home_title_capture">サロンプロフィールの表示と編集</span>
+				<p class="setting_home_title">
+					<span class="setting_home_title_content">
+						{{salon_name}}
+						<span class="setting_home_title_capture">サロンプロフィールの表示と編集</span>
+					</span>
 				</p>
 			</div>
-		</div>
-		<div class="contentbox">
-			<div class="contentbox_content" ng-click="salonPoi()">
+			<div class="contentbox setting_home_iconBox" ng-click="salonSettingPintMan()">
 				<span class="setting_home_icon"><img src="./img/icon/salon_point.svg" ></span>
-				<p class="setting_home_title">売上管理
+				<p class="setting_home_title">
+					<span class="setting_home_title_content">売上管理</span>
+				</p>
+			</div>
+			<div class="contentbox setting_home_iconBox" ng-click="salonSettingReview()">
+				<span class="setting_home_icon"><i class="ion-star"></i></span>
+				<p class="setting_home_title">
+					<span class="setting_home_title_content">レビュー</span>
+				</p>
+			</div>
+			<div class="contentbox setting_home_iconBox" ng-click="salonSettingAccount()">
+				<span class="setting_home_icon"><i class="ion-android-settings"></i></span>
+				<p class="setting_home_title">
+					<span class="setting_home_title_content">各種設定</span>
 				</p>
 			</div>
 		</div>
-		<div class="contentbox">
-			<div class="contentbox_content" ng-click="salonRev()">
-				<span class="setting_home_icon"><i class="ion-star"></i></span>
-				<p class="setting_home_title">レビュー</p>
-			</div>
-		</div>
-		<div class="contentbox">
-			<div class="contentbox_content" ng-click="salonSet()">
-				<span class="setting_home_icon"><i class="ion-android-settings"></i></span>
-				<p class="setting_home_title">各種設定</p>
-			</div>
-		</div>
-	</div>
-
-	<div div class="setting_home_02">
-		<div class="contentbox">
-			<div class="contentbox_content">
+	
+		<div div class="setting_home_box setting_home_marginBox">
+			<div class="contentbox setting_home_iconBox">
 				<span class="setting_home_icon"><i class="ion-help"></i></span>
-				<p class="setting_home_title">ヘルプ</p>
+				<p class="setting_home_title">
+					<span class="setting_home_title_content">ヘルプ</span>
+				</p>
 			</div>
 		</div>
+	
+		<div class="setting_home_box" >
+			<div class="contentbox setting_home_iconNoBox" ng-click="salonSettingTerms()">
+				<p class="setting_home_title">
+					<span class="setting_home_title_content">利用規約</span>
+				</p>
+			</div>
+			<div class="contentbox setting_home_iconNoBox" ng-click="salonSettingPrivacyPolicy()">
+				<p class="setting_home_title">
+					<span class="setting_home_title_content">プライバシーポリシー</span>
+				</p>
+			</div>
+			<div class="contentbox setting_home_iconNoBox" ng-click="salonSettingSclt()">
+				<p class="setting_home_title">
+					<span class="setting_home_title_content">特定商取引法について</span>
+				</p>
+			</div>
+		</div>
+		<button class="button button-block c01">ログアウト</button>
 	</div>
 
-	<div class="setting_home_03" >
-		<div class="contentbox">
-			<div class="contentbox_content" ng-click="salonTer()">
-				<span>
-				</span>
-				<p class="setting_home_title">利用規約</p>
-			</div>
-		</div>
-		<div class="contentbox">
-			<div class="contentbox_content" ng-click="salonPri()">
-				<span>
-				</span>
-				<p class="setting_home_title">プライバシーポリシー</p>
-			</div>
-		</div>
-		<div class="contentbox">
-				<div class="contentbox_content" ng-click="salonSclt()">
-				<span>
-				</span>
-				<p class="setting_home_title">特定商取引法について</p>
-			</div>
-		</div>
-	</div>
-
-	<button class="button button-block c01">ログアウト</button>
-
-</div>
+	<button class="button" ng-click="salonHomeHomeTop()">ホーム</button>
 
 </ion-content>
 </ion-view>

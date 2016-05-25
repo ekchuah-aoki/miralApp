@@ -2,37 +2,48 @@ angular.module('miral.salon.setting.setting_home.controllers', [])
 
 .controller('salonSalonSettingSettingHomeControllers', function($scope, $state) {
 
-	/* ユーザー情報 */
+	// ユーザー情報
 	$scope.salon_name = 'salon Hair Design';
+	
+	// 遷移
+	//サロン：設定：ポイント管理
+	$scope.salonSettingPintMan=function() {
+		$state.go('salon-setting-point_man',null,'');
+	}
 
-	/*　リンク　*/
-	$scope.salonPrf=function() {
+	//サロン：設定：マイプロフィール
+	$scope.salonSettingSalonDetail=function() {
 		$state.go('salon-setting-salon_detail',null,'');
 	}
-	
-	$scope.salonPoi=function() {
-		$state.go('salon-setting-point_man',null,'');
-	}	
-	
-	$scope.salonRev=function() {
+
+	//サロン：設定：レビュー
+	$scope.salonSettingReview=function() {
 		$state.go('salon-setting-review',null,'');
-	}	
-	
-	$scope.salonSet=function() {
+	}
+
+	//サロン：設定：アカウントの設定
+	$scope.salonSettingAccount=function() {
 		$state.go('salon-setting-account',null,'');
-	}	
-	
-	$scope.salonTer=function() {
+	}
+
+	//サロン：設定：利用規約
+	$scope.salonSettingTerms=function() {
 		$state.go('salon-setting-terms',null,'');
-	}	
-	
-	$scope.salonPri=function() {
+	}
+
+	//サロン：設定：プライバシーポリシー
+	$scope.salonSettingPrivacyPolicy=function() {
 		$state.go('salon-setting-privacy_policy',null,'');
-	}	
-	
-	$scope.salonSclt=function() {
+	}
+
+	//サロン：設定：特定商取引
+	$scope.salonSettingSclt=function() {
 		$state.go('salon-setting-sclt',null,'');
-	}	
+	}
+	//サロン：ホーム：トップ
+	$scope.salonHomeHomeTop=function() {
+		$state.go('salon-home-home_top',null,'');
+	}
 	
 	
 })
