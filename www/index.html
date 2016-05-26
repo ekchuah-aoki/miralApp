@@ -95,6 +95,7 @@
 
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
+    <script src="lib/ngStorage.min.js"></script>
 
     <!-- utility lib js -->
     <script src="lib/date-ja-JP.js"></script>
@@ -212,18 +213,18 @@
   </script>
   <body ng-app="miral" class="">
 
-   <ion-nav-bar >
+   <ion-nav-bar id="miralNaviBer" ng-controller="commonNaviBarControllers">
 		<div class="bar bar-header bar-stable beautiHd">
 	       <ion-nav-back-button style="margin-left:4px" side="left">戻る</ion-nav-back-button>
 			<ion-nav-buttons side="right">
-			　　<div class="iconHd" id="miralNaviBer" ng-controller="commonNaviBarControllers">
+			　　<div class="iconHd" >
 					<img src="./img/common/1/logo.svg" />
-					<div style="display:inline" ng-show="accountIsBeauti">
+					<div style="display:inline" ng-show="showNavi4Beauti">
 						<button class="button" ng-click="onHome()"><i class="ion-android-home"></i></a>
 						<button class="button" ng-click="onReserv()"><i class="ion-android-favorite"></i></a>
 						<button class="button" ng-click="onSetting()"><i class="ion-android-settings"></i></button>
 					</div>
-					<div  style="display:inline" ng-hide="accountIsBeauti">
+					<div style="display:inline" ng-show="showNavi4Salon">
 						<button class="button" ng-click="onSalonHome()"><i class="ion-android-home"></i></a>
 						<button class="button" ng-click=""><i class="ion-android-favorite"></i></a>
 						<button class="button" ng-click="onSalonSetting()"><i class="ion-android-settings"></i></button>

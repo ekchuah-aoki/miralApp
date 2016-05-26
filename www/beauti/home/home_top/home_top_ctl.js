@@ -1,6 +1,6 @@
-angular.module('miral.beauti.home.home_top.controllers', [])
+angular.module('miral.beauti.home.home_top.controllers', ['miral.common.navi_bar.controllers'])
 
-.controller('beautiHomeHomeTopControllers', function($scope,$window, $state, $timeout, $ionicHistory) {
+.controller('beautiHomeHomeTopControllers', function($scope,$window, $state, $timeout, $ionicHistory, miralNaviBarUtil) {
 
 	console.log('Start beautiHomeHomeTopControllers');
 
@@ -12,6 +12,7 @@ angular.module('miral.beauti.home.home_top.controllers', [])
 		//});
 	//};
 	
+	miralNaviBarUtil.show();
 	
 	//　遷移　
 	//美容師：ホーム：検索結果（未️マッチ）

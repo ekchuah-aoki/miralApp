@@ -1,6 +1,6 @@
-angular.module('miral.beauti.setting.account_edit_fnc', ['miral.common.googleAppenginConnecter','miral.loginInfo'])
+angular.module('miral.beauti.setting.account_edit_fnc', ['miral.common.googleAppenginConnecter','miral.loginInfo','miral.common.miralConst'])
 
-.factory('miralBeautiSettingAccountEditFnc', function(googleAppenginConnecter, loginInfo) {
+.factory('miralBeautiSettingAccountEditFnc', function(googleAppenginConnecter, loginInfo, ACCOUNT_TYPE) {
 
 	var myself = {
 			///////////////////////////////
@@ -33,7 +33,7 @@ angular.module('miral.beauti.setting.account_edit_fnc', ['miral.common.googleApp
 			    	//ログイン状態にする
 			    	loginInfo.setLoginInfo({
 						accountId:resp.accountId,
-						acType:ACCOUNT_TYPE.salon,
+						acType:ACCOUNT_TYPE.beauti,
 						kindId:resp.kindId,
 						email:beautiInfo_.email,
 						name: beautiInfo_.lastName + " " + beautiInfo_.firstName,

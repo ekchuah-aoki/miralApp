@@ -1,8 +1,8 @@
-angular.module('miral.loginInfo', ['miral.common.miralUtil','miral.common.miralConst'])
+angular.module('miral.loginInfo', ['miral.common.miralUtil','miral.common.miralConst','ngStorage'])
 
 ////////////////////////////////////////////
 //ログイン情報
-.factory('loginInfo', function($localStorage, LOGIN_TYPE) {
+.factory('loginInfo', function($localStorage, LOGIN_TYPE,$localStorage) {
 
 	//ログイン基本情報
 	var _loginInfo ={
@@ -22,7 +22,7 @@ angular.module('miral.loginInfo', ['miral.common.miralUtil','miral.common.miralC
 		/////////////////////////////
 		//ログイン情報をクリア
 		clearLoginInfo:function(){
-			$localStorage.remove('__$loginuser')
+			delete $localStorage.loginuser;
 		},
 		
 		
@@ -48,7 +48,7 @@ angular.module('miral.loginInfo', ['miral.common.miralUtil','miral.common.miralC
 				}
 			}
 
-			$localStorage.setObject('__$loginuser', _loginInfo)
+			$localStorage.loginuser = _loginInfo;
 			
 		},
 
@@ -56,7 +56,7 @@ angular.module('miral.loginInfo', ['miral.common.miralUtil','miral.common.miralC
 		/////////////////////////////
 		//ログイン基本情報の取得
 		getUserInfo:function(){
-			return $localStorage.getObject('__$loginuser');
+			return $localStorage.loginuser || {};
 		},
 
 	};

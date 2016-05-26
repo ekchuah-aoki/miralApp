@@ -51,10 +51,6 @@ angular.module('miral.login.controllers', ['miral.login.login_fnc','miral.common
 	//メールアドレスで新規登録
 	$scope.onNewByEmail=function() {
 
-		$ionicHistory.nextViewOptions({
-			disableBack: true
-		});		
-
 		$state.go('beauti-setting-account_edit',{mode:ACCOUNT_SETTING_MODE.add},'');
 	}
 
@@ -68,13 +64,10 @@ angular.module('miral.login.controllers', ['miral.login.login_fnc','miral.common
 	//HOME画面遷移
 	var goHome=function(){
 		userInfo = loginInfo.getUserInfo();
-
-		//Naviバーの状態を設定
-		var scope = angular.element(document.getElementById('miralNaviBer')).scope();
-		scope.$apply(function(){
-			scope.changeNaviBar();
-		});
 		
+		$ionicHistory.nextViewOptions({
+			disableBack: true
+		});		
 		
 		if (userInfo.acType == ACCOUNT_TYPE.salon){
 			console.log('サロン　アカウントでログイン');
@@ -100,6 +93,11 @@ angular.module('miral.login.controllers', ['miral.login.login_fnc','miral.common
 			//HOME画面に進む
 			goHome();
 		}else{
+			
+			$ionicHistory.nextViewOptions({
+				disableBack: true
+			});		
+			
 			$state.go('beauti-setting-account_edit',{mode:ACCOUNT_SETTING_MODE.modify},'');
 			console.debug('go beauti-setting-account_edit');
 		}
@@ -112,11 +110,6 @@ angular.module('miral.login.controllers', ['miral.login.login_fnc','miral.common
 		
 		var sucess = function(loginState_){
 			if(loginState_ == LOGIN_STATE.logined){
-				
-				$ionicHistory.nextViewOptions({
-					disableBack: true
-				});		
-				
 				//HOME画面に進む
 				goHome();
 			}else{

@@ -110,12 +110,6 @@ angular.module('miral.salon.setting.account_edit.controllers', ['miral.common.mi
 			
 			salonSettingAccountEditFnc.registAccount(salonInfo
 					,function(){
-				
-						//Naviバーの状態を設定
-						var scope = angular.element(document.getElementById('miralNaviBer')).scope();
-						scope.$apply(function(){
-							scope.changeNaviBar();
-						});
 						$state.go('salon-home-home_top',null,'');
 					}
 			);

@@ -1,6 +1,6 @@
 angular.module('miral.beauti.setting.account_edit.controllers', ['miral.common.miralConst','miral.beauti.setting.account_edit_fnc','miral.loginInfo'])
 
-.controller('beautiSettingAccountEditControllers', function($scope,$state, $stateParams, $ionicHistory, $ionicNavBarDelegate
+.controller('beautiSettingAccountEditControllers', function($scope,$state, $stateParams, $ionicHistory, $ionicNavBarDelegate,$timeout
 		, miralBeautiSettingAccountEditFnc,loginInfo
 		, ACCOUNT_SETTING_MODE, PREFECTURE, ACCOUNT_TYPE, LOGIN_TYPE) {
 
@@ -74,8 +74,23 @@ angular.module('miral.beauti.setting.account_edit.controllers', ['miral.common.m
 	}
 	
 	///////////////////////////////
-	//美容師免許に進む
-	$scope.onLicense=function(){
+	//HOME画面遷移
+	var goHome=function(){
+		userInfo = loginInfo.getUserInfo();
+
+		
+		$ionicHistory.nextViewOptions({
+			disableBack: true
+		});		
+		
+		console.log('美容師　アカウントでログイン');
+		$state.go('beauti-home-home-top',null,'');
+		
+	}
+		
+	///////////////////////////////
+	//登録進む
+	$scope.onTouroku=function(){
 		var accInfo = _setAccountByInputVal();
 		
 		//入力情報保存
@@ -84,28 +99,40 @@ angular.module('miral.beauti.setting.account_edit.controllers', ['miral.common.m
 			console.debug('新規登録');
 			miralBeautiSettingAccountEditFnc.registAccount(accInfo,
 					function(resp){
-						$state.go('beauti-setting-license_edit', null, '');
+						goHome();
 					}
 			)
 		}else{
 			//修正
 			console.debug('修正');
-			_accountModiy();
+			_accountModiy(accInfo, function(resp){
+							var backView = $ionicHistory.backView();
+							if( !backView){
+								//戻り先がない場合はHOMEへ
+								goHome();
+							}else{
+								$ionicHistory.goBack();
+							}
+						}
+			);
 		}
 	}
 	
-	/////////////////////////////////
+	/////////////////////////////////		
+
 	//修正登録処理
-	var _accountModiy=function(){
+	var _accountModiy=function(accInfo_, success_){
 		var userInfo = loginInfo.getUserInfo();
-		accInfo.accountId = userInfo.accountId;
+		accInfo_.accountId = userInfo.accountId;
 		
-		miralBeautiSettingAccountEditFnc.modifyAccount(accInfo,
+		miralBeautiSettingAccountEditFnc.modifyAccount(accInfo_,
 				function(resp){
 					//修正ということは、正規登録
 					loginInfo.setLoginInfo({temporary:false});
 					
-					$state.go('beauti-setting-license_edit', null, '');
+					if (success_){
+						success_(resp);
+					}
 				}
 		)
 		

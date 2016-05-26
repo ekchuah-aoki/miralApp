@@ -1,7 +1,10 @@
-angular.module('miral.salon.home.home_top.controllers', [])
+angular.module('miral.salon.home.home_top.controllers', ['miral.common.navi_bar.controllers'])
 
-.controller('salonHomeHomeTopControllers', function($scope, $state) {
+.controller('salonHomeHomeTopControllers', function($scope, $state, miralNaviBarUtil) {
 
+	//Naviバー表示制御
+	miralNaviBarUtil.show();
+	
 	// = 遷移 = = = = = = = = = =
 	//サロン：ホーム：シェアリクエスト
 	$scope.salonScheduleShareRequest=function() {

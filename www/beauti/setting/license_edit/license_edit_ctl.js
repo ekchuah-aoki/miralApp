@@ -9,14 +9,7 @@ angular.module('miral.beauti.setting.license_edit.controllers', ['miral.beauti.s
 
 	
 	var goHome=function(){
-		//Naviバーの状態を設定
-		var scope = angular.element(document.getElementById('miralNaviBer')).scope();
-		scope.$apply(function(){
-			scope.changeNaviBar();
-		});
-		
 		$state.go("beauti-home-home-top", null, '');
-		
 	}
 	
 	/////////////////////////////////////

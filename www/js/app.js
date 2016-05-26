@@ -85,7 +85,6 @@ angular.module('miral', ['ionic', 'ngCordovaOauth','ngAnimate', 'ionicLazyLoad',
     
     //ログイン済みなら各ホーム画面へ
     userInfo = loginInfo.getUserInfo();
-    
     if( userInfo.accountId){
     	if (userInfo.acType == ACCOUNT_TYPE.salon){
     		console.log('サロン　アカウントでログイン済み');
@@ -97,7 +96,6 @@ angular.module('miral', ['ionic', 'ngCordovaOauth','ngAnimate', 'ionicLazyLoad',
     }else{
    		$state.go('login',null,'');
     }
-    
     
   });
 })
@@ -523,7 +521,7 @@ angular.module('miral', ['ionic', 'ngCordovaOauth','ngAnimate', 'ionicLazyLoad',
 	  })
 
 	  // if none of the above states are matched, use this as the fallback
-	  //$urlRouterProvider.otherwise('/login');
+	 // $urlRouterProvider.otherwise('/login');
   
 
 });
