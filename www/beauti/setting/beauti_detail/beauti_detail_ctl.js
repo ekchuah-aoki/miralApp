@@ -1,6 +1,6 @@
 angular.module('miral.beauti.setting.beauti_detail.controllers', [])
 
-.controller('beautiSettingBeautiDetailControllers', function($scope) {
+.controller('beautiSettingBeautiDetailControllers', function($scope,$state) {
 	
 	$scope.user_name ="本田涼子";
 	$scope.reviwe_vel ="5.0";
@@ -14,6 +14,13 @@ angular.module('miral.beauti.setting.beauti_detail.controllers', [])
 	
 	$scope.stylist_his ="6";
 	$scope.license ="所有";	
+
+	//遷移
+	//美容師：設定：マイプロフィールの編集
+	$scope.beautiSettingBeautiEdit=function() {
+		$state.go('beauti-setting-beauti_edit',null,'');
+	}
+
 	
 })
 ;

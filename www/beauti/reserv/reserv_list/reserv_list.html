@@ -7,32 +7,14 @@
 			<a class="tab-item active" href="#">選択しない</a>
 		</div>
 	</div>
-<ion-content class="miralbody has-header-w">
+	<div class="reserv_map_MapIcon" ng-click="beautiReservReservMap()"><i class="ion-ios-location"></i></div>
+<ion-content class="miralbody has-header-w reserv_list">
 
-<!-- 
-<ion-tabs class="search_tab">
-  <ion-tab title="利用日時"  class="serch_tab_title">
-    <!-- Tab 1 content --
-  </ion-tab>
-  
-  <ion-tab title="今日" >
-    <!-- Tab 1 content --
-  </ion-tab>
-
-  <ion-tab title="明日">
-    <!-- Tab 2 content --
-  </ion-tab>
-
-  <ion-tab title="選択しない">
-    <!-- Tab 3 content --
-  </ion-tab>
-</ion-tabs>
- -->
 	<!-- サロン一覧 -->
 	<ul class="list">
 	
 		<!-- 1 -->
-		<li class="item reserv_list_result">
+		<li class="item reserv_list_result" ng-click="beautiHomeSalonDetail()">
 			<span class="favorite_button">
 				<input id="reserv_list_favorite_01" name="reserv_list" type="checkbox" checked />
 				<label for="reserv_list_favorite_01"><i class="ion-android-favorite"></i></label>
@@ -58,7 +40,7 @@
 		</li>
 	
 		<!-- 2 -->
-		<li class="item reserv_list_result">
+		<li class="item reserv_list_result" ng-click="beautiHomeSalonDetail()">
 			<span class="favorite_button">
 				<input id="reserv_list_favorite_02" name="reserv_list" type="checkbox" />
 				<label for="reserv_list_favorite_02"><i class="ion-android-favorite"></i></label>
@@ -83,7 +65,7 @@
 		</li>
 		
 		<!-- 3 -->
-		<li class="item reserv_list_result">
+		<li class="item reserv_list_result" ng-click="beautiHomeSalonDetail()">
 			<span class="favorite_button">
 				<input id="reserv_list_favorite_03" name="reserv_list" type="checkbox" />
 				<label for="reserv_list_favorite_03"><i class="ion-android-favorite"></i></label>
@@ -108,7 +90,7 @@
 		</li>
 		
 		<!-- 4 -->
-		<li class="item reserv_list_result">
+		<li class="item reserv_list_result" ng-click="beautiHomeSalonDetail()">
 			<span class="favorite_button">
 				<input id="reserv_list_favorite_04" name="reserv_list" type="checkbox" />
 				<label for="reserv_list_favorite_04"><i class="ion-android-favorite"></i></label>
@@ -134,7 +116,7 @@
 		</li>
 	
 		<!-- 5 -->
-		<li class="item reserv_list_result">
+		<li class="item reserv_list_result" ng-click="beautiHomeSalonDetail()">
 			<span class="favorite_button">
 				<input id="reserv_list_favorite_05" name="reserv_list" type="checkbox" />
 				<label for="reserv_list_favorite_05"><i class="ion-android-favorite"></i></label>

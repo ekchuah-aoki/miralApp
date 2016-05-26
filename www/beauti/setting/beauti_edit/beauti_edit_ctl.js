@@ -15,6 +15,10 @@ angular.module('miral.beauti.setting.beauti_edit.controllers', [])
 	$scope.stylist_his ="6";
 	$scope.license ="所有";	
 	
-})
+	//美容師：設定：マイプロフィール
+	$scope.beautiSettingBeautiDetail=function() {
+		$state.go('beauti-setting-beauti_detail',null,'');
+	}
 
-;
+	
+});

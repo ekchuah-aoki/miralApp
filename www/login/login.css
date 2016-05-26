@@ -1,11 +1,14 @@
 @CHARSET "UTF-8";
-/* login */
+/*　----- login_loginbody start -----　*/
 .login_loginbody { 
 	background-image: url('./img/login_back.jpg');
 	padding:10px;}
+/*　----- login_loginbody end-----　*/
 
+/*　----- login_tutorial start -----　*/
 .login_tutorial {
-	margin: 20px 20px;
+	margin: 10px;
+	padding: 10px;
 	}
 
 .login_tutorial > span {
@@ -16,28 +19,36 @@
 	border-radius:10px;
 	display:block;
 }
+/*　----- login_tutorial end -----　*/
 
-.login_tutorial div.box {
+/*　----- login_slide_box start -----　*/
+.login_slide_box {
 	margin: 0 auto;
-	width: 350px;
+	width:100%;
+	max-width: 350px;	
 	color:#FFF;
 	text-align: center;
 }
 
-.login_tutorial div p {
+.login_slide_box p {
 	color:#FFF;
 }
 
-.login_slideimg {
+.login_slide_box img {
 	width:100%;
+	padding: 20px;
 }
+/*　----- login_slide_box end -----　*/
 
+/*　----- login_nologin start -----　*/
 .login_nologin {
 	width:100%;
 	display: inline-block;
 	text-align: right;
 }
+/*　----- login_nologin end -----　*/
 
+/*　----- login_mail start -----　*/
 .login_mail {
 	width: 100%;
 	display: inline-block;
@@ -53,7 +64,9 @@
 	position: relative;
 	font-size: 17px;
 	}
-	
+/*　----- login_mail end -----　*/
+
+/*　----- login_button_icon start -----　*/
 .login_button_icon > i {
 	display: inline-block;
 	font-size:20px;
@@ -64,3 +77,4 @@
 	width: 260px;
 	display: inline-block;
 }
+/*　----- login_button_icon end -----　*/

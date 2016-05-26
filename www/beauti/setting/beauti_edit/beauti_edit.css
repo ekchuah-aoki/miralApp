@@ -1,5 +1,6 @@
 @CHARSET "UTF-8";
 
+/*　----- img_edit start -----　*/
 span.img_edit {
 	background-color: rgba(255,255,255,0.5);
 	height: 100%;
@@ -25,31 +26,27 @@ span.img_edit span {
 	-webkit-justify-content: center;
 	justify-content: center;
 }
+/*　----- img_edit end -----　*/
 
-li.galleryimgAdd {
+/*　----- galleryimg_add start -----　*/
+li.galleryimg_add {
 	background-color: rgba(255,255,255,0.5);
-	display: inline-block;
+	display:table;
 	box-sizing:border-box;
-	padding: 6px ;
-	position: relative;
+	padding: 6px;
 }
 
-li.galleryimgAdd:before {
-	content: "";
-	color: #FFF;
-	border: dotted 2px #FFF;
+li.galleryimg_add > span {
 	width: 100%;
 	height: 100%;
+	display: table-cell;
+	border: dotted 2px #FFF;
+	vertical-align: middle;
 	text-align: center;
-	margin: -2px 0px;
-	min-height: 110px;
 }
 
-li.galleryimgAdd p {
-	position:absolute;
-	margin-top: -50%;
-	font-size: 40px;
-	text-align: center;
-	right: 0;
-	left: 0;
+li.galleryimg_add > span:before {
+	content: "+";
+	font-size: 20px;
 }
+/*　----- galleryimg_add end -----　*/

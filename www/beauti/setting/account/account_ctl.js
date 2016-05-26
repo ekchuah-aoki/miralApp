@@ -11,6 +11,12 @@ angular.module('miral.beauti.setting.account.controllers', ['miral.common.miralC
 	$scope.licenseEdit=function(){
 		$state.go('beauti-setting-license_edit',null,'');
 	}
+	
+	//美容師：設定：退会
+	//$scope.beautiSettingWithdrawal=function() {
+	//$state.go('beauti-setting-withdrawal',null,'');
+	//}
+	
 })
 
 ;

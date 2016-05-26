@@ -1,11 +1,14 @@
 @CHARSET "UTF-8";
 
-.account {
+/*　----- account start -----　*/
+.account_content {
 	margin: 0px;
 }
 
-.account .contentbox {
+.account_content .contentbox {
 	margin: 0px;
 	margin-top: -1px;
 	padding-bottom:15px; 
+	cursor: pointer;
 }
+/*　----- account end -----　*/

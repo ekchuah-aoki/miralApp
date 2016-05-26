@@ -1,12 +1,13 @@
 @CHARSET "UTF-8";
 
-.reserv_RecMessage,
-.reserv_TraMessage {
+/* reserv_message_partner , reserv_message_self start*/
+.reserv_message_partner,.reserv_message_self {
 	width: 100%;
 	position: relative;
 }
 
-.reserv_RecMessage .message_cont {
+/* .message_cont */
+.reserv_message_partner .message_cont {
 	width: 100%;
 	background-color: #5c5c5c;
 	padding:15px;
@@ -18,7 +19,7 @@
 	box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.1);
 }
 
-.reserv_TraMessage .message_cont {
+.reserv_message_self .message_cont {
 	width: 100%;
 	background-color: #DDDDDD;
 	padding:15px;
@@ -29,7 +30,7 @@
 	box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.1);
 }
 
-.reserv_RecMessage .message_cont:after {
+.reserv_message_partner .message_cont:after {
 	border:10px solid transparent;
 	border-right-color:#5c5c5c;
 	border-left-width:0;
@@ -41,7 +42,7 @@
 	width:0;
 	}
 
-.reserv_TraMessage .message_cont:after {
+.reserv_message_self .message_cont:after {
 	border:10px solid transparent;
 	border-left-color:#DDDDDD;
 	border-right-width:0;
@@ -53,15 +54,17 @@
 	width:0;
 	}
 	
-.reserv_RecMessage .message_wrap{
+/* message_wrap */
+.reserv_message_partner .message_wrap{
 	margin-left: 65px;
 }
 
-.reserv_TraMessage .message_wrap{
+.reserv_message_self .message_wrap{
 	margin-right: 65px;
 }
 
-.reserv_RecMessage .message_img {
+/* .message_img */
+.reserv_message_partner .message_img {
 	width: 40px;
 	height: 40px;
 	background-color: #ccc;
@@ -72,7 +75,7 @@
 	left: 0px;
 }
 
-.reserv_TraMessage .message_img {
+.reserv_message_self .message_img {
 	width: 40px;
 	height: 40px;
 	background-color: #ccc;
@@ -83,25 +86,28 @@
 	right: 0px;
 }
 
-.reserv_RecMessage .message_addres {
+/* message_addres */
+.reserv_message_partner .message_addres {
 	width:100%;
 	margin-left: 10px;
 	font-size: 12px;
 	text-align: left;
 }
 
-.reserv_TraMessage .message_addres {
+.reserv_message_self .message_addres {
 	width:100%;
 	margin-right: 10px;
 	font-size: 12px;
 	text-align: right;
 }
+/* reserv_message_partner , reserv_message_self end */
 
+/* message_input start */
 .message_input {
 	width: 70px;
 	height: 70px;
 	border: none;
-	border-radius: 35px;
+	border-radius: 70px;
 	position: fixed;
 	bottom: 10px;
 	right: 10px;
@@ -114,3 +120,4 @@
 	height: 100px;
 	padding: 10px;
 }
+/* message_input end */

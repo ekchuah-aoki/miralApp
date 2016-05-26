@@ -85,3 +85,22 @@ li.reserv_list_result span.favorite_button {
 	width: 100%;
 }
 /* ----- reserv_list_result_img end ----- */
+
+/* ----- reserv_list_MapIcon start ----- */
+div.reserv_map_MapIcon {
+	width: 60px;
+	height: 60px;
+	border-radius:30px;
+	display:inline-block;
+	background-color: #A87544;
+	z-index: 10;
+	cursor: pointer;
+	margin: 20px;
+	padding: 15px 21px;
+	color: #FFF;
+	font-size: 30px;
+	position: fixed;
+	right: 0px;
+	bottom: 0px;
+}
+/* ----- reserv_list_result_img end ----- */

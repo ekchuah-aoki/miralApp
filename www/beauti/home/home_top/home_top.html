@@ -1,19 +1,22 @@
 <ion-view>
 <ion-content class="miralbody home_top">
+<div class="miralbody_wrap">
 <!-- 美容師　hoem_top -->
 
 	<!-- キャンペーンバナー -->
-	<div class="s_home_top_cam" ng-click="beautiHomeSalonSrhrst()">
+	<div class="b_home_top_cam" ng-click="beautiHomeSalonSrhrst()">
 		<img src="beauti/home/home_top/img/campaign_01.png">
 	</div>
 	
 	<!-- 検索 -->
 	<div class="searchbox">
-	  <label class="item item-input">
-	    <i class="icon ion-search placeholder-icon"></i>
-	    <input type="text" placeholder="Search">
-	  </label>
-	  <button class="button c01">検索</button>
+		<div>
+			<label class="item item-input">
+				<i class="icon ion-search placeholder-icon"></i>
+				<input type="text" placeholder="Search">
+			</label>
+		</div>
+		<button class="button c01">検索</button>
 	</div>
 	
 	<!-- キャンペーンバナー -->
@@ -42,5 +45,7 @@
 		<li ng-click="beautiHomeGuidesOwner()"><img src="beauti/home/home_top/img/bana_02.png"></li>
 		<li ng-click="beautiHomeRequest()"><img src="beauti/home/home_top/img/bana_03.png"></li>
 	</ul>
+	
+</div>
 </ion-content>
 </ion-view>

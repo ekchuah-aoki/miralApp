@@ -30,6 +30,7 @@ angular.module('miral', ['ionic', 'ngCordovaOauth','ngAnimate', 'ionicLazyLoad',
                          ,'miral.beauti.setting.beauti_detail.controllers'
                          ,'miral.beauti.setting.beauti_edit.controllers'
                          ,'miral.beauti.setting.review.controllers'
+                         ,'miral.beauti.setting.review_edit.controllers'
                          ,'miral.beauti.setting.account.controllers'
                          ,'miral.beauti.setting.account_edit.controllers'
                          ,'miral.beauti.setting.license_edit.controllers'
@@ -55,6 +56,7 @@ angular.module('miral', ['ionic', 'ngCordovaOauth','ngAnimate', 'ionicLazyLoad',
                          ,'miral.salon.setting.salon_detail.controllers'
                          ,'miral.salon.setting.salon_edit.controllers'
                          ,'miral.salon.setting.review.controllers'
+                         ,'miral.salon.setting.review_edit.controllers'
                          ,'miral.salon.setting.account.controllers'
                          ,'miral.salon.setting.account_edit.controllers'
                          ,'miral.salon.setting.terms.controllers'
@@ -468,6 +470,13 @@ angular.module('miral', ['ionic', 'ngCordovaOauth','ngAnimate', 'ionicLazyLoad',
 	    url: '/salon/setting/review',
 	    templateUrl: 'salon/setting/review/review.html',
 	    controller: 'salonSettingReviewControllers'
+	  })
+
+  // サロン 設定　レビューの編集
+  .state('salon-setting-review_edit', {
+	    url: '/salon/setting/review_edit',
+	    templateUrl: 'salon/setting/review_edit/review_edit.html',
+	    controller: 'salonSettingReviewEditControllers'
 	  })
 
   // サロン 設定  アカウントの設定

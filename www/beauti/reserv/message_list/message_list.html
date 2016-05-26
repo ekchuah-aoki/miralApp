@@ -1,53 +1,40 @@
 <ion-view>
-<ion-content class="miralbody" >
 
-<ion-tabs class="miral_tab">
-  <ion-tab title="Home" icon-on="ion-android-favorite" icon-off="ion-android-favorite">
-    <!-- Tab 1 content -->
-  </ion-tab>
-
-  <ion-tab title="About" icon-on="ion-android-calendar" icon-off="ion-android-calendar">
-    <!-- Tab 2 content -->
-  </ion-tab>
-
-  <ion-tab title="Settings" icon-on="ion-android-textsms" icon-off="ion-android-textsms">
-    <!-- Tab 3 content -->
-  </ion-tab>
-</ion-tabs>
-
-<div class="message_list ">
-	<div class="contentbox">
-		<img class="list_salon_img" src="./beauti/home/salon_detail/img/salon01_1.jpg">
+	<!-- タブ -->
+	<div class="tabs-striped tabs-top miral_tab">
+		<div class="tabs">
+			<a class="tab-item" ng-click ="beautiReservReservHome()"><i class="icon ion-android-favorite"></i></a>
+			<a class="tab-item" ng-click ="beautiReservReservInfo()"><i class="icon ion-android-calendar"></i></a>
+			<a class="tab-item active" ng-click ="beautiReservMessageList()"><i class="icon ion-android-textsms"></i></a>
+		</div>
+	</div>
+	
+<ion-content class="miralbody message_list has-header-w" >
+	<!-- 1 -->
+	<div class="contentbox" ng-click="beautiReservMessage()">
+		<div class="message_list_img">
+			<img class="list_salon_img" src="./img/salon/1/salon01_1.jpg">
+		</div>
 		<div class="message_list_text">
 			<div>
-				<span class="unread"></span>
-				<span class="mess_time">19:00</span>
+				<span class="message_unread"></span>
+				<span class="message_time">19:00</span>
 				<p class="salon_name">salon Hair Design 池袋店</p>
 				<p>2000年05月11日　10:00〜11:00 予約</p>
-				<p>おはようございます！はようございます！おはようございます</p>
+				<p>こんにちは。シェアのご予約ありがとうございました。予約内容は以下の通りになりますがお間違えないでしょうか。ご確認お願いいたします</p>
 			</div>
 		</div>
 	</div>
 
-	<div class="contentbox">
-		<img class="list_salon_img" src="./beauti/home/salon_detail/img/salon01_1.jpg">
-		<div class="message_list_text">
-			<div>
-				<span class="unread"></span>
-				<span class="mess_time">19:00</span>
-				<p class="salon_name">salon Hair Design 池袋店</p>
-				<p>2000年05月11日　10:00〜11:00 予約</p>
-				<p>おはようございます！はようございます！おはようございます</p>
-			</div>
+	<!-- 2 -->
+	<div class="contentbox" ng-click="beautiReservMessage()">
+		<div class="message_list_img">
+			<img class="list_salon_img" src="./img/salon/1/salon01_1.jpg">
 		</div>
-	</div>
-
-	<div class="contentbox">
-		<img class="list_salon_img" src="./beauti/home/salon_detail/img/salon01_1.jpg">
 		<div class="message_list_text">
 			<div>
-				<span class="unread"></span>
-				<span class="mess_time">19:00</span>
+				<span class="message_unread"></span>
+				<span class="message_time">19:00</span>
 				<p class="salon_name">salon Hair Design 池袋店</p>
 				<p>2000年05月11日　10:00〜11:00 予約</p>
 				<p>おはようございます！はようございます！おはようございます</p>
@@ -55,31 +42,51 @@
 		</div>
 	</div>
 	
-	<div class="contentbox">
-		<img class="list_salon_img" src="./beauti/home/salon_detail/img/salon01_1.jpg">
+	<!-- 3 -->
+	<div class="contentbox" ng-click="beautiReservMessage()">
+		<div class="message_list_img">
+			<img class="list_salon_img" src="./img/salon/1/salon01_1.jpg">
+		</div>
 		<div class="message_list_text">
 			<div>
-				<span class="unread"></span>
-				<span class="mess_time">19:00</span>
+				<span class="message_unread"></span>
+				<span class="message_time">19:00</span>
 				<p class="salon_name">salon Hair Design 池袋店</p>
 				<p>2000年05月11日　10:00〜11:00 予約</p>
 				<p>おはようございます！はようございます！おはようございます</p>
 			</div>
 		</div>
 	</div>
-	
-	<div class="contentbox">
-		<img class="list_salon_img" src="./beauti/home/salon_detail/img/salon01_1.jpg">
+		
+	<!-- 4 -->
+	<div class="contentbox" ng-click="beautiReservMessage()">
+		<div class="message_list_img">
+			<img class="list_salon_img" src="./img/salon/1/salon01_1.jpg">
+		</div>
 		<div class="message_list_text">
 			<div>
-				<span class="unread"></span>
-				<span class="mess_time">19:00</span>
+				<span class="message_unread"></span>
+				<span class="message_time">19:00</span>
 				<p class="salon_name">salon Hair Design 池袋店</p>
 				<p>2000年05月11日　10:00〜11:00 予約</p>
 				<p>おはようございます！はようございます！おはようございます</p>
 			</div>
 		</div>
 	</div>
-</div>
+		
+	<!-- 5 -->
+	<div class="contentbox" ng-click="beautiReservMessage()">
+		<div class="message_list_img">
+			<img class="list_salon_img" src="./img/salon/1/salon01_1.jpg">
+		</div>
+		<div class="message_list_text">
+			<div>
+				<span class="message_time">19:00</span>
+				<p class="salon_name">salon Hair Design 池袋店</p>
+				<p>2000年05月11日　10:00〜11:00 予約</p>
+				<p>おはようございます！</p>
+			</div>
+		</div>
+	</div>
 </ion-content>
 </ion-view>

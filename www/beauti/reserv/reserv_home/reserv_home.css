@@ -1,20 +1,20 @@
 @CHARSET "UTF-8";
-
 /*　----- reserv_home_salon start -----　*/
 .reserv_home_salon {
 	width:100%;
-	display: block;
-	padding:10px;
+	display: inline-block;
+	padding:10px 5px;
 }
 
 .reserv_home_salon dl   {
-	width: 20%;
+	width: 25%;
 	display: block;
 	float: left;
-	margin: 0px 2.5%;
+	padding: 0px 5px;
+	margin-bottom: 10px;
 }
 
-.reserv_home_salon dt {
+.reserv_home_salon dl dt {
 	font: 12px nomale;
 	display: block;
 	width: 100%;
@@ -23,14 +23,22 @@
 	text-overflow: ellipsis;
 }
 
-.reserv_home_salon dl dd  {
-	height: 100px;
+.reserv_home_salon dl dd {
+	position: relative;
+	height: auto;
+	min-height: 100px;
+	width:100%;
 	display: inline-block;
 	overflow:hidden;
+	background-color: #DDD;
 }
 
-.reserv_home_salon dl dd >img {
+.reserv_home_salon dl dd > img {
+	position:absolute;
+	top:0;
+	left:0;
 	width:100%;
+	height:100%;
 	min-width:100px;
 	min-height: 100px;
 }
@@ -46,20 +54,20 @@
 .reserv_home_search {
 	overflow: hidden;
 	font-size: 0;
-	vertical-align: top;
+	width: 100%;
 }
 
 .reserv_home_search li {
-	height: 100px;
+	/*height: 100px;*/
 	width: 100%;
-
 }
 
-.reserv_home_salon img{
+.reserv_home_search img{
 	margin:0px;
 	width: 100%;
 	height: auto;
-	min-height: 100px;
+	vertical-align: top;
+	/*min-height: 100px;*/
 }
 
 /*　----- reserv_home_salon end -----　*/

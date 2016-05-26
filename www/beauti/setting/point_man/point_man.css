@@ -1,50 +1,64 @@
 @CHARSET "UTF-8";
 
-.setting_point_man_inq > .contentbox p {
+/*　----- point_man_inquiry start -----　*/
+.point_man_inquiry > .contentbox p {
 	margin: 0;
 	width: 50%;
 	float: left;
 }
 
-.setting_point_man_inq > .contentbox p:last-child {
-	text-align: center;
-	font-size: 17px;
+.point_man_buy {
+	width: 100%;
+	margin-top: 10px;
 }
 
-.setting_point_man_inq > p,
-.setting_point_man_inq > button {
-	margin: 10px 1%;
-	width: 48%;
+.point_man_buy > div   {
+	width: 100%;
 	float: left;
+	padding-right: 160px;
 }
 
-.setting_point_man_inq > p{
-	font-size:12px;
+.point_man_buy > div > p  {
+	width: 100%;
+	display: inline-block;
 }
 
-.setting_point_man_inq > contentbox p:last-child {
-	text-align: center;
-	font-size: 17px;
+.point_man_buy button {
+	width: 150px;
+	margin-left: -151px;
 }
+/*　----- point_man_inquiry end -----　*/
 
-ul.setting_point_man_his{
+/*　----- point_man_history start -----　*/
+ul.point_man_history{
 	margin: 0px;
 	margin-bottom: -1px;
+	display: table;
+	width: 100%;
 }
 
-.setting_point_man_his > li.item > p {
-	margin: 0;
-	width: 50%;
+.point_man_history > li{
+	display: table-cell;
+	vertical-align: middle;
+	width: 100%;
 	float: left;
-	font-size: 17px;
+	height: 80px;
 }
 
-.setting_point_man_his > li.item > p:first-child span {
+.point_man_history > li.item > p {
+	margin: 0;
+	font-size: 18px;
+	float: left;
+}
+
+.point_man_history > li.item > p:first-child span {
 	font-size: 12px;
 }
 
-.setting_point_man_his > li.item > p:last-child {
+.point_man_history > li.item > p:last-child {
 	text-align: center;
 	font-size: 20px;
 	padding: 10px;
+	float: right;
 }
+/*　----- point_man_his end -----　*/

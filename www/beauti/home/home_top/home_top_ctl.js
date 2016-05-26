@@ -44,6 +44,10 @@ angular.module('miral.beauti.home.home_top.controllers', ['miral.common.navi_bar
 	$scope.beautiHomeRequest=function() {
 		$state.go('beauti-home-request',null,'');
 	}
-
+	
+	//サロン：ホーム：トップ
+	$scope.salonHomeHomeTop=function() {
+		$state.go('salon-home-home_top',null,'');
+	}
 })
 ;

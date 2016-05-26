@@ -21,7 +21,7 @@
 
 /*　----- reserv_hst_content start -----　*/
 .reserv_hst_content > .accordion{
-	margin-top: 0px;
+	margin-top: -1px;
 }
 .reserv_hst_content > .accordion > label {
 	padding-right: 35px;

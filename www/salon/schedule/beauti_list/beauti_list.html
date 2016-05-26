@@ -1,18 +1,21 @@
 <ion-view>
-<ion-content class="miralbody beauti_list">
 
 	<!-- タブ -->
-	<ion-tabs class="miral_tab">
-		<ion-tab title="シェアリクエスト"></ion-tab>
-		<ion-tab title="スタイリスト一覧"></ion-tab>
-	</ion-tabs>
+	<div class="tabs-striped tabs-top miral_tab">
+		<div class="tabs">
+			<a class="tab-item" ng-click ="salonScheduleShareRequest()">シェアリクエスト</a>
+			<a class="tab-item active" ng-click ="salonScheduleBeautiList()">スタイリスト一覧</a>
+		</div>
+	</div>
+
+<ion-content class="miralbody beauti_list has-header-w">
 
 	<!-- 美容師一覧 -->
 	<div class="padding beauti_list">
 		<!-- 1 -->
 		<div class="contentbox reserv_accordion">
 			<img class="list_beauti_img" src="./img/beauti/1/profile.png">
-			<div class="beauti_list_label">
+			<div class="beauti_list_label" ng-click ="beautiSettingBeautiDetail()">
 				<p>本田涼子</p>
 			</div>
 	
@@ -111,7 +114,7 @@
 		<!-- 2 -->
 		<div class="contentbox beauti_list">
 			<img class="list_beauti_img" src="./img/beauti/1/profile.png">
-			<div class="beauti_list_label">
+			<div class="beauti_list_label" ng-click ="beautiSettingBeautiDetail()">
 				<p>本田涼子</p>
 			</div>
 		</div>

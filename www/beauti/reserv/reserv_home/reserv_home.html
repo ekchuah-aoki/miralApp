@@ -1,59 +1,56 @@
 <ion-view>
-<ion-content class="miralbody reserv_home">
 
-<ion-tabs class="miral_tab">
-  <ion-tab title="Home" icon-on="ion-android-favorite" icon-off="ion-android-favorite">
-    <!-- Tab 1 content -->
-  </ion-tab>
-
-  <ion-tab title="About" icon-on="ion-android-calendar" icon-off="ion-android-calendar">
-    <!-- Tab 2 content -->
-  </ion-tab>
-
-  <ion-tab title="Settings" icon-on="ion-android-textsms" icon-off="ion-android-textsms">
-    <!-- Tab 3 content -->
-  </ion-tab>
-</ion-tabs>
-
+	<!-- タブ -->
+	<div class="tabs-striped tabs-top miral_tab">
+		<div class="tabs">
+			<a class="tab-item active" ng-click ="beautiReservReservHome()"><i class="icon ion-android-favorite"></i></a>
+			<a class="tab-item" ng-click ="beautiReservReservInfo()"><i class="icon ion-android-calendar"></i></a>
+			<a class="tab-item" ng-click ="beautiReservMessageList()"><i class="icon ion-android-textsms"></i></a>
+		</div>
+	</div>
+	
+<ion-content class="miralbody reserv_home has-header-w">
 	<!-- 最近マッチしたサロン -->
-	<p class="c01 titleBar m5">最近マッチしたサロン</p>
+	<p class="c01 titleBar maT10">最近マッチしたサロン</p>
 	<div class="reserv_home_salon">
-		<dl>
-			<dd><img src="./beauti/home/salon_detail/img/salon01_1.jpg"></dd>
+		<dl ng-click="beautiHomeSalonDetail()">
+			<dd class="liquid_box1x1"><img src="./beauti/home/salon_detail/img/salon01_1.jpg"></dd>
 			<dt>店舗名~店舗名~店舗名~店舗名~</dt>
 		</dl>
-		<dl>
-			<dd><img src="./beauti/home/salon_detail/img/salon01_2.jpg"></dd>
+		<dl ng-click="beautiHomeSalonDetail()">
+			<dd class="liquid_box1x1"><img src="./beauti/home/salon_detail/img/salon01_2.jpg"></dd>
 			<dt>店舗名</dt>
 		</dl>
-		<dl>
-			<dd><img src="./beauti/home/salon_detail/img/salon01_3.jpg"></dd>
+		<dl ng-click="beautiHomeSalonDetail()">
+			<dd class="liquid_box1x1"><img src="./beauti/home/salon_detail/img/salon01_3.jpg"></dd>
 			<dt>店舗名</dt>
 		</dl>
-		<dl>
-			<dd><img src="./beauti/home/salon_detail/img/salon01_4.jpg"></dd>
+		<dl ng-click="beautiHomeSalonDetail()">
+			<dd class="liquid_box1x1"><img src="./beauti/home/salon_detail/img/salon01_4.jpg"></dd>
 			<dt>店舗名</dt>
 		</dl>
-		<p class="clB">もっとみる</p>
+		<p class="clB" ng-click="beautiReservSalonList()">もっとみる</p>
 	</div>
 
 	<!-- サロン検索 -->
 	<p class="c01 titleBar">サロン検索</p>
 	<ul class="reserv_home_search">
-		<li><img src="./beauti/reserv/reserv_home/img/campaign_01.png"></li>
+		<li ng-click="beautiReservReservList()"><img src="./beauti/reserv/reserv_home/img/campaign_01.png"></li>
 	</ul>
 	<!-- 検索ボックス -->
 	<div class="searchbox">
-		<label class="item item-input">
-			<i class="icon ion-search placeholder-icon"></i>
-			<input type="text" placeholder="Search">
-		</label>
-		<button class="button c01">検索</button>
+		<div>
+			<label class="item item-input">
+				<i class="icon ion-search placeholder-icon"></i>
+				<input type="text" placeholder="Search">
+			</label>
+		</div>
+		<button class="button c01" ng-click="beautiReservReservList()">検索</button>
 	</div>
 	<ul class="reserv_home_search">
-		<li><img src="./beauti/reserv/reserv_home/img/campaign_02.png"></li>
-		<li><img src="./beauti/reserv/reserv_home/img/campaign_03.png"></li>
-		<li><img src="./beauti/reserv/reserv_home/img/campaign_04.png"></li>
+		<li ng-click="beautiReservReservList()"><img src="./beauti/reserv/reserv_home/img/campaign_02.png"></li>
+		<li ng-click="beautiReservReservList()"><img src="./beauti/reserv/reserv_home/img/campaign_03.png"></li>
+		<li ng-click="beautiReservReservList()"><img src="./beauti/reserv/reserv_home/img/campaign_04.png"></li>
 	</ul>
 	
 </ion-content>

@@ -1,71 +1,70 @@
 <ion-view>
-<ion-content class="miralbody">
-<div ng-switch="viewNo" class="withdrawal">
-
-<!-- 退会手続き -->
-<div ng-switch-when="1">
-<p class="titleBar c01">退会手続き</p>
-	<div class="padding">
-		<div class="contentbox">
-			<p>
-			いつもご利用いただきありがとうございます。<br/>
-			こちらではMiralの退会手続きを行います。<br/>
-			</p>
-			<p>
-			退会をご検討中の方は、今一度下記の内容をお読み頂き、<br/>
-			よろしければ「次へ」のボタンからお進みください。
-			</p>
-			
-			<p class="withdrawal_title">お手持ちのポイントについて</p>
-			<p>Miral退会手続きを行うとMiralで購入したポイントが消滅します。<br/>
-			現在所持しているポイントは以下のポイントになります。
-			</p>
-			<p class="withdrawal_point">
-				<span class="withdrawal_point">現在の所持ポイント</span>
-				<span>100Pt</span>
-			</p>
-			<p class="withdrawal_title">サロンのご利用について</p>
-			<p>Miralの退会手続きを実行後、Miralで繋がったサロンとミラーレンタルの契約を行った場合、契約違反の罰金が発生致します。<br/>
-			詳しくは利用規約をお読みください。</p>
+<ion-content class="miralbody withdrawal">
+	<div ng-switch="viewNo">
+	
+		<!-- 退会手続き -->
+		<div ng-switch-when="1">
+			<p class="titleBar c01">退会手続き</p>
+			<div class="padding">
+				<div class="contentbox">
+					<p>
+					いつもご利用いただきありがとうございます。<br/>
+					こちらではMiralの退会手続きを行います。<br/>
+					</p>
+					<p>
+					退会をご検討中の方は、今一度下記の内容をお読み頂き、<br/>
+					よろしければ「次へ」のボタンからお進みください。
+					</p>
+					
+					<p class="withdrawal_title">お手持ちのポイントについて</p>
+					<p>Miral退会手続きを行うとMiralで購入したポイントが消滅します。<br/>
+					現在所持しているポイントは以下のポイントになります。
+					</p>
+					<p class="withdrawal_point">
+						<span class="withdrawal_point">現在の所持ポイント</span>
+						<span>100Pt</span>
+					</p>
+					<p class="withdrawal_title">サロンのご利用について</p>
+					<p>Miralの退会手続きを実行後、Miralで繋がったサロンとミラーレンタルの契約を行った場合、契約違反の罰金が発生致します。<br/>
+					詳しくは利用規約をお読みください。</p>
+				</div>
+				<a class="button button-block c01" ng-click="withdrawalNext()">次へ</a>
+			</div>
 		</div>
-		<a class="button button-block c01" ng-click="withdrawalNext()">次へ</a>
-	</div>
-</div>
-
-<!-- 退会手続き確認 -->
-<div ng-switch-when="2">
-<p class="titleBar c01">退会手続きの確認</p>
-	<div class="padding">
-		<div class="contentbox">
-			<p>退会するとユーザー情報が削除され、所持しているポイントも消滅し、
-			二度とアカウントを復元することはできません。</p>
-			<p>本当によろしいですか？</p>
-			<dl>
-				<dt>ご登録ユーザー名</dt>
-				<dd>本田涼子様</dd>
-			</dl>
-			<dl>
-				<dt>消滅するポイント</dt>
-				<dd>1000Pt</dd>
-			</dl>
+	
+		<!-- 退会手続き確認 -->
+		<div ng-switch-when="2">
+		<p class="titleBar c01">退会手続きの確認</p>
+			<div class="padding">
+				<div class="contentbox">
+					<p>退会するとユーザー情報が削除され、所持しているポイントも消滅し、
+					二度とアカウントを復元することはできません。</p>
+					<p>本当によろしいですか？</p>
+					<dl class="withdrawal_list">
+						<dt>ご登録ユーザー名</dt>
+						<dd>本田涼子様</dd>
+					</dl>
+					<dl class="withdrawal_list">
+						<dt>消滅するポイント</dt>
+						<dd>1000Pt</dd>
+					</dl>
+				</div>
+			<a class="button button-block c01" ng-click="withdrawalEnd()">退会する</a>
+			</div>
 		</div>
-	<a class="button button-block c01" ng-click="withdrawalEnd()">退会する</a>
-	</div>
-</div>
-
-<!-- 退会手続完了 -->
-<div ng-switch-when="3">
-<p class="titleBar c01">退会手続きの完了</p>
-	<div class="padding">
-		<div class="contentbox">
-			<p>ご利用頂きありがとうございました。</p>
+	
+		<!-- 退会手続完了 -->
+		<div ng-switch-when="3">
+		<p class="titleBar c01">退会手続きの完了</p>
+			<div class="padding">
+				<div class="contentbox">
+					<p>ご利用頂きありがとうございました。</p>
+				</div>
+			<a class="button button-block c01">トップページに戻る</a>
+			</div>
 		</div>
-	<a class="button button-block c01">トップページに戻る</a>
+	
 	</div>
-</div>
-
-</div>
-
 
 </ion-content>
 </ion-view>

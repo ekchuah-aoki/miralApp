@@ -1,0 +1,35 @@
+<ion-view>
+<ion-content class="miralbody review_edit">
+
+	<p class="titleBar c01">{{user_name}}さんをレビューする</p>
+	<div class="padding">
+		<div class="contentbox">
+			<div class="review_edit_rating">
+				<p class="contentbox_title">評価</p>
+				<div><div id="review_star" class="review_edit_star"></div></div>
+			</div>
+			<div class="review_edit_comment">
+				<p class="contentbox_title">コメント</p>
+				<div><textarea></textarea></div>
+			</div>
+		</div>
+		<button class="button c01 button-block">レビューを投稿する</button>
+	</div>
+
+
+<script type="text/javascript">
+  $(function(){
+	    $('#review_star').raty({
+	      half     : false,
+	      starOff  : 'ion-ios-star fc06',
+	      starOn   : 'ion-ios-star fc01',
+	      targetKeep: true,
+	      starType    : 'i'
+	  });
+  });
+  </script>
+
+
+
+</ion-content>
+</ion-view>

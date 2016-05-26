@@ -1,26 +1,34 @@
 @CHARSET "UTF-8";
 
+/*　----- withdrawal start -----　*/
 .withdrawal .contentbox {
-	padding-bottom: 15px;
+	padding-bottom: 10px;
 }
+/*　----- withdrawal end -----　*/
+
+/*　----- withdrawal_title start -----　*/
 .withdrawal_title {
 	font-size: 17px;
 	color:#A87544;
 	margin: 20px 0px 10px;
 }
+/*　----- withdrawal_title end -----　*/
 
+/*　----- withdrawal_point start -----　*/
 .withdrawal_point {
 	width: 100%;
 	margin: 15px;
 	font-size: 17px;
 }
+/*　----- withdrawal_point end -----　*/
 
-.withdrawal .contentbox dl {
+/*　----- withdrawal_list start -----　*/
+.withdrawal_list {
 	width: 100%;
 	margin-top: 30px;
 }
 
-.withdrawal .contentbox dl dt {
+.withdrawal_list dt {
 	font-weight: normal;
 	width:50%;
 	float:left;
@@ -30,9 +38,11 @@
 	color:#A87544;
 }
 
-.withdrawal .contentbox dl dd {
+.withdrawal_list dd {
 	width: 50%;
 	display: inline-block;
 	text-align: right;
 	font-size: 17px;
 }
+/*　----- withdrawal_list end -----　*/
+

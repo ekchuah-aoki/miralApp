@@ -3,7 +3,7 @@
 
 	<!-- サロン 情報 -->
 	<div class="salon_detail_head">
-		<button class="button c01 salon_detail_head_button">シェアリクエスト</button>
+		<button class="button c01 salon_detail_head_button" ng-click="BeautiShareRequestPopup()">シェアリクエスト</button>
 		<button class="c01 salon_detail_head_map">MAP</button>
 		<div class="favorite_button salon_detail_favorite">
 			<input id="reserv_list_favorite_01" name="reserv_list" type="checkbox" checked/>
@@ -133,8 +133,8 @@
 					<tr>
 						<th>備考</th>
 						<td>
-						 ・禁煙<br>
-					     ・ブランケットなどの貸出も行っております。
+						・禁煙<br>
+						・ブランケットなどの貸出も行っております。
 						</td>
 					</tr>
 					<tr>
@@ -157,7 +157,7 @@
 			<p class="contentbox_title">レビュー</p>
 		</div>
 		
-		<button class="button button-block c01">シェアリクエスト</button>
+		<button class="button button-block c01" ng-click="beautiReservReservation()">予約</button>
 	</div>
 	<script src="js/lightbox.js"></script>
 	

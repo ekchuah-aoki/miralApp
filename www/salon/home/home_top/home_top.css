@@ -2,7 +2,7 @@
 
 /* ----- s_home_top_cam  start -----*/
 .s_home_top_cam {
-	height: 250px;
+	/*height: 250px;*/
 	width: 100%;
 	overflow: hidden;
 }
@@ -10,7 +10,8 @@
 .s_home_top_cam img{
 	width: 100%;
 	height: auto;
-	min-height: 250px;
+	/*min-height: 250px;*/
+	vertical-align: top;
 }
 /* ----- s_home_top_cam end -----*/
 

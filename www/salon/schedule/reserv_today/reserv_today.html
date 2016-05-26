@@ -1,16 +1,18 @@
 <ion-view>
-<ion-content class="miralbody salon_reserv_today">
 
 	<!-- タブ -->
-	<ion-tabs class="miral_tab">
-		<ion-tab title="今日の予定"></ion-tab>
-		<ion-tab title="明日の予定"></ion-tab>
-		<ion-tab title="予約履歴"></ion-tab>
-	</ion-tabs>
+	<div class="tabs-striped tabs-top miral_tab">
+		<div class="tabs">
+			<a class="tab-item active" ng-click ="salonScheduleReservToday()">今日の予定</a>
+			<a class="tab-item" ng-click ="salonScheduleReservTomorrow()">明日の予定</a>
+			<a class="tab-item" ng-click ="salonScheduleReservHst()">予約履歴</a>
+		</div>
+	</div>
 
+<ion-content class="miralbody salon_reserv_today has-header-w">
 	<!-- 空き時間 -->
 	<div class="padding">
-		<div class="salon_reserv_today_seat contentbox">
+		<div class="salon_availability contentbox">
 			<p class="contentbox_title">今日の空き状況</p>
 			<div class="contentbox_content">
 				<table>
@@ -30,11 +32,12 @@
 	</div>
 
 	<!-- 利用者 -->
+	<!-- 1 -->
 	<p class="titleBar c01">利用者</p>
 	<div class="padding beauti_list">
 		<div class="contentbox reserv_accordion">
 			<img class="list_beauti_img" src="./beauti/home/salon_detail/img/salon01_1.jpg">
-			<div class="salon_reserv_today_user_salonName">
+			<div class="beauti_list_label">
 				<p>高橋 和男</p>
 			</div>
 			<div class="accordion reserv_accordion_today">
@@ -82,6 +85,7 @@
 			</div>
 		</div>
 
+		<!-- 2 -->
 		<div class="contentbox reserv_accordion">
 			<img class="list_beauti_img" src="./beauti/home/salon_detail/img/salon01_1.jpg">
 			<div class="beauti_list_label">
@@ -132,6 +136,7 @@
 			</div>
 		</div>
 
+		<!-- 3 -->
 		<div class="contentbox reserv_accordion">
 			<img class="list_beauti_img" src="./beauti/home/salon_detail/img/salon01_1.jpg">
 			<div class="beauti_list_label">
@@ -181,7 +186,7 @@
 				</div>
 			</div>
 		</div>
-		
 	</div>
+	
 </ion-content>
 </ion-view>

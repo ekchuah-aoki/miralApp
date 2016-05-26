@@ -1,12 +1,17 @@
 <ion-view>
-<ion-content class="miralbody">
-	<ion-tabs class="miral_tab">
-		<ion-tab title="サロン一覧"></ion-tab>
-		<ion-tab title="お気に入り"></ion-tab>
-	</ion-tabs>
-	
+	<!-- タブ -->
+	<div class="tabs-striped tabs-top miral_tab">
+		<div class="tabs">
+			<a class="tab-item" ng-click ="beautiReservSalonList()">サロン一覧</a>
+			<a class="tab-item active" ng-click ="beautiReservFavorite()">お気に入り</a>
+		</div>
+	</div>
+
+<ion-content class="miralbody fovaorite has-header-w">
+	<!-- お気に入りサロン一覧 -->	
 	<div class="padding salon_list">
-		<div class="contentbox reserv_accordion">
+		<!-- 1 -->
+		<div class="contentbox reserv_accordion" ng-click="beautiHomeSalonDetail()">
 			<img class="list_salon_img" src="./beauti/home/salon_detail/img/salon01_1.jpg">
 			<div class="salon_list_label">
 				<p>salon Hair Design 池袋店</p>
@@ -64,8 +69,9 @@
 				</div>
 			</div>
 		</div>
-	
-		<div class="contentbox reserv_accordion">
+
+		<!-- 2 -->	
+		<div class="contentbox reserv_accordion" ng-click="beautiHomeSalonDetail()">
 			<img class="list_salon_img" src="./beauti/home/salon_detail/img/salon01_1.jpg">
 			<div class="salon_list_label">
 				<p>salon Hair Design 池袋店</p>
@@ -81,7 +87,8 @@
 			</div>
 		</div>
 		
-		<div class="contentbox reserv_accordion">
+		<!-- 3 -->
+		<div class="contentbox reserv_accordion" ng-click="beautiHomeSalonDetail()">
 			<img class="list_salon_img" src="./beauti/home/salon_detail/img/salon01_1.jpg">
 			<div class="salon_list_label">
 				<p>salon Hair Design 池袋店</p>

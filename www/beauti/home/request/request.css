@@ -1,8 +1,10 @@
 @CHARSET "UTF-8";
 
-.request_message  textarea {
+/*　----- request_message start -----　*/
+.request_message textarea {
 	width: 100%;
 	height:15em;
 	border:solid 1px #DDDDDD;
 	resize:none;
 }
+/*　----- request_message start -----　*/
