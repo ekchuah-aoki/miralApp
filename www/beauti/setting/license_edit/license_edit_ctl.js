@@ -16,9 +16,15 @@ angular.module('miral.beauti.setting.license_edit.controllers', ['miral.beauti.s
 	//美容師免許画像取得
 	miralBeautiSettingLicenseEditFnc.getLicenseImg(function(imgData_){
 		$scope.$apply(function(){
-			$scope.licenseImgType ="data:image/;base64,"
-			$scope.licenseImgData= imgData_;
-			$scope.selectedImag = true;
+			if( imgData_ ){
+				$scope.licenseImgType ="data:image/;base64,"
+				$scope.licenseImgData= imgData_;
+				$scope.selectedImag = true;
+			}else{
+				$scope.licenseImgType=""
+				$scope.licenseImgData= "";
+				$scope.selectedImag = false;
+			}
 		});
 	})
 	

@@ -16,7 +16,11 @@ angular.module('miral.beauti.setting.license_edit_fnc', ['miral.loginInfo','mira
 				var success = function(resMsg){
 					
 					if( resMsg.res.rstCode == UMU_FLG.ari){
+						console.log('美容師免許画像  有り');
 						success_(resMsg.imgbase64data)
+					}else{
+						console.log('美容師免許画像　無し');
+						success_(null)
 					}
 					
 				}
