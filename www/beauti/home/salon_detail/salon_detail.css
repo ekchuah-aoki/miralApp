@@ -106,66 +106,6 @@
 	position: relative;
 }
 
-.chair {
-	background-repeat:no-repeat;
-	background-image: url('../../../../img/icon/salon_detail/icon001.png');
-	background-position:50% 10%;
-}
-
-.shampoo {
-	background-repeat:no-repeat;
-	background-image: url('../../../../img/icon/salon_detail/icon002.png');
-	background-position:50% 10%;
-}
-
-.cape {
-	background-repeat:no-repeat;
-	background-image: url('../../../../img/icon/salon_detail/icon003.png');
-	background-position:50% 10%;
-}
-
-.towel {
-	background-repeat:no-repeat;
-	background-image: url('../../../../img/icon/salon_detail/icon004.png');
-	background-position:50% 10%;
-}
-
-.drier {
-	background-repeat:no-repeat;
-	background-image: url('../../../../img/icon/salon_detail/icon005.png');
-	background-position:50% 10%;
-}
-
-.wagon {
-	background-repeat:no-repeat;
-	background-image: url('../../../../img/icon/salon_detail/icon006.png');
-	background-position:50% 10%;
-}
-
-.stool {
-	background-repeat:no-repeat;
-	background-image: url('../../../../img/icon/salon_detail/icon007.png');
-	background-position:50% 10%;
-}
-
-.rollerBall {
-	background-repeat:no-repeat;
-	background-image: url('../../../../img/icon/salon_detail/icon008.png');
-	background-position:50% 10%;
-}
-
-.equipment {
-	background-repeat:no-repeat;
-	background-image: url('../../../../img/icon/salon_detail/icon009.png');
-	background-position:50% 10%;
-}
-
-.expendables {
-	background-repeat:no-repeat;
-	background-image: url('../../../../img/icon/salon_detail/icon010.png');
-	background-position:50% 10%;
-}
-
 .salon_detail_material_list li span {
 	display:block;
 	text-align: center;
