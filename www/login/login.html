@@ -1,29 +1,26 @@
- <ion-view hide-nav-bar="true">
-<ion-content class="login_loginbody" >
+<ion-view hide-nav-bar="true">
+<ion-content class="login_loginbody" on-scroll="false">
 <div class="miralbody_wrap">
 
 	<!-- チュートリアル -->
 	<div class="login_tutorial">
-		<span></span>
-			<ion-content >
-				<ion-slide-box  style="height:430px" does-continue="true" auto-play="true" on-slide-changed="">
-				  <ion-slide>
-				    <div class="login_slide_box"><img class="login_slideimg" src="login/img/tutorial_01.png">
-				    <p>今いる場所や好きな場所から<br>お気に入りのサロンをみつけよう</p></div>
-				  </ion-slide>
-				  <ion-slide>
-				    <div class="login_slide_box"><img class="login_slideimg" src="login/img/tutorial_02.png">
-	   			    <p>気に入ったサロンをみつけたら<br>ボタンを押してシェアをしよう</p></div>
-				  </ion-slide>
-				  <ion-slide>
-				    <div class="login_slide_box"><img class="login_slideimg" src="login/img/tutorial_03.png">
-				     <p>サロンからOKがきたら<br>マッチング成立です<br>サロンをいつでも借りることが出来るよ</p></div>
-				  </ion-slide>
-				  <ion-slide>
-				    <div class="login_slide_box"><img class="login_slideimg" src="login/img/tutorial_04.png">
-				    <p>ミラルでサロンに「シェア」を送って<br>たくさんのサロンと繋がろう</p></div>
-				</ion-slide-box>
-			</ion-content>
+		<ion-slide-box style="height:100%" does-continue="true" auto-play="true" on-slide-changed="" show-pager="false">
+			<ion-slide>
+				<div class="login_slide_box"><img class="login_slideimg" src="login/img/tutorial_01.png">
+				<p>今いる場所や好きな場所から<br>お気に入りのサロンをみつけよう</p></div>
+			</ion-slide>
+			<ion-slide>
+				<div class="login_slide_box"><img class="login_slideimg" src="login/img/tutorial_02.png">
+				<p>気に入ったサロンをみつけたら<br>ボタンを押してシェアをしよう</p></div>
+			</ion-slide>
+			<ion-slide>
+				<div class="login_slide_box"><img class="login_slideimg" src="login/img/tutorial_03.png">
+				<p>サロンからOKがきたら<br>マッチング成立です<br>サロンをいつでも借りることが出来るよ</p></div>
+			</ion-slide>
+			<ion-slide>
+				<div class="login_slide_box"><img class="login_slideimg" src="login/img/tutorial_04.png">
+				<p>ミラルでサロンに「シェア」を送って<br>たくさんのサロンと繋がろう</p></div>
+		</ion-slide-box>
 	</div>
 
 	<!--
@@ -43,76 +40,76 @@
 	
 	<div ng-switch="viewNo" class="padding">
 	
-	<!-- 初期表示 -->
-	<div ng-switch-when="1">
-		<a class="button button-block c07" ng-click="onLoginEntry()">ログイン</a>
-		<a class="button button-block 06" ng-click="onNewEntry()" >新規登録</a>
+			<!-- 初期表示 -->
+			<div ng-switch-when="1" class="login_button">
+				<a class="button button-block c07" ng-click="onLoginEntry()">ログイン</a>
+				<a class="button button-block 06" ng-click="onNewEntry()" >新規登録</a>
+				<p class="login_nologin"><a class="c04" ng-click="onLogin()" >ログインせずにアプリを利用する</a></p>
+			</div>
+		
+			<!-- ログイン -->
+			<div ng-switch-when="2" class="login_button">
+			
+				<a class="button button-block cFB login_button_icon" ng-click="onFacebookLogin()">
+					<i class="ion-social-facebook"></i>
+					<span>Facebookのアカウントでログイン</span>
+				</a>
+				<a class="button button-block cGO login_button_icon" ng-disabled="googlePlusBtnDisabled" ng-click="onGooglePlusLogin()">
+					<i class="ion-social-googleplus"></i>
+					<span>google+のアカウントでログイン</span>
+				</a>
+				<a class="button button-block cTW login_button_icon" ng-click="onTwitterLogin()">
+					<i class="ion-social-twitter"></i>
+					<span>Twitterのアカウントでログイン</span>
+				</a>
+			<!-- 
+				<a class="button button-block cIN login_button_icon" ng-click="onLogin()">
+					<i class="ion-social-instagram"></i>
+					<span>Instagramのアカウントでログイン</span>
+				</a>
+			 -->	
+			
+				<a class="button button-block c07 login_button" ng-click="onMallLogin()">メールアドレスとパスワードでログイン</a>
+			</div>
+			
+			<!-- 新規登録 -->
+			<div ng-switch-when="3">
+			<!-- 
+				<a class="button button-block cFB login_button_icon" ng-click="onNew()">
+					<i class="ion-social-facebook"></i>
+					<span>Facebookのアカウントで新規登録</span>
+				</a>
+				<a class="button button-block cGO login_button_icon" ng-click="onNew()">
+					<i class="ion-social-googleplus"></i>
+					<span>google+のアカウントで新規登録</span>
+				</a>
+				<a class="button button-block cTW login_button_icon" ng-click="onNew()">
+					<i class="ion-social-twitter"></i>
+					<span>Twitterのアカウントで新規登録</span>
+				</a>
+				<a class="button button-block cIN login_button_icon" ng-click="onNew()">
+					<i class="ion-social-instagram"></i>
+					<span>Instagramのアカウントで新規登録</span>
+				</a>
+			 -->
+				<a class="button button-block" ng-click="onNewByEmail()">メールアドレスを使って新規登録</a>
+				<a class="button button-block" ng-click="onNewForSalon()">サロンの新規登録</a>
+			</div>
+		
+			<!-- メールアドレス/ID・パスワード -->
+			<div ng-switch-when="4" class="login_buttonlogin_button">
+				<div class="login_mail">
+					<!-- メールアドレス -->
+					<input type="text" placeholder="メールアドレス" ng-model="form.loginEmail">
+					<!-- パスワード -->
+					<input type="password" placeholder="パスワード" ng-model="form.loginPassword">
+				</div>
+				<a class="button button-block c06" ng-click="onMailLogin()">ログイン</a>
+			</div>
+	
 	</div>
+	
 
-	<!-- ログイン -->
-	<div ng-switch-when="2">
-	
-		<a class="button button-block cFB login_button_icon" ng-click="onFacebookLogin()">
-			<i class="ion-social-facebook"></i>
-			<span>Facebookのアカウントでログイン</span>
-		</a>
-		<a class="button button-block cGO login_button_icon" ng-disabled="googlePlusBtnDisabled" ng-click="onGooglePlusLogin()">
-			<i class="ion-social-googleplus"></i>
-			<span>google+のアカウントでログイン</span>
-		</a>
-		<a class="button button-block cTW login_button_icon" ng-click="onTwitterLogin()">
-			<i class="ion-social-twitter"></i>
-			<span>Twitterのアカウントでログイン</span>
-		</a>
-	<!-- 
-		<a class="button button-block cIN login_button_icon" ng-click="onLogin()">
-			<i class="ion-social-instagram"></i>
-			<span>Instagramのアカウントでログイン</span>
-		</a>
-	 -->	
-	
-		<a class="button button-block c07" ng-click="onMallLogin()">メールアドレスとパスワードでログイン</a>
-	</div>
-	
-	<!-- 新規登録 -->
-	<div ng-switch-when="3">
-	<!-- 
-		<a class="button button-block cFB login_button_icon" ng-click="onNew()">
-			<i class="ion-social-facebook"></i>
-			<span>Facebookのアカウントで新規登録</span>
-		</a>
-		<a class="button button-block cGO login_button_icon" ng-click="onNew()">
-			<i class="ion-social-googleplus"></i>
-			<span>google+のアカウントで新規登録</span>
-		</a>
-		<a class="button button-block cTW login_button_icon" ng-click="onNew()">
-			<i class="ion-social-twitter"></i>
-			<span>Twitterのアカウントで新規登録</span>
-		</a>
-		<a class="button button-block cIN login_button_icon" ng-click="onNew()">
-			<i class="ion-social-instagram"></i>
-			<span>Instagramのアカウントで新規登録</span>
-		</a>
-	 -->
-		<a class="button button-block" ng-click="onNewByEmail()">メールアドレスを使って新規登録</a>
-		<a class="button button-block" ng-click="onNewForSalon()">サロンの新規登録</a>
-	</div>
-	
-	<!-- メールアドレス/ID・パスワード -->
-	<div ng-switch-when="4">
-		<div class="login_mail">
-			<!-- メールアドレス -->
-			<input type="text" placeholder="メールアドレス" ng-model="form.loginEmail">
-			<!-- パスワード -->
-			<input type="password" placeholder="パスワード" ng-model="form.loginPassword">
-		</div>
-		<a class="button button-block c06" ng-click="onMailLogin()">ログイン</a>
-	</div>
-	
-	</div>
-	
-	<!-- ログインなし -->
-	<p class="login_nologin"><a class="c04" ng-click="onLogin()" >ログインせずにアプリを利用する</a></p>
 
 </div>
 </ion-content>

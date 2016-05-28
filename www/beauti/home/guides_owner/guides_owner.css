@@ -34,8 +34,9 @@
 	color: #A87544;
 	font-size: 18px;
 	padding:20px 0px 25px;
-	width: 15em;
+	width: auto;
 	margin: 0 auto;
+	display: inline-block;
 }
 
 
@@ -50,6 +51,7 @@
 	opacity:0.5;
 	width: auto;
 	margin-top: 4px;
+	
 }
 /*　----- guides_owner_border end -----　*/
 

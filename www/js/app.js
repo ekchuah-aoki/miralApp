@@ -284,6 +284,14 @@ angular.module('miral', ['ionic', 'ngCordovaOauth','ngAnimate', 'ionicLazyLoad',
 	    controller: 'beautiSettingReviewControllers'
 	  })
 
+  //美容師 設定　レビューの編集
+  .state('beauti-setting-review_edit', {
+	    url: '/beauti/setting/review_edit',
+	    templateUrl: 'beauti/setting/review_edit/review_edit.html',
+	    controller: 'beautiSettingReviewEditControllers'
+	  })
+
+	  
   //美容師 設定　アカウントの設定
   .state('beauti-setting-account', {
 	    url: '/beauti/setting/account',

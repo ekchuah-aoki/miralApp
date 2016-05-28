@@ -71,3 +71,50 @@
 }
 
 /*　----- reserv_home_salon end -----　*/
+
+
+/* ===== SP ===== */
+@media screen and (max-width: 550px) {
+/*　----- reserv_home_salon start -----　*/
+.reserv_home_salon {
+	width: 100%;
+	padding: 0px;
+	margin: 0px;
+	display: inline-block;
+}
+
+.reserv_home_salon dl   {
+	width: 50%;
+	margin: 0px;
+	padding: 0px;
+	position: relative;
+	margin-bottom: -4px;
+}
+
+.reserv_home_salon dl dt {
+	width: 100%;
+	padding: 10px 5px;
+	overflow: hidden;
+	position: absolute;
+	bottom: 4px;
+	background-color: rgba(0,0,0,0.5);
+	color: #FFF;
+}
+
+.reserv_home_salon p {
+	padding: 9px 5px 5px;
+	text-align: center;
+}
+
+.reserv_home_salon p > span {
+	background-color: #A87544;
+	border-radius:4px;
+	color: #FFF;
+	display: inline-block;
+	width: 100%;
+	padding: 10px;
+}
+
+/*　----- reserv_home_salon end -----　*/
+
+}

@@ -9,9 +9,9 @@ html, body{　height: 100%; }
 	color:#5C5C5C;
 	margin: 0 auto;
 }
-/* タブレット表示 */
+
 .miralbody_wrap { width:100%; max-width: 960px; margin: 0 auto;}
-/* @media screen and (max-width: 600px) {　/* スマホ表示 　.miralbody_wrap { width:100%; margin: 0 auto;}}*/
+
 
 a {	text-decoration: none;}
 
@@ -53,7 +53,7 @@ a {	text-decoration: none;}
 
 
 /* has-header-w (タブが２つある場合) */
-.has-header-w {	top:94px;}
+.has-header-w {	top:93px !important;}
 
 /* margin */
 .maN   {	margin: 0px !important;}
@@ -61,6 +61,7 @@ a {	text-decoration: none;}
 .maR10 {	margin-right: 10px !important;}
 .maB10 {	margin-bottom: 10px !important;}
 .maL10 {	margin-left: 10px !important;}
+
 /* padding */
 .paN {	padding: 0px !important;}
 
@@ -270,7 +271,7 @@ span.message_unread:before{
 	font-size:12px;
 	border: none;
 	height: 47px;
-	margin-left: -100px;
+	margin-left: -100.5px;
 }
 /*　----- searchbox end -----　*/
 
@@ -584,22 +585,22 @@ img.list_beauti_img {
 	width:100%;
 	height: auto;
 	display: inline-block;
+	vertical-align: top;
 }
 
 .miral_gallery_title {
-	display:block;
-	width: 120px;
+	display:inline-block;
+	width: 100%;
 	height:auto;
-	margin-right:-120px;
 	float: left;
 	text-align: center;
 	padding-top: 35px;
 	font-size: 20px;
 }
 
-.miral_gallery_img {
+/*.miral_gallery_img {
 	margin-left: 120px;
-}
+}*/
 
 .miral_gallery_img li {
 	position: relative;
@@ -723,6 +724,11 @@ img.list_beauti_img {
 	top:20px;
 	right: 10px;
 }
+
+.salon_list_label_favorite {
+	padding-right: 40px;
+}
+
 /* ----- salon_list_label end -----　*/
 
 /* ----- beauti_list_label start -----　*/
@@ -922,3 +928,16 @@ td.reserv_accordion_review {
 	background-position:50% 10%;
 }
 /* ----- salon_detaile icon end ----- */
+
+/* ===== break point 550px以下 start ===== */
+@media screen and (max-width: 550px) {　
+
+.diN_s { display: none;}
+
+
+.salon_list_label p:first-child {
+	font-size: 15px;
+}
+}
+/* ===== break point 550px以下 ends ===== */
+
