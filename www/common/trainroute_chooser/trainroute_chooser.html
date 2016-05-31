@@ -1,0 +1,30 @@
+<ion-view >
+  <ion-content class="miralbody">
+    <p class="c01 titleBar">路線検索</p>
+    <div class="padding">
+      <div class="list trainroute_chooser">
+      
+        <!-- 検索フォーム -->
+        <div id="Search">
+          <label class="item item-input">
+            <input type="text" ng-model="form.TName" />
+          </label>
+          <div class="iconButton" ng-click="onSrhStationList()">
+            <div class="center">
+              <i class="icon ion-search placeholder-icon"></i>
+            </div>
+          </div>
+        </div>
+        
+        <ul id="list" ng-repeat="s in stationList">
+          <div class="stationBox">
+		    <div class="center">
+			  <li class="station_name">{{s.trainName+':'+s.stationName}}</li>
+	        </div>
+	      </div>
+        </ul>
+          
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

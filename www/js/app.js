@@ -67,7 +67,8 @@ angular.module('miral', ['ionic', 'ngCordovaOauth','ngAnimate', 'ionicLazyLoad',
                          ,'miral.loginInfo'
                          ,'miral.common.miralConst'
                          ,'miral.sample.sample1'
-                         ])
+                         ,'miral.common.trainroute_chooser.trainroute_chooser.controllers'
+                          ])
                          
 .run(function($ionicPlatform,googleAppenginConnecter,$state,loginInfo,ACCOUNT_TYPE) {
   $ionicPlatform.ready(function() {
@@ -96,7 +97,7 @@ angular.module('miral', ['ionic', 'ngCordovaOauth','ngAnimate', 'ionicLazyLoad',
     		$state.go('beauti-home-home-top',null,'');
     	}
     }else{
-   		$state.go('login',null,'');
+   		$state.go('common-trainroute_chooser-trainroute_chooser',null,'');
     }
     
   });
@@ -528,8 +529,14 @@ angular.module('miral', ['ionic', 'ngCordovaOauth','ngAnimate', 'ionicLazyLoad',
 	    templateUrl: 'salon/setting/sclt/sclt.html',
 	    controller: 'salonSettingScltControllers'
 	  })
-
-
+	  
+  // train
+  .state('common-trainroute_chooser-trainroute_chooser', {
+	    url: '/common/trainroute_chooser/trainroute_chooser',
+	    templateUrl: 'common/trainroute_chooser/trainroute_chooser.html',
+	    controller: 'commonTrainrouteChooserTrainrouteChooserControllers'
+ 　　　 })
+	    	
   // 開発サンプル
   .state('sample-sample1', {
 	    url: '/sample/sample1',
