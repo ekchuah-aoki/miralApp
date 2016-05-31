@@ -97,7 +97,7 @@ angular.module('miral', ['ionic', 'ngCordovaOauth','ngAnimate', 'ionicLazyLoad',
     		$state.go('beauti-home-home-top',null,'');
     	}
     }else{
-   		$state.go('common-trainroute_chooser-trainroute_chooser',null,'');
+   		$state.go('login',null,'');
     }
     
   });
