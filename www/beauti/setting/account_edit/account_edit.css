@@ -1,46 +1,52 @@
 @CHARSET "UTF-8";
 
-.account_edit .contentbox_content > input [type="text"] {
+/* ----- account_edit start ----- */
+.account_edit .contentbox {
+	padding: 15px;
+}
+
+.account_edit .contentbox_content {
+	padding-bottom: 20px;
+	display: inline-block;
+}
+/* ----- account_edit end ----- */
+
+/* ----- account_edit_text start ----- */
+.account_edit_text > input[type="text"],
+.account_edit_text > input[type="password"] {
 	border-bottom: solid #DDD 1px;
 	width: 100%;
 }
+/* ----- account_edit_text end ----- */
 
-.account_edit .contentbox_title {
-	font-size:18px;
-	padding: 5px 0px;
-}
-
-/* お名前 */
-span.account_edit_name {
+/* ----- account_edit_name start ----- */
+.account_edit_name {
 	width: 50%;
 	float: left;
 }
 
-span.account_edit_name > input {
-	border-bottom: solid #DDD 1px;
-	width:100%;
+.account_edit_name > input {
 	padding-left: 40px;
 }
 
-span.account_edit_name > span  {
+.account_edit_name > span  {
 	display: inline-block;
 	padding: 5px;
 	margin-right: -40px;
 	width: 40px;
 	float: left;
 }
+/* ----- account_edit_name end ----- */
 
-.account_edit .contentbox_content  {
-	height: 50px;
-}
 
-/* セレクトボックス */
-.account_edit .contentbox_content select {
-	width: 100%;
+/* ----- contentbox_content_select start ----- */
+.contentbox_content_select select {
 	max-width: none;
+	height: 20px;
 }
+/* ----- contentbox_content_select end ----- */
 
-/* ラジオボタン */
+/* ----- account_edit_gender start ----- */
 .account_edit_gender {
 	width: 100%;
 }
@@ -89,14 +95,24 @@ span.account_edit_name > span  {
 .account_edit_gender > input[type=radio]:checked + label:before {
   opacity: 1;
 }
+/* ----- account_edit_gender end ----- */
 
-/* 生年月日 */
+/* ----- account_edit_birthday start ----- */
+.account_edit_birthday {
+	display: inline-block;
+	padding-bottom: 20px;
+	width: 100%;
+}
+
 .account_edit_birthday > span {
 	display: table;
+	padding: 10px 0px;
+	float: right;
 }
 
 .account_edit_birthday > span > .item-select {
 	padding: 0px 40px 0px 0px;
+	height: 20px;
 }
 
 .account_edit_birthday > span > .item-select > select {
@@ -108,11 +124,11 @@ span.account_edit_name > span  {
 }
 
 .account_edit_birthday > span > div:nth-child(3) {
-	width: 70px;
+	width: 80px;
 }
 
 .account_edit_birthday > span > div:nth-child(5) {
-	width: 70px;
+	width: 80px;
 }
 
 .account_edit_birthday > span > span:nth-child(2),
@@ -121,8 +137,28 @@ span.account_edit_name > span  {
 	margin-bottom: 30px;
 	display: table-cell;
 	vertical-align: middle;
+	height: 20px;
+}
+/* ----- account_edit_birthday end ----- */
+
+
+/* ----- 414px以下 ----- */
+@media screen and (max-width: 414px) {
+.account_edit_name {
+	width: 100%;
+	float: none;
+	padding: 40px 0px;
 }
 
-.account_edit_birthday > span {
-	float: right; 
+.account_edit_name > input {
+	height:40px;
+}
+
+.account_edit_name > span  {
+	display: inline-block;
+	padding: 10px 5px 10px 5px;
+	margin-right: -40px;
+	width: 40px;
+	float: left;
+}
 }

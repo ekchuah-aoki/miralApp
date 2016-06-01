@@ -4,21 +4,114 @@
 .beauti_detail_head {
 	padding:0px;
 	margin: 0px;
+	display: inline-block;
+	width: 100%;
+	position: relative;
+	max-height: 414px;
+	background-color: #A87544;
+}
+
+.beauti_detail_head > div > div  {
+	display:inline-block;
+	height: 100%;
+	overflow: hidden;
+	vertical-align: top;
+	width: 50%;
+	max-height: 414px;
+	
+} 
+
+.beauti_detail_head div > div > img {
+	width: 100%;
+	height:auto;
+	vertical-align: top;
+}
+
+.beauti_detail_head > div  {
+	background-color: rgba(0,0,0,0.5);
+}
+
+.beauti_detail_head_content {
+	padding:10px;
+	width: 50%;
+	color:#FFF;
+	float: right;
+	height: 100%;
+	position: relative;
+	vertical-align: middle;
+}
+
+.beauti_detail_username {
+	font-size: 22px;
+}
+.beauti_detail_reviwe {
+	font-size: 12px;
+}
+
+.beauti_detail_slide {
+	width: 100%;
+	height:100%;
+	display: inline-block;
+}
+
+.beauti_detail_slide > div {
+	vertical-align: middle;
+}
+
+.beauti_detail_slide > div p {
+	margin: 5px 0px;
+}
+
+.beauti_detail_slide > div:first-child {
+	width:auto;
+}
+
+.beauti_detail_prf {
+	width: 50%;
+	float: left;
+	display: inline-block;
+}
+
+/*　----- beauti_detail_head end -----　*/
+
+/*　----- beauti_detail_contentbox start -----　*/
+.beauti_detail_contentbox {
+	display: inline-block;
+	width: 100%;
+	height:100%;
+	position: relative;
+}
+/*　----- beauti_detail_contentbox end -----　*/
+
+@media screen and (max-width: 414px) {　
+
+/*　----- beauti_detail_head start -----　*/
+.beauti_detail_head {
+	padding:0px;
+	margin: 0px;
 	display: block;
 	width: 100%;
 	position: relative;
+	max-height: 414px;
+	background-color: #A87544;
+	vertical-align: top;
 }
 
-.beauti_detail_head > span  {
-	display: block;
-	height: 400px;
+.beauti_detail_head > div > div  {
+	display:inline-block;
+	height: auto;
 	overflow: hidden;
+	vertical-align: top;
+	text-align: center;
+	width: 100%;
 } 
 
-.beauti_detail_head span > img {
+.beauti_detail_head div > div > img {
 	width: 100%;
-	min-width: 400px;
-	min-height: 400px;
+	height:auto;
+	max-width:414px;
+	max-height: 414px;
+	vertical-align: top;
 }
 
 .beauti_detail_head_content {
@@ -51,61 +144,21 @@
 }
 
 .beauti_detail_slide > div p {
-	margin: 10px 0px;
+	margin: 5px 0px;
 }
 
 .beauti_detail_slide > div:first-child {
-	width: 50%;
+	width:auto;
+}
+
+.beauti_detail_prf {
+	font-size: 0.9em;
+}
+
+.beauti_detail_prf p {
+
 }
 /*　----- beauti_detail_head end -----　*/
 
-/*　----- beauti_detail_contentbox start -----　*/
-.beauti_detail_contentbox {
-	display: inline-block;
-	width: 100%;
-	height:100%;
-	position: relative;
-}
-/*　----- beauti_detail_contentbox end -----　*/
 
-/*　----- beauti_detail_gallery start -----　*/
-.beauti_detail_gallery {
-	width:100%;
-	height: 100%;
-	display: inline-block;
-	vertical-align: top;
 }
-
-.beauti_detail_gallerytitle {
-	display:inline-block;
-	width: 100%;
-	height:50px;
-	margin-right:-120px;
-	float: left;
-	text-align: center;
-	padding-top: 15px;
-	font-size: 20px;
-}
-
-.beauti_detail_galleryimg {
-	margin-left: 120px;
-}
-
-.beauti_detail_galleryimg li {
-	position: relative;
-	width: 33.3%;
-	height: 120px;
-	float:left;
-	display:inline-block;
-	overflow: hidden;
-}
-.beauti_detail_galleryimg li img {
-	position:absolute;
-	top:0;
-	left:0;
-	width:100%;
-	height:auto;
-	min-width:150px;
-	min-height: 120px;
-}
-/*　----- beauti_detail_gallery end -----　*/

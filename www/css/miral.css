@@ -50,7 +50,10 @@ a {	text-decoration: none;}
 .teAC {	text-align: center;}
 
 /* font-size */
-
+.fs12 {font-size: 12px;}
+.fs14 {font-size: 14px;}
+.fs17 {font-size: 17px;}
+.fs21 {font-size: 21px;}
 
 /* has-header-w (タブが２つある場合) */
 .has-header-w {	top:93px !important;}
@@ -594,14 +597,18 @@ img.list_beauti_img {
 	width: 100%;
 	height:auto;
 	float: left;
+	height: 60px;
 	text-align: center;
-	padding-top: 35px;
+	padding-top: 20px;
 	font-size: 20px;
 }
 
-/*.miral_gallery_img {
-	margin-left: 120px;
-}*/
+ul.miral_gallery_img {
+	display: inline-block;
+	width: 100%;
+	border:solid;
+	border-width: 0px 2px;
+}
 
 .miral_gallery_img li {
 	position: relative;
@@ -611,19 +618,24 @@ img.list_beauti_img {
 	display:inline-block;
 	overflow: hidden;
 	min-height: 120px;
+	border:solid;
+	border-width: 0px 2px;
 }
 
-@media screen and (max-width: 500px) {
-	.miral_gallery_img li {
-		position: relative;
-		width: 50%;
-		height:auto;
-		float:left;
-		display:inline-block;
-		overflow: hidden;
-		min-height: 120px;
-	}
-	}
+.miral_gallery.c01 .miral_gallery_img li,
+.miral_gallery.c01 ul.miral_gallery_img {
+	border-color: #A87544;
+}
+
+.miral_gallery.c05 .miral_gallery_img li,
+.miral_gallery.c05 ul.miral_gallery_img {
+	border-color: #5C5C5C;
+}
+
+.miral_gallery.cIN .miral_gallery_img li,
+.miral_gallery.cIN ul.miral_gallery_img {
+	border-color: #3F729B;
+}
 
 .miral_gallery_img li img {
 	position:absolute;
@@ -871,68 +883,78 @@ td.reserv_accordion_review {
 /* ----- salon_detaile icon start ----- */
 .chair {
 	background-repeat:no-repeat;
-	background-image: url('../../../../img/icon/salon_detail/icon001.png');
-	background-position:50% 10%;
+	background-image: url('../img/icon/salon_detail/icon001.png');
+	background-position:50% 20%;
+	background-size: 50px 46px; 
 }
 
 .shampoo {
 	background-repeat:no-repeat;
 	background-image: url('../../../../img/icon/salon_detail/icon002.png');
-	background-position:50% 10%;
+	background-position:50% 20%;
+	background-size: 50px 46px; 
 }
 
 .cape {
 	background-repeat:no-repeat;
 	background-image: url('../../../../img/icon/salon_detail/icon003.png');
-	background-position:50% 10%;
+	background-position:50% 20%;
+	background-size: 50px 44px; 
 }
 
 .towel {
 	background-repeat:no-repeat;
 	background-image: url('../../../../img/icon/salon_detail/icon004.png');
-	background-position:50% 10%;
+	background-position:50% 20%;
+	background-size: 50px 44px; 
 }
 
 .drier {
 	background-repeat:no-repeat;
 	background-image: url('../../../../img/icon/salon_detail/icon005.png');
-	background-position:50% 10%;
+	background-position:50% 20%;
+	background-size: 50px 44px; 
 }
 
 .wagon {
 	background-repeat:no-repeat;
 	background-image: url('../../../../img/icon/salon_detail/icon006.png');
-	background-position:50% 10%;
+	background-position:50% 20%;
+	background-size: 50px 44px; 
 }
 
 .stool {
 	background-repeat:no-repeat;
 	background-image: url('../../../../img/icon/salon_detail/icon007.png');
-	background-position:50% 10%;
+	background-position:50% 20%;
+	background-size: 50px 44px; 
 }
 
 .rollerBall {
 	background-repeat:no-repeat;
 	background-image: url('../../../../img/icon/salon_detail/icon008.png');
-	background-position:50% 10%;
+	background-position:50% 20%;
+	background-size: 50px 44px; 
 }
 
 .equipment {
 	background-repeat:no-repeat;
 	background-image: url('../../../../img/icon/salon_detail/icon009.png');
-	background-position:50% 10%;
+	background-position:50% 20%;
+	background-size: 50px 44px; 
 }
 
 .expendables {
 	background-repeat:no-repeat;
 	background-image: url('../../../../img/icon/salon_detail/icon010.png');
-	background-position:50% 10%;
+	background-position:50% 20%;
+	background-size: 50px 44px; 
 }
 /* ----- salon_detaile icon end ----- */
 
-/* ===== break point 550px以下 start ===== */
-@media screen and (max-width: 550px) {　
 
+/* ===== break point 414px以下 start ===== */
+@media screen and (max-width: 414px) {
 .diN_s { display: none;}
 
 
@@ -940,5 +962,5 @@ td.reserv_accordion_review {
 	font-size: 15px;
 }
 }
-/* ===== break point 550px以下 ends ===== */
+/* ===== break point 414px以下 end ===== */
 

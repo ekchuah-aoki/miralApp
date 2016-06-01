@@ -5,33 +5,47 @@
 	<p class="titleBar c01">予約をする</p>
 	
 	<!-- サロン　利用可能機材 -->
-	<div class="reserv_reservation_materialBox">
-		<div class="reserv_reservation_material">
-			<div>
-				<div class="reserv_reservation_salonName">
-					<p>salonHairDeseign 池袋店<br>JR「池袋駅」徒歩５分 ★★★★★(4.9)</p>
-					<p>利用料金<br>1時間　1000Pt / １日　8000Pt</p>
+	<div class="reservation_materialBox">
+		<div class="reservation_material">
+			<div class="reservation_detail_box">
+				<div class="reservation_salonName fs17">
+					<p>salonHairDeseign 池袋店</p>
+					<p class="reservation_station fs12 clB">
+						<span>JR山手線</span>
+						<span>「池袋」駅</span>
+						<span>徒歩５分</span>
+					</p>
+				<p class="reservation_review fs12">★★★★★(4.9)</p>
 				</div>
-				<ul>
-					<li class="chair"><span>セット台・椅子</span></li>
-					<li class="shampoo"><span>シャンプー台</span></li>
-					<li class="cape"><span>ケープ・クロス</span></li>
-					<li class="towel"><span>タオル</span></li>
-					<li class="drier"><span>ドライヤー</span></li>
-					<li class="wagon"><span>ワゴン</span></li>
-					<li class="stool"><span>スツール</span></li>
-					<li class="rollerBall"><span>ローラーボール</span></li>
-					<li class="equipment"><span>その他機材</span></li>
-					<li class="expendables"><span>その他消耗品</span></li>
-				</ul>
+				<div class="reservation_Fee">
+					<dl>
+						<dt>利用料金</dt>
+						<dd>
+							<span>1時間　1000Pt
+							<br>1日  　8000Pt</span>
+						</dd
+					</dl>
+				</div>
 			</div>
+			<ul class="salon_detail_material_list">
+				<li class="chair"><span>セット台・椅子</span></li>
+				<li class="shampoo"><span>シャンプー台</span></li>
+				<li class="cape"><span>ケープ・クロス</span></li>
+				<li class="towel"><span>タオル</span></li>
+				<li class="drier"><span>ドライヤー</span></li>
+				<li class="wagon"><span>ワゴン</span></li>
+				<li class="stool"><span>スツール</span></li>
+				<li class="rollerBall"><span>ローラーボール</span></li>
+				<li class="equipment"><span>その他機材</span></li>
+				<li class="expendables"><span>その他消耗品</span></li>
+			</ul>
 		</div>
 	</div>
 	
 	<div class="padding"><!-- padding -->
 
 		<!-- サロン　利用希望日 -->
-		<div class="reserv_reservation_dataDay contentbox">
+		<div class="reservation_dataDay contentbox">
 			<p class="contentbox_title">利用希望日</p>			
 			<div class="contentbox_content">
 				<input type="radio" value="1" id="today" name="dataDay" checked>
@@ -43,7 +57,7 @@
 			
 
 		<!-- サロン 利用希望時間 -->
-		<div class="reserv_reservation_dataTime contentbox">
+		<div class="reservation_dataTime contentbox">
 			<p class="contentbox_title">利用希望時間</p>
 			<div class="contentbox_content salon_availability">
 				<table>
@@ -57,7 +71,7 @@
 						<td></td><td></td> <td></td><td></td> <td></td><td></td> <td></td><td></td>
 					</tr>
 				</table>
-				<div class="reserv_reservation_strTime">
+				<div class="reservation_strTime">
 					<p>開始時間</p>
 					<div class="contentbox_content item-select">
 					   <select>
@@ -69,7 +83,7 @@
 					   </select>
 					</div>
 				</div>
-				<div class="reserv_reservation_finTime">
+				<div class="reservation_finTime">
 					<p>終了時間</p>
 					<div class="contentbox_content item-select">
 					   <select>
@@ -81,11 +95,11 @@
 					   </select>
 					</div>
 				</div>
-				<div class="reserv_reservation_useTime">
+				<div class="reservation_useTime">
 					<p>利用時間</p>
 					<p>1:00</p>
 				</div>
-				<div class="reserv_reservation_useFee">
+				<div class="reservation_useFee">
 					<p>利用料金</p>
 					<p>1000Pt</p>
 				</div>
@@ -93,7 +107,7 @@
 		</div>
 
 		<!-- サロン　利用規約 -->
-		<div class="reserv_reservation_use accordion">
+		<div class="reservation_use accordion">
 			<input id="salon_detail_use" type="checkbox" checked>
 			<label for="salon_detail_use">利用条件</label>
 			<div class="accordion_content">
@@ -106,7 +120,7 @@
 		</div>
 
 		<!-- サロン　メッセージ -->
-		<div class="reserv_reservation_message contentbox">
+		<div class="reservation_message contentbox">
 			<p class="contentbox_title">メッセージ</p>
 			<div class="contentbox_content">
 				<textarea></textarea>
