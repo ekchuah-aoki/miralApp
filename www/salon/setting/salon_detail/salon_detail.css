@@ -187,13 +187,6 @@
 	padding:5px;
 }
 
-.salon_salon_detail_sister dl {
-	width:100px;
-	float:left;
-	overflow: hidden;
-	margin: 0 10px;
-}
-
 .salon_salon_detail_sister dd {
 	height: 100px;
 	overflow: hidden;

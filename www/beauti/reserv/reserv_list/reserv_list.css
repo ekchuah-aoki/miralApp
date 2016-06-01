@@ -32,7 +32,7 @@ li.reserv_list_result span.favorite_button {
 	display: inline-block;
 	position:absolute;
 	width: 100%;
-	height: 90px;
+	height: 100px;
 	background-color: rgba(0,0,0,0.5);
 	bottom: 0px;
 	color:#FFF;
@@ -83,6 +83,7 @@ li.reserv_list_result span.favorite_button {
 
 .reserv_list_result_img > img {
 	width: 100%;
+	min-height:250px;
 }
 /* ----- reserv_list_result_img end ----- */
 
@@ -102,5 +103,7 @@ div.reserv_map_MapIcon {
 	position: fixed;
 	right: 0px;
 	bottom: 0px;
+	
+	box-shadow:0px 3px 3px 1px rgba(0,0,0,0.4);
 }
 /* ----- reserv_list_result_img end ----- */
