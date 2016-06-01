@@ -31,6 +31,19 @@ angular.module('miral.sample.sample1_fnc', ['miral.common.miralConst'
 					fail_,
 					reqMsg
 					)
+		},
+		srhSalon:function(keyword_, pos_, limit_, success_, fail_){
+			
+			reqMsg = {keyword:keyword_
+					,pos:pos_
+					,limit:limit_};
+			
+			googleAppenginConnecter.execute(
+					gapi.client.miralServer.salon.salonqueryservice.srhbykeyword,
+					success_,
+					fail_,
+					reqMsg
+					)
 		}
 		
 	};

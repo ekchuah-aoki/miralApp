@@ -52,12 +52,40 @@ angular.module('miral.sample.sample1', ['miral.sample.sample1_fnc','ionicImageSo
 	}
 	
 	
+	
 	$scope.onChangeMode = function(){
 		
 		console.debug('onChangeMode');		
 		$('#img_sortable').attr('mode', 'delete');
 		
 	}
+	
+	
+	$scope.onSrhSalon=function(){
+		
+		//取得成功時のコールバック関数
+		var success = function(response){
+
+			console.debug("検索件数:"+response.count);
+			
+			sList = response.salons;
+			
+			for(var i=0; i< sList.length; i++){
+				
+				var s = sList[i]; 
+				
+				console.debug("name:"+s.name);
+			}
+		}
+		
+		//取得失敗時のコールバック関数
+		var fail = function (){
+			alert('失敗');
+		}
+		
+		sampleSample1Fnc.srhSalon('池袋', 1, 10, success, fail);
+		
+	}	
 })
 
 ;
