@@ -20,9 +20,9 @@ angular.module('miral.beauti.setting.setting_home.controllers', ['miral.loginInf
 		$state.go('beauti-setting-beauti_detail',null,'');
 	}
 
-	//美容師：設定：レビュー
-	$scope.beautiSettingReview=function() {
-		$state.go('beauti-setting-review',null,'');
+	//美容師：設定：サロンレビュー
+	$scope.beautiSettingReviewSalon=function() {
+		$state.go('beauti-setting-review_salon',null,'');
 	}
 
 	//美容師：設定：アカウントの設定

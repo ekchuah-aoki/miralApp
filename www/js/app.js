@@ -20,6 +20,7 @@ angular.module('miral', ['ionic', 'ngCordovaOauth','ngAnimate', 'ionicLazyLoad',
                          ,'miral.beauti.reserv.reserv_map.controllers'
                          ,'miral.beauti.reserv.salon_list.controllers'
                          ,'miral.beauti.reserv.reservation.controllers'
+                         ,'miral.beauti.reserv.salon_map.controllers'
                          ,'miral.beauti.reserv.favorite.controllers'
                          ,'miral.beauti.reserv.reserv_info.controllers'
                          ,'miral.beauti.reserv.message_list.controllers'
@@ -29,7 +30,8 @@ angular.module('miral', ['ionic', 'ngCordovaOauth','ngAnimate', 'ionicLazyLoad',
                          ,'miral.beauti.setting.point_buy.controllers'
                          ,'miral.beauti.setting.beauti_detail.controllers'
                          ,'miral.beauti.setting.beauti_edit.controllers'
-                         ,'miral.beauti.setting.review.controllers'
+                         ,'miral.beauti.setting.review_salon.controllers'
+                         ,'miral.beauti.setting.review_beauti.controllers'
                          ,'miral.beauti.setting.review_edit.controllers'
                          ,'miral.beauti.setting.account.controllers'
                          ,'miral.beauti.setting.account_edit.controllers'
@@ -49,13 +51,17 @@ angular.module('miral', ['ionic', 'ngCordovaOauth','ngAnimate', 'ionicLazyLoad',
                          ,'miral.salon.schedule.reserv_today.controllers'
                          ,'miral.salon.schedule.reserv_tomorrow.controllers'
                          ,'miral.salon.schedule.reserv_hst.controllers'
+                         ,'miral.salon.schedule.reserv_latest.controllers'
+                         ,'miral.salon.schedule.reserv_past.controllers'
                          ,'miral.salon.schedule.message_list.controllers'
                          ,'miral.salon.schedule.message.controllers'
                          ,'miral.salon.setting.setting_home.controllers'
                          ,'miral.salon.setting.point_man.controllers'
+                         ,'miral.salon.setting.point_hst.controllers'
                          ,'miral.salon.setting.salon_detail.controllers'
                          ,'miral.salon.setting.salon_edit.controllers'
-                         ,'miral.salon.setting.review.controllers'
+                         ,'miral.salon.setting.review_salon.controllers'
+                         ,'miral.salon.setting.review_beauti.controllers'
                          ,'miral.salon.setting.review_edit.controllers'
                          ,'miral.salon.setting.account.controllers'
                          ,'miral.salon.setting.account_edit.controllers'
@@ -207,6 +213,13 @@ angular.module('miral', ['ionic', 'ngCordovaOauth','ngAnimate', 'ionicLazyLoad',
 	    controller: 'beautiReservReservationControllers'
 	  })
 
+  //美容師 予約　MAP
+  .state('beauti-reserv-salon_map', {
+	    url: '/beauti/reserv/salon_map',
+	    templateUrl: 'beauti/reserv/salon_map/salon_map.html',
+	    controller: 'beautiReservSalonMapControllers'
+	  })
+
   //美容師 予約　サロン一覧
   .state('beauti-reserv-salon_list', {
 	    url: '/beauti/reserv/salon_list',
@@ -278,11 +291,18 @@ angular.module('miral', ['ionic', 'ngCordovaOauth','ngAnimate', 'ionicLazyLoad',
 	    controller: 'beautiSettingBeautiEditControllers'
 	  })
 
-  //美容師 設定　レビュー
-  .state('beauti-setting-review', {
-	    url: '/beauti/setting/review',
-	    templateUrl: 'beauti/setting/review/review.html',
-	    controller: 'beautiSettingReviewControllers'
+   //美容師 設定　サロンレビュー
+  .state('beauti-setting-review_salon', {
+	    url: '/beauti/setting/review_salon',
+	    templateUrl: 'beauti/setting/review_salon/review_salon.html',
+	    controller: 'beautiSettingReviewSalonControllers'
+	  })
+
+  //美容師 設定　スタイリストレビュー
+  .state('beauti-setting-review_beauti', {
+	    url: '/beauti/setting/review_beauti',
+	    templateUrl: 'beauti/setting/review_beauti/review_beauti.html',
+	    controller: 'beautiSettingReviewBeautiControllers'
 	  })
 
   //美容師 設定　レビューの編集
@@ -292,7 +312,6 @@ angular.module('miral', ['ionic', 'ngCordovaOauth','ngAnimate', 'ionicLazyLoad',
 	    controller: 'beautiSettingReviewEditControllers'
 	  })
 
-	  
   //美容師 設定　アカウントの設定
   .state('beauti-setting-account', {
 	    url: '/beauti/setting/account',
@@ -424,6 +443,20 @@ angular.module('miral', ['ionic', 'ngCordovaOauth','ngAnimate', 'ionicLazyLoad',
 	    controller: 'salonScheduleReservHstControllers'
 	  })
 
+   // サロン スケジュール　最新の利用履歴
+  .state('salon-schedule-reserv_past', {
+	    url: '/salon/schedule/reserv_past',
+	    templateUrl: 'salon/schedule/reserv_past/reserv_past.html',
+	    controller: 'salonScheduleReservPastControllers'
+	  })
+
+   // サロン スケジュール　過去の利用履歴
+  .state('salon-schedule-reserv_latest', {
+	    url: '/salon/schedule/reserv_latest',
+	    templateUrl: 'salon/schedule/reserv_latest/reserv_latest.html',
+	    controller: 'salonScheduleReservLatestControllers'
+	  })
+
   //　サロン スケジュール メッセージ一覧
   .state('salon-schedule-message_list', {
 	    url: '/salon/schedule/message_list',
@@ -453,6 +486,13 @@ angular.module('miral', ['ionic', 'ngCordovaOauth','ngAnimate', 'ionicLazyLoad',
 	    controller: 'salonSettingPointManControllers'
 	  })
 
+  // サロン 設定　過去の売上
+  .state('salon-setting-point_hst', {
+	    url: '/salon/setting/point_hst',
+	    templateUrl: 'salon/setting/point_hst/point_hst.html',
+	    controller: 'salonSettingPointHstControllers'
+	  })
+	  
   // サロン 設定　マイプロフィール
   .state('salon-setting-salon_detail', {
 	    url: '/salon/setting/salon_detail',
@@ -474,13 +514,20 @@ angular.module('miral', ['ionic', 'ngCordovaOauth','ngAnimate', 'ionicLazyLoad',
 	    controller: 'salonSettingGalleryEditControllers'
 	  })
 	  
-  // サロン 設定　レビュー
-  .state('salon-setting-review', {
-	    url: '/salon/setting/review',
-	    templateUrl: 'salon/setting/review/review.html',
-	    controller: 'salonSettingReviewControllers'
+  // サロン 設定　サロンレビュー
+  .state('salon-setting-review_salon', {
+	    url: '/salon/setting/review_salon',
+	    templateUrl: 'salon/setting/review_salon/review_salon.html',
+	    controller: 'salonSettingReviewSalonControllers'
 	  })
 
+  // サロン 設定　スタイリストレビュー
+  .state('salon-setting-review_beauti', {
+	    url: '/salon/setting/review_beauti',
+	    templateUrl: 'salon/setting/review_beauti/review_beauti.html',
+	    controller: 'salonSettingReviewBeautiControllers'
+	  })
+	  
   // サロン 設定　レビューの編集
   .state('salon-setting-review_edit', {
 	    url: '/salon/setting/review_edit',
@@ -500,13 +547,6 @@ angular.module('miral', ['ionic', 'ngCordovaOauth','ngAnimate', 'ionicLazyLoad',
 	    url: '/salon/setting/account_edit/:mode',
 	    templateUrl: 'salon/setting/account_edit/account_edit.html',
 	    controller: 'salonSettingAccountEditControllers'
-	  })
-
-  // サロン 設定　その他の設定
-  .state('salon-setting-other_edit', {
-	    url: '/salon/setting/other_edit',
-	    templateUrl: 'salon/setting/other_edit/other_edit.html',
-	    controller: 'salonSettingOtherEditControllers'
 	  })
 
   // サロン 設定  利用規約
@@ -530,7 +570,7 @@ angular.module('miral', ['ionic', 'ngCordovaOauth','ngAnimate', 'ionicLazyLoad',
 	    controller: 'salonSettingScltControllers'
 	  })
 	  
-  // train
+  // コモン　最寄駅選択画面 （train）
   .state('common-trainroute_chooser-trainroute_chooser', {
 	    url: '/common/trainroute_chooser/trainroute_chooser',
 	    templateUrl: 'common/trainroute_chooser/trainroute_chooser.html',

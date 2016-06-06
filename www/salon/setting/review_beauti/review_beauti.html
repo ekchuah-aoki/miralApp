@@ -1,11 +1,15 @@
 <ion-view>
-<ion-content class="miralbody review">
-<div class="miralbody_wrap">
+
 	<!-- タブ -->
-	<ion-tabs class="miral_tab">
-		<ion-tab title="サロンレビュー"></ion-tab>
-		<ion-tab title="スタイリストレビュー"></ion-tab>
-	</ion-tabs>
+	<div class="tabs-striped tabs-top miral_tab">
+		<div class="tabs">
+			<a class="tab-item" ng-click="beautiSettingReviewSalon()">サロンレビュー</a>
+			<a class="tab-item active" ng-click="beautiSettingReviewBeauti()">スタイリストレビュー</a>
+		</div>
+	</div>
+
+<ion-content class="miralbody review has-header-w">
+<div class="miralbody_wrap">
 
 	<p class="review_cases">サロンへ送られてきたレビュー　５件</p>
 	<p class="titleBar c01">サロンへのレビュー</p>

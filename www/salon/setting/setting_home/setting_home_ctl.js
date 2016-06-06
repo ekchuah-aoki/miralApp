@@ -16,9 +16,9 @@ angular.module('miral.salon.setting.setting_home.controllers', ['miral.loginInfo
 		$state.go('salon-setting-salon_detail',null,'');
 	}
 
-	//サロン：設定：レビュー
-	$scope.salonSettingReview=function() {
-		$state.go('salon-setting-review',null,'');
+	//サロン：設定：サロンレビュー
+	$scope.salonSettingReviewSalon=function() {
+		$state.go('salon-setting-review_salon',null,'');
 	}
 
 	//サロン：設定：アカウントの設定

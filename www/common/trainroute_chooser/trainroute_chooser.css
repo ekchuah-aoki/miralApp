@@ -11,7 +11,7 @@
     border-color: #DDD;
 }
 
-.list {
+.list.trainroute_chooser {
 	margin: 0;
 	padding: 0;
 }

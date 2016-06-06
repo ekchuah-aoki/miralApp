@@ -17,6 +17,15 @@ angular.module('miral.salon.schedule.reserv_hst.controllers', [])
 		$state.go('salon-schedule-reserv_hst',null,'');
 	}
 	
+	//サロン：スケジュール：予約履歴_最新
+	$scope.salonScheduleReservPast=function() {
+		$state.go('salon-schedule-reserv_past',null,'');
+	}
+
+	//サロン：スケジュール：予約履歴_過去
+	$scope.salonScheduleReservLatest=function() {
+		$state.go('salon-schedule-reserv_latest',null,'');
+	}
 	
 })
 

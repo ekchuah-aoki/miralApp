@@ -23,6 +23,7 @@
 	<link href="beauti/reserv/reserv_map/reserv_map.css" rel="stylesheet">
 	<link href="beauti/reserv/salon_list/salon_list.css" rel="stylesheet">
 	<link href="beauti/reserv/reservation/reservation.css" rel="stylesheet">
+	<link href="beauti/reserv/salon_map/salon_map.css" rel="stylesheet">
 	<link href="beauti/reserv/favorite/favorite.css" rel="stylesheet">
 	<link href="beauti/reserv/reserv_info/reserv_info.css" rel="stylesheet">
 	<link href="beauti/reserv/message_list/message_list.css" rel="stylesheet">
@@ -32,7 +33,8 @@
 	<link href="beauti/setting/point_buy/point_buy.css" rel="stylesheet">
 	<link href="beauti/setting/beauti_detail/beauti_detail.css" rel="stylesheet">
 	<link href="beauti/setting/beauti_edit/beauti_edit.css" rel="stylesheet">
-	<link href="beauti/setting/review/review.css" rel="stylesheet">
+	<link href="beauti/setting/review_salon/review_salon.css" rel="stylesheet">
+	<link href="beauti/setting/review_beauti/review_beauti.css" rel="stylesheet">
 	<link href="beauti/setting/review_edit/review_edit.css" rel="stylesheet">
 	<link href="beauti/setting/account/account.css" rel="stylesheet">
 	<link href="beauti/setting/account_edit/account_edit.css" rel="stylesheet">
@@ -51,14 +53,18 @@
 	<link href="salon/schedule/beauti_list/beauti_list.css" rel="stylesheet">
 	<link href="salon/schedule/reserv_today/reserv_today.css" rel="stylesheet">
 	<link href="salon/schedule/reserv_tomorrow/reserv_tomorrow.css" rel="stylesheet">
+	<link href="salon/schedule/reserv_latest/reserv_latest.css" rel="stylesheet">
+	<link href="salon/schedule/reserv_past/reserv_past.css" rel="stylesheet">
 	<link href="salon/schedule/reserv_hst/reserv_hst.css" rel="stylesheet">
 	<link href="salon/schedule/message_list/message_list.css" rel="stylesheet">
-	<link href="salon/schedule/message/message.css" rel="stylesheet">	
+	<link href="salon/schedule/message/message.css" rel="stylesheet">
 	<link href="salon/setting/setting_home/setting_home.css" rel="stylesheet">
 	<link href="salon/setting/point_man/point_man.css" rel="stylesheet">
+	<link href="salon/setting/point_hst/point_hst.css" rel="stylesheet">
 	<link href="salon/setting/salon_detail/salon_detail.css" rel="stylesheet">
 	<link href="salon/setting/salon_edit/salon_edit.css" rel="stylesheet">
-	<link href="salon/setting/review/review.css" rel="stylesheet">
+	<link href="salon/setting/review_salon/review_salon.css" rel="stylesheet">
+	<link href="salon/setting/review_beauti/review_beauti.css" rel="stylesheet">
 	<link href="salon/setting/review_edit/review_edit.css" rel="stylesheet">
 	<link href="salon/setting/account/account.css" rel="stylesheet">
 	<link href="salon/setting/account_edit/account_edit.css" rel="stylesheet">
@@ -131,6 +137,7 @@
 
 	<!-- google map -->
  	<script src="https://maps.googleapis.com/maps/api/js"></script>
+ 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCoDm8vqP9uqtCURgBwIfC-2YtIPZ5Ivw4"　type="text/javascript"></script>
 
 
     <!-- your app's js -->
@@ -154,6 +161,7 @@
     <script src="beauti/reserv/reserv_map/reserv_map_ctl.js"></script>
     <script src="beauti/reserv/salon_list/salon_list_ctl.js"></script>
     <script src="beauti/reserv/reservation/reservation_ctl.js"></script>
+    <script src="beauti/reserv/salon_map/salon_map_ctl.js"></script>
     <script src="beauti/reserv/favorite/favorite_ctl.js"></script>
     <script src="beauti/reserv/reserv_info/reserv_info_ctl.js"></script>
     <script src="beauti/reserv/message_list/message_list_ctl.js"></script>
@@ -163,7 +171,8 @@
     <script src="beauti/setting/point_buy/point_buy_ctl.js"></script>
     <script src="beauti/setting/beauti_detail/beauti_detail_ctl.js"></script>
     <script src="beauti/setting/beauti_edit/beauti_edit_ctl.js"></script>
-    <script src="beauti/setting/review/review_ctl.js"></script>
+    <script src="beauti/setting/review_salon/review_salon_ctl.js"></script>
+    <script src="beauti/setting/review_beauti/review_beauti_ctl.js"></script>
     <script src="beauti/setting/review_edit/review_edit_ctl.js"></script>
     <script src="beauti/setting/account/account_ctl.js"></script>
     <script src="beauti/setting/account_edit/account_edit_ctl.js"></script>
@@ -186,18 +195,21 @@
     <script src="salon/schedule/reserv_today/reserv_today_ctl.js"></script>
     <script src="salon/schedule/reserv_tomorrow/reserv_tomorrow_ctl.js"></script>
     <script src="salon/schedule/reserv_hst/reserv_hst_ctl.js"></script>
+    <script src="salon/schedule/reserv_latest/reserv_latest_ctl.js"></script>
+    <script src="salon/schedule/reserv_past/reserv_past_ctl.js"></script>
     <script src="salon/schedule/message_list/message_list_ctl.js"></script>
     <script src="salon/schedule/message/message_ctl.js"></script>
     <script src="salon/setting/setting_home/setting_home_ctl.js"></script>
     <script src="salon/setting/point_man/point_man_ctl.js"></script>
+    <script src="salon/setting/point_hst/point_hst_ctl.js"></script>
     <script src="salon/setting/salon_detail/salon_detail_ctl.js"></script>
     <script src="salon/setting/salon_edit/salon_edit_ctl.js"></script>
-    <script src="salon/setting/review/review_ctl.js"></script>
+    <script src="salon/setting/review_salon/review_salon_ctl.js"></script>
+    <script src="salon/setting/review_beauti/review_beauti_ctl.js"></script>
     <script src="salon/setting/review_edit/review_edit_ctl.js"></script>
     <script src="salon/setting/account/account_ctl.js"></script>
     <script src="salon/setting/account_edit/account_edit_fnc.js"></script>
     <script src="salon/setting/account_edit/account_edit_ctl.js"></script>
-    <script src="salon/setting/other_edit/other_edit_ctl.js"></script>
     <script src="salon/setting/terms/terms_ctl.js"></script>
     <script src="salon/setting/privacy_policy/privacy_policy_ctl.js"></script>
     <script src="salon/setting/sclt/sclt_ctl.js"></script>
@@ -238,7 +250,6 @@
 					</div>
 					<div style="display:inline" ng-show="showNavi4Salon">
 						<button class="button" ng-click="onSalonHome()"><i class="ion-android-home"></i></a>
-						<button class="button" ng-click=""><i class="ion-android-favorite"></i></a>
 						<button class="button" ng-click="onSalonSetting()"><i class="ion-android-settings"></i></button>
 					</div>
 				</div>
