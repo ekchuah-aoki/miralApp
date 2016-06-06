@@ -34,11 +34,11 @@
 	<div class="contentbox_box">
 	  <p class="salon_contentbox_title">お名前</p>
 	  <div class="salon_contentbox_content">
-  		<span class="salon_account_edit_name">
+  		<span class="salon_account_edit_shopName">
     	  <span>性</span>
   		  <input type="text" ng-model="form.lastName">
   		</span>
-  		<span class="salon_account_edit_name">
+  		<span class="salon_account_edit_shopName">
   		  <span>名</span>
 	  	  <input type="text" ng-model="form.firstName">
   		</span>
@@ -47,13 +47,13 @@
 
 	<!-- フリガナ -->
     <div class="contentbox_box">
-	  <p class="salon_contentbox_title">カナ</p>
+	  <p class="salon_account_edit_contentbox_title">カナ</p>
 	  <div class="salon_contentbox_content">
-		<span class="salon_account_edit_name">
+		<span class="salon_account_edit_shopName">
 		  <span>セイ</span>
   		  <input type="text" ng-model="form.lastNameKana">
 		</span>
-		<span class="salon_account_edit_name">
+		<span class="salon_account_edit_shopName">
 		  <span>メイ</span>
 		  <input type="text" ng-model="form.firstNameKana">
 		</span>
@@ -80,7 +80,7 @@
   		</span>
   	  </div>
   	  <div class="salon_contentbox_content">
-  	    <span class="salon_account_edit_name">
+  	    <span class="salon_account_edit_shopName">
   		  <span>カナ</span>
   		  <input type="text" ng-model="form.shopNameKana">
   		</span>
@@ -107,7 +107,7 @@
 	  	</span>
 	  </div>
 	  <div class="salon_contentbox_content">
-	    <span class="salon_account_edit_name">
+	    <span class="salon_account_edit_shopName">
 	  	  <span>住所</span>
 	  	  <input type="text" ng-model="form.streetAdd2">
 	  	</span>
@@ -119,11 +119,18 @@
 	  <div class="contentbox_box">
 	    <p class="salon_contentbox_title"> アクセス</p>
 		<div class="salon_contentbox_content">
-	  	  <span class="salon_account_edit_accessName">
-	  	    <span>最寄り駅①</span>
-	  	    <input type="text" ng-model="form.access">
-	  	  </span>
-	  	  <span class="salon_account_edit_walkName">
+	  	  <span class="account_edit_station">
+	  	    <span class="account_edit_station_word">最寄り駅</span>
+	  	    <a class="account_edit_searchBotton button c01"  ng-click="touroku()"  >検索</a>
+	  	    <p class="space">山手線　池袋駅</p>
+	  	   </span>
+	  	  
+	  	  
+	  	  <!-- style="padding-left:75px;" -->
+	  	  
+	  	  
+	  	  
+	  	  <span class="salon_account_edit_shopName">
 	  	    <span>徒歩</span>
 	  	    <input type="text" ng-model="form.walk">
 	  	  </span>
@@ -141,11 +148,36 @@
 	  	</div>
 	  </div>
  -->	  	
+		</div>
 	</div>
 	
 	<!-- 利用可能席数 -->
 	<div class="overflow_hidden">
-	  <div class="contentbox_box">
+	<div class="contentbox_box">
+	    <p class="salon_account_edit_contentbox_title"> 利用可能席数</p>
+		<div class="salon_contentbox_content">
+	      <span class="salon_account_edit_searchName"></span>
+	      <div class="salon_contentbox_content item-select">
+  	        <div class="salon_account_edit_chear">	
+		    <span>
+			  <div class="contentbox_content item-select">
+		        <select>
+			      <option value="">--</option>
+		  	      <option value="06">1</option>
+			      <option value="07">2</option>
+			      <option value="08">3</option>
+	              <option value="09">4</option>
+			      <option value="10">5</option>
+			    </select>
+		      </div>
+			</span>
+			</div>
+	      </div>
+	    </div>
+     </div>
+	</div>
+	
+<!-- 	  <div class="contentbox_box">
 	    <p class="salon_contentbox_title">利用可能席数</p>
 		<div class="salon_contentbox_content ">
 	  	  <span class="salon_account_edit_prefecturesName">
@@ -155,6 +187,8 @@
 	  	</div>
 	  </div>
 	</div>
+
+ -->
 
 	<!-- 営業時間 -->
     <div class="contentbox_box">
@@ -193,7 +227,7 @@
 		  </div>
 	  	</div>
 	  </div>
-	  <div class="close_overflow_hidden">
+	  <div class="close_overflow_hidden clB">
 	  	<div class="salon_contentbox_content">
 	  	  <span class="salon_account_edit_openClose">
 	  	    <span>close</span>
@@ -233,42 +267,66 @@
 	<div class="contentbox_box">
 	  <p class="salon_contentbox_title">定休日</p>
 	  <div class="contentbox_content salon_week">
-	    <input type="radio" value="0" id="mon" ng-model="form.holiday">
+	  
+		<input type="checkbox" value="0" id="mon">
 	    <label for="mon">月</label>
-        <input type="radio" value="1" id="tues" ng-model="form.holiday">
+        <input type="checkbox" value="1" id="tues">
         <label for="tues">火</label>
-   	    <input type="radio" value="2" id="wed" ng-model="form.holiday">
+   	    <input type="checkbox" value="2" id="wed">
    	    <label for="wed">水</label>
-	    <input type="radio" value="3" id="thurs" ng-model="form.holiday">
+	    <input type="checkbox" value="3" id="thurs">
 	    <label for="thurs">木</label>
-	    <input type="radio" value="4" id="fri" ng-model="form.holiday">
+	    <input type="checkbox" value="4" id="fri">
 	    <label for="fri">金</label>
-	    <input type="radio" value="5" id="sat" ng-model="form.holiday">
+	    <input type="checkbox" value="5" id="sat">
 	    <label for="sat">土</label>
-	    <input type="radio" value="6" id="sun" ng-model="form.holiday">
+	    <input type="checkbox" value="6" id="sun">
 	    <label for="sun">日</label>
-	    <input type="radio" value="7" id="holiday" ng-model="form.holiday">
+	    <input type="checkbox" value="7" id="holiday">
 	    <label for="holiday">祝</label>
-	  </div>
+		
+		
+		<!--
+		
+		<input type="checkbox" value="0" id="mon" ng-model="form.holiday">
+	    <label for="mon">月</label>
+        <input type="checkbox" value="1" id="tues" ng-model="form.holiday">
+        <label for="tues">火</label>
+	    <input type="checkbox" value="2" id="wed" ng-model="form.holiday">
+	    <label for="wed">水</label>
+	    <input type="checkbox" value="3" id="thurs" ng-model="form.holiday">
+	    <label for="thurs">木</label>
+	    <input type="checkbox" value="4" id="fri" ng-model="form.holiday">
+	    <label for="fri">金</label>
+	    <input type="checkbox" value="5" id="sat" ng-model="form.holiday">
+	    <label for="sat">土</label>
+	    <input type="checkbox" value="6" id="sun" ng-model="form.holiday">
+	    <label for="sun">日</label>
+	    <input type="checkbox" value="7" id="holiday" ng-model="form.holiday">
+	    <label for="holiday">祝</label>
+	    
+	    -->
+
+
 	</div>
 	
-    <!-- 一時間利用ポイント -->
+    <!-- 1時間利用ポイント -->
 	<div class="contentbox_box">	
-	  <p class="salon_contentbox_title">一時間利用ポイント</p>
+	  <p class="salon_contentbox_title">1時間利用ポイント</p>
   	  <div class="salon_contentbox_content">
-  	    <span class="salon_account_edit_name">
-  		  <span>P</span>
+  	    <span class="salon_account_edit_namePoint">
+  	      <span class="salon_account_edit_point">P</span>
   	      <input type="text" ng-model="form.oneHourPoint">
   		</span>
   	  </div>
 	</div>
 		
-    <!-- 一日利用ポイント -->
+    <!-- 1日利用ポイント -->
 	<div class="contentbox_box">	
-	  <p class="salon_contentbox_title">一日利用ポイント</p>
+	  <p class="salon_contentbox_title">1日利用ポイント</p>
 	  <div class="salon_contentbox_content">
-  	    <span class="salon_account_edit_name">
-   	  	  <span>P</span>
+  	    <span class="salon_account_edit_namePoint">
+   	  	  <span class="salon_account_edit_point">P</span>
   		  <input type="text" ng-model="form.oneDayPoint">
   		</span>
   	  </div>
@@ -278,8 +336,8 @@
 	<div class="contentbox_box">	
 	  <p class="salon_contentbox_title">キャンセル割合</p>
 	  <div class="salon_contentbox_content">
-  	    <span class="salon_account_edit_name">
-  		  <span>%</span>
+  	    <span class="salon_account_edit_namePoint">
+  		  <span class="salon_account_edit_point">%</span>
   		  <input type="text" ng-model="form.cancel">
   		</span>
   	  </div>
@@ -289,7 +347,7 @@
     <div class="contentbox_box">	
 	  <p class="salon_contentbox_title">ホームページまたはブログURL</p>
 	  <div class="salon_contentbox_content">
-  	    <span class="salon_account_edit_name">
+  	    <span class="salon_account_edit_shopName">
   		  <span>URL</span>
   		  <input type="text" ng-model="form.URL">
   		</span>
@@ -298,19 +356,25 @@
     
 	<!-- 利用条件 -->
 	<p class="salon_contentbox_title">利用条件</p>
-    <form method="post" action="commnt.cgi">
-      <textarea name="commnt" style="width:100%;border:1px #A87544 solid" cols="70" rows="5"ng-model="form.conditions"></textarea></p>
+	<form method="post" action="commnt.cgi">
+      <textarea class="salon_account_edit_condition" name="commnt" cols="70" rows="5"ng-model="form.conditions"></textarea>
 	</form>
   
-  </div>
+<!--	<div class="card request_message">
+			<div class="item item-text-wrap">
+				<textarea name="Request_Message"></textarea>
+			</div>
+		</div>
+   -->
   
+  </div><!-- contentbox list account_edit end -->
+  </div>
   <!-- 登録 -->
   <div class="touroku">
     <a class="button button-block c01"  ng-click="touroku()"  >登録</a>
   </div>
   
   
-</div>
 </div>
 </ion-content>
 </ion-view>
