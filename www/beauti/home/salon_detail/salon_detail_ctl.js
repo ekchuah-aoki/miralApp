@@ -2,6 +2,11 @@ angular.module('miral.beauti.home.salon_detail.controllers', [])
 
 .controller('beautiHomeSalonDetailControllers', function($scope, $state,$ionicPopup) {
 
+	//googleMapの起動
+	$scope.map = function(){
+		$state.go('beauti-reserv-salon_map',null,'');
+	}
+	
 	//美容師：予約：予約
 	$scope.beautiReservReservation=function() {
 		$state.go('beauti-reserv-reservation',null,'');

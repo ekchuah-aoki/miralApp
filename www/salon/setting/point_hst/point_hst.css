@@ -1,0 +1,38 @@
+@CHARSET "UTF-8";
+
+/* ----- point_man_content start ----- */
+.point_man_content{
+	margin-top:-1px;
+	padding:10px 15px 10px 15px;
+	height:60px;
+	display: table;
+}
+
+.point_man_content > div {
+	display: table-cell;
+	vertical-align: middle;
+}
+/* ----- point_man_content end ----- */
+
+/* ----- point_man_earnings start ----- */
+.point_man_earnings{
+	text-align:right;
+	font-size:20px;
+}
+/* ----- point_man_earnings end ----- */
+
+/* ----- point_man_detil start ----- */
+.point_man_detil{
+	font-size:20px;
+}
+/* ----- point_man_detil end ----- */
+
+/* ----- point_man_compare , point_man_userName start ----- */
+.point_man_compare,
+.point_man_userName{
+	font-size:12px;
+}
+/* ----- point_man_compare , point_man_userName end ----- */
+
+
+
