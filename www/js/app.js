@@ -94,10 +94,10 @@ angular.module('miral', ['ionic', 'ngCordovaOauth','ngAnimate', 'ionicLazyLoad',
     		$state.go('salon-home-home_top',null,'');
     	}else{
     		console.log('美容師　アカウントでログイン済み');
-    		$state.go('beauti-home-home-top',null,'');
+    		$state.go('beauti-home-salon_srhrst',null,'');
     	}
     }else{
-   		$state.go('login',null,'');
+   		$state.go('beauti-home-salon_srhrst',null,'');
     }
     
   });

@@ -13,7 +13,7 @@ angular.module('miral.common.trainroute_chooser.trainroute_chooser.controllers',
 		
 		//取得成功時のコールバック関数
 		var success = function(response){
-			trainList = response.trains;
+			trainList = response.salons;
 			
 			for(var i=0; i< trainList.length; i++){
 				
