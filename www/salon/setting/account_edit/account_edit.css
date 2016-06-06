@@ -1,260 +1,67 @@
 @CHARSET "UTF-8";
 
-/* ----- account_edit .salon_contentbox_content start ----- */
-.account_edit .salon_contentbox_content > input[type="text"] ,
-.account_edit .salon_contentbox_content > input[type="password"]
-{
-	border-bottom: solid #DDD 1px;
+/* ----- account_edit start ----- */
+.account_edit .contentbox > div {
+	margin: 5px 0px;
+}
+/* ----- account_edit end ----- */
+
+/* ----- span.account_edit_text_indent start ----- */
+span.account_edit_text_indent {
 	width: 100%;
-}
-
-/* ----- account_edit .salon_contentbox_content end ----- */
-
-
-/* ----- account_edit .salon_contentbox_title start ----- */
-.account_edit .salon_contentbox_title {
-	font-size:18px;
-	/*padding: 5px 0px;*/
-	padding:15px 0 0 0 ;
-	color:#A87544;/*beautiでは記述無し*/
-}
-
-/* ----- account_edit .salon_contentbox_title end ----- */
-
-
-/* ----- span.salon_account_edit_name start ----- */
-span.salon_account_edit_name {
-	width: 50%;
 	float: left;
 }
 
-span.salon_account_edit_name > input {
+span.account_edit_text_indent > input[type="text"]{ 
 	border-bottom: solid #DDD 1px;
 	width:100%;
-	padding-left: 40px;
+	padding-left: 60px;
 }
 
-span.salon_account_edit_name > span  {
+span.account_edit_text_indent > span  {
 	display: inline-block;
 	padding: 5px;
-	margin-right: -40px;
-	width: 40px;
+	margin-right: -70px;
+	width: 70px;
 	float: left;
 }
+/* ----- span.account_edit_text_indent end ----- */
 
-/* ----- span.salon_account_edit_name end ----- */
-
-
-/* ----- span.salon_account_edit_namePoint start ----- */
-span.salon_account_edit_namePoint > input{
-	border-bottom: solid #DDD 1px;
-	width:100%;
-	padding-right: 40px;
-}
-
-/* ----- span.salon_account_edit_namePoint end ----- */
-
-
-/* ----- account_edit .salon_contentbox_content ----- */
-.account_edit .salon_contentbox_content  {
-	height: 50px;
-}
-
-.account_edit .salon_contentbox_content > input[type="password"] {
-	border-bottom: solid #DDD 1px;
-	width: 100%;
-}
-
-/* ----- account_edit .salon_contentbox_content end ----- */
-
-
-/* ----- salon_account_edit .contentbox_content select start ----- */
-.salon_account_edit .contentbox_content select {
-	width: 100%;
-	max-width: none;
-}
-
-/* ----- salon_account_edit .contentbox_content select end ----- */
-
-
-
-
-/* ----- span.salon_account_edit_shopName start ----- */
-span.salon_account_edit_shopName {
-	width: 100%;
-	float: left;
-}
-
-span.salon_account_edit_shopName > input[type="text"]{ 
-	border-bottom: solid #DDD 1px;
-	width:100%;
-	padding-left: 50px;
-}
-
-span.salon_account_edit_shopName > span  {
-	display: inline-block;
-	padding: 5px;
-	margin-right: -60px;
-	width: 60px;
-	float: left;
-}
-
-/* ----- span.salon_account_edit_shopName end ----- */
-
-
-/* ----- span.salon_account_edit_prefecturesName start ----- */
-span.salon_account_edit_prefecturesName {
-	width: 50%;
-	float: left;
-}
-
-span.salon_account_edit_prefecturesName > input {
-	border-bottom: solid #DDD 1px;
-	width:100%;
-	padding-left: 70px;
-}
-
-span.salon_account_edit_prefecturesName > span  {
-	display: inline-block;
-	padding: 5px;
-	margin-right: -80px;
-	width: 80px;
-	float: left;
-}
-
-/* ----- span.salon_account_edit_prefecturesName end ----- */
-
-
-/* ----- account_edit_searchBotton start ----- */
-.account_edit_searchBotton{
-	float:right;
-}
-
-/* ----- account_edit_searchBotton end ----- */
-
-
-/* ----- space start ----- */
-.space{
-	clear:both;
-}
-
-/* ----- space end ----- */
-
-
-/* ----- account_edit_station ----- */
+/* ----- account_edit_station start ----- */
 .account_edit_station {
 	display: inline-block;
-	padding: 5px;
-	margin-right: -60px;
+	padding: 5px 0px;
 	width: 100%;
 	float: left;
 }
 
-span.account_edit_station > input[type="text"]{
-	padding-left:0px;
-	border-bottom: solid #DDD 1px;
-	width: 100%;
-}
-
-.account_edit_station_word{
-	float:left;
-	width:60px;
-	margin-right:-60px;
-}
-
-/* ----- account_edit_station ----- */
-
-
-/* ----- span.salon_account_edit_accessName start ----- */
-span.salon_account_edit_accessName {
-	width: 50%;
-	float: left;
-}
-
-span.salon_account_edit_accessName > input {
-	border-bottom: solid #DDD 1px;
-	width:100%;
-	padding-left: 80px;
-}
-
-span.salon_account_edit_accessName > span  {
+.account_edit_station > span {
 	display: inline-block;
-	padding: 5px;
-	margin-right: -80px;
 	width: 80px;
-	float: left;
+	padding: 5px 0px;
+}
+.account_edit_station > a.button {
+	padding: 0px 5px;
+	line-height: 26px;
+	height:26px;
+	min-height: 30px;
 }
 
-/* ----- span.salon_account_edit_accessName end ----- */
-
-
-/* ----- span.salon_account_edit_walkName start ----- */
-span.salon_account_edit_walkName {
-	width: 50%;
-	float: left;
+.account_edit_station > p {
+	margin: 0px;
+	padding: 15px 5px 10px 80px;
 }
 
-span.salon_account_edit_walkName > input {
-	border-bottom: solid #DDD 1px;
-	width:100%;
-	padding-left: 50px;
-}
-
-span.salon_account_edit_walkName > span  {
-	display: inline-block;
-	padding: 5px;
-	margin-right: -80px;
-	width: 80px;
-	float: left;
-}
-
-/* ----- span.salon_account_edit_walkName end ----- */
-
-
-/* ----- span.salon_account_edit_searchName start ----- */
-span.salon_account_edit_searchName > span  {
-	padding: 5px;
-	margin-right: -120px;
-	width: 120px;
-	float: left;
-}
-
-/* ----- span.salon_account_edit_searchName end ----- */
-
-
-/* -----salon_account_edit_contentbox_title start ----- */
-.salon_account_edit_contentbox_title{
-	font-size:18px;
-	/*padding: 5px 0px;*/
-	padding:15px 0 0 0 ;
-	color:#A87544;/*beautiでは記述無し*/
-	clear:both;
-}
-
-/* ----- salon_account_edit_contentbox_title end ----- */
-
-
-/* ----- span.salon_account_edit_chear start ----- */
-span.salon_account_edit_chear > span {
-	padding:5px;
-	margin-ringht:-120px;
-	width:120px;
-	float:left;
-}
-
-/* ----- span.salon_account_edit_chear end ----- */
-
+/* ----- account_edit_station end ----- */
 
 /* ----- span.salon_account_edit_openClose start ----- */
 span.salon_account_edit_openClose > span  {
-	padding: 5px;
 	margin-right: -120px;
 	width: 120px;
 	float: left;
+	height: 20px;
 }
-
 /* ----- span.salon_account_edit_openClose end ----- */
-
 
 /* ----- account_edit_openClose start ----- */
 .account_edit_openClose > span {
@@ -264,6 +71,7 @@ span.salon_account_edit_openClose > span  {
 
 .account_edit_openClose > span > .item-select {
 	padding: 0px 40px 0px 0px;
+	height: 25px;
 }
 
 .account_edit_openClose > span > .item-select > select {
@@ -290,27 +98,7 @@ span.salon_account_edit_openClose > span  {
 	vertical-align: middle;
 }
 
-.account_edit_openClose > span {
-	float: right; 
-}
-
 /* ----- account_edit_openClose end ----- */
-
-
-/* ----- close_overflow_hidden start ----- */
-.close_overflow_hidden {
-    overflow: hidden;
-}
-
-/* ----- close_overflow_hidden end ----- */
-
-
-
-
-
-
-
-
 
 /* ----- salon_week_checkbox start ----- */
 .salon_week {
@@ -362,76 +150,7 @@ span.salon_account_edit_openClose > span  {
 .salon_week > input[type=checkbox]:checked + label:before {
   opacity: 1;
 }
-
 /* ----- salon_week_checkbox end ----- */
-
-
-/* ----- salon_week ----- */
-.salon_week {
-	width: 100%;
-}
-
-.salon_week > input[type="radio"] {
-	display: none;
-}
-
-.salon_week > label {
-	width:10%;
-	display: inline-block;
-	float: left;
-	text-align:right;
-	position: relative;
-	padding-right: 56px;
-	cursor: pointer;
-	margin:5px;
-}
-
-.salon_week > label:after {
-	position: absolute;
-	top: 50%;
-	right: 10px;
-	display: block;
-	margin-top: -10px;
-	width: 24px;
-	height: 24px;
-	border: 2px solid #DDD;
-	border-radius: 50%;
-	content: '';
-}
-
-.salon_week > label:before {
-	position: absolute;
-	top: 50%;
-	right: 15px;
-	display: block;
-	margin-top: -5px;
-	width: 14px;
-	height: 14px;
-	border-radius: 50%;
-	background-color: #A87544;
-	content: '';
-	opacity: 0;
-}
-
-.salon_week > input[type=radio]:checked + label:before {
-  opacity: 1;
-}
-
-/* ----- salon_week ----- */
-
-
-/* ----- contentbox_content_obento start ----- */
-.contentbox_content_obento{
-	width:100%;
-	height:auto;
-}
-
-.contentbox_content_obento > input[type=checkbox]{
-	margin:10px;
-}
-
-/* ----- contentbox_content_obento end ----- */
-
 
 /* ----- salon_account_edit_namePoint start ----- */
 .salon_account_edit_namePoint{
@@ -444,20 +163,18 @@ span.salon_account_edit_openClose > span  {
 span.salon_account_edit_namePoint > input[type="text"]{
 	border-bottom: solid #DDD 1px;
 	width: 100%;
-	margin-right:-60px;
+	padding-right: 30px;
+	float: left;
+	text-align: right;
+	height: 20px;
 }
 
 .salon_account_edit_point{
 	float:right;
-	width:80px;
-	margin-right:-80px;
+	width:20px;
+	margin-left:-20px;
 }
 /* ----- salon_account_edit_namePoint end ----- */
-
-/* 一日利用ポイント */
-/* キャンセル割合 */
-/* HP URL */
-
 
 /* ----- salon_account_edit_condition start ----- */
 .salon_account_edit_condition{
@@ -466,6 +183,4 @@ span.salon_account_edit_namePoint > input[type="text"]{
 	border:1px #DDDDDD solid;
 	resize:none;
 }
-
-
 /* ----- salon_account_edit_condition end ----- */

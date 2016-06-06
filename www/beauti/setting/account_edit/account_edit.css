@@ -3,6 +3,7 @@
 /* ----- account_edit start ----- */
 .account_edit .contentbox {
 	padding: 15px;
+	margin: 10px 0px;
 }
 
 .account_edit .contentbox_content {
@@ -13,7 +14,8 @@
 
 /* ----- account_edit_text start ----- */
 .account_edit_text > input[type="text"],
-.account_edit_text > input[type="password"] {
+.account_edit_text > input[type="password"],
+p.account_edit_text {
 	border-bottom: solid #DDD 1px;
 	width: 100%;
 }
