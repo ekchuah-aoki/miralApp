@@ -1,8 +1,8 @@
-angular.module('miral.beauti.setting.account_edit.controllers', ['miral.common.miralConst','miral.beauti.setting.account_edit_fnc','miral.loginInfo'])
+angular.module('miral.beauti.setting.account_edit.controllers', ['miral.common.miralConst','miral.beauti.setting.account_edit_fnc','miral.loginInfo','miral.common.miralUtil'])
 
 .controller('beautiSettingAccountEditControllers', function($scope,$state, $stateParams, $ionicHistory, $ionicNavBarDelegate,$timeout
 		, miralBeautiSettingAccountEditFnc,loginInfo
-		, ACCOUNT_SETTING_MODE, PREFECTURE, ACCOUNT_TYPE, LOGIN_TYPE) {
+		, ACCOUNT_SETTING_MODE, PREFECTURE, ACCOUNT_TYPE, LOGIN_TYPE,miralConstUtil) {
 
 	//入力項目は必ず配列にすること、でないと値が取得できない
 //	$scope.form.login={}
@@ -30,8 +30,8 @@ angular.module('miral.beauti.setting.account_edit.controllers', ['miral.common.m
 	}
 	
 	//都道府県リストの設定
-	$scope.prefectureList = [{code:'', name:'選択してください'}, PREFECTURE.tokyo, PREFECTURE.kanagawa];
-	$scope.form.prefect =$scope.prefectureList[0].code;
+	$scope.prefectureList = [{code:'0', name:'選択してください'}, PREFECTURE.tokyo, PREFECTURE.kanagawa];
+	$scope.form.prefect =$scope.prefectureList[0];
 	
 	//入力項目の初期化(デバッグよう）
 	$scope.form.email = "test@ekchuah.co.jp";
@@ -44,7 +44,7 @@ angular.module('miral.beauti.setting.account_edit.controllers', ['miral.common.m
 	$scope.form.birthday_y = "1987";
 	$scope.form.birthday_m = "7";
 	$scope.form.birthday_d = "7";
-	$scope.form.prefect =$scope.prefectureList[1].code;
+	$scope.form.prefect =$scope.prefectureList[1];
 
 	if($scope.settingMode == ACCOUNT_SETTING_MODE.add){
 		//新規
@@ -56,13 +56,14 @@ angular.module('miral.beauti.setting.account_edit.controllers', ['miral.common.m
 		var userInfo = loginInfo.getUserInfo();
 		
 		var success = function(accInfo_){
+			
 			$scope.$apply(function(){
 				$scope.form.email=accInfo_.email;
 				$scope.form.lastName = accInfo_.lastName;       
 				$scope.form.firstName = accInfo_.firstName;
 				$scope.form.lastNameKana= accInfo_.lastNameKana ;  
 				$scope.form.firstNameKana= accInfo_.firstNameKana;            
-				$scope.form.prefect = accInfo_.prefect;           
+				$scope.form.prefect = miralConstUtil.getPrefectureByCode(accInfo_.prefect);
 				$scope.form.gender=accInfo_.gender;
 				$scope.form.birthday_y=accInfo_.birthday_y;
 				$scope.form.birthday_m=accInfo_.birthday_m;
@@ -149,7 +150,7 @@ angular.module('miral.beauti.setting.account_edit.controllers', ['miral.common.m
 		accInfo.firstName= $scope.form.firstName;
 		accInfo.lastNameKana= $scope.form.lastNameKana;   
 		accInfo.firstNameKana= $scope.form.firstNameKana;            
-		accInfo.prefect= $scope.form.prefect;   
+		accInfo.prefect= $scope.form.prefect.code;   
 		accInfo.pwd= $scope.form.pwd;                   
 		accInfo.gender=parseInt($scope.form.gender);
 		accInfo.birthday_y=$scope.form.birthday_y;

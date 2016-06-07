@@ -1,28 +1,35 @@
-angular.module('miral.loginInfo', ['miral.common.miralUtil','miral.common.miralConst','ngStorage'])
+angular.module('miral.loginInfo', ['miral.common.miralUtil','miral.common.miralConst'
+                                   ,'miral.common.facebook'
+                                   ,'miral.common.twitter'
+                                   ,'ngStorage'])
 
 ////////////////////////////////////////////
 //ログイン情報
-.factory('loginInfo', function($localStorage, LOGIN_TYPE,$localStorage) {
+.factory('loginInfo', function($localStorage, LOGIN_TYPE,$localStorage,facebookConnecter,twitterConnecter) {
 
-	//ログイン基本情報
-	var _loginInfo ={
-		accountId:"",  //アカウントId
-		acType:"",    //アカウントタイプ（美容師・サロン）
-		kindId:"",     //美容師の場合は美容師KindのId、サロンの場合はサロンのKindのId 
-		email:"",
-		name:"",
-		loginType:"",
-		temporary:true	
-	};
-	
 	
 	var myself = 
 	{
 		
 		/////////////////////////////
 		//ログイン情報をクリア
-		clearLoginInfo:function(){
-			delete $localStorage.loginuser;
+		clearLoginInfo:function(success_){
+			
+			//SNSもログアウト
+			var userInfo = myself.getUserInfo();
+			
+			if(userInfo.loginType == LOGIN_TYPE.facebook){
+				facebookConnecter.facebookSignOut(function(){
+					delete $localStorage.loginuser;
+					success_();
+				});
+			}else if(userInfo.loginType == LOGIN_TYPE.twitter){
+				twitterConnecter.twitterLogout(function(){
+					delete $localStorage.loginuser;
+					success_();
+				});	
+			}
+			
 		},
 		
 		
@@ -42,6 +49,8 @@ angular.module('miral.loginInfo', ['miral.common.miralUtil','miral.common.miralC
 		//基本情報はlocalstrageに保存
 		setLoginInfo:function(props_){
 			
+			_loginInfo = myself.getUserInfo();
+			
 			for(var n in props_){
 				if(_loginInfo[n]!=undefined){
 					_loginInfo[n] = props_[n];
@@ -56,7 +65,21 @@ angular.module('miral.loginInfo', ['miral.common.miralUtil','miral.common.miralC
 		/////////////////////////////
 		//ログイン基本情報の取得
 		getUserInfo:function(){
-			return $localStorage.loginuser || {};
+			
+			var usrinf = $localStorage.loginuser;
+			
+			return usrinf || {
+					accountId:"",  //アカウントId
+					acType:"",    //アカウントタイプ（美容師・サロン）
+					kindId:"",     //美容師の場合は美容師KindのId、サロンの場合はサロンのKindのId 
+					email:"",
+					name:"",
+					loginType:"",
+					twitterId:"",
+					twitterToken:"",
+					facebookId:"",
+					temporary:true	
+				};
 		},
 
 	};

@@ -102,8 +102,15 @@ angular.module('miral.login.login_fnc', ['miral.common.miralConst'
 				email:accInfo_.email,
 				name: accInfo_.lastName + " " + accInfo_.firstName,
 				kindId:resMsg_.kindId,
-				temporary:true
+				temporary:true,
 			});
+			if(accInfo_.facebookId){
+				loginInfo.setLoginInfo({facebookId:accInfo_.facebookId});		//facebookのId
+			}
+			
+			if(accInfo_.twitterId){
+				loginInfo.setLoginInfo({twitterId:accInfo_.twitterId});		   //twitterのId
+			}
 			success_();
 		} 
 		

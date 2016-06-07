@@ -9,21 +9,13 @@
 	</div >
 	
 	<p class="contentbox_title">ギャラリーの変更</p>
-	<div  id="img_sortable" class="contentbox" sortable  draggable=".gallery_edit_pct" >
-	
-		<img class="gallery_edit_pct" src="./img/beauti/1/mygallery_01.jpg">
-		<img class="gallery_edit_pct" src="./img/beauti/1/mygallery_02.jpg">
-		<img class="gallery_edit_pct" src="./img/beauti/1/mygallery_03.jpg">
-		<img class="gallery_edit_pct" src="./img/beauti/1/workgallery_01.jpg">
-		<img class="gallery_edit_pct" src="./img/beauti/1/workgallery_02.jpg">
-		<img class="gallery_edit_pct" src="./img/beauti/1/workgallery_03.jpg">
-		<img class="gallery_edit_pct" src="./img/beauti/1/workgallery_04.jpg">
-	  
+	<div  id="salon_gallery_edit_imglist" class="contentbox" sortable  draggable=".galley_edit_imagebox" >
 	  <i class="imgsortable_trashbox icon ion-close-circled" style="display:none;font-size:64pt" class="icon ion-close-circled"></i>  
 	</div>
 	<button class="button button-block c01" ng-click="salonAddImg()">ギャラリーの追加</button>
 	<br>
-	<button class="button button-block c01" ng-click="salonPrf()">変更を保存する</button>
+	<button class="button button-block c01" ng-click="upload()">変更を保存する</button>
+	<img id="salon_gallery_edit_workimg" style="display:none">
 </div>
 </ion-content>
 </ion-view>

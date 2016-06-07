@@ -1,6 +1,6 @@
 angular.module('miral.common.facebook', [])
 
-.factory('facebookConnecter', function($q, loginInfo) {
+.factory('facebookConnecter', function($q) {
 'use strict';
 
 	var _getFacebookProfileInfo=function(authResponse){
@@ -25,7 +25,6 @@ angular.module('miral.common.facebook', [])
 
 			  facebookConnectPlugin.getLoginStatus(function(status_success){
 				  
-
 				  if(status_success.status === 'connected'){
 
 					  
@@ -41,7 +40,7 @@ angular.module('miral.common.facebook', [])
 					  
 				  }else{
 					  facebookConnectPlugin.login(['email', 'public_profile'], function(response){
-							if(response.authResponse){
+							if(!response.authResponse){
 								//login error
 								fail_(); 
 								return;
@@ -65,7 +64,7 @@ angular.module('miral.common.facebook', [])
 					  }, function(){
 							console.log('Facebook Login Fail!!')  
 					  });
-				  }
+				 }
 			  
 			  });
 		  },
@@ -76,7 +75,9 @@ angular.module('miral.common.facebook', [])
 			  },
 			  function(fail){
 				  console.log('Facebook Logout Fail!!') 
-				  fail_();
+				  if(fail_){
+					  fail_();
+				  }
 			  });
 		  }
 		  

@@ -1,6 +1,6 @@
 angular.module('miral.common.twitter', [])
 
-.factory('twitterConnecter', function($window, $cordovaOauth, loginInfo) {
+.factory('twitterConnecter', function($window, $cordovaOauth) {
 'use strict';
 
   return {

@@ -25,7 +25,7 @@ angular.module('miral.common.miralUtil', ['miral.common.miralConst'])
 'use strict';
 	  var myself = {
 		  toInt:function(val){
-			  if(myself.isEmpty){
+			  if(myself.isEmpty(val)){
 				  return 0;
 			  }
 			  
@@ -41,13 +41,45 @@ angular.module('miral.common.miralUtil', ['miral.common.miralConst'])
 			  
 			  return val.toString(val, 10);
 		  },
+		  timeSplit:function(val){
+			  
+			  var rst = {h:"", m:"", s:""};
+			  
+			  if( myself.isEmpty(val)){
+				  return rst;
+			  }
+			  
+			  switch(val.length){
+			  case 3:
+				  rst.h = val.substr(0,1);
+				  rst.m = val.substr(1,2);
+				  break;
+			  case 4:
+				  rst.h = val.substr(0,2);
+				  rst.m = val.substr(2,2);
+				  break;
+			  case 5:
+				  rst.h = val.substr(0,1);
+				  rst.m = val.substr(1,2);
+				  rst.s = val.substr(3,2);
+				  break;
+			  case 6:
+				  rst.h = val.substr(0,2);
+				  rst.m = val.substr(2,2);
+				  rst.s = val.substr(4,2);
+				  break;
+			  }
+			  
+			  return rst;
+			  
+		  },
 		  isEmpty:function(val){
 			  
-			  val = val.toString();
 			  
-			  if (val == undefined || val==null || val == ""){
+			  if (val == undefined || val==null || val==""){
 				  return true;
 			  }
+
 			  
 			  return false;
 		  }

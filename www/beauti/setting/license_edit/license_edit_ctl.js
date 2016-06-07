@@ -25,6 +25,8 @@ angular.module('miral.beauti.setting.license_edit.controllers', ['miral.beauti.s
 				$scope.licenseImgData= "";
 				$scope.selectedImag = false;
 			}
+			
+			
 		});
 	})
 	

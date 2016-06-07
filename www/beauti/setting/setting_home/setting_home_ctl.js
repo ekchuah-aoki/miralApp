@@ -56,8 +56,10 @@ angular.module('miral.beauti.setting.setting_home.controllers', ['miral.loginInf
 
 			   confirmPopup.then(function(res) {
 			     if(res) {
-			 		loginInfo.clearLoginInfo();		//ログイン情報クリア（ログアウト）
-			 		$state.go('login',null,'');
+			 		loginInfo.clearLoginInfo(function(){
+				 		//ログイン情報クリア（ログアウト）
+				 		$state.go('login',null,'');
+			 		});		
 			     } else {
 			     }
 			   });		
